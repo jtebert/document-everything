@@ -1,1 +1,13 @@
-$link-color: $blue-000;
+$jte-green: #38BC24;
+
+$link-color: $jte-green;
+// $body-heading-color: $jte-green;
+
+$body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Space+Mono&display=swap');
+
+.site-title {
+    font-family: "Space Mono", monospace;
+    color: $jte-green !important;
+}
