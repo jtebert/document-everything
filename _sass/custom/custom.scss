@@ -11,3 +11,8 @@ $body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica n
     font-family: "Space Mono", monospace;
     color: $jte-green !important;
 }
+
+.main-content h2:not(.text-delta) {
+    color: $jte-green;
+    font-family: "Space Mono", monospace;
+}

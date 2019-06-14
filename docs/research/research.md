@@ -6,4 +6,6 @@ nav_order: 3
 has_children: true
 ---
 
-Research stuff
+# {{ page.title }}
+
+![Aliens doing science]({{ "assets/img/undraw_firmware_mf69.svg" | absolute_url }})

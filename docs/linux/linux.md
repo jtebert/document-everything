@@ -6,4 +6,10 @@ permalink: /linux
 nav_order: 2
 ---
 
-Tips & tricks related to Linux use and configuration
+# Linux
+
+![So many monitors]({{ "assets/img/undraw_programming_2svr.svg" | absolute_url }})
+
+Tips & tricks related to Linux use and configuration.
+
+And I put Chrome OS under Linux. Fight me.
