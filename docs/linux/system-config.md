@@ -174,3 +174,36 @@ This creates a bash command that can be executed in the terminal (from any direc
    sudo chmod 755 /usr/bin/$SCRIPT
    ```
 6. Run it to make sure everything’s working.
+
+## Automatic backups (with cron and rsync)
+
+I use this for creating a daily uncompressed backup of data of my internal data drive to an external hard drive.
+
+Create a bash script somewhere (I have it in the main directory of what I'm backing up) containing the following:
+```bash
+rsync -av --delete SOURCE DESTINATION
+```
+Mine looks like this:
+```bash
+rsync -av --delete /media/jtebert/data /media/jtebert/data-backup/backup
+```
+Note that the `--delete` flag means anything placed in the destination that's not in the source will be deleted. In other words, use the backup as a backup, not to actually edit stuff.
+
+Then make sure the script is executable:
+```bash
+chmod +x /path/to/backup-script.sh
+```
+You can now directly run this script to verify that it does what you expect.
+
+Now we'll create a cron table entry to automatically call this script at some time every day (this is set to 3 AM). Open the cron table with:
+```bash
+crontab -e
+```
+And add the following line:
+```bash
+0 3 * * * /path/to/backup-script.sh
+```
+Check back the next day and you should see a copy of everything you put
+
+Source: [How-To Geek](https://www.howtogeek.com/135533/how-to-use-rsync-to-backup-your-data-on-linux/)
+{:.fs-2}
