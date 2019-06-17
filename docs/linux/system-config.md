@@ -7,7 +7,7 @@ permalink: /linux/system-config
 
 # System Configuration
 
-1. TOC
+- TOC
 {:toc}
 
 ---
@@ -203,7 +203,7 @@ And add the following line:
 ```bash
 0 3 * * * /path/to/backup-script.sh
 ```
-Check back the next day and you should see a copy of everything you put
+Check back the next day and you should see a copy of everything from your original folder in the backup location.
 
 Source: [How-To Geek](https://www.howtogeek.com/135533/how-to-use-rsync-to-backup-your-data-on-linux/)
 {:.fs-2}
