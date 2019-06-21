@@ -12,6 +12,8 @@ permalink: /linux/zsh
 
 ---
 
+The most up-to-date version of my `.zshrc` configuration is in [my dotfiles repository](https://github.com/jtebert/dotfiles/blob/master/.zshrc)
+
 ## Installation
 
 Install zsh with:

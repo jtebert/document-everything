@@ -207,3 +207,9 @@ Check back the next day and you should see a copy of everything from your origin
 
 Source: [How-To Geek](https://www.howtogeek.com/135533/how-to-use-rsync-to-backup-your-data-on-linux/)
 {:.fs-2}
+
+## Saving dotfiles with git
+
+I followed [this tutorial](https://www.anand-iyer.com/blog/2018/a-simpler-way-to-manage-your-dotfiles.html) to set up a repository containing my dotfiles.
+
+[Here's my dotfiles repository.](https://github.com/jtebert/dotfiles)
