@@ -5,7 +5,7 @@ parent: Linux
 permalink: /linux/programs
 ---
 
-# Programs to Install
+# {{ page.title }}
 
 1. TOC
 {:toc}
@@ -34,6 +34,14 @@ permalink: /linux/programs
 | [User themes](https://extensions.gnome.org/extension/19/user-themes/)                 | Allow user themes described above             |
 | [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/) | Label/number workspaces in the top bar        |
 
+## Work
+
+| Program                                                   | Purpose                                                                                   |
+| :-------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
+| [Kilogui](https://github.com/acornejo/kilogui/releases)   | Programmer interface for Kilobots                                                         |
+| [Eagle](https://www.autodesk.com/products/eagle/overview) | PCB design (see [setup instructions]({{ 'linux/program-config#eagle-create-desktop-entry' | absolute_url }})) |
+| `sudo apt install minicom`                                | Serial monitor terminal (for Kilobots and LARVAbot)                                       |
+
 ## Everyday
 
 | Program                                                      | Purpose                                       |
@@ -41,10 +49,12 @@ permalink: /linux/programs
 | [Visual Studio Code](https://code.visualstudio.com/Download) | General-purpose code editor + git integration |
 | `sudo apt install inkscape`                                  | Vector graphics editor                        |
 | `sudo apt install gimp`                                      | Raster graphics editor                        |
-| [Kilogui](https://github.com/acornejo/kilogui/releases)      | Programmer interface for Kilobots             |
+| [Typora](https://typora.io/)                                 | Markdown editor                               |
+| [MuseScore](https://musescore.org/en)                        | Music notation                                |
+| [Spotify](https://www.spotify.com/us/download/other/)        | Music                                         |
+| [Zsh]({{ "linux/zsh"                                         | absolute_url }})                              | Better terminal |
 
 ## Miscellaneous
-
 
 | Program                                                                                                  | Purpose                                                         |
 | :------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
@@ -52,5 +62,25 @@ permalink: /linux/programs
 | `sudo apt install synaptic`                                                                              | GUI for package management                                      |
 | `sudo apt install gparted`                                                                               | GUI for disk partitioning                                       |
 | [Insync](https://www.insynchq.com/)                                                                      | Google Drive client for Linux                                   |
-| `sudo apt install minicom`                                                                               | Serial monitor terminal                                         |
 | [Nvidia drivers](https://www.mvps.net/docs/install-nvidia-drivers-ubuntu-18-04-lts-bionic-beaver-linux/) | Proprietary GPU drivers                                         |
+
+## OctoPrint Plugins
+
+Start by using [OctoPi](https://octoprint.org/download/) to set up OctoPrint on a Raspberry Pi 3B.
+
+| Program                                                                     | Purpose                                   |
+| :-------------------------------------------------------------------------- | :---------------------------------------- |
+| [CustomBackground](https://github.com/jneilliii/OctoPrint-CustomBackground) | Change background on temperature graph    |
+| [FileManager](https://github.com/Salandora/OctoPrint-FileManager)           | Separate tab for direct file management   |
+| [Firmware Updater](https://github.com/OctoPrint/OctoPrint-FirmwareUpdater)  | Update printer firmware                   |
+| [FullScreen](https://github.com/BillyBlaze/OctoPrint-FullScreen)            | Make camera full screen with double click |
+| [HeaterTimeout](https://github.com/google/OctoPrint-HeaterTimeout)          | Disable heater after timeout for safety   |
+| [NavbarTemp](https://github.com/imrahil/OctoPrint-NavbarTemp)               | Show temperatures in top bar              |
+| [Octolapse](https://github.com/FormerLurker/Octolapse)                      | Pretty timelapses                         |
+| [Printer Stats](https://github.com/amsbr/OctoPrint-Stats)                   | Tab of various printer stats              |
+| [Print Time Genius](https://github.com/amsbr/OctoPrint-Stats)               | Better print time estimation              |
+| [Prusa Mesh Map](https://github.com/PrusaOwners/OctoPrint-PrusaMeshMap)     | Mesh bed leveling for Nyloc mod           |
+| [TabOrder](https://github.com/jneilliii/OctoPrint-TabOrder)                 | Set tab order and icons                   |
+| [The Spaghetti Detective](https://www.thespaghettidetective.com/)           | Watch for failed prints                   |
+| [Themeify](https://github.com/birkbjo/OctoPrint-Themeify)                   | Dark theme!                               |
+| [TouchUI](https://github.com/BillyBlaze/OctoPrint-TouchUI)                  | Make it finger-friendly                   | s |
