@@ -63,7 +63,7 @@ Version=<version>
 Categories=Development
 ```
 
-Where `<version>` is the Eagle version number (like 8.6.3) and `<username>` is your username. If you're using a theme that has an icon for Eagle, you can replace the `Icon` value with the name given to that icon.
+Where `<version>` is the Eagle version number (like 8.6.3) and `<username>` is your username. If you're using a theme that has an icon for Eagle, you can replace the `Icon` value with the name given to that icon. (For example, with the Papirus icons, just make this `Icon=eagle`.)
 
 Whenever you get a new version of Eagle, you'll have to update the version number in this `.desktop` file to point to the right location.
 

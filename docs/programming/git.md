@@ -181,6 +181,29 @@ node_modules/
 **/*.o
 ```
 
+## Tags and releases
+
+Tags let you mark certain commits with versions so you can identify them easier at a later time. This is particularly useful in conjunction with [Github's releases](https://help.github.com/en/articles/creating-releases).
+
+The most common use case I have is adding a tag to your current commit on a repository's master branch. After you make your commit, add a tag:
+```bash
+git tag -a v2.2 -m "more about my version 2.2"
+```
+
+The `-a` says that it's an annotated tag, which keeps more information with it than a lightweight tag. (Use this type of tag if you're not certain.) And the `-m` let's you add the message for your tag directly, like a commit message.
+
+You can list all of your tags with `git tag`.
+
+Now you need to push your tags:
+```bash
+git push origin --tags
+```
+
+Now if you go to the "Releases" section on your repository on Github (in the bar below the repository description), you'll see your tag. If you move from the "Releases" tab to the "Tags" tab, you can click the three dots and select "Create release." From here, you can create a nicely-formatted permalinked release with additional information, embedded images, and compiled binaries. It will also automatically include a zip file of the source code at that tag's commit.
+
+Source: [Git documentation](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+{: .fs-2}
+
 ## Other useful stuff
 
 - Show differences between your staged/committed and unstaged changes:  `git diff` \\
