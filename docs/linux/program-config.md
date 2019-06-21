@@ -5,7 +5,7 @@ parent: Linux
 permalink: /linux/program-config
 ---
 
-# System Configuration
+# {{ page.title }}
 
 1. TOC
 {:toc}
