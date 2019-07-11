@@ -12,7 +12,7 @@ permalink: /linux/zsh
 
 ---
 
-The most up-to-date version of my `.zshrc` configuration is in [my dotfiles repository](https://github.com/jtebert/dotfiles/blob/master/.zshrc)
+The most up-to-date version of my `.zshrc` configuration is in [my dotfiles repository](https://github.com/jtebert/dotfiles/blob/master/.zshrc). For more info on setting up/saving/retrieving dotfiles with git, see [this section]({{ 'linux/system-config#saving-dotfiles-with-git' | absolute_url }}). If adding existing dotfiles to a new system, install ZSH and Oh-My-ZSH *before* cloning the dotfiles repo (otherwise it looks like the .zshrc gets overwritten).
 
 ## Installation
 
