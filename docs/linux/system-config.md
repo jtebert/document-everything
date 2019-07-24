@@ -49,7 +49,7 @@ We'll add an entry to the filesystem table to detect and mount the drive by its 
 
 **Warning:** If you mess up this file, your computer will possibly not boot. I suggest making a backup of it so you can revert if necessary.
 
-Edit /etc/fstab:
+Edit `/etc/fstab`:
 
 ```bash
 sudo nano /etc/fstab
@@ -213,3 +213,28 @@ Source: [How-To Geek](https://www.howtogeek.com/135533/how-to-use-rsync-to-backu
 I followed [this tutorial](https://www.anand-iyer.com/blog/2018/a-simpler-way-to-manage-your-dotfiles.html) to set up a repository containing my dotfiles.
 
 [Here's my dotfiles repository.](https://github.com/jtebert/dotfiles)
+
+## Using Tilix as default terminal application (with Gnome, at least)
+
+Gnome defaults to `gnome-terminal` for its system terminal, but Tilix lets you tile terminals and nice stuff like that.
+
+To make Tilix be the terminal that opens with the shortcut `Ctrl`+`Alt`+`T`, run:
+```shell
+sudo update-alternatives --config x-terminal-emulator
+```
+and choose Tilix from the resulting list of options.
+
+Depending on your Ubuntu version, you may need to fix a Virtual Terminal Emulator (VTE) setting. If this is the case, you'll get a warning ("Configuration Issue Detected") when you open the Tilix preferences. You need to add the following to your `~/.bashrc` or `~/.zshrc` file. (This is already in my `.zshrc` in my dotfiles repository.)
+```bash
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+```
+
+You may also need to create a missing symlink, if the file `/etc/profile.d/vte.sh` doesn't exist:
+```bash
+sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
+```
+
+Sources: [Ask Ubuntu](https://askubuntu.com/questions/1135970/ctrl-alt-t-launches-a-different-terminal-than-that-from-the-launcher), [Tilix: VTE Configuration](https://gnunn1.github.io/tilix-web/manual/vteconfig/)
+{:.fs-2}

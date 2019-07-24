@@ -85,59 +85,36 @@ POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0B3'
 ```
 There are many options provided in the [powerline extra symbols](https://github.com/ryanoasis/powerline-extra-symbols) (included with Nerd Fonts).
 
-Here is also an annotated bit of my (possibly outdated) `~/.zshrc` file:
+My most up to date `~/.zshrc` file can be found [in my dotfiles repository](https://github.com/jtebert/dotfiles/blob/master/.zshrc).
 
-```zsh
-# LEFT SIDE
-# Set what shows up in the left-aligned section. `newline` add a line break
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline os_icon)
-# Show a lock and blue background when in a folder I don't have write permissions for
-POWERLEVEL9K_DIR_SHOW_WRITABLE=true
-# Show the current directory as bold (just that last folder)
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD=true
-# Set location to have green background and white text
-POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
-POWERLEVEL9K_DIR_HOME_BACKGROUND="green"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="green"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="green"
-# This keeps the non-writable folder from having black text on blue background
-POWERLEVEL9K_DIR_NOT_WRITABLE_FOREGROUND="white"
-# Hide the tilde (~) abbreviating /home/jtebert in paths, since I'm showing an icon instead
-POWERLEVEL9K_HOME_FOLDER_ABBREVIATION=""
-# Use a pretty caret character (> ) to display instead of / character
-POWERLEVEL9K_DIR_PATH_SEPARATOR=" \ue0b1 "
-# Show a home icon when in home folder or a subdirectory of home
-POWERLEVEL9K_HOME_ICON='\uf7db'
-POWERLEVEL9K_HOME_SUB_ICON='\uf7db'
-# Show a MDI folder icon everywhere else
-POWERLEVEL9K_FOLDER_ICON='\uf74a'
-# I like this github icon better
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uF408'
-# And I think showing the branch is redundant
-POWERLEVEL9K_HIDE_BRANCH_ICON=true
-# Show the OS icon right before the prompt
-POWERLEVEL9K_OS_ICON_BACKGROUND='grey'
-POWERLEVEL9K_OS_ICON_FOREGROUND='white'
-# Show a blank line between prompts for readability
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+## `ls` with icons and colors
 
-# RIGHT SIDE
-# What to show in right-aligned section. `virtualenv` shows which you're in
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv time)
-
-# Make virtualenv colors match
-POWERLEVEL9K_VIRTUALENV_BACKGROUND='green'
-POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'
-# Make the status show up as green check/red x on gray background
-POWERLEVEL9K_STATUS_OK_BACKGROUND='grey'
-POWERLEVEL9K_STATUS_ERROR_BACKGROUND='grey'
-POWERLEVEL9K_STATUS_ERROR_FOREGROUND='red'
-POWERLEVEL9K_STATUS_CROSS=true
-# Get rid of the icon next to the time
-POWERLEVEL9K_TIME_ICON=''
+While we're add it, let's make `ls` look pretty too by giving it nicer colors and icons. First we need to install dependencies:
+```shell
+sudo apt install ruby ruby-dev ruby-colorize
 ```
+and then install `colorls` from Ruby:
+```shell
+sudo gem install colorls
+```
+
+We can also add an alias in `~/.zshrc` to map `lc` because `colorls` is long:
+```shell
+alias lc='colorls'
+```
+
+But now the colors probably don't match your terminal. First we have to copy an existing YAML file containing color configuration:
+```shell
+cp $(dirname $(gem which colorls))/yaml/dark_colors.yaml ~/.config/colorls/dark_colors.yaml
+```
+If this complains about "no such file or directory," it probably means that you don't have a config folder for colorls. You can make one with:
+```shell
+mkdir ~/.config/colorls
+```
+Now you can edit this YAML file to your heart's content. I opted for lazily taking someone else's version that uses the terminal profile's ANSI colors, as [found in this GitHub issue](https://github.com/athityakumar/colorls/issues/165).
+
+Sources: [OMG Ubuntu](https://www.omgubuntu.co.uk/2017/07/add-bling-ls-bash-command-colorls), [colorls GitHub](https://github.com/athityakumar/colorls/issues/165)
+{:.fs-2}
 
 ## Other Fixes
 
@@ -145,7 +122,7 @@ POWERLEVEL9K_TIME_ICON=''
 
 To fix the broken icons in Visual Studio Code, add the following line to your settings: `"terminal.integrated.fontFamily": "Hack Nerd Font"`. And substitute whatever font you're using. Note that the font name doesn't exactly match the file name.
 
-The colors are also different from whatever you specify in your external terminal. Someone made [a website to generate VS Code terminal color schemes](https://glitchbone.github.io/vscode-base16-term/#/). But my default (Tango wasn't included), so I copied the default colors into the settings section like this:
+The colors are also different from whatever you specify in your external terminal. Someone made [a website to generate VS Code terminal color schemes](https://glitchbone.github.io/vscode-base16-term/#/). But my default (Tango) wasn't included, so I copied the default colors into the settings section like this:
 
 ```js
 "workbench.colorCustomizations": {
@@ -165,6 +142,29 @@ The colors are also different from whatever you specify in your external termina
     "terminal.ansiRed": "#CC0000",
     "terminal.ansiWhite": "#D3D7CF",
     "terminal.ansiYellow": "#C4A000"
+},
+```
+
+Since then, I've also switched to my own dark/bold Material color scheme, which I've put into gnome-terminal and Tilix. (The color scheme for Tilix is included in my dotfiles.)
+
+```js
+"workbench.colorCustomizations": {
+    "terminal.ansiBlack": "#263238",
+    "terminal.ansiRed": "#F44336",
+    "terminal.ansiGreen": "#4CAF50",
+    "terminal.ansiYellow": "#FFC107",
+    "terminal.ansiBlue": "#3F51B5",
+    "terminal.ansiMagenta": "#673AB7",
+    "terminal.ansiCyan": "#00BCD4",
+    "terminal.ansiWhite": "#E0E0E0",
+    "terminal.ansiBrightBlack": "#607D8B",
+    "terminal.ansiBrightRed": "#E57373",
+    "terminal.ansiBrightGreen": "#81C784",
+    "terminal.ansiBrightYellow": "#FFD54F",
+    "terminal.ansiBrightBlue": "#7986CB",
+    "terminal.ansiBrightMagenta": "#9575CD",
+    "terminal.ansiBrightCyan": "#80DEEA",
+    "terminal.ansiBrightWhite": "#FAFAFA",
 },
 ```
 
