@@ -3,7 +3,7 @@ layout: default
 title: Programming
 permalink: /programming
 has_children: true
-nav_order: 3
+nav_order: 4
 ---
 
 # {{ page.title }}

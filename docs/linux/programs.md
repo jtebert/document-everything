@@ -66,15 +66,14 @@ permalink: /linux/programs
 
 ## OctoPrint Plugins
 
-Start by using [OctoPi](https://octoprint.org/download/) to set up OctoPrint on a Raspberry Pi 3B.
+For OctoPrint installation/setup and more information, see my [OctoPrint page]({{ '3d-printing/octoprint' | absolute_url }})
 
 | Program                                                                     | Purpose                                   |
 | :-------------------------------------------------------------------------- | :---------------------------------------- |
 | [CustomBackground](https://github.com/jneilliii/OctoPrint-CustomBackground) | Change background on temperature graph    |
 | [FileManager](https://github.com/Salandora/OctoPrint-FileManager)           | Separate tab for direct file management   |
 | [Firmware Updater](https://github.com/OctoPrint/OctoPrint-FirmwareUpdater)  | Update printer firmware                   |
-| [FullScreen](https://github.com/BillyBlaze/OctoPrint-FullScreen)            | Make camera full screen with double click |
-| [HeaterTimeout](https://github.com/google/OctoPrint-HeaterTimeout)          | Disable heater after timeout for safety   |
+| [Fullscreen Camera](https://github.com/BillyBlaze/OctoPrint-FullScreen)     | Make camera full screen with double click |
 | [NavbarTemp](https://github.com/imrahil/OctoPrint-NavbarTemp)               | Show temperatures in top bar              |
 | [Octolapse](https://github.com/FormerLurker/Octolapse)                      | Pretty timelapses                         |
 | [Printer Stats](https://github.com/amsbr/OctoPrint-Stats)                   | Tab of various printer stats              |
@@ -83,4 +82,4 @@ Start by using [OctoPi](https://octoprint.org/download/) to set up OctoPrint on 
 | [TabOrder](https://github.com/jneilliii/OctoPrint-TabOrder)                 | Set tab order and icons                   |
 | [The Spaghetti Detective](https://www.thespaghettidetective.com/)           | Watch for failed prints                   |
 | [Themeify](https://github.com/birkbjo/OctoPrint-Themeify)                   | Dark theme!                               |
-| [TouchUI](https://github.com/BillyBlaze/OctoPrint-TouchUI)                  | Make it finger-friendly                   | s |
+| [TouchUI](https://github.com/BillyBlaze/OctoPrint-TouchUI)                  | Make it finger-friendly                   |
