@@ -8,3 +8,4 @@ nav_order: 2
 
 # {{ page.title }}
 
+![Art that's probably not 3D printed]({{ "/assets/img/undraw_art_museum_8or4.svg" }})

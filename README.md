@@ -19,3 +19,7 @@ bundle exec jekyll serve
 ```
 
 Github pages is currently set up for the master branch. The trick to actually getting this to work was to disable the `url` and set the `remote_theme` in `_config.yml`.
+
+## Credits
+
+Images are from [unDraw](https://undraw.co/illustrations), sometimes modified by me.
