@@ -9,7 +9,7 @@ nav_order: 6
 
 ![Human-sized To Do list]({{ "/assets/img/undraw_to_do_list_a49b.svg" }})
 
-These are things I want to learn how to do or try out.
+These are things I want to learn how to do or try out. Not for work or anything. Mostly to procrastinate on work. Like everything on this website. And this website itself.
 
 ---
 
@@ -29,3 +29,9 @@ These are things I want to learn how to do or try out.
 - Start a blog (OK, [I've already actually created a blog](https://blog.juliaebert.com), but I need to actually start writing things on it)
 - Move [Lazy Baker](http://lazybaker.juliaebert.com) to my DigitalOcean VPS
   - And make it secure (`https://`)
+- Try out Powerlevel9k for ZSH
+
+## To Make
+
+- Add lighting to 3D printer
+- 8" 3D-printed moon lamp (gotta figure out how I'm lighting it up. Section of a 12 V LED strip?)
