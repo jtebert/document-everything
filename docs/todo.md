@@ -29,7 +29,9 @@ These are things I want to learn how to do or try out. Not for work or anything.
 - Start a blog (OK, [I've already actually created a blog](https://blog.juliaebert.com), but I need to actually start writing things on it)
 - Move [Lazy Baker](http://lazybaker.juliaebert.com) to my DigitalOcean VPS
   - And make it secure (`https://`)
-- Try out Powerlevel9k for ZSH
+- Try out Powerlevel10k for ZSH
+- [Try using Google Drive as remote network drive](https://www.omgubuntu.co.uk/2016/08/use-google-drive-ubuntu-16-04-linux-desktops)
+- Add swap back to my home desktop (and maybe try switching to Pop! OS from Ubuntu?)
 
 ## To Make
 

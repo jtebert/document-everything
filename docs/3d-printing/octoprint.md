@@ -73,7 +73,26 @@ Sources: [Raspberry Pi StackExchange](https://raspberrypi.stackexchange.com/ques
 
 ### Firmware Updater
 
-*I'll add this when I have to set it up to update the printer firmware.*
+SSH into the Raspberry Pi and install avrdude:
+```shell
+sudo apt install avrdude
+```
+
+Open Settings (wrench) and under "Plugins," select "Firmware Updater." Click the wrench in the upper right to get the plugin configuration, and set the following settings:
+
+| Item                | Setting                          |
+| :------------------ | :------------------------------- |
+| Flash method        | avrdude (Atmel AVR family)       |
+| AVR MCU             | ATmega2560                       |
+| Path to avrdude     | `/usr/bin/avrdude` (and test it) |
+| AVR Programmer type | wiring                           |
+
+And you don't need to do anything for the advanced settings.
+
+Now you can get the [latest firmware from Prusa](https://www.prusa3d.com/drivers/) and flash the HEX file with "Flash from File."
+
+Source: [PrusaPrinters forum](https://forum.prusaprinters.org/forum/original-prusa-i3-mk2-s-others-archive/octoprint-firmware-upgrades/)
+{:fs-2}
 
 ### Octolapse
 

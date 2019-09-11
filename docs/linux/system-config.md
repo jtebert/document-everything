@@ -238,3 +238,21 @@ sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
 
 Sources: [Ask Ubuntu](https://askubuntu.com/questions/1135970/ctrl-alt-t-launches-a-different-terminal-than-that-from-the-launcher), [Tilix: VTE Configuration](https://gnunn1.github.io/tilix-web/manual/vteconfig/)
 {:.fs-2}
+
+## Using Cisco AnyConnect VPN
+
+There's pretty nice integration for this on Chrome OS. But the Linux client was ugly and constantly cut/lost my connection. Harvard's IT people suggested this solution/alternative using openconnect and it actually worked.
+
+Install openconnect:
+```shell
+sudo apt install network-manager-openconnect-gnome
+```
+
+Test that the VPN works by using it through the command line:
+```shell
+sudo openconnect VPNURL
+```
+In the case of the Harvard VPN, the url is `vpn.harvard.edu`. Also for Harvard, you can leave the second password entry (the one for two-factor authentication) blank, in which case you'll get the Duo mobile notification on your phone for approval.
+
+Source: [Ask Ubuntu](https://askubuntu.com/questions/1033315/connecting-to-cisco-vpn-from-ubuntu-18-04-without-a-group-password)
+{:.fs-2}
