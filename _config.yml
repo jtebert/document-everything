@@ -24,6 +24,20 @@ url: "https://docs.juliaebert.com" # the base hostname & protocol for your site,
 twitter_username: jtebert
 github_username:  jtebert
 
+# Heading anchor links appear on hover over h1-h6 tags in page content
+# allowing users to deep link to a particular heading on a page.
+#
+# Supports true (default) or false/nil
+heading_anchors: true
+
+# Footer content appears at the bottom of every page's main content
+footer_content: "&copy; 2019 by Julia Ebert"
+
+# Google Analytics Tracking (optional)
+# e.g, UA-1234567-89
+ga_tracking: UA-54476418-2
+
+
 # Build settings
 markdown: kramdown
 remote_theme: pmarsceill/just-the-docs
