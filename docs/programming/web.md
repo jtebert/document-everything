@@ -67,7 +67,7 @@ If you want to test stuff locally with the contents of your development database
    ```shell
    ALTER USER PSQL_USERNAME PASSWORD 'newPassword';
    ```
-   **Do not forget the trailing semicolon.** Then exit with `Ctrl+D` or `\q`.
+   Don't forget the trailing semicolon! Then exit with `Ctrl`+`D` or `\q`.
 6. If it complains that the database doesn't exist, the easiest solution is to run
    ```shell
    python3 manage.py migrate

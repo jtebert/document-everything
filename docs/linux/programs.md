@@ -14,45 +14,50 @@ permalink: /linux/programs
 
 ## Visuals
 
-| Program                                                                       | Purpose                             |
-| :---------------------------------------------------------------------------- | :---------------------------------- |
-| [Adapta GTK Theme](https://github.com/adapta-project/adapta-gtk-theme)        | Clean dark theme                    |
-| [Adapta-gtk-theme-colorpack](https://www.gnome-look.org/p/1190851/)           | Change Adapta accent color          |
-| [Papirus icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) | Material-inspired icons             |
-| [Papirus folders](https://github.com/PapirusDevelopmentTeam/papirus-folders)  | Match folder icons to Adapta colors |
+| Program                                                                                              | Purpose                             |
+| :--------------------------------------------------------------------------------------------------- | :---------------------------------- |
+| [Adapta GTK Theme](https://github.com/adapta-project/adapta-gtk-theme)                               | Clean dark theme                    |
+| [Adapta-gtk-theme-colorpack](https://www.gnome-look.org/p/1190851/)                                  | Change Adapta accent color          |
+| [Plata GTK Theme](https://www.linuxuprising.com/2018/11/plata-is-new-gtk-theme-based-on-latest.html) | Clean darker theme                  |
+| [Papirus icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)                        | Material-inspired icons             |
+| [Papirus folders](https://github.com/PapirusDevelopmentTeam/papirus-folders)                         | Match folder icons to Adapta colors |
 
 
 ## Gnome Extensions
 
-| Program                                                                               | Purpose                                       |
-| :------------------------------------------------------------------------------------ | :-------------------------------------------- |
-| [Alternatetab](https://extensions.gnome.org/extension/15/alternatetab/)               | Alt+Tab switches by window instead of program |
-| [Dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)              | More configuration of dash bar                |
-| [OpenWeather](https://extensions.gnome.org/extension/750/openweather/)                | Show weather in top bar                       |
-| [ShellTile](https://extensions.gnome.org/extension/657/shelltile/)                    | More places to snap windows                   |
-| [Suspend button](https://extensions.gnome.org/extension/826/suspend-button/)          | Add a suspend button to the main dropdown     |
-| [User themes](https://extensions.gnome.org/extension/19/user-themes/)                 | Allow user themes described above             |
-| [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/) | Label/number workspaces in the top bar        |
+| Program                                                                               | Purpose                                                     |
+| :------------------------------------------------------------------------------------ | :---------------------------------------------------------- |
+| [Alternatetab](https://extensions.gnome.org/extension/15/alternatetab/)               | Alt+Tab switches by window instead of program               |
+| [Dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)              | More configuration of dash bar                              |
+| [OpenWeather](https://extensions.gnome.org/extension/750/openweather/)                | Show weather in top bar                                     |
+| [ShellTile](https://extensions.gnome.org/extension/657/shelltile/)                    | More places to snap windows                                 |
+| [Suspend button](https://extensions.gnome.org/extension/826/suspend-button/)          | Add a suspend button to the main dropdown                   |
+| [User themes](https://extensions.gnome.org/extension/19/user-themes/)                 | Allow user themes described above                           |
+| [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/) | Label/number workspaces in the top bar                      |
+| [Material Shell](https://github.com/PapyElGringo/material-shell)                      | Tiling WM style for Gnome (clear `~/.cache` if misbehaving) |
 
 ## Work
 
-| Program                                                   | Purpose                                                                                   |
-| :-------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
-| [Kilogui](https://github.com/acornejo/kilogui/releases)   | Programmer interface for Kilobots                                                         |
-| [Eagle](https://www.autodesk.com/products/eagle/overview) | PCB design (see [setup instructions]({{ 'linux/program-config#eagle-create-desktop-entry' | absolute_url }})) |
-| `sudo apt install minicom`                                | Serial monitor terminal (for Kilobots and LARVAbot)                                       |
+| Program                                                        | Purpose                                                                                                               |
+| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| [Kilogui](https://github.com/acornejo/kilogui/releases)        | Programmer interface for Kilobots                                                                                     |
+| [Eagle](https://www.autodesk.com/products/eagle/overview)      | PCB design ([configuration]({{ 'linux/program-config#using-tilix-as-default-terminal-application-with-gnome-at-least' | absolute_url }})) |
+| `sudo apt install minicom`                                     | Serial monitor terminal (for Kilobots and LARVAbot)                                                                   |
+| [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer/releases) | 3D printing slicer                                                                                                    |
+| [Arduino IDE](https://www.arduino.cc/en/guide/linux)           | Programming Arduinos/microcontrollers ([configuration]({{ 'research/larvabot#arduino-setup'                           | absolute_url }})) |
 
 ## Everyday
 
-| Program                                                      | Purpose                                       |
-| :----------------------------------------------------------- | :-------------------------------------------- |
-| [Visual Studio Code](https://code.visualstudio.com/Download) | General-purpose code editor + git integration |
-| `sudo apt install inkscape`                                  | Vector graphics editor                        |
-| `sudo apt install gimp`                                      | Raster graphics editor                        |
-| [Typora](https://typora.io/)                                 | Markdown editor                               |
-| [MuseScore](https://musescore.org/en)                        | Music notation                                |
-| [Spotify](https://www.spotify.com/us/download/other/)        | Music                                         |
-| [Zsh]({{ "linux/zsh"                                         | absolute_url }})                              | Better terminal |
+| Program                                                      | Purpose                                                                              |
+| :----------------------------------------------------------- | :----------------------------------------------------------------------------------- |
+| [Visual Studio Code](https://code.visualstudio.com/Download) | General-purpose code editor + git integration                                        |
+| `sudo apt install tilix`                                     | Better terminal ([configuration]({{ 'linux/system-config#eagle-create-desktop-entry' | absolute_url }}))        |
+| `sudo apt install inkscape`                                  | Vector graphics editor                                                               |
+| `sudo apt install gimp`                                      | Raster graphics editor                                                               |
+| [Typora](https://typora.io/)                                 | Markdown editor                                                                      |
+| [MuseScore](https://musescore.org/en)                        | Music notation                                                                       |
+| [Spotify](https://www.spotify.com/us/download/other/)        | Music                                                                                |
+| [Z shell]({{ "linux/zsh"                                     | absolute_url }})                                                                     | Better interactive shell |
 
 ## Miscellaneous
 
@@ -62,7 +67,8 @@ permalink: /linux/programs
 | `sudo apt install synaptic`                                                                              | GUI for package management                                      |
 | `sudo apt install gparted`                                                                               | GUI for disk partitioning                                       |
 | [Insync](https://www.insynchq.com/)                                                                      | Google Drive client for Linux                                   |
-| [Nvidia drivers](https://www.mvps.net/docs/install-nvidia-drivers-ubuntu-18-04-lts-bionic-beaver-linux/) | Proprietary GPU drivers                                         |
+| `sudo apt install duplicity`                                                                             | Déjà Dup automatic backups                                      |
+| [Nvidia drivers](https://www.mvps.net/docs/install-nvidia-drivers-ubuntu-18-04-lts-bionic-beaver-linux/) | Proprietary GPU drivers (now may be included, Ubuntu 19.10+)    |
 
 ## OctoPrint Plugins
 
