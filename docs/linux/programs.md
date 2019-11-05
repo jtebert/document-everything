@@ -12,6 +12,19 @@ permalink: /linux/programs
 
 ---
 
+## Everyday
+
+| Program                                               | Purpose                                                                              |
+| :---------------------------------------------------- | :----------------------------------------------------------------------------------- |
+| [Chrome](https://www.google.com/chrome/)              | Browser                                                                              |
+| `sudo apt install tilix`                              | Better terminal ([configuration]({{ 'linux/system-config#eagle-create-desktop-entry' | absolute_url }}))        |
+| `sudo apt install inkscape`                           | Vector graphics editor                                                               |
+| `sudo apt install gimp`                               | Raster graphics editor                                                               |
+| [Typora](https://typora.io/)                          | Markdown editor                                                                      |
+| [MuseScore](https://musescore.org/en)                 | Music notation                                                                       |
+| [Spotify](https://www.spotify.com/us/download/other/) | Music                                                                                |
+| [Z shell]({{ "linux/zsh"                              | absolute_url }})                                                                     | Better interactive shell |
+
 ## Visuals
 
 | Program                                                                                              | Purpose                             |
@@ -36,30 +49,38 @@ permalink: /linux/programs
 | [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/) | Label/number workspaces in the top bar                      |
 | [Material Shell](https://github.com/PapyElGringo/material-shell)                      | Tiling WM style for Gnome (clear `~/.cache` if misbehaving) |
 
-## Work
+## Work/Research
 
-| Program                                                        | Purpose                                                                                                               |
-| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
-| [Kilogui](https://github.com/acornejo/kilogui/releases)        | Programmer interface for Kilobots                                                                                     |
-| [Eagle](https://www.autodesk.com/products/eagle/overview)      | PCB design ([configuration]({{ 'linux/program-config#using-tilix-as-default-terminal-application-with-gnome-at-least' | absolute_url }})) |
-| `sudo apt install minicom`                                     | Serial monitor terminal (for Kilobots and LARVAbot)                                                                   |
-| [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer/releases) | 3D printing slicer                                                                                                    |
-| [Arduino IDE](https://www.arduino.cc/en/guide/linux)           | Programming Arduinos/microcontrollers ([configuration]({{ 'research/larvabot#arduino-setup'                           | absolute_url }})) |
+| Program                                                                                   | Purpose                                                                                                               |
+| :---------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| [Kilogui](https://github.com/acornejo/kilogui/releases)                                   | Programmer interface for Kilobots                                                                                     |
+| [Mendeley](https://www.mendeley.com/guides/download-mendeley-desktop/ubuntu/instructions) | Managing papers                                                                                                       |
+| [Eagle](https://www.autodesk.com/products/eagle/overview)                                 | PCB design ([configuration]({{ 'linux/program-config#using-tilix-as-default-terminal-application-with-gnome-at-least' | absolute_url }})) |
+| `sudo apt install minicom`                                                                | Serial monitor terminal (for Kilobots and LARVAbot)                                                                   |
+| [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer/releases)                            | 3D printing slicer                                                                                                    |
+| `sudo apt install openscad`                                                               | Script-based CAD                                                                                                      |
 
-## Everyday
+## Programming
 
-| Program                                                      | Purpose                                                                              |
-| :----------------------------------------------------------- | :----------------------------------------------------------------------------------- |
-| [Visual Studio Code](https://code.visualstudio.com/Download) | General-purpose code editor + git integration                                        |
-| `sudo apt install tilix`                                     | Better terminal ([configuration]({{ 'linux/system-config#eagle-create-desktop-entry' | absolute_url }}))        |
-| `sudo apt install inkscape`                                  | Vector graphics editor                                                               |
-| `sudo apt install gimp`                                      | Raster graphics editor                                                               |
-| [Typora](https://typora.io/)                                 | Markdown editor                                                                      |
-| [MuseScore](https://musescore.org/en)                        | Music notation                                                                       |
-| [Spotify](https://www.spotify.com/us/download/other/)        | Music                                                                                |
-| [Z shell]({{ "linux/zsh"                                     | absolute_url }})                                                                     | Better interactive shell |
+| Program                                                        | Purpose                                                                                     |
+| :------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| [Visual Studio Code](https://code.visualstudio.com/Download)   | General-purpose code editor + git integration                                               |
+| [Matlab](https://www.mathworks.com/downloads/)                 | "Programming"                                                                               |
+| [Arduino IDE](https://www.arduino.cc/en/guide/linux)           | Programming Arduinos/microcontrollers ([configuration]({{ 'research/larvabot#arduino-setup' | absolute_url }})) |
+| [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) | Manage Heroku projects                                                                      |
 
-## Miscellaneous
+Install relevant development packages all at once:
+
+| Item            | Install                                                                                                                                            |
+| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Python 2        | `sudo apt install python-dev python-pip`                                                                                                           |
+| Python 3        | `sudo apt install python3-dev python3-pip`                                                                                                         |
+| Python packages | `pip3 install numpy scipy matplotlib pandas seaborn tables h5py jupyter pylint dash plotly`                                                        |
+| Jekyll          | `sudo apt install ruby-full build-essential zlib1g-dev & gem install jekyll bundler`                                                               |
+| Node/NPM        | `sudo apt install nodejs build-essential` or [PPA or NVM](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) |
+| Other           | `sudo apt install libhdf5-dev htop`                                                                                                                |
+
+## Miscellaneous/Utilities
 
 | Program                                                                                                  | Purpose                                                         |
 | :------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
@@ -69,6 +90,8 @@ permalink: /linux/programs
 | [Insync](https://www.insynchq.com/)                                                                      | Google Drive client for Linux                                   |
 | `sudo apt install duplicity`                                                                             | Déjà Dup automatic backups                                      |
 | [Nvidia drivers](https://www.mvps.net/docs/install-nvidia-drivers-ubuntu-18-04-lts-bionic-beaver-linux/) | Proprietary GPU drivers (now may be included, Ubuntu 19.10+)    |
+| `sudo apt install gnome-tweaks`                                                                          | Make Gnome usable                                               |
+| `sudo apt install dconf-editor`                                                                          | Edit Dconf files                                                |
 
 ## OctoPrint Plugins
 
