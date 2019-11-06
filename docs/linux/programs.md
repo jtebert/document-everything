@@ -24,6 +24,7 @@ permalink: /linux/programs
 | [MuseScore](https://musescore.org/en)                 | Music notation                                                                       |
 | [Spotify](https://www.spotify.com/us/download/other/) | Music                                                                                |
 | [Z shell]({{ "linux/zsh"                              | absolute_url }})                                                                     | Better interactive shell |
+| [Steam](https://store.steampowered.com)               | Games!                                                                               |
 
 ## Visuals
 
@@ -62,21 +63,22 @@ permalink: /linux/programs
 
 ## Programming
 
-| Program                                                        | Purpose                                                                                     |
-| :------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
-| [Visual Studio Code](https://code.visualstudio.com/Download)   | General-purpose code editor + git integration                                               |
-| [Matlab](https://www.mathworks.com/downloads/)                 | "Programming"                                                                               |
-| [Arduino IDE](https://www.arduino.cc/en/guide/linux)           | Programming Arduinos/microcontrollers ([configuration]({{ 'research/larvabot#arduino-setup' | absolute_url }})) |
-| [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) | Manage Heroku projects                                                                      |
+| Program                                                                                               | Purpose                                                                                     |
+| :---------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| [Visual Studio Code](https://code.visualstudio.com/Download)                                          | General-purpose code editor + git integration                                               |
+| [Matlab](https://www.mathworks.com/downloads/)                                                        | "Programming"                                                                               |
+| [Arduino IDE](https://www.arduino.cc/en/guide/linux)                                                  | Programming Arduinos/microcontrollers ([configuration]({{ 'research/larvabot#arduino-setup' | absolute_url }})) |
+| [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)                                        | Manage Heroku projects                                                                      |
+| [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-engine---community-1) | Containers for development                                                                  |
 
 Install relevant development packages all at once:
 
 | Item            | Install                                                                                                                                            |
 | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Python 2        | `sudo apt install python-dev python-pip`                                                                                                           |
-| Python 3        | `sudo apt install python3-dev python3-pip`                                                                                                         |
+| Python 3        | `sudo apt install python3-dev python3-pip python3-venv`                                                                                            |
 | Python packages | `pip3 install numpy scipy matplotlib pandas seaborn tables h5py jupyter pylint dash plotly`                                                        |
-| Jekyll          | `sudo apt install ruby-full build-essential zlib1g-dev & gem install jekyll bundler`                                                               |
+| Jekyll          | `sudo apt install ruby-full build-essential zlib1g-dev && sudo gem install jekyll bundler`                                                         |
 | Node/NPM        | `sudo apt install nodejs build-essential` or [PPA or NVM](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) |
 | Other           | `sudo apt install libhdf5-dev htop`                                                                                                                |
 
