@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Modding
 parent: 3D Printing
 permalink: /3d-printing/modding
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

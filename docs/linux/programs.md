@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Programs to Install
 parent: Linux
 permalink: /linux/programs
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

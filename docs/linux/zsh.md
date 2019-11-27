@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Z shell
 parent: Linux
 permalink: /linux/zsh
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

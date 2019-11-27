@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 parent: Programming
 title: Miscellaneous
 permalink: /programming/other
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

@@ -1,12 +1,10 @@
 ---
-layout: default
+layout: page
 title: Programming
 permalink: /programming
 has_children: true
 nav_order: 4
 ---
-
-# {{ page.title }}
 
 ![Code]({{ "assets/img/undraw_code_review_l1q9.svg" | absolute_url }})
 

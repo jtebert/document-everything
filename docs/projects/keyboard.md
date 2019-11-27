@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Custom Keyboard
 parent: Side Projects
 permalink: /projects/keyboard
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}
@@ -24,9 +22,9 @@ According to [this](https://deskthority.net/viewtopic.php?f=7&t=5761&start=) it 
 
 ### Design inspiration
 
-I like the ortholinear keyboard design of my [ErgodDox Infinity keyboard](https://kono.store/products/infinity-ergodox-keyboard-kit).
+I like the ortholinear keyboard design of my [ErgoDox Infinity keyboard](https://kono.store/products/infinity-ergodox-keyboard-kit).
 
-![ErgoDox Infinity keyboard]({{ "/assets/img/projects/keyboard/ergodox-infinity.png" }})
+![ErgoDox Infinity keyboard]({{ "/assets/img/projects/keyboard/ergodox-infinity.jpg" }})
 
 I like the icon keycaps of the [Granite keycap set](https://kono.store/products/sa-granite-keycap-set) (but I'm way too cheap to ever buy it).
 
@@ -91,11 +89,13 @@ I'm definitely not set on the colors yet. But I do know I have (or have access t
 
 As I start to look at keycap designs and stabilization, I'm realizing that my 3u space bar/backspace might prove difficult: it's large enough that it should have some stabilizer, and 3u isn't a standard keycap size. A pain to make keycaps, and one more thing I need to buy and design for. The easiest solution while keeping the whole thing ortholinear: make the space bar(s) 2u and add more keys for thumbs! From my experience with 2u keys for thumbs on my ErgoDox, that's small enough not to need stabilizers.
 
-For pointless funsies, I also thought it would be fun to make a function layer just for emojis. Why? How about *why not*? Now I can more easily write [Emojiscript](https://github.com/dan3944/emojiscript).
+I also realized my first design had the bottom row of letters shifted over 1u to the left from what my current setup is, which would inevitably drive me up a wall. So now I'm switching to hoping that a 1u shift key doesn't drive me up a wall instead.
 
 Which brings us to the next layout, now with 87 keys (and made in Inkscape):
 
 ![Layout 2]({{ "/assets/img/projects/keyboard/keycaps.png" }})
+
+For pointless funsies, I also thought it would be fun to make a function layer just for emojis. Why? How about *why not*? Now I can more easily write [Emojiscript](https://github.com/dan3944/emojiscript).
 
 ![Function layers]({{ "/assets/img/projects/keyboard/fn-layers.png" }})
 

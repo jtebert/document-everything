@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Git Cheat Sheet
 parent: Programming
 permalink: /programming/git
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

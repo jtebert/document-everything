@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Program Configuration
 parent: Linux
 permalink: /linux/program-config
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

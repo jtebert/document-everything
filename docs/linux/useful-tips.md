@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Useful Tips
 parent: Linux
 permalink: /linux/tips
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

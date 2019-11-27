@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Chrome OS
 parent: Linux
 permalink: /linux/chrome-os
 ---
-
-{{ page.title }}
 
 1. TOC
 {:toc}

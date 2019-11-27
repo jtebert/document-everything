@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: System Configuration
 parent: Linux
 permalink: /linux/system-config
 ---
-
-# System Configuration
 
 - TOC
 {:toc}

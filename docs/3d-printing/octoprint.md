@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: OctoPrint
 parent: 3D Printing
 permalink: /3d-printing/octoprint
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

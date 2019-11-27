@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: Kilobots
 parent: Research
 permalink: /research/kilobots
 ---
-
-# Kilobots
 
 1. TOC
 {:toc}

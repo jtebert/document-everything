@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: LARVAbot
 parent: Research
 permalink: /research/larvabot
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}

@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: TODO
 permalink: /todo
 nav_order: 7
 ---
-
-# {{ page.title }}
 
 ![Human-sized To Do list]({{ "/assets/img/undraw_to_do_list_a49b.svg" }})
 

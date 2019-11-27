@@ -1,12 +1,11 @@
 ---
-layout: default
+layout: page
 title: Linux
 has_children: true
 permalink: /linux
 nav_order: 3
 ---
 
-# {{ page.title }}
 
 ![So many monitors]({{ "assets/img/undraw_programming_2svr.svg" | absolute_url }})
 

@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 parent: Research
 title: Graphics
 permalink: /research/graphics
 ---
-
-# {{ page.title }}
 
 1. TOC
 {:toc}
