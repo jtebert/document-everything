@@ -10,7 +10,7 @@ permalink: '/'
 
 # Julia Documents Things
 
-![Programming robots to take over the world]({{ "assets/img/undraw_robotics_kep0.svg" | absolute_url }})
+![Programming robots to take over the world](/assets/img/undraw_robotics_kep0.svg)
 
 {{ site.description }}
 

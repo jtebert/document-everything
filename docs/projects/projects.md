@@ -6,3 +6,6 @@ permalink: projects
 nav_order: 6
 ---
 
+![Building... something]("/assets/img/undraw_building_blocks_n0nc.svg")
+
+

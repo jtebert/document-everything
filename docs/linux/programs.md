@@ -12,17 +12,17 @@ permalink: /linux/programs
 
 ## Everyday
 
-| Program                                               | Purpose                                                                              |
-| :---------------------------------------------------- | :----------------------------------------------------------------------------------- |
-| [Chrome](https://www.google.com/chrome/)              | Browser                                                                              |
-| `sudo apt install tilix`                              | Better terminal ([configuration]({{ 'linux/system-config#eagle-create-desktop-entry' | absolute_url }}))        |
-| `sudo apt install inkscape`                           | Vector graphics editor                                                               |
-| `sudo apt install gimp`                               | Raster graphics editor                                                               |
-| [Typora](https://typora.io/)                          | Markdown editor                                                                      |
-| [MuseScore](https://musescore.org/en)                 | Music notation                                                                       |
-| [Spotify](https://www.spotify.com/us/download/other/) | Music                                                                                |
-| [Z shell]({{ "linux/zsh"                              | absolute_url }})                                                                     | Better interactive shell |
-| [Steam](https://store.steampowered.com)               | Games!                                                                               |
+| Program                                               | Purpose                                                                                                                 |
+| :---------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| [Chrome](https://www.google.com/chrome/)              | Browser                                                                                                                 |
+| `sudo apt install tilix`                              | Better terminal ([configuration](/linux/system-config#using-tilix-as-default-terminal-application-with-gnome-at-least)) |
+| `sudo apt install inkscape`                           | Vector graphics editor                                                                                                  |
+| `sudo apt install gimp`                               | Raster graphics editor                                                                                                  |
+| [Typora](https://typora.io/)                          | Markdown editor                                                                                                         |
+| [MuseScore](https://musescore.org/en)                 | Music notation                                                                                                          |
+| [Spotify](https://www.spotify.com/us/download/other/) | Music                                                                                                                   |
+| [Z shell](/linux/zsh)                                 | Better interactive shell                                                                                                |
+| [Steam](https://store.steampowered.com)               | Games!                                                                                                                  |
 
 ## Visuals
 
@@ -50,24 +50,24 @@ permalink: /linux/programs
 
 ## Work/Research
 
-| Program                                                                                   | Purpose                                                                                                               |
-| :---------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
-| [Kilogui](https://github.com/acornejo/kilogui/releases)                                   | Programmer interface for Kilobots                                                                                     |
-| [Mendeley](https://www.mendeley.com/guides/download-mendeley-desktop/ubuntu/instructions) | Managing papers                                                                                                       |
-| [Eagle](https://www.autodesk.com/products/eagle/overview)                                 | PCB design ([configuration]({{ 'linux/program-config#using-tilix-as-default-terminal-application-with-gnome-at-least' | absolute_url }})) |
-| `sudo apt install minicom`                                                                | Serial monitor terminal (for Kilobots and LARVAbot)                                                                   |
-| [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer/releases)                            | 3D printing slicer                                                                                                    |
-| `sudo apt install openscad`                                                               | Script-based CAD                                                                                                      |
+| Program                                                                                   | Purpose                                                                        |
+| :---------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------- |
+| [Kilogui](https://github.com/acornejo/kilogui/releases)                                   | Programmer interface for Kilobots                                              |
+| [Mendeley](https://www.mendeley.com/guides/download-mendeley-desktop/ubuntu/instructions) | Managing papers                                                                |
+| [Eagle](https://www.autodesk.com/products/eagle/overview)                                 | PCB design ([configuration](/linux/program-config#eagle-create-desktop-entry)) |
+| `sudo apt install minicom`                                                                | Serial monitor terminal (for Kilobots and LARVAbot)                            |
+| [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer/releases)                            | 3D printing slicer                                                             |
+| `sudo apt install openscad`                                                               | Script-based CAD                                                               |
 
 ## Programming
 
-| Program                                                                                               | Purpose                                                                                     |
-| :---------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
-| [Visual Studio Code](https://code.visualstudio.com/Download)                                          | General-purpose code editor + git integration                                               |
-| [Matlab](https://www.mathworks.com/downloads/)                                                        | "Programming"                                                                               |
-| [Arduino IDE](https://www.arduino.cc/en/guide/linux)                                                  | Programming Arduinos/microcontrollers ([configuration]({{ 'research/larvabot#arduino-setup' | absolute_url }})) |
-| [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)                                        | Manage Heroku projects                                                                      |
-| [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-engine---community-1) | Containers for development                                                                  |
+| Program                                                                                               | Purpose                                                                                   |
+| :---------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
+| [Visual Studio Code](https://code.visualstudio.com/Download)                                          | General-purpose code editor + git integration                                             |
+| [Matlab](https://www.mathworks.com/downloads/)                                                        | "Programming"                                                                             |
+| [Arduino IDE](https://www.arduino.cc/en/guide/linux)                                                  | Programming Arduinos/microcontrollers ([configuration](/research/larvabot#arduino-setup)) |
+| [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)                                        | Manage Heroku projects                                                                    |
+| [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-engine---community-1) | Containers for development                                                                |
 
 Install relevant development packages all at once:
 
@@ -95,7 +95,7 @@ Install relevant development packages all at once:
 
 ## OctoPrint Plugins
 
-For OctoPrint installation/setup and more information, see my [OctoPrint page]({{ '3d-printing/octoprint' | absolute_url }})
+For OctoPrint installation/setup and more information, see my [OctoPrint page](/3d-printing/octoprint)
 
 | Program                                                                     | Purpose                                   |
 | :-------------------------------------------------------------------------- | :---------------------------------------- |

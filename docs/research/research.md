@@ -6,6 +6,6 @@ nav_order: 5
 has_children: true
 ---
 
-![Aliens doing science]({{ "assets/img/undraw_firmware_mf69.svg" | absolute_url }})
+![Aliens doing science](/assets/img/undraw_firmware_mf69.svg)
 
 Make robots do things.

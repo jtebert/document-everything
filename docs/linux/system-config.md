@@ -97,13 +97,15 @@ Sometimes you have to restart Linux after updates. If you do this with the softw
 
 You can tell that a restart is required if the file `/var/run/reboot-required` exists. But I also never remember what that file name and location are to check that. But I can remember `rr`, so now I have an alias that uses that file to tell me if a restart is required based on the existence of that file. (This came from the [AskUbuntu answer](https://askubuntu.com/a/861286/410248).)
 
-Just add the following to your `~/.bashrc` file:
+Just add the following to your `~/.bashrc` (or `~/.zshrc`) file:
 
 ```bash
 alias rr='if [ -f /var/run/reboot-required ]; then echo "reboot required"; else echo "No reboot needed"; fi`
 ```
 
 ## Command line history completion
+
+*Note: this is useful for bash, but for ZSH, there's a nicer approach.*
 
 In Matlab, you can start typing a command, hit the up arrow, and it'll go through the history of commands that match what you've typed in. I like this feature and  want to use it in my general command line.
 
@@ -152,26 +154,34 @@ And when you reboot, the pesky errors from before shouldn't make a reappearance.
 Source: [Ask Ubuntu](http://askubuntu.com/questions/133385/getting-system-program-problem-detected-pops-up-regularly-after-upgrade)
 {: .fs-2}
 
-## Make a bash command
+## Make a shell command
 
 This creates a bash command that can be executed in the terminal (from any directory, as any user, without sh)
 
-1. Create a text file in any location with the first line:
-   ```bash
+One-time setup: add this to your `~/.zshrc`/`~.bashrc` file:
+```shell
+if [ -d "$HOME/bin" ] ; then
+    export PATH="$HOME/bin:$PATH"
+fi
+```
+
+For each script:
+
+1. Create your script file in `~/bin`. Leave off the `.sh` filename extension when you're naming it so you don't have to type it to run it.
+2. Start your script file with:
+   ```shell
    #! /bin/bash
    ```
-2. Add comments in it on lines starting with `#`
-3. Add the commands you want the script to execute
-4. Move the file to the correct location with:
-   ```bash
-   sudo mv $SCRIPT /usr/bin
+3. Give it the correct permissions to be executed:
+   ```shell
+   chmod 755 ~/bin/$SCRIPT
    ```
-   (where `$SCRIPT` is the name of the file)
-5. Give it the correct permissions to be executed:
-   ```bash
-   sudo chmod 755 /usr/bin/$SCRIPT
-   ```
-6. Run it to make sure everything’s working.
+4. Run it to make sure everything’s working.
+
+You can now also add the scripts in this folder to your [dotfiles](#saving-dotfiles-with-git).
+
+Source: [Unix Stack Exchange](https://unix.stackexchange.com/questions/201768/storing-shell-scripts)
+{:.fs-2}
 
 ## Automatic backups (with cron and rsync)
 
