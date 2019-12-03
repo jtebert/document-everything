@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<h1><i class="mdi {{page.icon}}"></i> {{ page.title }}</h1>
 
 <!-- <div id="inline_toc" markdown="1">
 1. TOC
@@ -19,4 +19,4 @@ layout: default
     </div>
 </div>
 
-<script src="{{ "/assets/js/test.js" }}"></script>
+<script src="{{ "/assets/js/img-modal.js" }}"></script>

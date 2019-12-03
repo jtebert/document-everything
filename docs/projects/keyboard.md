@@ -127,7 +127,14 @@ As a comparison, at least, I printed the same design with the top up. This time,
 
 ![Keyboard wiring]({{ "/assets/img/projects/keyboard/stem-fail.jpg" }})
 
-The next step is to actually systematically test out an array of keycap tolerances to find what will fit sunggly on the switches without falling off or being unremovable. And I need to do the same thing for... the rest of the keyboard parts.
+The next step is to actually systematically test out an array of keycap tolerances to find what will fit sung on the switches without falling off or being unremovable. And I need to do the same thing for... the rest of the keyboard parts.
+
+Coming back a week later, I did just that. First, I fixed the bed adhesion issue by adding a 0.2 mm thick bar connecting the stem part to the outer part. (I should probably just take a picture.) I increased my tolerance/slop factor to 0.15 mm, kept my 0.07 mm layer height, and bam -- I have a functional keycap!
+
+![First functional keycap]({{ "/assets/img/projects/keyboard/keycap-prototype-2.jpg" }})
+
+I'm still getting some weirdly prominent/funky layer lines, so I decided to try printing with a 0.1 mm layer height, keeping the same tolerance (and this time printing in black). The resulting keycap was so loose that it didn't stay on the switch at all. I can't tell whether it's from the different filament color or the layer height, but at least the layers look a little bit nicer. Actually, the fact that this tolerance is now too loose for a taller layer height suggests that I was getting a bit of (probably inconsistent) over-extrusion for the thin layers.
+
 
 ## Bill of materials
 

@@ -1,5 +1,3 @@
-console.log("Hello, world")
-
 var modalOverlay = document.getElementById("modal-overlay");
 var modalImg = document.getElementById("modal-content")
 
