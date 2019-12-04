@@ -113,7 +113,7 @@ This completely neglects things like tolerances, since I haven't printed pretty 
 
 The body is composed of two 3D printed pieces, each precariously close to the 300 mm length limit of Clark's printer, clocking in at 297.7 mm. Each is designed to print with a nice flat base (with possibly a few minimal supports to hold up some holes for nuts on the bottom of the bottom piece.) In theory, this should also work with 10 mm M3 screws and not have them stick out the bottom, but I'll believe it when I print it. (Also, no idea if this is enough screws for the whole thing to feel sturdy, or if it's completely excessive.) Right now, the keys are all blanks, because I'm not going to waste my time designing the details of keycaps that possibly don't even work. For the space for the Teensy, I blatantly stole the shape and dimensions from the SiCK-68 linked above. If it works, why reinvent it? (Though, I haven't verified yet if it does work...)
 
-### Keycaps
+## Keycaps
 
 Meanwhile, I've also been working on the keycap design. Here's a comparison of my first efforts.
 
@@ -134,6 +134,51 @@ Coming back a week later, I did just that. First, I fixed the bed adhesion issue
 ![First functional keycap]({{ "/assets/img/projects/keyboard/keycap-prototype-2.jpg" }})
 
 I'm still getting some weirdly prominent/funky layer lines, so I decided to try printing with a 0.1 mm layer height, keeping the same tolerance (and this time printing in black). The resulting keycap was so loose that it didn't stay on the switch at all. I can't tell whether it's from the different filament color or the layer height, but at least the layers look a little bit nicer. Actually, the fact that this tolerance is now too loose for a taller layer height suggests that I was getting a bit of (probably inconsistent) over-extrusion for the thin layers.
+
+I checked the inside of the cross for the stem on both the 0.1 mm and 0.07 mm layer prints (which is tricky to get calipers into) and it verified what I suspected: despite the larger tolerance, the lower layer height cap had a smaller opening. So I think we're just gonna stick to 0.1 mm layers. So I printed out the caps with different tolerances:
+
+![Keycap tolerance testing]({{ "/assets/img/projects/keyboard/keycap-tolerances.jpg" }})
+
+At some point I stopped printing the whole thing and saved myself 20 minutes each by only printing the stem portion. Because I kept having to go lower and lower. Eventually I settled on -0.05 mm, but I can't say for certain whether this is actually negative, because I couldn't find consistent information online about the canonical size of the "+"-shaped stem of Cherry MX-style switches. (And again, measuring this tiny thing with calipers is a pain.)
+
+### Making them prettier
+
+Yesterday I ran across a [Raspberry Pi Case on Thingiverse](https://www.thingiverse.com/thing:3723561) that took an interesting approach to creating multi-color prints without actually needing a multi-material upgrade to the Prusa. Basically, you change the filament manually instead of having the machine do it, which works fine as long as you don't have many swaps to do. In the case of this case, there are one or two accent colors in the first layer that get swaps, and then the rest of it prints in the main color. I can definitely steal that and apply it to my keycaps. Here's the setup process:
+
+1. In CAD, create the keycap with a 0.2 mm depth inset for the legend. (0.2 mm is the height of the first layer.) Make the legend as a separate part (in place), 0.2 mm thick. Export each as a separate STL.
+2. PrusaSlicer setup:
+   1. Under Printer Settings > General > Capabilities, set the number of extruders to 2, and check the box for Single Extruder Multi Material
+   2. For each extruder on the left side of the Printer Settings, change the color so you can tell them apart
+   3. In Printer Settings > Custom G-code > Tool change G-code, add `M600`. That's the code for manual filament change.
+   4. In Print Settings > Multiple Extruders > Wipe tower, *uncheck* the enable box. (You don't need a purge block if you're changing the filament manually.)
+   5. Under Print Settings > Skirt and Brim, set the skirt height to at least 2. This will keep any gunk from the filament swapping out of the print itself.
+   6. The Thingiverse link also has suggestions about post-processing to know which filament to swap when, but I haven't bothered with that yet; I'm doing pretty simple stuff.
+3. Print setup:
+   1. Import *both* STLs at the same time. Because you have multiple extruders selected, you should get a prompt asking if you want to treat it as one multi-material object. Select yes.
+   2. In the plater, check the right side bar and verify that each part is set to use a different extruder.
+   3. Hit "Slice Now" and you should see the multi-color g-code preview for printing.
+
+Surprisingly, this worked for me on the first try. I went back to printing the keycaps letter-side down for two reasons: first, I thought it would make a nice textured finish with the two colors (no bridging for the legend now). But more importantly, I could do the filament swapping immediately and not have it wait around for me half and hour (or more) later.
+
+It looks sweeeeeeeet! And the top texture is so much nicer to type on than printing the keycaps right-side-up and getting those retraction bumps.
+
+![Dual color keycap]({{ "/assets/img/projects/keyboard/keycap-dual-color.jpg" }})
+
+It's not *perfect,* especially around the corners, but I think with a little fiddling with retraction and the seam position, I can get it looking even nicer. And if all also fails, I'll just orient it so that part ends up in a less visible corner of the keycap.
+
+![Keycap imperfections]({{ "/assets/img/projects/keyboard/keycap-imperfections.jpg" }})
+
+Now, instead of going to sleep, I can make the CAD for all of the keycaps. I'd been pondering the best way to do this for awhile. Should I try to manually type all the letters into a sketch in OnShape? And then import the icon ones as DXF files to put on each individual keycap? My instincts said this was a terrible idea and would make me sad. But I realized that I'd actually done pretty much all the work in the Inkscape render of the keycaps (see above). I could just export this as a DXF (after converting the text to paths) and use that directly.
+
+The remaining piece then, was to generate the correct grid of keycaps to paste my DXF on top of. This I did kind of hackily. In a new part studio, I imported one 1U keycap and did linear patterns to make a grid. Then I imported the 2U keycap and did manual transforms to place them in the right location. Still better than recreating the whole legend by hand. OnShape definitely started to struggle with what I was throwing at it by this point -- once I generated the inset pieces for the legends, I was at 209 individual parts.
+
+After that, it was some quick recoloring, and I can actually render the full keycap set with legends!
+
+![render of keycap set, with legends](/assets/img/projects/keyboard/keycap-set-render.png)
+
+Still a little inconsistent on when I'm using text vs. icons, and some of the colors and line thicknesses, but it's relatively easy to change. I just make the change in Inkscape, export, and import into OnShape.
+
+Also, I still need to figure out homing keys.
 
 
 ## Bill of materials

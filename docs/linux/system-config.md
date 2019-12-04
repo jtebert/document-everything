@@ -244,7 +244,9 @@ You may also need to create a missing symlink, if the file `/etc/profile.d/vte.s
 sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
 ```
 
-Sources: [Ask Ubuntu](https://askubuntu.com/questions/1135970/ctrl-alt-t-launches-a-different-terminal-than-that-from-the-launcher), [Tilix: VTE Configuration](https://gnunn1.github.io/tilix-web/manual/vteconfig/)
+Lastly, it's useful to have the option to right click in Nautilus (file explorer) and open Tilix in that folder. To make sure that works, you have to install the `python nautilus` package.
+
+Sources: [Ask Ubuntu](https://askubuntu.com/questions/1135970/ctrl-alt-t-launches-a-different-terminal-than-that-from-the-launcher), [Tilix: VTE Configuration](https://gnunn1.github.io/tilix-web/manual/vteconfig/), [Tilix Github](https://github.com/gnunn1/tilix/issues/1529)
 {:.fs-2}
 
 ## Using Cisco AnyConnect VPN
