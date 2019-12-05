@@ -180,6 +180,101 @@ Still a little inconsistent on when I'm using text vs. icons, and some of the co
 
 Also, I still need to figure out homing keys.
 
+## Firmware
+
+From my cursory search, there seem to be two common approaches for programming a Teensy 2.0 as a keyboard: [TMK](https://github.com/tmk/tmk_keyboard) and [EasyAVR](https://github.com/dhowland/EasyAVR). In keeping with this class using low-level coding, it seems like TMK is the right choice, since EasyAVR is a GUI interface meant for non-technical people. And what fun is that??
+
+I started by playing around with the keymaps, looking at part 2 of [this tutorial](https://deskthority.net/viewtopic.php?f=7&t=7177&start=) and the [TMK keymap documentation](https://github.com/tmk/tmk_keyboard/blob/master/tmk_core/doc/keymap.md). (We're still waiting on the parts to arrive, so this seems like a better place to start than messing around with setting up the pins.)
+
+This shows how it's very straightforward to set up the "standard" keys: alphanumerics, modifiers, and even system things like volume control and power. But for other things, it gets hairy fast. The first not-so-simple thing is setting dedicated keys for underscore and parentheses. The TMK documentation calls these [modified keys](https://github.com/tmk/tmk_keyboard/blob/master/tmk_core/doc/keymap.md#212-modified-key) -- a modifier plus a key. An underscore, for example, is just `Shift + -`. So according to the documentation, that's `ACTION_MODS_KEY(MOD_LSFT, KC_MINS)`.
+
+...But this documentation isn't really clear on *where on earth you're supposed to put that line of code.* (I could go on such a rant about documentation that makes very frustrating and off-putting assumptions about its users. Give examples, people!) From [this other part of the documentation](https://github.com/tmk/tmk_keyboard/wiki/FAQ-Keymap#1-keyboard-layout), it looks like you just use it directly in place of a keycode in a `KEYMAP`.
+
+...But then I ran across multiple random forum threads like [this](https://deskthority.net/viewtopic.php?t=12622) and [this](https://geekhack.org/index.php?topic=41989.1400), which seem to say otherwise. Here, they set that key to be an unused `Fn` key (e.g., `FN8`), and then within `fn_actions[]`, they set that to be something like `[8]  = ACTION_MODS_KEY(MOD_LSFT, KC_MINS)`. That's way uglier. And based off of [this section of the keymap documentation](https://github.com/tmk/tmk_keyboard/blob/master/tmk_core/doc/keymap.md#15-fn-key), you can only have 32 function keys. If that's really the case, the emoji layer is probably dead. (Also, based on [this FAQ](https://github.com/tmk/tmk_keyboard/wiki/FAQ-Keymap#input-special-charactors-other-than-ascii-like-c%C3%A9dille-%C3%87), it seems like there's not even a universal way to implement unicode input; it's OS-specific.) Even my current modifier layer has about 40 custom keys.
+
+### Some incomplete playing around with keymaps
+
+```c
+const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    /* 0: Letters & numbers (base layer)
+     * ,-----------------------------------------------------------.
+     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Del|Pau|
+     * |-----------------------------------------------------------|
+     * | ` | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = | ( | ) |
+     * |-----------------------------------------------------------|
+     * |Tab| Q | W | E | R | T | Y | U | I | O | P | [ | ] | \ |PgU|
+     * |-----------------------------------------------------------|
+     * | _ | A | S | D | F | G | H | J | K | L | ; | ' | Enter |PgD|
+     * |-----------------------------------------------------------|
+     * |Shf| Z | X | C | V | B | N | M | , | . | / |Cap|Hom| Up|End|
+     * |-----------------------------------------------------------|
+     * |Ctl|Alt|Sup|Del|Backspc| Space |Ent|Alt|Fn0|Fn1|Lft|Dwn| Rt|
+     * `-----------------------------------------------------------'
+     */
+    KEYMAP( ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9, F10, F11, F12, DEL,PAUS, \
+            GRV,  1,   2,   3,   4,   5,   6,   7,   8,   9,   0,MINS, EQL,SHIFT(9),SHIFT(0), \
+            TAB,  Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,LBRC,RBRC,BSLS,PGUP, \
+            SHIFT(MINS),  A,   S,   D,   F,   G,   H,   J,   K,   L,SCLN,QUOT,      ENT,PGDN, \
+           LSFT,  Z,   X,   C,   V,   B,   N,   M,COMM, DOT,SLSH,CAPS,HOME,  UP, END, \
+           LCTL,LALT,LGUI,DEL,     BSPC,      SPC, ENT,RALT, FN0, FN1,LEFT,DOWN,RGHT),
+    /* 1: Cursor(HHKB mode)
+     * ,-----------------------------------------------------------.
+     * |SLP|1/2|2/3|1/3|1/4|3/4|   |   |1/8|1/9|/10|   |   |   |Prt|
+     * |-----------------------------------------------------------|
+     * |   | ‽ | ° |   | € |   |   | • | × |   | ∅ | – | ± | ⟨ | ⟩ |
+     * |-----------------------------------------------------------|
+     * |   |   |   | ∃ |   | ™ |   | ∪ | ∈ | Ω | ∝ |   |   | ≈ |VUp|
+     * |-----------------------------------------------------------|
+     * | _ | α | ∑ | ° | ∀ |   |   |   |   | λ | ∴ | ⋯ |   ↵   |VDn|
+     * |-----------------------------------------------------------|
+     * |   | ✓ | ✗ | © |   | β |   | μ | ≤ | ≥ | ÷ | ≠ |   | ↑ |   |
+     * |-----------------------------------------------------------|
+     * |   |   |   |   |       |   ⋅   | ↵ |   |   |   | ← | ↓ | → |
+     * `-----------------------------------------------------------'
+     *
+     * ,-----------------------------------------------------------.
+     * |Pwr| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
+     * |-----------------------------------------------------------|
+     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus|Up |   |Backs|
+     * |-----------------------------------------------------------|
+     * |Contro|VoD|VoU|Mut|   |   |  *|  /|Hom|PgU|Lef|Rig|Enter   |
+     * |-----------------------------------------------------------|
+     * |Shift   |   |   |   |   |   |  +|  -|End|PgD|Dow|Shift |   |
+     * `-----------------------------------------------------------'
+     *      |Gui |Alt  |Space                  |Alt  |Gui|
+     *      `--------------------------------------------'
+     */
+    KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
+           CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS,UP,  TRNS,BSPC, \
+           LCTL,VOLD,VOLU,MUTE,TRNS,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \
+           LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \
+                LGUI,LALT,          SPC,                RALT,RGUI),
+    /* 2: Mousekey
+     * ,-----------------------------------------------------------.
+     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
+     * |-----------------------------------------------------------|
+     * |Tab  |   |   |   |   |   |MwL|MwD|MwU|MwR|   |   |   |Backs|
+     * |-----------------------------------------------------------|
+     * |Contro|   |   |   |   |   |McL|McD|McU|McR|   |   |Return  |
+     * |-----------------------------------------------------------|
+     * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
+     * `-----------------------------------------------------------'
+     *      |Gui |Alt  |Mb1                    |Alt  |   |
+     *      `--------------------------------------------'
+     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel
+     */
+    KEYMAP(ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
+           TAB, TRNS,TRNS,TRNS,TRNS,TRNS,WH_L,WH_D,WH_U,WH_R,TRNS,TRNS,TRNS,BSPC, \
+           LCTL,TRNS,ACL0,ACL1,ACL2,TRNS,MS_L,MS_D,MS_U,MS_R,TRNS,QUOT,ENT, \
+           LSFT,TRNS,TRNS,TRNS,TRNS,BTN3,BTN2,BTN1,BTN4,BTN5,SLSH,RSFT,TRNS, \
+                LGUI,LALT,          BTN1,               RALT,TRNS),
+};
+
+const action_t PROGMEM fn_actions[] = {
+    [0] = ACTION_LAYER_MOMENTARY(1),            // FN0
+    [1] = ACTION_LAYER_MOMENTARY(2),            // FN1
+};
+```
 
 ## Bill of materials
 
