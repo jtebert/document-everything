@@ -10,6 +10,16 @@ permalink: /projects/keyboard
 
 ---
 
+## TL;DR: The latest picture
+
+![Keyboard render with keycaps](/assets/img/projects/keyboard/keyboard-render-1.png)
+
+- There's a nice render but the only thing physical is a couple keycaps
+- The firmware is making me sad because it won't let me make an entire layer of emoji.
+
+(Gotta put a nice picture first for the social media previews.)
+{:.fs-2}
+
 ## Inspiration
 
 I want to build a custom mechanical keyboard from the ground up. That means a custom layout, designing the case to fit that, hand wiring the keyboard, getting (or making) keycaps, compiling my own firmware,
