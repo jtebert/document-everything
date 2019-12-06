@@ -101,7 +101,7 @@ As I start to look at keycap designs and stabilization, I'm realizing that my 3u
 
 I also realized my first design had the bottom row of letters shifted over 1u to the left from what my current setup is, which would inevitably drive me up a wall. So now I'm switching to hoping that a 1u shift key doesn't drive me up a wall instead.
 
-Which brings us to the next layout, now with 87 keys (and made in Inkscape):
+Which brings us to the updated layout, now with 87 keys (and made in Inkscape):
 
 ![Layout 2]({{ "/assets/img/projects/keyboard/keycaps.png" }})
 
@@ -114,6 +114,8 @@ For pointless funsies, I also thought it would be fun to make a function layer j
 And finally, I made an unnecessarily nice diagram of the wiring, without actually knowing if this will work.
 
 ![Keyboard wiring]({{ "/assets/img/projects/keyboard/wiring.png" }})
+
+*Note: to avoid confusing myself in the future, I'm updating this wiring figure to match what I'm actually doing. Trust me, the original still looked very similar.*
 
 Spend way too much Prednisone-fueled time in OnShape and I have a render of a first prototype!
 
@@ -202,89 +204,20 @@ This shows how it's very straightforward to set up the "standard" keys: alphanum
 
 ...But then I ran across multiple random forum threads like [this](https://deskthority.net/viewtopic.php?t=12622) and [this](https://geekhack.org/index.php?topic=41989.1400), which seem to say otherwise. Here, they set that key to be an unused `Fn` key (e.g., `FN8`), and then within `fn_actions[]`, they set that to be something like `[8]  = ACTION_MODS_KEY(MOD_LSFT, KC_MINS)`. That's way uglier. And based off of [this section of the keymap documentation](https://github.com/tmk/tmk_keyboard/blob/master/tmk_core/doc/keymap.md#15-fn-key), you can only have 32 function keys. If that's really the case, the emoji layer is probably dead. (Also, based on [this FAQ](https://github.com/tmk/tmk_keyboard/wiki/FAQ-Keymap#input-special-charactors-other-than-ascii-like-c%C3%A9dille-%C3%87), it seems like there's not even a universal way to implement unicode input; it's OS-specific.) Even my current modifier layer has about 40 custom keys.
 
-### Some incomplete playing around with keymaps
+### Long Live QMK
 
-```c
-const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /* 0: Letters & numbers (base layer)
-     * ,-----------------------------------------------------------.
-     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Del|Pau|
-     * |-----------------------------------------------------------|
-     * | ` | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = | ( | ) |
-     * |-----------------------------------------------------------|
-     * |Tab| Q | W | E | R | T | Y | U | I | O | P | [ | ] | \ |PgU|
-     * |-----------------------------------------------------------|
-     * | _ | A | S | D | F | G | H | J | K | L | ; | ' | Enter |PgD|
-     * |-----------------------------------------------------------|
-     * |Shf| Z | X | C | V | B | N | M | , | . | / |Cap|Hom| Up|End|
-     * |-----------------------------------------------------------|
-     * |Ctl|Alt|Sup|Del|Backspc| Space |Ent|Alt|Fn0|Fn1|Lft|Dwn| Rt|
-     * `-----------------------------------------------------------'
-     */
-    KEYMAP( ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9, F10, F11, F12, DEL,PAUS, \
-            GRV,  1,   2,   3,   4,   5,   6,   7,   8,   9,   0,MINS, EQL,SHIFT(9),SHIFT(0), \
-            TAB,  Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,LBRC,RBRC,BSLS,PGUP, \
-            SHIFT(MINS),  A,   S,   D,   F,   G,   H,   J,   K,   L,SCLN,QUOT,      ENT,PGDN, \
-           LSFT,  Z,   X,   C,   V,   B,   N,   M,COMM, DOT,SLSH,CAPS,HOME,  UP, END, \
-           LCTL,LALT,LGUI,DEL,     BSPC,      SPC, ENT,RALT, FN0, FN1,LEFT,DOWN,RGHT),
-    /* 1: Cursor(HHKB mode)
-     * ,-----------------------------------------------------------.
-     * |SLP|1/2|2/3|1/3|1/4|3/4|   |   |1/8|1/9|/10|   |   |   |Prt|
-     * |-----------------------------------------------------------|
-     * |   | ‽ | ° |   | € |   |   | • | × |   | ∅ | – | ± | ⟨ | ⟩ |
-     * |-----------------------------------------------------------|
-     * |   |   |   | ∃ |   | ™ |   | ∪ | ∈ | Ω | ∝ |   |   | ≈ |VUp|
-     * |-----------------------------------------------------------|
-     * | _ | α | ∑ | ° | ∀ |   |   |   |   | λ | ∴ | ⋯ |   ↵   |VDn|
-     * |-----------------------------------------------------------|
-     * |   | ✓ | ✗ | © |   | β |   | μ | ≤ | ≥ | ÷ | ≠ |   | ↑ |   |
-     * |-----------------------------------------------------------|
-     * |   |   |   |   |       |   ⋅   | ↵ |   |   |   | ← | ↓ | → |
-     * `-----------------------------------------------------------'
-     *
-     * ,-----------------------------------------------------------.
-     * |Pwr| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
-     * |-----------------------------------------------------------|
-     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus|Up |   |Backs|
-     * |-----------------------------------------------------------|
-     * |Contro|VoD|VoU|Mut|   |   |  *|  /|Hom|PgU|Lef|Rig|Enter   |
-     * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |   |  +|  -|End|PgD|Dow|Shift |   |
-     * `-----------------------------------------------------------'
-     *      |Gui |Alt  |Space                  |Alt  |Gui|
-     *      `--------------------------------------------'
-     */
-    KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS,UP,  TRNS,BSPC, \
-           LCTL,VOLD,VOLU,MUTE,TRNS,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \
-           LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \
-                LGUI,LALT,          SPC,                RALT,RGUI),
-    /* 2: Mousekey
-     * ,-----------------------------------------------------------.
-     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
-     * |-----------------------------------------------------------|
-     * |Tab  |   |   |   |   |   |MwL|MwD|MwU|MwR|   |   |   |Backs|
-     * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   |McL|McD|McU|McR|   |   |Return  |
-     * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
-     * `-----------------------------------------------------------'
-     *      |Gui |Alt  |Mb1                    |Alt  |   |
-     *      `--------------------------------------------'
-     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel
-     */
-    KEYMAP(ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           TAB, TRNS,TRNS,TRNS,TRNS,TRNS,WH_L,WH_D,WH_U,WH_R,TRNS,TRNS,TRNS,BSPC, \
-           LCTL,TRNS,ACL0,ACL1,ACL2,TRNS,MS_L,MS_D,MS_U,MS_R,TRNS,QUOT,ENT, \
-           LSFT,TRNS,TRNS,TRNS,TRNS,BTN3,BTN2,BTN1,BTN4,BTN5,SLSH,RSFT,TRNS, \
-                LGUI,LALT,          BTN1,               RALT,TRNS),
-};
+After looking around more, it turns out that there are way better options than TMK. As fork of it has since taken off and become its own thing: QMK. And QMK has *way* better documentation and more features, like native (software-based) support for unicode. So let's use that instead. As a bonus, when you get it working, you can submit a pull request (even for your homemade, handwired keyboard), and they'll include it in the repository so other people can make it!
 
-const action_t PROGMEM fn_actions[] = {
-    [0] = ACTION_LAYER_MOMENTARY(1),            // FN0
-    [1] = ACTION_LAYER_MOMENTARY(2),            // FN1
-};
-```
+But that means we first have to go through the process of [creating a custom layout for a hand-wired board](https://docs.qmk.fm/#/hand_wire).
+
+- Need to run `make git-submodule` to fix LUFA error
+- Add reset key ([guessing from this](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md))
+
+### TODO:
+
+- Initialize Unicode input method? (Not sure if this is needed)
+- Add a way to cycle through unicode input methods
+- Make a macro that outputs some stupid copypasta (because we can)
 
 ## Bill of materials
 

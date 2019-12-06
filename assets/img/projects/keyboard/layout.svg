@@ -29,11 +29,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.0550432"
-     inkscape:cx="80.142674"
-     inkscape:cy="357.35173"
+     inkscape:zoom="0.7958199"
+     inkscape:cx="463.05187"
+     inkscape:cy="142.00249"
      inkscape:document-units="mm"
-     inkscape:current-layer="g7394-3-2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -82,15 +82,16 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-0.42499971,-68.825002)"
-     style="display:none"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:11.40460014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:11.40459893, 22.80919789;stroke-dashoffset:0;stroke-opacity:1"
        id="rect12"
        width="285.75"
        height="114.3"
        x="0"
-       y="68.400002" />
+       y="68.400002"
+       inkscape:export-xdpi="170.67"
+       inkscape:export-ydpi="170.67" />
     <rect
        style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:11.40460014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:11.40459884, 22.8091977;stroke-dashoffset:0;stroke-opacity:1"
        id="rect12-2"
@@ -98,8 +99,8 @@
        height="190.50002"
        x="304.80002"
        y="-7.8000021"
-       inkscape:export-xdpi="133.33333"
-       inkscape:export-ydpi="133.33333" />
+       inkscape:export-xdpi="146.28999"
+       inkscape:export-ydpi="146.28999" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1558,9 +1559,8 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="switches"
-     style="display:none"
-     transform="translate(-0.42499971,-0.42500126)"
-     sodipodi:insensitive="true">
+     style="display:inline"
+     transform="translate(-0.42499971,-0.42500126)">
     <g
        style="display:inline"
        id="g1474"
@@ -2403,9 +2403,8 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="wiring"
-     style="display:none"
-     transform="translate(-0.42499971,-0.42500126)"
-     sodipodi:insensitive="true">
+     style="display:inline"
+     transform="translate(-0.42499971,-0.42500126)">
     <image
        y="-440.13141"
        x="130.80228"
@@ -3554,25 +3553,25 @@
        sodipodi:nodetypes="ccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ececec;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 539.35254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 10e-6,-17.1848495 h 8.33496 l -10e-6,-8.1828305"
+       d="m 539.35254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 10e-6,-17.1848495 h 8.33496 l 0,-9.5250035"
        id="path3968-37-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#808080;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 558.40254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 1e-5,-17.1848495 h 8.33496 l -10e-6,-8.1828305"
+       d="m 558.40254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 1e-5,-17.1848495 8.33496,-3.3e-6 v -9.5250032"
        id="path3968-37-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#9c27b0;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 577.45254,107.67238 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05002 v -19.05001 l 10e-6,-17.1848495 H 571.5 v -9.5249995"
+       d="m 577.45254,107.67238 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05002 v -19.05001 l 10e-6,-31.472353 -5.95254,0"
        id="path3968-37-4"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc" />
+       sodipodi:nodetypes="cccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#2962ff;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 596.50254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 10e-6,-31.472349 H 571.5"
+       d="m 596.50254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 10e-6,-36.234853 H 571.5"
        id="path3968-37-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
@@ -3611,7 +3610,7 @@
          id="tspan4929"
          x="-1.3421857"
          y="328.61249"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">Col 0: B0</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">Col 14: B0</tspan></text>
     <text
        transform="rotate(-90)"
        id="text4935"
@@ -3623,7 +3622,7 @@
          y="347.66251"
          x="-1.3421857"
          id="tspan4933"
-         sodipodi:role="line">Col 1: B1</tspan></text>
+         sodipodi:role="line">Col 13: B1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350071px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3635,7 +3634,7 @@
          id="tspan4937"
          x="-1.3421857"
          y="366.71249"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#808080;fill-opacity:1;stroke-width:0.26458332px">Col 2: B2</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#808080;fill-opacity:1;stroke-width:0.26458332px">Col 12: B2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3647,7 +3646,7 @@
          id="tspan4937-3"
          x="-1.3421857"
          y="385.76248"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#9c27b0;fill-opacity:1;stroke-width:0.26458332px">Col 3: B3</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#9c27b0;fill-opacity:1;stroke-width:0.26458332px">Col 11: B3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#2962ff;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3659,7 +3658,7 @@
          id="tspan4937-4"
          x="-1.3421857"
          y="404.8125"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#2962ff;fill-opacity:1;stroke-width:0.26458332px">Col 4: B7</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#2962ff;fill-opacity:1;stroke-width:0.26458332px">Col 10 B7</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#8bc34a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3671,7 +3670,7 @@
          id="tspan4937-39"
          x="-1.3421857"
          y="423.86249"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#8bc34a;fill-opacity:1;stroke-width:0.26458332px">Col 5: D0</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#8bc34a;fill-opacity:1;stroke-width:0.26458332px">Col 9: D0</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#ffeb3b;fill-opacity:1;stroke:#000000;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3683,7 +3682,7 @@
          id="tspan4937-2"
          x="-1.3421857"
          y="442.91251"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#ffeb3b;fill-opacity:1;stroke:#000000;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none">Col 6: D1</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#ffeb3b;fill-opacity:1;stroke:#000000;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none">Col 8: D1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#ff9e00;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3707,7 +3706,7 @@
          id="tspan4937-0"
          x="-1.3421857"
          y="481.01251"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#f44336;fill-opacity:1;stroke-width:0.26458332px">Col 8: D3</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#f44336;fill-opacity:1;stroke-width:0.26458332px">Col 6: D3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#795548;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3719,7 +3718,7 @@
          id="tspan4937-0-4"
          x="-1.3421857"
          y="500.0625"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#795548;fill-opacity:1;stroke-width:0.26458332px">Col 9: C6</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#795548;fill-opacity:1;stroke-width:0.26458332px">Col 5: C6</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3731,7 +3730,7 @@
          id="tspan4937-0-4-6"
          x="-1.3421857"
          y="519.11249"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">Col 10:</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">Col 4:</tspan><tspan
          sodipodi:role="line"
          x="-1.3421857"
          y="525.60602"
@@ -3747,7 +3746,7 @@
          y="-5.8412466"
          x="546.62921"
          sodipodi:role="line"
-         id="tspan5055">Col 11:</tspan><tspan
+         id="tspan5055">Col 3:</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
          y="2.2756298"
          x="546.62921"
@@ -3757,18 +3756,18 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="565.6792"
+       x="565.65936"
        y="-5.8412466"
        id="text5065"><tspan
          id="tspan5061"
          sodipodi:role="line"
-         x="565.6792"
+         x="565.65936"
          y="-5.8412466"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none">Col 12:</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none">Col 2:</tspan><tspan
          dy="-1.9778374"
          id="tspan5063"
          sodipodi:role="line"
-         x="565.6792"
+         x="565.65936"
          y="2.2756298"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none">D4</tspan></text>
     <text
@@ -3782,29 +3781,30 @@
          y="595.3125"
          x="-1.3421857"
          id="tspan5067"
-         sodipodi:role="line">Col 14:</tspan><tspan
+         sodipodi:role="line">Col 0:</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#2962ff;fill-opacity:1;stroke-width:0.26458332px"
          y="601.80603"
          x="-1.3421857"
          sodipodi:role="line"
-         id="tspan5071">D7</tspan></text>
+         id="tspan5071">B4</tspan></text>
     <text
        id="text5077"
-       y="-5.8412466"
-       x="586.84589"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
-         y="-5.8412466"
-         x="586.84589"
+       y="576.27423"
+       x="-1.3421857"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       xml:space="preserve"
+       transform="rotate(-90)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
+         y="576.27423"
+         x="-1.3421857"
          sodipodi:role="line"
-         id="tspan5073">Col 13:</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
-         y="2.2756298"
-         x="586.84589"
+         id="tspan5073">Col 1:</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
+         y="584.39111"
+         x="-1.3421857"
          sodipodi:role="line"
          id="tspan5075"
-         dy="-1.9778374">D6</tspan></text>
+         dy="-1.9778374">D7</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -4610,7 +4610,7 @@
            id="tspan7365-5-0-2-67"
            x="4.0421796"
            y="11.006478"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">?</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">RESET</tspan></text>
       <image
          y="11.382258"
          x="4.3265724"
@@ -7015,7 +7015,7 @@
        transform="translate(266.7,76.200004)"
        id="g7394-3-2-8-56-4-38">
       <rect
-         y="2.5250006"
+         y="3.0541673"
          x="2.5249996"
          height="14"
          width="14"
@@ -7042,7 +7042,7 @@
            id="tspan7365-5-0-2-29-05-9"
            x="4.0421796"
            y="11.006478"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">?</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">MUTE</tspan></text>
       <image
          y="11.382258"
          x="4.3265724"
@@ -7606,8 +7606,7 @@
      id="layer4"
      inkscape:label="Keycaps"
      style="display:none;opacity:1"
-     transform="translate(-0.42499971,-0.42500126)"
-     sodipodi:insensitive="true">
+     transform="translate(-0.42499971,-0.42500126)">
     <g
        id="g1870"
        transform="translate(19.049999,38.099999)">
@@ -9797,39 +9796,36 @@
        inkscape:connector-curvature="0"
        style="display:inline;opacity:1;fill:#1a1a1a;fill-opacity:1;stroke-width:0.26458332" />
     <text
-       transform="translate(0,1.5258789e-6)"
        id="text1864-8-2-3-2"
-       y="90.134895"
-       x="302.83667"
+       y="90.624809"
+       x="294.87555"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.40492439px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;display:inline;opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#1a1a1a;fill-opacity:1;stroke-width:0.26458332px"
-         y="90.134895"
-         x="302.83667"
+         y="90.624809"
+         x="294.87555"
          id="tspan1862-90-6-0-5"
          sodipodi:role="line">↦</tspan></text>
     <text
-       transform="translate(0,1.5258789e-6)"
        id="text1864-8-2-3-5"
-       y="72.318542"
-       x="304.59903"
+       y="71.461197"
+       x="292.7186"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.40492439px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;display:inline;opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#1a1a1a;fill-opacity:1;stroke-width:0.26458332px"
-         y="72.318542"
-         x="304.59903"
+         y="71.461197"
+         x="292.7186"
          id="tspan1862-90-6-0-9"
          sodipodi:role="line">↧</tspan></text>
     <text
-       transform="translate(0,1.5258789e-6)"
        id="text1864-8-2-3-0"
-       y="59.43681"
-       x="303.01291"
+       y="57.599632"
+       x="292.47974"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.40492439px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;display:inline;opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#1a1a1a;fill-opacity:1;stroke-width:0.26458332px"
-         y="59.43681"
-         x="303.01291"
+         y="57.599632"
+         x="292.47974"
          id="tspan1862-90-6-0-8"
          sodipodi:role="line">↥</tspan></text>
     <text
@@ -9962,9 +9958,8 @@
        style="display:inline;fill:#1a1a1a;fill-opacity:1;stroke-width:0.26458332"
        sodipodi:nodetypes="ccccccccsccccccccccccscccccccscccccccccsssss" />
     <path
-       transform="translate(0,1.5279167e-6)"
        id="path3004-9"
-       d="m 296.91837,41.098218 3.06342,-3.063215 0.54539,0.549195 -2.12739,2.12724 h 5.48092 v 0.773551 h -5.48092 l 2.13126,2.127239 -0.54926,0.549215 z m -0.51171,-3.867708 h -0.7736 v 7.735416 h 0.7736 z"
+       d="m 289.03108,42.475727 3.06342,-3.063215 0.54539,0.549195 -2.12739,2.12724 h 5.48092 v 0.773551 h -5.48092 l 2.13126,2.127239 -0.54926,0.549215 z m -0.51171,-3.867708 h -0.7736 v 7.735416 h 0.7736 z"
        inkscape:connector-curvature="0"
        style="display:inline;fill:#1a1a1a;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.26458332;stroke-opacity:1"
        sodipodi:nodetypes="ccccccccccccccc" />
@@ -10838,7 +10833,7 @@
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
         <polygon
            id="polygon2805"
-           points="5,38.75 17.898,25.852 50,57.955 57.955,50 25.852,17.898 38.75,5 5,5 "
+           points="38.75,5 5,5 5,38.75 17.898,25.852 50,57.955 57.955,50 25.852,17.898 "
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
       </g>
     </g>
