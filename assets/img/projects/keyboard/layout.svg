@@ -17,7 +17,7 @@
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="layout.svg"
-   inkscape:export-filename="/home/jtebert/google-drive/Projects/Programming/html/document-everything/assets/img/projects/keyboard/fn-layers.png"
+   inkscape:export-filename="/home/jtebert/google-drive/Projects/Programming/html/document-everything/assets/img/projects/keyboard/keycaps.png"
    inkscape:export-xdpi="222.22223"
    inkscape:export-ydpi="222.22223">
   <defs
@@ -29,9 +29,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7958199"
-     inkscape:cx="463.05187"
-     inkscape:cy="142.00249"
+     inkscape:zoom="0.97158791"
+     inkscape:cx="474.31097"
+     inkscape:cy="92.080284"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1559,7 +1559,7 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="switches"
-     style="display:inline"
+     style="display:none"
      transform="translate(-0.42499971,-0.42500126)">
     <g
        style="display:inline"
@@ -2403,7 +2403,7 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="wiring"
-     style="display:inline"
+     style="display:none"
      transform="translate(-0.42499971,-0.42500126)">
     <image
        y="-440.13141"
@@ -3553,7 +3553,7 @@
        sodipodi:nodetypes="ccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ececec;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 539.35254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 10e-6,-17.1848495 h 8.33496 l 0,-9.5250035"
+       d="m 539.35254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 10e-6,-17.1848495 h 8.33496 v -9.5250035"
        id="path3968-37-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
@@ -3565,7 +3565,7 @@
        sodipodi:nodetypes="ccccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#9c27b0;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 577.45254,107.67238 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05002 v -19.05001 l 10e-6,-31.472353 -5.95254,0"
+       d="m 577.45254,107.67238 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05002 v -19.05001 l 10e-6,-31.472353 H 571.5"
        id="path3968-37-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
@@ -3948,7 +3948,7 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Fn Layers"
-     style="display:inline;opacity:1"
+     style="display:none;opacity:1"
      transform="translate(-0.42499971,-0.42499974)">
     <g
        id="g7394"
@@ -5325,13 +5325,22 @@
            x="4.0421796"
            y="11.006478"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">?</tspan></text>
-      <rect
-         style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect3997-7-6-00"
-         width="4"
-         height="4"
-         x="4.3265724"
-         y="11.382258" />
+      <text
+         id="text1658"
+         y="13.576219"
+         x="4.0421796"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px"
+           y="13.576219"
+           x="4.0421796"
+           id="tspan1656"
+           sodipodi:role="line">Unicode</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px"
+           y="15.692885"
+           x="4.0421796"
+           sodipodi:role="line"
+           id="tspan1660">Mode</tspan></text>
     </g>
     <g
        transform="translate(19.049994,38.100003)"
@@ -7605,7 +7614,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Keycaps"
-     style="display:none;opacity:1"
+     style="display:inline;opacity:1"
      transform="translate(-0.42499971,-0.42500126)">
     <g
        id="g1870"
@@ -9993,7 +10002,7 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="Legends"
-     style="display:none"
+     style="display:inline"
      transform="translate(-0.42499971,-0.42499974)">
     <text
        transform="translate(19.049999,38.099997)"
@@ -10316,7 +10325,7 @@
          y="12.525"
          x="9.5250006"
          id="tspan1862-8-3"
-         sodipodi:role="line">K</tspan></text>
+         sodipodi:role="line">B</tspan></text>
     <text
        transform="translate(114.3,76.200003)"
        id="text1864-96-9"
@@ -10328,7 +10337,7 @@
          y="12.525"
          x="9.5250006"
          id="tspan1862-3-1"
-         sodipodi:role="line">N</tspan></text>
+         sodipodi:role="line">K</tspan></text>
     <text
        transform="translate(133.35001,76.200003)"
        id="text1864-5-3"
@@ -10833,7 +10842,7 @@
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
         <polygon
            id="polygon2805"
-           points="38.75,5 5,5 5,38.75 17.898,25.852 50,57.955 57.955,50 25.852,17.898 "
+           points="25.852,17.898 38.75,5 5,5 5,38.75 17.898,25.852 50,57.955 57.955,50 "
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
       </g>
     </g>

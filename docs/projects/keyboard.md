@@ -14,8 +14,8 @@ permalink: /projects/keyboard
 
 ![Keyboard render with keycaps](/assets/img/projects/keyboard/keyboard-render-1.png)
 
-- There's a nice render but the only thing physical is a couple keycaps
-- The firmware is making me sad because it won't let me make an entire layer of emoji.
+- There's a nice render but I haven't printed all the necessary parts to build it yet.
+- QMK firmware compiles, but I don't have an assembled keyboard to test it on.
 
 (Gotta put a nice picture first for the social media previews.)
 {:.fs-2}
@@ -164,7 +164,7 @@ Yesterday I ran across a [Raspberry Pi Case on Thingiverse](https://www.thingive
    3. In Printer Settings > Custom G-code > Tool change G-code, add `M600`. That's the code for manual filament change.
    4. In Print Settings > Multiple Extruders > Wipe tower, *uncheck* the enable box. (You don't need a purge block if you're changing the filament manually.)
    5. Under Print Settings > Skirt and Brim, set the skirt height to at least 2. This will keep any gunk from the filament swapping out of the print itself.
-   6. The Thingiverse link also has suggestions about post-processing to know which filament to swap when, but I haven't bothered with that yet; I'm doing pretty simple stuff.
+   6. The Thingiverse link also has suggestions about post-processing to know which filament to swap when, but I haven't bothered with that. You can tell which color will print first by looking at the color of the first layer skirt. If it's not doing it in the order you want, just swap which STL is printed with extruder 1 and 2.
 3. Print setup:
    1. Import *both* STLs at the same time. Because you have multiple extruders selected, you should get a prompt asking if you want to treat it as one multi-material object. Select yes.
    2. In the plater, check the right side bar and verify that each part is set to use a different extruder.
@@ -178,6 +178,8 @@ It looks sweeeeeeeet! And the top texture is so much nicer to type on than print
 
 It's not *perfect,* especially around the corners, but I think with a little fiddling with retraction and the seam position, I can get it looking even nicer. And if all also fails, I'll just orient it so that part ends up in a less visible corner of the keycap.
 
+(Update: I realized that this is occurring because of cooling. This only happens on the back corners because they're on the opposite side of the fan. So I'll just orient my parts that way.)
+
 ![Keycap imperfections]({{ "/assets/img/projects/keyboard/keycap-imperfections.jpg" }})
 
 Now, instead of going to sleep, I can make the CAD for all of the keycaps. I'd been pondering the best way to do this for awhile. Should I try to manually type all the letters into a sketch in OnShape? And then import the icon ones as DXF files to put on each individual keycap? My instincts said this was a terrible idea and would make me sad. But I realized that I'd actually done pretty much all the work in the Inkscape render of the keycaps (see above). I could just export this as a DXF (after converting the text to paths) and use that directly.
@@ -190,7 +192,29 @@ After that, it was some quick recoloring, and I can actually render the full key
 
 Still a little inconsistent on when I'm using text vs. icons, and some of the colors and line thicknesses, but it's relatively easy to change. I just make the change in Inkscape, export, and import into OnShape.
 
-Also, I still need to figure out homing keys.
+### Making all the keycaps
+
+Once I started printing keycaps in batches instead of individually, I ended up having to change the tolerances again: -0.05 mm was too tight because the layers had more time to cool before the extruder returned for the next layer. The keycap stem attachments ended up being too tight. With a bit of force, I could still get them *onto* the switches, but then this happened sometimes when trying to get them *off.*
+
+![Broken keycap stem](/assets/img/projects/keyboard/broken-key-stem.jpg)
+
+At least it just broke the keycap (which I can easily replace) instead of the switch itself. I did a bit of fiddling with parts of the stem design (reducing the asymmetry between the slot sizes for the stem) and increasing the tolerance to -0.02 to get something that worked for large batches.
+
+The first set of multiple keys I printed was my highlight keys (because there's red filament in the lab but not at home). Here's a comparison of my three rounds to get them looking like I want:
+
+![3 versions of highlight keys](/assets/img/projects/keyboard/highlight-key-versions.jpg)
+
+In the first version (top row), I was still using the text version of the enter symbol. It looks a little small and didn't quite match the style I wanted. And the escape key symbol (also the text version) was smaller than I wanted; in fact, the arrow part came off the bed and just became a blob.
+
+In the second version (next row), I switched to icons. The enter symbol is from the [material design icons](https://materialdesignicons.com/), and the (now also larger) escape symbol came from [The Noun Project](https://thenounproject.com/). In this case, it printed the red first, then filled in the white icons. This resulted in the icons coming out smaller/narrower-lined than I wanted. Because the first layer is always a little more squished and therefore produces wides lines than it should, whichever color goes down first will be on the bottom and look fatter.
+
+So for the third version, I printed white first. Looks good enough for my purposes!
+
+Now check out how many keycaps I made instead of studying for this final exam:
+
+![I made a lot of keycaps](/assets/img/projects/keyboard/many-keycaps.jpg)
+
+I haven't had a 100% success rate with the printing. Occasionally they'll come off the printbed (the bottom surface is pretty small, and I sometimes forget to clean the bed with isopropyl alcohol before I print). And a few have had some under-extrusion on the bottom layer, so the legends don't come out looking very clean. I've had to reprint under 10 keys for the whole board.
 
 ## Firmware
 
@@ -208,31 +232,172 @@ This shows how it's very straightforward to set up the "standard" keys: alphanum
 
 After looking around more, it turns out that there are way better options than TMK. As fork of it has since taken off and become its own thing: QMK. And QMK has *way* better documentation and more features, like native (software-based) support for unicode. So let's use that instead. As a bonus, when you get it working, you can submit a pull request (even for your homemade, handwired keyboard), and they'll include it in the repository so other people can make it!
 
-But that means we first have to go through the process of [creating a custom layout for a hand-wired board](https://docs.qmk.fm/#/hand_wire).
+But that means we first have to go through the process of [creating a custom layout for a hand-wired board](https://docs.qmk.fm/#/hand_wire). I followed the instructions for "Creating and compiling your firmware locally (command line method)," because why would I do it through an online GUI when I can dig into it myself? (Maybe I'm old and just don't trust the internet, but I also like to be able to keep track of everything in a git repository.) But the process was pretty well-documented and straight-forward (summarized here):
 
-- Need to run `make git-submodule` to fix LUFA error
-- Add reset key ([guessing from this](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md))
+- On Github, create a fork of the [QMK firmware repository](https://github.com/qmk/qmk_firmware).
+- Clone your newly forked repository and create a new keyboard project with: `.util/new_keyboard.sh` (and follow the prompts)
+- Navigate into the new project: `cd keyboards/<project_name>`
+- In the project's `config.h` file, fill in the number of `MATRIX_ROWS` and MATRIX_COLUMNS`, pins that are used for each row and column (these should be in order) and any unused pins (to save power). Mine looks like this:
+  ```c
+  /* key matrix size */
+  #define MATRIX_ROWS 6
+  #define MATRIX_COLS 15
+  ...
+  #define MATRIX_ROW_PINS \
+      { F7, F6, F5, F4, F1, F0 }
+  #define MATRIX_COL_PINS \
+      { B4, D7, D4, D5, C7, C6, D3, D2, D1, D0, B7, B3, B2, B1, B0 }
+  #define UNUSED_PINS \
+      { B6, B5, B4, D6 }
+  ```
+- In `<project_name>.h`, we'll fill out the `LAYOUT`: how the pins map to the layout of the keyboard. This I found a little confusing, because the example used key names like `K03` for the key in the 0th row and 3rd column. But I have more than 10 columns. Because downloading the QMK firmware also includes the firmware for every other keyboard, I could look for examples of how othershandled it, and they weren't consistent. Some used `k0A` (hex) to indicate being the 0th row and 10th column, where others used `K010`. (Also inconsistent capitalization.) These are all using constants/variables, not strings, so my guess is that behind the scenes QMK gives you every option, or some of them are aliases for others. I opted for the 3-digit version, which compiles; we'll find out later if it actually works correctly. Mine ended up looking like this:
+  ```c
+    #define LAYOUT( \
+        K000, K001, K002, K003, K004, K005, K006, K007, K008, K009, K010, K011, K012, K013, K014, \
+        K100, K101, K102, K103, K104, K105, K106, K107, K108, K109, K110, K111, K112, K113, K114, \
+        K200, K201, K202, K203, K204, K205, K206, K207, K208, K209, K210, K211, K212, K213, K214, \
+        K300, K301, K302, K303, K304, K305, K306, K307, K308, K309, K310, K311, K312,       K314, \
+        K400, K401, K402, K403, K404, K405, K406, K407, K408, K409, K410, K411, K412, K413, K414, \
+        K500, K501, K502, K503, K504,       K506,       K508, K509, K510, K511, K512, K513, K514 \
+        ) \
+        { \
+        { K000, K001, K002, K003, K004, K005, K006, K007, K008, K009, K010, K011, K012, K013, K014 }, \
+        { K100, K101, K102, K103, K104, K105, K106, K107, K108, K109, K110, K111, K112, K113, K114 }, \
+        { K200, K201, K202, K203, K204, K205, K206, K207, K208, K209, K210, K211, K212, K213, K214 }, \
+        { K300, K301, K302, K303, K304, K305, K306, K307, K308, K309, K310, K311, K312, KC_NO,K314 }, \
+        { K400, K401, K402, K403, K404, K405, K406, K407, K408, K409, K410, K411, K412, K413, K414 }, \
+        { K500, K501, K502, K503, K504, KC_NO,K506, KC_NO,K508, K509, K510, K511, K512, K513, K514 }  \
+    }
+  ```
+  - The first part of `LAYOUT` is a 1D array containing all of the key names (just formatted to look nice)
+  - The second part is a 2D array showing what key is in what row and column. If there's a column without a key in that row (matching your actual wiring), it gets the code `KC_NO` to make sure the vertical alignment of columns is retained.
+- Now we can set up the keymap in `keymaps/default/keymap.c` This is where you assign what physical key maps to what character. For all of the "standard" keyboard keys, there are [keycodes listed here](https://beta.docs.qmk.fm/features/keycodes_basic). In addition to standard keys (alphanumeric, system keys), I also needed to encode my unicode (more on that below) and stuff like `(` as a non-shift key, which I explain below.
+- Now we need to compile. First (and *not* in the documentation) you need to run `make git-submodule` from the repository root folder to install/compile dependencies. (Otherwise you'll get an error about LUFA.) Then just run `make <project_name>:default` to compile the default layout. (Or fix any errors.) If you have a mismatch anywhere in terms of number of keys specified for a layout/keymap, it will conveniently tell you when it fails to compile.
+
+#### Special keymap stuff
+
+Because it's large, you can see the full keymap [in my Github repository](https://github.com/jtebert/qmk_firmware/blob/master/keyboards/project223/keymaps/default/keymap.c). But there were a couple particulars that I had to sort out to get the layout as I wanted.
+
+**Modifier keys (`(` = `Shift+9`):** While TMK made this a pain, QMK makes it easy ([as described here](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#modifier-keys)). Where I would but a keycode like `KC_9`, I instead use `LSFT(KC_9)` or `S(KC_9)` to get a left parenthesis (`Shift + 9`).
+
+**Emoji (full unicode mapping)**: QMK has a whole [section of documentation for Unicode input](https://beta.docs.qmk.fm/features/feature_unicode). If I only wanted "simple" unicode characters (anything with a 3-4 digit code, which cover non-emoji stuff), there's a simpler way to do this. But since I want Emoji (5-digit unicode characters), I have to encode all of my Unicode using the more complicated method.
+
+- First, in the project's `rules.mk`, you add the following: `UNICODEMAP_ENABLE = yes`
+- In the `keymap.c` file, you then need to create names for every unicode character you want to use (before you define your keymaps):
+  ```c
+    enum unicode_names {
+        BANG,
+        IRONY,
+        SNEK
+    };
+  ```
+- Then you add your map from names to characters:
+  ```c
+    const uint32_t PROGMEM unicode_map[] = {
+        [BANG]  = 0x203D,  // ‽
+        [IRONY] = 0x2E2E,  // ⸮
+        [SNEK]  = 0x1F40D, // 🐍
+    };
+  ```
+- Now you can use these names in your keymap like you would any other keycode like `KC_9`
+
+**Unicode strings:** It turns out flag emoji are multiple characters, and I had decided to ironically put the US flag in the keyboard's emoji layer. This multi-character part means that you can't use the approach above to include a flag. Instead, you need a unicode string. This requires a couple of pieces in the `keymap.c`
+
+- In the `custom_keycodes` array, add a name for your character (in my case, `US_FLAG`):
+  ```c
+    // Defines the keycodes used by our macros in process_record_user
+    enum custom_keycodes {
+        ...
+        US_FLAG
+    };
+  ```
+- In the `process_record_user` function, add a case to the switch statement for this character:
+  ```c
+    bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+        switch (keycode) {
+            ...
+            case US_FLAG:
+                if (record->event.pressed) {
+                    send_unicode_hex_string("1F1FA 1F1F8");
+                }
+                break;
+        }
+        return true;
+    }
+  ```
+- Now you can use that character name as a keycode in your keymap
+
+**Switching unicode input mode:** As I mentioned earlier, unicode is a PITA for keyboard input because different operating systems have different input methods. Luckily, QMK also has a way to handle this. It has a keycode for switching the unicode input mode, which is then saved to EEPROM. It's kind of hacky, but I don't know what a better solution would be. At least it's easy to set up.
+
+- In the *keymap's* `config.h` (`<project_name>/keymaps/default/config.h`) (*not* the project config file), add the following:
+  ```c
+  #define UNICODE_SELECTED_MODES UC_LNX, UC_OSX, UC_WIN, UC_WINC
+  ```
+  (and remove whatever options you don't want).
+- In `keymap.c`, in one of your keymap layers, add `UC_MOD` as a keycode, which will cycle through the input modes you specified. I have mine set to `Emoji + Tab`.
+
+- Unicode strings (flag)
+- Switching unicode input mode
+
+**Reset key:** My physical keyboard design (ingeniously) makes it impossible to get to the reset button on the Teensy when the keyboard is assembled. (That's part of the design that I stole from the [SiCK-68](https://www.thingiverse.com/thing:3478494).) But QMK lets me set a keyboard key to do this! It's dead simple: just use the keycode `RESET` for a key. (Mine is the top right key on the function layer.)
 
 ### TODO:
 
 - Initialize Unicode input method? (Not sure if this is needed)
-- Add a way to cycle through unicode input methods
 - Make a macro that outputs some stupid copypasta (because we can)
+
+## Making the keyboard case
+
+### Prototype
+
+All of this needs to go into something. We can't even wire anything until the case is printed -- the switches have to get inserted into the top half of the case, and then the hand wiring is done on the backside of that. The challenge here is that the case is 298 mm wide, and my printer bed is only 250 mm wide. I *could* figure out how to split it up into pieces that I could glue/screw together after the fact, but luckily I don't have to; my boyfriend [Clark](https://cbteeple.github.io/) has a CR-10S printer with a 300 mm x 300 mm bed. The case will *just barely* fit in that. Nice.
+
+Because every printer has different tolerances, I had to also test my case tolerances on that printer before I went ahead and printed the whole thing. So I cut out one corner of both pieces of the case and printed those (taking only an hour and a half of print time total). There were a three major things I needed to check the tolerances for: the M3 screw + nut, the switches, and the Teensy. I also wanted to see how my choice of colors looked: black PLA on top and natural/clear PETG for the bottom (hoping to somewhat show off the multi-colored wiring). It was printed at 0.15 mm layer height for a compromise between aesthetics and strength.
+
+![Switch fit for case prototype](/assets/img/projects/keyboard/case-prototype-1.jpg)
+
+The CR-10S has a glass bed instead of the textured PEI I've been using for my keycaps. And we have to cover the whole thing in gluestick to get the PLA to stick to the bed (which, fortunately, can be washed off with soap and water). So the top surface finish isn't as nice, but it will mostly be covered up by the keys anyway.
+
+The switches fit into the case, but *just barely;* they were very difficult to get out. I increased the tolerance on the 14 mm square holes from 0.05 mm to 0.1 mm. At least the thickness of the top plate part was right (set to 1.5 mm and came out as 1.44 mm, which worked fine).
+
+The dimensions for the M3 screw hole I took from my LARVAbot CAD model. In this case, the hole for the shaft and the nut were fine, but the diameter of the counterbore hole for the head was a little small. It was set as 5.6 mm, and it came out quite a bit smaller than that -- to small for the 5.38 mm head diameter. The squished first layer also made it difficult to get the screw in. I bumped that up to 5.8 mm for the next version and added a small chamfer around the opening.
+
+![Side view of case prototype](/assets/img/projects/keyboard/case-prototype-2.jpg)
+
+As my CAD model showed, the switches and the teensy *just* clear each other. Assuming there are no crazy wires, it's perfect. It's really hard to get a sense of size in a CAD model, so I'm very happy with how thin the whole base is when assembled. I'm also incredibly satisfied that my choice of 10 mm screws is just right: fully into the nut on the backside, and doesn't stick out to scratch whatever the board is sitting on. I still plan to put rubber feet on the bottom anyway so it doesn't lide around.
+
+The opening for the Teensy board inside the bottom of the case was *almost* right. I stole all the dimensions for this from the SiCK-68 again. It's mostly free in the case, but the end of the board is press fit into a horizontal slot in the back of the bottom piece. The slot means there's an unsupported overhang to print. We tried printing with supports, but it's such a tiny little piece that the support didn't really exist, and the Teensy didn't fit in. But a little work with a knife cleaned up the sagging overhang and we could cram the board in. It's now protected from being pulled out if you yank on the USB cord, but there's nothing to stop it from coming loose when you *push* it from the outside (like putting in a USB cord.) The easiest solution is probably just a dab of hot glue when everything is finally put together. No reason to overcomplicate this.
+
+To keep the edges of the case from feeling to sharp, I also included a chamfer along the top and bottom. But as you might be able to tell from the picture above, it's basically non-existant. (Again, really hard to judge scale of things in a CAD model on a screen.) So I'll also bump up the chamfer size.
+
+Lastly, I didn't end up being happy with the clear PETG for the bottom of the case. Having it printed in a different color ends up emphasizing the fact that it's all 3D printed. And the clear filament didn't end up being super clear and looked a bit dirty. So I'll just make both parts black PLA for a stealth look.
+
+### Production
+
+In theory, the CR-10S has a large enough print bed to do both the top and bottom pieces at once (which Cura told us would take 29 hours to print, but only 157 g of filament). In practice, the print bed was slightly bowed and didn't print well near the front and back edges; the extruder was too close to the bed. It's possible to add a sensor to the printer to adjust for that, or to do a manual adjustment, but it's not worth the time to try and figure that out when there's a deadline at hand. Instead, we can just print one piece at a time.
+
+First up: 15 hours to print the top plate.
+
+![Case top printing](/assets/img/projects/keyboard/case-printing-1.jpg)
+
+It looks kind of comical, when the printer can do up to 400 mm on the Z axis and I'm using 8.2 mm of that. But at least it seems to be sticking well to the bed.
+
 
 ## Bill of materials
 
 I'll update this as I go. You can get this stuff cheaper on eBay/AliExpress, but I have a deadline, so they're from Amazon.
 
-| Item                                                                                             | Quantity | Unit Price |      Total |
-| :----------------------------------------------------------------------------------------------- | -------: | ---------: | ---------: |
-| [1N148 diodes (pack of 100)](https://smile.amazon.com/gp/product/B06XB1R2NK)                     |        1 |      $4.99 |      $4.99 |
-| [Teensy 2.0 microcontroller](https://smile.amazon.com/gp/product/B00NC43256/)                    |        1 |     $19.20 |     $19.20 |
-| [Gateron Mechanical switches (pack of 90)](https://smile.amazon.com/gp/product/B07X3VFBFJ/?th=1) |        1 |     $34.99 |     $34.99 |
-| Solder                                                                                           |
-| Solid-core wire                                                                                  |
-| 3D printer filament                                                                              |
-| M3x10 mm screws and nuts                                                                         |       10 |
-|                                                                                                  |          | **TOTAL:** | **$59.18** |
+| Item                                                                                                                                | Quantity | Unit Price |      Total |
+| :---------------------------------------------------------------------------------------------------------------------------------- | -------: | ---------: | ---------: |
+| [1N148 diodes (pack of 100)](https://smile.amazon.com/gp/product/B06XB1R2NK)                                                        |        1 |      $4.99 |      $4.99 |
+| [Teensy 2.0 microcontroller](https://smile.amazon.com/gp/product/B00NC43256/)                                                       |        1 |     $19.20 |     $19.20 |
+| [Gateron Mechanical switches (pack of 90)](https://smile.amazon.com/gp/product/B07X3VFBFJ/?th=1)                                    |        1 |     $34.99 |     $34.99 |
+| [Hatchbox PLA filament](https://smile.amazon.com/stores/page/BE84484A-154A-49EC-BF3F-FF4CE6E4ECB7)                                  |        1 |     $19.99 |     $19.99 |
+| [Rubber feet](https://www.homedepot.com/p/Everbilt-3-8-in-Clear-Adhesive-Bumper-Pads-16-Pack-822891/306229466) (pack of at least 8) |        1 |      $2.48 |      $2.48 |
+| M3x10 mm screws and nuts                                                                                                            |       10 |
+| Solid-core wire                                                                                                                     |
+| Solder                                                                                                                              |
+|                                                                                                                                     |          | **TOTAL:** | **$59.18** |
 
 Non-consumable equipment:
 - 3D printer
