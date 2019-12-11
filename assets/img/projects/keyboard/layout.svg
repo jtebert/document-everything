@@ -29,9 +29,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.97158791"
-     inkscape:cx="474.31097"
-     inkscape:cy="92.080284"
+     inkscape:zoom="0.48579395"
+     inkscape:cx="491.18127"
+     inkscape:cy="56.175388"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -3948,7 +3948,7 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Fn Layers"
-     style="display:none;opacity:1"
+     style="display:inline;opacity:1"
      transform="translate(-0.42499971,-0.42499974)">
     <g
        id="g7394"
@@ -4641,7 +4641,7 @@
            y="6.946733"
            x="4.0421796"
            id="tspan7357-5-2-2-48"
-           sodipodi:role="line">PAUSE</tspan></text>
+           sodipodi:role="line">PRTSC</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:125%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -4652,7 +4652,7 @@
            id="tspan7365-5-0-2-29"
            x="4.0421796"
            y="11.006478"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">PRT SCN</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">?</tspan></text>
       <image
          y="11.382258"
          x="4.3265724"
@@ -10842,7 +10842,7 @@
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
         <polygon
            id="polygon2805"
-           points="25.852,17.898 38.75,5 5,5 5,38.75 17.898,25.852 50,57.955 57.955,50 "
+           points="17.898,25.852 50,57.955 57.955,50 25.852,17.898 38.75,5 5,5 5,38.75 "
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
       </g>
     </g>

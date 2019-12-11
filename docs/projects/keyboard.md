@@ -10,11 +10,16 @@ permalink: /projects/keyboard
 
 ---
 
-## TL;DR: The latest picture
+*This is a build log of my ortholinear 87-key (~75%) keyboard, ostensibly as a class project for Physics 223*
+
+## TL;DR: The current status
 
 ![Keyboard render with keycaps](/assets/img/projects/keyboard/keyboard-render-1.png)
 
-- There's a nice render but I haven't printed all the necessary parts to build it yet.
+![Keyboard size comparison](/assets/img/projects/keyboard/keyboard-size-comparison.jpg)
+
+- All of the parts are now printed (assuming they all work as expected).
+- There's a nice render, but currently there's an empty shell of a case where a keyboard will be.
 - QMK firmware compiles, but I don't have an assembled keyboard to test it on.
 
 (Gotta put a nice picture first for the social media previews.)
@@ -51,6 +56,11 @@ The 84-key size and style of the [Keychron K2 keyboard](https://smile.amazon.com
 On a [GeekHack thread](https://geekhack.org/index.php?topic=75111.0), some people were coming up with ideas for full-size ortholinear designs.
 
 ![Full-size ortholinear design]({{ "/assets/img/projects/keyboard/full-size-ortholinear.png" }})
+
+And [someone on Reddit actually made a 14x6 ortholinear keyboard](https://www.reddit.com/r/MechanicalKeyboards/comments/94caov/hand_wired_14x6_ortholinear_mechanical_keyboard/), which commenters described as "enormous" and "What a beast." But even the creator said that the 1u space bar(s) in this were a pain.
+
+![Someone made a 14x6 ortholinear keyboard]({{ "/assets/img/projects/keyboard/14x6-ortho-example.jpg" }})
+
 
 ### Useful tools and references
 
@@ -95,7 +105,7 @@ This does involve a lot of custom keycaps/sizes, so I've basically given up on o
 
 I'm definitely not set on the colors yet. But I do know I have (or have access to) black, white, red, and yellow printer filament. If I print in PLA, I'll have more color options than if I use PETG, but the latter might make for higher quality keys. If you buy injection-molded keycaps, they're usually ABS, but there's no way I'm messing with printing that stuff.
 
-## Design round 2
+## Designing
 
 As I start to look at keycap designs and stabilization, I'm realizing that my 3u space bar/backspace might prove difficult: it's large enough that it should have some stabilizer, and 3u isn't a standard keycap size. A pain to make keycaps, and one more thing I need to buy and design for. The easiest solution while keeping the whole thing ortholinear: make the space bar(s) 2u and add more keys for thumbs! From my experience with 2u keys for thumbs on my ErgoDox, that's small enough not to need stabilizers.
 
@@ -215,6 +225,10 @@ Now check out how many keycaps I made instead of studying for this final exam:
 ![I made a lot of keycaps](/assets/img/projects/keyboard/many-keycaps.jpg)
 
 I haven't had a 100% success rate with the printing. Occasionally they'll come off the printbed (the bottom surface is pretty small, and I sometimes forget to clean the bed with isopropyl alcohol before I print). And a few have had some under-extrusion on the bottom layer, so the legends don't come out looking very clean. I've had to reprint under 10 keys for the whole board.
+
+![I did not nail it. Failed keycap prints](/assets/img/projects/keyboard/keycap-print-fail.jpg)
+
+**#NailedIt**. I let it keep going so I could at least get 7/10 keycaps out of that batch.
 
 ## Firmware
 
@@ -346,7 +360,7 @@ Because it's large, you can see the full keymap [in my Github repository](https:
 - Initialize Unicode input method? (Not sure if this is needed)
 - Make a macro that outputs some stupid copypasta (because we can)
 
-## Making the keyboard case
+## Making the case
 
 ### Prototype
 
@@ -382,6 +396,43 @@ First up: 15 hours to print the top plate.
 
 It looks kind of comical, when the printer can do up to 400 mm on the Z axis and I'm using 8.2 mm of that. But at least it seems to be sticking well to the bed.
 
+And it's finished!
+
+![Finished keyboard case top piece](/assets/img/projects/keyboard/case-top-finished.jpg)
+
+One corner came up a tiny bit, but it's just a little rounded and barely noticeable. Definitely not worth re-printing.
+
+The bottom of the case is only a 10 hour print, but the first layer is 1:15 of that. The first 8 layers take a total of 8 hours, printing that huge base, but then the next 24 layers for the walls only take 2 hours! That giant first layer is also a real test of the levelness of your print bed.
+
+![Finished keyboard case bottom piece](/assets/img/projects/keyboard/case-bottom-finished.jpg)
+
+Check out that beautiful top finish, which no one will ever see because it's inside the keyboard.
+
+In a moment of truth when we got the pieces, from Clark, we tested the tolerances. Both pieces warped a little (the long way) from cooling, but that shouldn't be an issue because it'll all be screwed together. The switches have a *tiny* bit of wiggle to them. They're definitely not coming out accidentally, though, and I'm guessing that little wiggle won't be noticeable when the whole thing is assembled. (And if it is, a tiny drop of hot glue with fix it.) The screw heads fit nicely with their increased tolerance, and you can get all of the nuts in easily using the [screw pulling technique](https://manual.prusa3d.com/Guide/1.+Introduction/1057#s18633) that I learned when building my Prusa MK3S printer.
+
+I screwed the whole thing together with all 10 M3 screws. One screw end sticks out a tiny bit and scratches the table This is where one corner of the top plate pulled off the bed a bit, so the screw head hole is deeper than it should be. I could add a bit of support inside the hole if I want to prevent this, but it won't be a problem once I add rubber feet to the bottom.
+
+When assembled, though, the whole thing is incredibly sturdy; there's hardly any flex when trying to bend or twist the keyboard, or when pressing down on the top plate. (Thanks to the support screws in the middle, I think.) But there is a significant problem: when sitting it down on the table, it doesn't lay flat. It sits on two diagonal corners and rocks back and forth across the other two. There are two ways I can think of to fix this. The lazy way would be shimming the rubber feet -- adding a bit of thickness underneath one or more of the feet until it sits flat. But the more proper way would probably be with Clark's suggestion to warm it up slightly (there's a 60 deg C oven in his lab) and put a weight on it to force it flat. If we take that route, it needs to be done before we actually insert all the switches and start wiring it up.
+
+Before we get to that (which will be *after* the final exam for this class, so I actually do some studying), some pictures to show off.
+
+First, a size comparison to my other keyboards: ErgoDox Infinity and Magicforce 68:
+
+![Keyboard size comparison](/assets/img/projects/keyboard/keyboard-size-comparison.jpg)
+
+It's narrower than the 68-key keyboard but deeper. (After all, it does have to squeeze in 19 more keys somewhere.) Overall, I'm pleased by the compact form factor I've managed to squeeze this into. It's also a very thin keyboard:
+
+![Keyboard height comparison](/assets/img/projects/keyboard/keyboard-height-comparison.jpg)
+
+It's slightly thinner than the thinnest part of the Magicforce keyboard (without rubber feet, though). I'm excited to start turning this into something functional.
+
+## Assembly
+
+*Coming soon...*
+
+## Programming
+
+*Coming later but still soon...*
 
 ## Bill of materials
 
