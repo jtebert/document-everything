@@ -428,7 +428,60 @@ It's slightly thinner than the thinnest part of the Magicforce keyboard (without
 
 ## Assembly
 
-*Coming soon...*
+### Wiring the rows
+
+With the final exam finished, there's now time to put this whole contraption together!
+
+Popping all 87 switches into place on the board was so satisfying.
+
+![Switches popped into case](/assets/img/projects/keyboard/assembly-switches.jpg)
+
+- Shaping/cutting the diodes, soldering them on
+- Cutting wire for rows (gaps, stripping)
+- Soldering rows, cleaning up wires
+
+Next, we had to shape and cut all 87 diodes for the keys. Because the switches just have pins sticking out, you want to make your life as easy as possible when it comes to soldering them on. That means creating a little loop on each diode to stick over the pin, then solder that without it falling off when one hand is full of solder and the other has the soldering iron. (Soldering is the primary situation in which I want a robotics third hand.)
+
+So first we bent all the diodes into an L shape. This provides sort of a nucleation point for the loop you make next. It's important to do this on the correct end of the diodes. Because we want to allow current to flow *into* the wires for the rows (from the columns), we need to attach the anode to the switch and the cathode (the end with the black line) to the row wire. So we're making loops on the anode (non-black-line) end.
+
+![Bending diodes](/assets/img/projects/keyboard/assembly-diodes-1.jpg)
+
+Then, to make the loop, we had to wrap the lead of each diode around something slightly larger than the pins on the switches. The best thing we could find in the lab was... a small nail. It looks incredibly sketchy, but it did the job.
+
+![Making loops in diode leads](/assets/img/projects/keyboard/assembly-diodes-2.jpg)
+
+You can then trim the ends of loops on each diode and solder them all onto the switches. For soldering, each of the diodes has its long cathode end pointing up (so we can attach it to the row wires). That means its easiest to start by soldering the diodes in the top row, so you don't have to worry about the leads of the other rows' diodes getting in the way.
+
+Turns out 87 diodes is a lot, so we took turns on this part.
+
+![Jen soldering diodes](/assets/img/projects/keyboard/assembly-jen-soldering.jpg)
+
+Next, we have to wires each of these diodes together into a row. To make it harder to short the row wires and column wires of the matrix, we want to keep the wires between each of the switches insulated. That means a lot of wire stripping. To make our lives easier, we employed some math to strip our wires beforehand.
+
+Switches are spaced at 19 mm apart, and we want to leave ourselves a little gap in the insulation to actually solder the diodes to the wires (say, 3 mm). For our 15 switches in a row, that means we want 14 sections of insulation, each 16 mm long. To make sure we had enough wire length, we first stripped about 5 cm of insulation off the end of our solid core wire. Then we marked out our 16 mm sections with Sharpie and cut with wire strippers. Now we can slide the little sections of insulation around as we solder to put them in between the switches. It turns out its not worth trying to line up all the little gaps before you solder; just do it for the next switch as you go.
+
+To make it easier to solder, we again make little loops (well, half loops this time). Lay the wire down just north of the bump in the middle of the switch, with the diode cathode leads underneath. Then fold the first diode up and over the stripped section of wire (forming a little U), and solder. Then you can slide the next section of insulation down tight to this (preferably after you let it cool) and move on to the next switch.
+
+![Closeup of soldered row](/assets/img/projects/keyboard/assembly-row-closeup.jpg)
+
+The one challenge we encountered with our nice 16 mm insulation sections is that it doesn't apply when you have switches more the one switch-length apart, like for the enter key and the space/backspace keys on the bottom row. But it turns out the math here isn't complicated. The enter key is spaced in between two columns, so it's 1.5 switch-lengths away from the next switch in the row (about 29 mm). Subtract our 3 mm stripped section, and we need a 26 mm insulation section instead of 16 mm: $$1.5 \times (19~\text{mm}) - 3~\text{mm} = 26~\text{mm}$$.
+
+We can also do the same thing for the gap between the 2u keys in the bottom row: $$2 \times (19~\text{mm}) - 3~\text{mm} = 35~\text{mm}$$.
+
+We took turns stripping wire and soldering, then trimmed up all the loose wire and and ends of the diode leads.
+
+![All the rows soldered and trimmed](/assets/img/projects/keyboard/assembly-rows-finished.jpg)
+
+### Wiring the columns
+
+This is very similar to wiring the rows, but this time there are no diodes to connect to; we're soldering all of the column pins together directly. This does mean that we don't have any convenient little loops anymore, but we can make loops in the wire as we go to make soldering easier.
+
+Stripping the wire is also pretty much the same as for the rows, with 19 mm vertical spacing for the switches as well. The one trick here is that some rows only have 5 rows of keys, while others have keys in the column slightly offset from the others. (See the wiring diagram above or the result picture below.) I *could* calculate the angle between the keys again for this, but it's really not a precise operation, so I just approximated the distance between the pins with a ruler and subtracted 3 mm.
+
+Here, each column is slightly different, so it was useful to keep them all in order to prevent confusion. (The color coding here is also useful. But we forgot to grab blue wire, so we'll have to come back to those columns.) Because we also have to wrap the wires around each of the pins, we started with a longer stripped length at the end of the wire so we wouldn't run out.
+
+![Stripped wires for the keyboard columns](/assets/img/projects/keyboard/assembly-stripped-wires.jpg)
+
 
 ## Programming
 
