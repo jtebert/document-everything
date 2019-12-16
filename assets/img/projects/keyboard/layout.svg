@@ -29,11 +29,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.83875362"
-     inkscape:cx="1854.4587"
-     inkscape:cy="342.05486"
+     inkscape:zoom="1.1861767"
+     inkscape:cx="526.07322"
+     inkscape:cy="273.65319"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer5"
+     inkscape:current-layer="layer1"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -82,7 +82,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-0.42499971,-68.825002)"
-     style="display:none">
+     style="display:inline">
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:11.40460014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:11.40459893, 22.80919789;stroke-dashoffset:0;stroke-opacity:1"
        id="rect12"
@@ -7612,7 +7612,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Keycaps"
-     style="display:inline;opacity:1"
+     style="display:none;opacity:1"
      transform="translate(-0.42499971,-0.42500126)">
     <g
        id="g1870"
@@ -10000,7 +10000,7 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="Legends"
-     style="display:inline"
+     style="display:none"
      transform="translate(-0.42499971,-0.42499974)">
     <text
        transform="translate(19.049999,38.099997)"
@@ -10840,7 +10840,7 @@
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
         <polygon
            id="polygon2805"
-           points="17.898,25.852 50,57.955 57.955,50 25.852,17.898 38.75,5 5,5 5,38.75 "
+           points="57.955,50 25.852,17.898 38.75,5 5,5 5,38.75 17.898,25.852 50,57.955 "
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
       </g>
     </g>
