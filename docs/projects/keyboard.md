@@ -547,15 +547,47 @@ Let's start with a simpler version of what we actually wired by removing the dio
 
 The first thing to understand is that the rows and columns have different roles in the process. The columns are "out" pins on the microcontroller, and the rows are "in" pins. In the most basic sense, the microcontroller sets a digital voltage low (0 V) on the pin for a particular column, and then checks if that flows through to end up with the same voltage on the "in" pin for each row. If you press the keyboard key, it closes the switch between the row and the column, and you'll see the column output on the row input. When the switch is open (the key isn't pressed), the voltage for that row will be high because the microcontroller has an internal pull-up resistor.
 
+For example, if you pressed the key in column B, row 1, the MCU would see a signal on the row 1 input pin only when it sets column B low.
+
+![Pressing one key in the matrix](/assets/img/projects/keyboard/matrix-1-key.png)
+
+If you press multiple keys in the same column, you'll see multiple row input pins go low:
+
+![Pressing two keys in the matrix](/assets/img/projects/keyboard/matrix-2-keys.png)
+
 That approach works if you're just looking at one column. If you set the voltage on multiple columns at once, you wouldn't be able to tell which column was causing the signal to go high for a particular row. So you just set and check one column at a time, but you cycle through them. Because you're doing this with a microcontroller, you can do this really fast, cycling through at multiple megahertz speed. This is so much faster than the speed at which a human can type that we can get away with this just fine.
 
 So far, though, we've hidden a tricky part from you. If we just had this set up with no diodes, we can run into a tricky situation if we press the right combination of keys. Because at this point, we just have wires that can be connected or not connected; there's nothing that's special about something being a row wire or column wire.
 
-- strobing
-- diodes
-- debouncing
-- ghosting
-- jamming
+Now, let's imagine you press 3 keys, as shown below:
+
+![3 keys press](/assets/img/projects/keyboard/matrix-3-keys-off.png)
+
+When the microcontroller strobes the B column, it looks as expected: inputs for rows 1 and 2 are active:
+
+![3 keys pressed, column B](/assets/img/projects/keyboard/matrix-3-keys-B.png)
+
+But something funny happens when column C is active.
+
+![3 keys pressed, column C](/assets/img/projects/keyboard/matrix-3-keys-C.png)
+
+Rows 1 and 2 both show up as active again, even though we aren't pressing the key in column C, row 2 isn't pressed. But because the switches in column B are still closed, they are connecting rows 1 and 2. This is called **ghosting**: key C2 shows up as a keypress, even though the key isn't actually pressed.
+
+This can also cause a problem called **masking** or **jamming**: if you now pressed key C2, the key press would be masked (not detected), because the microcontroller already believes that it's been pressed.
+
+How can we fix this problem? This is where the diodes come in, inserted between the switch and the row wire.
+
+![Matrix with diodes](/assets/img/projects/keyboard/matrix-diodes.png)
+
+In the non-tricky (non-ghosted/masked/jammed) situations we saw above, the keyboard behavior will be exactly the same; the diode will not prevent the signal from dropping to ground between the column and the row.
+
+But its benefit becomes clear in the ghosting situation we saw before:
+
+![3 keys pressed, column C, with diodes](/assets/img/projects/keyboard/matrix-diodes-3-keys-C.png)
+
+The 0 V can't go "backwards" through the diode connected to the switch in colmumn B, row 1. The diodes allow you to decouple the keys by preventing these errant paths.
+
+Now we have a functional keyboard without ghosting!
 
 ## Bill of materials
 
