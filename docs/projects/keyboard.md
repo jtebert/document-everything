@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Custom Keyboard
+title: Creating a Keyboard
 parent: Side Projects
 permalink: /projects/keyboard
 ---
@@ -10,7 +10,7 @@ permalink: /projects/keyboard
 
 ---
 
-*This is a build log of my ortholinear 87-key (~75%) keyboard, ostensibly as a class project for Physics 223*
+*This is a build log of our ortholinear 87-key (~75%) keyboard as a class project for Physics 223.*
 
 ## TL;DR: The current status
 
@@ -19,6 +19,8 @@ permalink: /projects/keyboard
 ![Keyboard render with keycaps](/assets/img/projects/keyboard/keyboard-render-1.png)
 
 It's built! And it looks like the original render! And it works! (Except unicode, but we're still working on that.)
+
+You can download the latest version of the firmware from [the GitHub repository](https://github.com/jtebert/qmk_firmware/tree/master/keyboards/project223).
 
 (Gotta put a nice picture first for the social media previews.)
 {:.fs-2}
@@ -43,7 +45,7 @@ I like the icon keycaps of the [Granite keycap set](https://kono.store/products/
 
 ![SA Grantite keycaps]({{ "/assets/img/projects/keyboard/granite-keycaps.png" }})
 
-The 84-key size and style of the [Keychron K2 keyboard](https://smile.amazon.com/dp/B07QBPDWLS/) seems like enough to have the useful stuff without keys I'm never going to use.
+The 84-key size and style of the [Keychron K2 keyboard](https://smile.amazon.com/dp/B07QBPDWLS/) seems like enough to have the useful stuff without keys I'm never going to use. Typically, this is called a 75% layout. It's about the same number of keys a "tenkeyless" (TKL) keyboard, which is a full-sized keyboard with numpad, but it's laid out in a more compact form factor.
 
 ![Keychron K2]({{ "/assets/img/projects/keyboard/keychron.jpg" }})
 
@@ -527,9 +529,33 @@ We tried to type on it, and it did successfully produce letters as we expected, 
 
 So we went back and looked at the keymap specification in our firmware. It turned out I had accidentally put in "F6" twice, so everything after that (the keymap is specified as a single flat array), was shifted by one. But then the code should have failed to compile, claiming that the keymap had 88 keys instead of 87. So we had to go through the whole array key by key until we realized that the Caps Lock key was missing toward the end of the keymap, which also explained why the keys at the end of the board behaved correctly.
 
-The last piece was the unicode. And we still don't have that working. This was hacky to begin with, thanks to the HID specification only allowing keyboard key input (resulting in the OS-specific unicode input methods being simulated in the firmware and sent as a series of keystrokes). In Linux, unicode input is done as `Ctrl+Shift+u`, followed by the unicode string (such as `00bd` for the fraction symbol ½), then `Enter`. And if you type that series of characters on the keyboard, it does create the unicode character. But the macro that's supposed to do that on the keyboard just spits the characters `00bd ` instead. But we haven't had the time to get back to that to debug it further.
+But now, it works! And I'm typing this on our newly functional keyboard.
+
+![Typing gibberish with this keyboard](/assets/img/projects/keyboard/keyboard-typing.png)
+
+Look at the beautiful gibberish we can generate.
+
+The last piece was the unicode. And we still don't have that working. This was hacky to begin with, thanks to the HID specification only allowing keyboard key input (resulting in the OS-specific unicode input methods being simulated in the firmware and sent as a series of keystrokes). In Linux, unicode input is done as `Ctrl+Shift+u`, followed by the unicode string (such as `00bd` for the fraction symbol ½), then `Enter`. And if you type that series of characters on the keyboard, it does create the unicode character. But the macro that's supposed to do that on the keyboard just spits the characters `00bd ` instead. (You can see that in the picture above as well.) But we haven't had the time to get back to that to debug it further.
 
 For now, though, we do have a fully functional keyboard! It just doesn't (yet) have the power to type emoji.
+
+## How does this work?
+
+A keyboard matrix is pretty simple to set up and wire, but it's not necessarily intuitive how it's possible to figure out the key pressed from this wiring setup -- and that's the interesting part of this project! I found these explanations from [komar's techblog](http://blog.komar.be/how-to-make-a-keyboard-the-matrix/) and [PCB Heaven](http://pcbheaven.com/wikipages/How_Key_Matrices_Works/) useful.
+
+Let's start with a simpler version of what we actually wired by removing the diodes from the equation. Each key is still a switch connecting a column wire and a row wire, but for now let's say we *didn't* put a diode in between the switch and the row wire.
+
+The first thing to understand is that the rows and columns have different roles in the process. The columns are "out" pins on the microcontroller, and the rows are "in" pins. In the most basic sense, the microcontroller sets a digital voltage low (0 V) on the pin for a particular column, and then checks if that flows through to end up with the same voltage on the "in" pin for each row. If you press the keyboard key, it closes the switch between the row and the column, and you'll see the column output on the row input. When the switch is open (the key isn't pressed), the voltage for that row will be high because the microcontroller has an internal pull-up resistor.
+
+That approach works if you're just looking at one column. If you set the voltage on multiple columns at once, you wouldn't be able to tell which column was causing the signal to go high for a particular row. So you just set and check one column at a time, but you cycle through them. Because you're doing this with a microcontroller, you can do this really fast, cycling through at multiple megahertz speed. This is so much faster than the speed at which a human can type that we can get away with this just fine.
+
+So far, though, we've hidden a tricky part from you. If we just had this set up with no diodes, we can run into a tricky situation if we press the right combination of keys. Because at this point, we just have wires that can be connected or not connected; there's nothing that's special about something being a row wire or column wire.
+
+- strobing
+- diodes
+- debouncing
+- ghosting
+- jamming
 
 ## Bill of materials
 
@@ -540,7 +566,7 @@ I'll update this as I go. You can get this stuff cheaper on eBay/AliExpress, but
 | [1N148 diodes (pack of 100)](https://smile.amazon.com/gp/product/B06XB1R2NK)                                                           |        1 |      $4.99 |      $4.99 |
 | [Teensy 2.0 microcontroller](https://smile.amazon.com/gp/product/B00NC43256/)                                                          |        1 |     $19.20 |     $19.20 |
 | [Gateron Mechanical switches (pack of 90)](https://smile.amazon.com/gp/product/B07X3VFBFJ/?th=1)                                       |        1 |     $34.99 |     $34.99 |
-| [Hatchbox PLA filament](https://smile.amazon.com/stores/page/BE84484A-154A-49EC-BF3F-FF4CE6E4ECB7)                                     |        1 |     $19.99 |     $19.99 |
+| [Hatchbox PLA filament](https://smile.amazon.com/stores/page/BE84484A-154A-49EC-BF3F-FF4CE6E4ECB7)                                     |          |            |            |
 | [Rubber feet](https://spthe characters `00bd ` instead.-8-in-Clear-Adhesive-Bumper-Pads-16-Pack-822891/306229466) (pack of at least 8) |        1 |      $2.48 |      $2.48 |
 | M3x10 mm screws and nuts                                                                                                               |       10 |
 | Solid-core wire                                                                                                                        |

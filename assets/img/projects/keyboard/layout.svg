@@ -29,9 +29,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1861767"
-     inkscape:cx="526.07322"
-     inkscape:cy="273.65319"
+     inkscape:zoom="0.36204012"
+     inkscape:cx="730.36113"
+     inkscape:cy="-68.212241"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2958,7 +2958,7 @@
          height="54.841679"
          width="31.413414"
          id="rect4245-3"
-         style="opacity:1;vector-effect:none;fill:#358639;fill-opacity:0.90151513;stroke:none;stroke-width:0.47566777;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:1;vector-effect:none;fill:#358639;fill-opacity:0.90151511;stroke:none;stroke-width:0.47566777;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <circle
          r="1.2640672"
          cy="99.64222"
@@ -3547,25 +3547,25 @@
        sodipodi:nodetypes="cccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 520.30253,88.622353 v -19.05 -19.050002 -19.05 -19.05 l 10e-6,-21.9473528 H 542.925 l 33.3375,0 0,-4.7625002 H 571.5"
+       d="m 520.30253,88.622353 v -19.05 -19.050002 -19.05 -19.05 l 10e-6,-21.9473528 H 542.925 576.2625 V -14.287502 H 571.5"
        id="path4019-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ececec;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 539.35254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 10e-6,-12.4223527917578 h 8.33496 V -4.7625018 l 19.05,0 14.2875,-4.7625 0,-9.5250002 H 571.5"
+       d="m 539.35254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 10e-6,-12.4223527917578 h 8.33496 V -4.7625018 h 19.05 l 14.2875,-4.7625 V -19.050002 H 571.5"
        id="path3968-37-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#808080;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 558.40254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 1e-5,-12.4223494917578 13.09746,-3.3e-6 V -4.7625018 l 14.2875,0 0,-19.0500002 H 571.5"
+       d="m 558.40254,107.67237 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05001 v -19.05001 l 1e-5,-12.4223494917578 13.09746,-3.3e-6 V -4.7625018 h 14.2875 V -23.812502 H 571.5"
        id="path3968-37-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#9c27b0;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 577.45254,107.67238 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05002 v -19.05001 l 0,-12.4223527917578 13.09747,0 L 590.55,-28.575002 H 571.5"
+       d="m 577.45254,107.67238 -2e-5,-19.049997 10e-6,-19.05 -10e-6,-19.050002 10e-6,-19.05002 V 12.422351 -1.7917578e-6 H 590.55 V -28.575002 H 571.5"
        id="path3968-37-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc" />
@@ -3738,36 +3738,40 @@
          id="tspan5035">C7</tspan></text>
     <text
        id="text4935-5"
-       y="-5.8412466"
-       x="546.62921"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       y="-5.3232036"
+       x="546.32404"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.11234045px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0006924,0.9993081)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
-         y="-5.8412466"
-         x="546.62921"
+         y="-5.3232036"
+         x="546.32404"
          sodipodi:role="line"
-         id="tspan5055">Col 3:</tspan><tspan
+         id="tspan5059">Col 3:</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
-         y="2.2756298"
-         x="546.62921"
+         y="1.067222"
+         x="546.32404"
          sodipodi:role="line"
-         id="tspan5059">C6</tspan></text>
+         id="tspan1657"
+         dy="-2.3014767">C6</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="565.65936"
-       y="-5.8412466"
-       id="text5065"><tspan
-         id="tspan5061"
-         sodipodi:role="line"
-         x="565.65936"
-         y="-5.8412466"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none">Col 2:</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.11234045px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="570.25269"
+       y="-5.0489593"
+       id="text5065"
+       transform="scale(1.0006924,0.9993081)"><tspan
          id="tspan5063"
          sodipodi:role="line"
-         x="565.65936"
-         y="2.2756298"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none">D3</tspan></text>
+         x="570.25269"
+         y="-5.0489593"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none">Col 2:</tspan><tspan
+         sodipodi:role="line"
+         x="570.25269"
+         y="1.3414663"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;text-anchor:end;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
+         id="tspan1661"
+         dy="-2.3733978">D3</tspan></text>
     <text
        transform="rotate(-90)"
        id="text5069"
@@ -3787,22 +3791,22 @@
          id="tspan5071">D1</tspan></text>
     <text
        id="text5077"
-       y="576.27423"
-       x="-1.3421857"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       y="-1.0703816"
+       x="579.224"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.11234045px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;display:inline;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        xml:space="preserve"
-       transform="rotate(-90)"><tspan
+       transform="scale(1.0006924,0.9993081)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
-         y="576.27423"
-         x="-1.3421857"
+         y="-1.0703816"
+         x="579.224"
          sodipodi:role="line"
          id="tspan5073">Col 1:</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#9c27b0;fill-opacity:1;stroke:none;stroke-width:0.15000001;stroke-miterlimit:4;stroke-dasharray:none"
-         y="584.39111"
-         x="-1.3421857"
+         y="5.320044"
+         x="579.224"
          sodipodi:role="line"
          id="tspan5075"
-         dy="-1.9778374">D2</tspan></text>
+         dy="-1.5571535">D2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.49350119px;line-height:125%;font-family:Miso;-inkscape-font-specification:'Miso Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3946,7 +3950,7 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Fn Layers"
-     style="display:inline;opacity:1"
+     style="display:none;opacity:1"
      transform="translate(-0.42499971,-0.42499974)">
     <g
        id="g7394"
@@ -7612,7 +7616,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Keycaps"
-     style="display:none;opacity:1"
+     style="display:inline;opacity:1"
      transform="translate(-0.42499971,-0.42500126)">
     <g
        id="g1870"
@@ -10000,7 +10004,7 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="Legends"
-     style="display:none"
+     style="display:inline"
      transform="translate(-0.42499971,-0.42499974)">
     <text
        transform="translate(19.049999,38.099997)"
@@ -10840,7 +10844,7 @@
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
         <polygon
            id="polygon2805"
-           points="57.955,50 25.852,17.898 38.75,5 5,5 5,38.75 17.898,25.852 50,57.955 "
+           points="38.75,5 5,5 5,38.75 17.898,25.852 50,57.955 57.955,50 25.852,17.898 "
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
       </g>
     </g>
