@@ -19,7 +19,7 @@ _This is a build log of our ortholinear 87-key (\~75%) keyboard as a class proje
 
 ![Keyboard render with keycaps](/assets/img/projects/keyboard/keyboard-render-1.png)
 
-!\[test image\](/assets/img/projects/keyboard/3d-printed-keycaps.jpg)
+![test image](/assets/img/projects/keyboard/3d-printed-keycaps.jpg)
 
 It's built! And it looks like the original render! And it works! (Except unicode, but we're still working on that.)
 
