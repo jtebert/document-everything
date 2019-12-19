@@ -1,0 +1,16 @@
+---
+label: Child docs page
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: text
+  name: parent
+  label: parent
+- type: text
+  name: permalink
+  label: permalink
