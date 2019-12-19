@@ -1,0 +1,19 @@
+---
+label: Parent docs page
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: text
+  name: permalink
+  label: permalink
+- type: boolean
+  name: has_children
+  label: has_children
+- type: number
+  name: nav_order
+  label: nav_order
