@@ -166,7 +166,7 @@ Then I hopped back to the [previous tutorial](https://www.digitalocean.com/commu
 
 In order to see if *any* of this works, though, I do actually need to move over the URL. Currently, my domain registrar has an `A` record named `blog` pointing at the IP address. Since Nginx is supposed to handle the domain routing, I think I *should* just be able to add another `A` record named `lazybaker` pointing at the same IP address and it will magically work. (That never happens.) But now I need to wait for the record to update to tell if anything worked. (Update: that part actually worked after very limited debug -- I'd put the wrong path to the `.sock` file in the nginx site configuration.)
 
-### Database transfer
+## Database transfer
 
 Right now I can load the admin at `lazybaker.juliaebert.com`, but the site has no content, so I still get a 500 error on the home page. Time to steal the database from Heroku.
 
@@ -196,14 +196,40 @@ I have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) instal
 
 Now everything shows up in the admin when I log in, but I'm still getting a 500 error on the home page! Turning on Debug again (in production, sorry), it's saying it can't find the template. After local debugging, it turns out that the issue came from relative paths: when I moved the settings file out of a subdirectory, the `BASE_URL` reference in that file was then one level too high, so it couldn't find the templates. Honestly, I'm surprised that's the only thing I saw failing from that.
 
+## Adding SSL
+
+The website now works (including, miraculously, the AWS stuff), but it's not secure (HTTP only, no HTTPS). To do this, I need to add an SSL certificate (which are no conveniently free and easy with Let's Encrypt). DigitalOcean even has [easy integration](https://www.digitalocean.com/docs/accounts/security/certificates/)... as long as you're using their nameservers for managing your domain. Since I'm absolutely overloading my use of the juliaebert.com domain, this isn't a good option; I wouldn't be able to keep doing everything else with it.
+
+But since I already did this for blog.juliaebert.com, I know it's possible to do this more manually. And [DigitalOcean has a tutorial for that.](https://www.digitalocean.com/docs/accounts/security/certificates/)
+
+The first step is installing Certbot, which is system-wide and therefore already done for the previous site. Similarly, steps 2 and 3 are already covered by what I've done so far. That means it's just a matter of running one command to get it configured:
+
+```shell
+sudo certbot --nginx -d lazybaker.juliaebert.com
+```
+
+There's one prompt: whether you want to redirect HTTP traffic to HTTPS. I picked the redirect here, because I don't think there's any reason to let the non-secure stuff hang around.
+
+It also provides a convenient link to check your configuration for your URL ([check mine out here -- it got an A!](https://www.ssllabs.com/ssltest/analyze.html?d=lazybaker.juliaebert.com&latest))
+
+You can also check the automatic renewal with a dry run, using a single command:
+```shell
+sudo certbot renew --dry-run
+```
+
+Everything just worked, which is pretty amazing! I guess I didn't remember how I did it for the previous website because it's just so straightforward and painless.
+
+## Miscellaneous
+
+I ran into trouble uploading images (getting a 413 error), because it turns out the default file upload size limit for Nginx is 1 MB. It's easy to change, though ([as explained here](https://www.tecmint.com/limit-file-upload-size-in-nginx/)). In `/etc/nginx/sites-available/lazybaker.juliaebert.com`, I added the following line to the main `server` section to increase the limit to 10 MB:
+```shell
+client_max_body_size 10M;
+```
+
+Then restart Nginx with `sudo systemctl restart nginx` and you're good to go.
+
 ## TODO
 
 (Not in any useful order)
 
-- Set up environment variables for project
-- Get it running locally on server
-- Configure URL
-- Add SSL certificate
-- Migrate database
-- Make sure static content is working with S3
 - Fix settings so that in debug, it's using local dynamically-compiled static files (ie current CSS)
