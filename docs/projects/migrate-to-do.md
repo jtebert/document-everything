@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Migrating from Heroku to DigitalOcen
+title: Migrating from Heroku to DigitalOcean
 parent: Side Projects
 permalink: /projects/migrate-to-do
 ---
