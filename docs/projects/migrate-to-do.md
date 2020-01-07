@@ -225,11 +225,39 @@ I ran into trouble uploading images (getting a 413 error), because it turns out 
 ```shell
 client_max_body_size 10M;
 ```
-
 Then restart Nginx with `sudo systemctl restart nginx` and you're good to go.
+
+Now, another security note: I don't feel comfortable with my database password in plain text in the `settings.ini` file. From finding Google results like [this Medium post](https://medium.com/@marcelpociot/protect-your-env-files-387b4f66d809) I felt less bad about it by restricting access to the file by limiting its permissions:
+```shell
+chmod 600 settings.ini
+```
+
+## Updating the Domain
+
+... And then, after doing all of that setup, I decided to get a new, real domain name for this site: meet *Reckless Ham.* Which means I now need to go back and modify all the URL/website name related stuff on my server.
+
+With the domain name `recklessham.com` purchased, I started by setting an `A` record in the DNS settings to point the apex domain (`@`) to my server's IP address.
+
+Now to change/fix all of my names/references. First, finding all the files named this way:
+```shell
+ sudo find / -name "*lazy*"
+ ```
+
+ Then finding all the files *containing* references to this name/these files:
+ ```shell
+ grep -iRl "lazy" /var/www
+ grep -iRl "lazy" /etc/nginx
+ ```
+
+
 
 ## TODO
 
 (Not in any useful order)
 
-- Fix settings so that in debug, it's using local dynamically-compiled static files (ie current CSS)
+- Migrate to the new URL (and change all associated issues/names)
+  - Redirect www to apex domain
+  - redirect lazy baker to reckless ham
+- Deal with all my many lingering GitHub issues
+- Fix favicon (change to reckless ham)
+- Update references to the website elsewhere (broken links)
