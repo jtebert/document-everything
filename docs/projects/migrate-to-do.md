@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Migrating from Heroku to DigitalOcean
-parent: Side Projects
+title: Migrating a website to DigitalOcean
+grand_parent: Side Projects
+parent: 2020
 permalink: /projects/migrate-to-do
 ---
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="381mm" height="187.51mm" version="1.1" viewBox="0 0 381 187.51" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient856" x1="47.901" x2="47.901" y1="120.17" y2="130.53" gradientTransform="matrix(7.5364 0 0 7.5364 -314.27 -819.28)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="gray" stop-opacity=".25" offset="0"/>
+   <stop stop-color="gray" stop-opacity=".12" offset=".54"/>
+   <stop stop-color="gray" stop-opacity=".1" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(96.49 -8.9806)">
+  <g transform="matrix(1.3177 0 0 1.3177 30.655 -62.426)" stroke-width=".7589">
+   <g fill="#3f3d56">
+    <circle cx="171.61" cy="160.61" r="21.036"/>
+    <circle cx="120.06" cy="95.437" r="41.247"/>
+    <circle cx="-65.555" cy="95.024" r="30.935"/>
+    <circle cx="30.55" cy="144.11" r="52.383"/>
+   </g>
+   <text x="-75.49601" y="162.94843" fill="url(#linearGradient856)" font-family="sans-serif" font-size="107.2px" letter-spacing="0px" stroke-width=".20079px" word-spacing="0px" style="line-height:100%" xml:space="preserve"><tspan x="-75.49601" y="162.94843" fill="url(#linearGradient856)" font-family="'Space Mono'" font-weight="bold" stroke-width=".20079px">2020</tspan></text>
+   <text x="-79.484055" y="166.93642" fill="#000000" font-family="sans-serif" font-size="107.2px" letter-spacing="0px" stroke-width=".20079px" word-spacing="0px" style="line-height:100%" xml:space="preserve"><tspan x="-79.484055" y="166.93642" fill="#38bc24" font-family="'Space Mono'" font-weight="bold" stroke-width=".20079px">2020</tspan></text>
+  </g>
+ </g>
+</svg>

@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Creating a Keyboard
-parent: Side Projects
+grand_parent: Side Projects
+parent: 2019
 permalink: /projects/keyboard
 ---
 
