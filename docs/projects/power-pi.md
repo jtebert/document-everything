@@ -110,6 +110,39 @@ And I used [Papirus folder icon colors](https://github.com/PapirusDevelopmentTea
 ### Miscellaneous
 
 - Change hostname. Edit `/etc/hostname` and `/etc/hosts` to swap in the new name you want. It should take effect on reboot. (I named mine `fortyone`, since It's in an Argon40 One case, similar to how my sister named her OnePlus One Phone `Two`.)
+- Argon case setup: for fan and power button control
+  ```shell
+  curl https://download.argon40.com/argon1.sh | bash
+  ```
+  - Configuration: `argonone-config`
+  - Uninstall: `argonone-uninstall`
+  
+## Booting from SSD
+
+It's not yet possible on the Pi 4 to boot without any SSD at all, so it's time to use the same solution I did back when I first got a Pi 2: the SSD just has a tiny boot partition, and everything else goes on the SSD. Why move to the SSD in the first place? [Because it's faster!](https://www.tomshardware.com/news/raspberry-pi-4-ssd-test,39811.html). According to that article, it can be as much as 42% faster, for some tasks (also depending on the SSD, of course.) I couldn't find anything about *which* external SSD would be best suited to this task, so I ended up picking the [500 GB Samsung T5](https://www.amazon.com/Samsung-T5-Portable-SSD-MU-PA500B/dp/B073GZBT36) because it seemed like a well-received and reliable one in general.
+
+I was planning to follow this [Tom's Hardware guide](https://www.tomshardware.com/news/boot-raspberry-pi-from-usb,39782.html), but based on the comments, people couldn't get it to work. Instead, I ended up directed to a [tutorial by James A. Chambers](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/) It has the additional benefits of being updated within the past week, and an author who seems very responsive when people have trouble getting it to work. But on the downside, it says:
+
+> I highly recommend doing this on a completely new install. If you try to upgrade your old ones and something goes wrong there’s a good chance you might lose data. We will be modifying the boot partition, resizing partitions, etc. so don’t use a drive with any data on it unless you are positive you have all of the steps down!
+
+Welp. Too late for that. Maybe I shouldn't have been so impatient and done all this stuff before my SSD arrived. But on the plus side, I wrote everything down in case I need to redo it! I'll also copy what I can to a flash drive and try to keep a record of programs installed so I can restore things if needed.
+
+### Backup prep
+
+From [this page](https://www.ostechnix.com/create-list-installed-packages-install-later-list-centos-ubuntu/) I figured out how to make a list of packages I can re-install from later. (It says it's for Ubuntu, but both Raspbian and Ubuntu are Debian-based, so it should work.) Since I did some weird custom installations (like Adapta and Code OSS), I might need to do some manual stuff after, but this is where my notes here come in.
+```shell
+dpkg-query -f '${binary:Package}\n' -W > pkglist.txt
+```
+
+I'll also need a list of PPAs so I can get actually get them later. Because I want the GPG keys and the sources lists, I think I'll just copy/save/backup the whole `/etc/apt` directory. (What could go wrong...)
+
+So, I'll save the following to a flash drive:
+- `/home/pi` (and I also put my `pkglist.txt` here)
+- `/etc/apt`
+- `/usr/share/themes` (which mightprevent needing re-compile the Adapta theme. But it also threw a bunch of errors about symlinks, so we'll see.)
+
+For my own sanity, I'm not going to re-write the details of the tutorial, but I'll note any quirks/issues/failures I ran into along the way.
+
 
 ## TODO
 
