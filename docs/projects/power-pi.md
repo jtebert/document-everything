@@ -53,12 +53,67 @@ By default, Raspbian now comes with its own PIXEL desktop interface, which isn't
 
 - XFCE4
   ```shell
-  sudo apt install xfce4
+  sudo apt install xfce4 xfce4-terminal lightdm
   sudo update-alternatives x-session-manager
   ```
-- xfce extras
-- ZSH (and download dotfiles)
-- [ARM version of VS Code](https://code.headmelted.com/) (community-maintained Code OSS)
+- [ARM version of VS Code](https://code.headmelted.com/) (community-maintained Code OSS) (from [these instructions](https://pimylifeup.com/raspberry-pi-visual-studio-code/))
   ```shell
-
+  wget https://packagecloud.io/headmelted/codebuilds/gpgkey -O - | sudo apt-key add -
+  curl -L https://raw.githubusercontent.com/headmelted/codebuilds/master/docs/installers/apt.sh | sudo bash
   ```
+- [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/#debian-and-derivatives)
+  ```shell
+  sudo sh -c "echo 'deb http://ppa.launchpad.net/papirus/papirus/ubuntu bionic main' > /etc/apt/sources.list.d/papirus-ppa.list"
+  sudo apt-get install dirmngr
+  sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F
+  sudo apt-get update
+  sudo apt-get install papirus-icon-theme
+  ```
+- Theme. Originally I was going to install Adapta, but it doesn't have a release in its PPA for Raspbian. Nor does the Pop OS theme. Nor did Plata. But someone made a [variant of the Plata theme that works with XFCE](https://www.xfce-look.org/p/1313394/). Just download the ZIP file and extract it to `~./themes`. (The folder might not exist yet, so you may need to create it.) To match the theme, I also used the [Roboto font](https://www.fontsquirrel.com/fonts/roboto). (Extract the files to `~/.fonts`.) *Note: I later changed this. See below.*
+- xfce extras
+  ```shell
+  sudo apt install xfce4-goodies
+  ```
+- ZSH (and download dotfiles)
+- Terminal configuration
+- Panel configuration
+
+### Configuration
+
+- Whisker menu. The XFCE default is ugly. The main thing: change out the default applications menu for the whisker menu. You can also [make a keyboard shortcut](https://codeyarns.com/2015/11/03/how-to-open-whisker-menu-with-win-key/) to open this with the Super (Win) key. Under Settings > Keyboard > Application Shortcuts, add a new shortcut for `xfce4-popup-whiskermenu`, and press the `Win` key when prompted for the shortcut.
+- Make caps lock work as caps lock. Since I'm using Colemak, caps is remapped to backspace, and XFCE doesn't have a utility to easily change this. But thanks to [this AskUbuntu question](https://askubuntu.com/questions/1053457/caps-lock-as-a-control-ctrl-key-though-the-shell-command), I found an easy fix:
+  ```shell
+  setxkbmap -option 'caps:capslock'
+  ```
+  *Edit: somehow this didn't seem to stick, maybe after rebooting or updates.*
+
+### Theming
+
+Eventually I gave in after spending too much time on [/r/unixporn](https://www.reddit.com/r/unixporn/) and decided to invest the time to compile Adapta from scratch, following the instructions on the [repository](https://github.com/adapta-project/adapta-gtk-theme). As a bonus, this also lets me customize the theme colors myself as well.
+```shell
+./autogen.sh --prefix=/usr \
+	--enable-parallel --disable-gnome --disable-cinnamon --disable-flashback --disable-mate --disable-openbox \
+	--with-selection_color=#f44336"" --with-accent-color="#e57373" --with-suggestion-color="#4caf50" --with-destruction-color="#ef9a9a"
+make
+sudo make install
+```
+And then I ended up using the pre-generated Adapta Red Grey Nokto instead of my own colors anyway.
+
+I also used this [Adapta XFCE fix](https://www.xfce-look.org/p/1262068/) to get the menu bars to look right
+
+And I used [Papirus folder icon colors](https://github.com/PapirusDevelopmentTeam/papirus-folders) to make the folders red like everything else. (This assumes you've already added the Papirus repository)
+  ```shell
+  sudo apt-get install papirus-folders
+  papirus-folders -C red --theme Papirus-Dark
+  ```
+
+### Miscellaneous
+
+- Change hostname. Edit `/etc/hostname` and `/etc/hosts` to swap in the new name you want. It should take effect on reboot. (I named mine `fortyone`, since It's in an Argon40 One case, similar to how my sister named her OnePlus One Phone `Two`.)
+
+## TODO
+
+- Change username (which probably means [making a new user and moving stuff over](https://www.raspberrypi.org/forums/viewtopic.php?t=12270))
+- Change login screen
+- Fix caps lock key... *permanently*
+- Add SSD (when it arrives)

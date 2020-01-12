@@ -21,7 +21,7 @@ sudo apt install zsh
 
 Set zsh as your default terminal:
 ```bash
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 ```
 You have to log out in order for that to take effect, but you can run it directly from your existing shell by running `zsh`.
 
