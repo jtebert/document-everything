@@ -189,3 +189,9 @@ and indeed, `/` is on `/dev/sda2`, the SSD. That was a lot less painful than I e
 
 - Change username (which probably means [making a new user and moving stuff over](https://www.raspberrypi.org/forums/viewtopic.php?t=12270))
 - Fix caps lock key... *permanently*
+- [PiVPN](https://pivpn.dev/)
+  - Another potentially useful tutorial](https://pimylifeup.com/raspberry-pi-vpn-server/)
+  - Maybe use [No-IP](https://www.noip.com/) with it ([settings up Dynamic DNS](https://www.noip.com/support/knowledgebase/how-to-configure-ddns-in-router/))
+- [PiHole](https://pi-hole.net/)
+  - Might need [final config](https://marcstan.net/blog/2017/06/25/PiVPN-and-Pi-hole/) to make it work with PiVPN ([or this](https://github.com/pivpn/pivpn/wiki/FAQ#installing-with-pi-hole))
+- Give it a local hostname and static local IP
