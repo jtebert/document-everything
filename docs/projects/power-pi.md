@@ -116,7 +116,7 @@ And I used [Papirus folder icon colors](https://github.com/PapirusDevelopmentTea
   ```
   - Configuration: `argonone-config`
   - Uninstall: `argonone-uninstall`
-  
+
 ## Booting from SSD
 
 It's not yet possible on the Pi 4 to boot without any SSD at all, so it's time to use the same solution I did back when I first got a Pi 2: the SSD just has a tiny boot partition, and everything else goes on the SSD. Why move to the SSD in the first place? [Because it's faster!](https://www.tomshardware.com/news/raspberry-pi-4-ssd-test,39811.html). According to that article, it can be as much as 42% faster, for some tasks (also depending on the SSD, of course.) I couldn't find anything about *which* external SSD would be best suited to this task, so I ended up picking the [500 GB Samsung T5](https://www.amazon.com/Samsung-T5-Portable-SSD-MU-PA500B/dp/B073GZBT36) because it seemed like a well-received and reliable one in general.
@@ -141,12 +141,33 @@ So, I'll save the following to a flash drive:
 - `/etc/apt`
 - `/usr/share/themes` (which mightprevent needing re-compile the Adapta theme. But it also threw a bunch of errors about symlinks, so we'll see.)
 
-For my own sanity, I'm not going to re-write the details of the tutorial, but I'll note any quirks/issues/failures I ran into along the way.
+### New Installation
 
+For my own sanity, I'm not going to re-write the details of the tutorial (it's already very clear and well-written), but I'll note any quirks/issues/failures I ran into along the way.
+
+- I skipped the USB quirks stuff at the beginning; if I run into an issue, I'll deal with it then.
+- The instructions are adamant about using Balena Etcher to make the disk instead of `dd`, but Balena isn't working (and didn't for OctoPi either) so I rebeliously used `dd`. It worked for making my initial SD card.
+- It always refers to `/dev/sda` as the SSD. In my case, it was, but I don't know if it's guaranteed that it will be. You can check before you start with `sudo fdisk -l`
+- When I ran the storage benchmark at the end of the guide, I got a score of 6309, which is slightly below average for the T5, [according to the results online](https://storage.jamesachambers.com/fastest/). Based on a comment on the main page, I could play around with the Quirks stuff to maybe speed it up. But the results are also skewed by some people overclocking the crap out of their Pi 4s, so I'm going to call this good enough for now.
+
+After I'm finished, the Pi is now using the "default" everything (`/home` and `/`) that's on the new SSD, but my "updated" versions (that I made on the SD card) are still on the SD card. Can I just copy the contents of these directories on the SD card to what's on the SSD? ...What's the worst that could happen?
+
+Two things here: I need to keep the permissions on everything when I copy it, and I probably shouldn't do this on the system while I'm running it. So I powered down the Pi and plugged both the SSD and SD card into my desktop. It's important to keep track of which is which, because they'll look nearly identical. In my case, I plugged in the SD card first, so it mounted as `/media/jtebert/boot` (the partition we're not going to mess with) and `/media/jtebert/rootfs`. Then the relevant SSD partition mounted as `/media/jtebert/rootfs1`.
+
+After some digging on Google, I found [this StackExchange post](https://superuser.com/a/713017/788876), which covered the issue of transferring everything with the right ownership and permissions. I left out all the things it talked about excluding, but I wanted to make sure I didn't mess with the `/etc/fstab` (leaving it to boot from the wrong place), so I marked that for exclusion. I also had to run it as root or some stuff wouldn't transfer because of permissions errors.
+```shell
+sudo rsync -axHAWXS /media/jtebert/rootfs/ /media/jtebert/rootfs1/ --info=progress\
+    --exclude='media/jtebert/rootfs/etc/fstab'
+```
+
+Plugged them both back into the Pi, crossed my fingers, and it works! To make sure I wasn't tricking myself and it was actually running from the SSD, I ran:
+```shell
+findmnt -n -o SOURCE /
+```
+and indeed, `/` is on `/dev/sda2`, the SSD. That was a lot less painful than I expected, and I didn't even need to use my sketchy flash drive backup.
 
 ## TODO
 
 - Change username (which probably means [making a new user and moving stuff over](https://www.raspberrypi.org/forums/viewtopic.php?t=12270))
 - Change login screen
 - Fix caps lock key... *permanently*
-- Add SSD (when it arrives)
