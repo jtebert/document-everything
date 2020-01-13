@@ -102,10 +102,29 @@ And then I ended up using the pre-generated Adapta Red Grey Nokto instead of my 
 I also used this [Adapta XFCE fix](https://www.xfce-look.org/p/1262068/) to get the menu bars to look right
 
 And I used [Papirus folder icon colors](https://github.com/PapirusDevelopmentTeam/papirus-folders) to make the folders red like everything else. (This assumes you've already added the Papirus repository)
-  ```shell
-  sudo apt-get install papirus-folders
-  papirus-folders -C red --theme Papirus-Dark
-  ```
+```shell
+sudo apt-get install papirus-folders
+papirus-folders -C red --theme Papirus-Dark
+```
+
+### Prettier login screen
+
+First I want to fix the fact that this automatically logs in on boot. Turns out this is easy to fix inside of `sudo raspi-config`. Go to Boot Options > Desktop and select the option for desktop without automatic login.
+
+OK, now to make that login screen as pretty as everything else. It's using its own greeter settings within lightdm, which are stored in `/etc/lightdm/pi-greeter.conf` (as I learned [here](https://www.raspberrypi.org/forums/viewtopic.php?t=164001)). I backed up the original and made mine look like this:
+```shell
+[greeter]
+default-user-image=/home/pi/Pictures/raspberry-pi-logo-mono.png
+desktop_bg=#d6d6d3d3dede
+wallpaper=/home/pi/Pictures/wallpapers/mars-ultrawide.png
+wallpaper_mode=crop
+gtk-theme-name=Adapta-RedGrey-Nokto
+gtk-icon-theme-name=Papirus-Dark
+gtk-font-name=Montserrat 11
+```
+Now it matches the theme, fonts, icons, and background I already set up.
+
+I also had to make sure that I had the font installed system-wide (putting it in `/usr/local/share/fonts`) and that both the font and images had the permission `644` (`-rw-r--r--`) so they could be accessed.
 
 ### Miscellaneous
 
@@ -169,5 +188,4 @@ and indeed, `/` is on `/dev/sda2`, the SSD. That was a lot less painful than I e
 ## TODO
 
 - Change username (which probably means [making a new user and moving stuff over](https://www.raspberrypi.org/forums/viewtopic.php?t=12270))
-- Change login screen
 - Fix caps lock key... *permanently*
