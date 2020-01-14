@@ -171,12 +171,12 @@ Yesterday I ran across a [Raspberry Pi Case on Thingiverse](https://www.thingive
 1. In CAD, create the keycap with a 0.2 mm depth inset for the legend. (0.2 mm is the height of the first layer.) Make the legend as a separate part (in place), 0.2 mm thick. Export each as a separate STL.
 2. PrusaSlicer setup:
    1. Under Printer Settings > General > Capabilities, set the number of extruders to 2, and check the box for Single Extruder Multi Material
-   2. For each extruder on the left side of the Printer Settings, spthe characters `00bd ` instead.. In Printer Settings > Custom G-code > Tool change G-code, add `M600`. That's the code for manual filament change.
+   2. For each extruder on the left side of the Printer Settings, change the color so you can tell them apart. In Printer Settings > Custom G-code > Tool change G-code, add `M600`. That's the code for manual filament change.
    4. In Print Settings > Multiple Extruders > Wipe tower, *uncheck* the enable box. (You don't need a purge block if you're changing the filament manually.)
    5. Under Print Settings > Skirt and Brim, set the skirt height to at least 2. This will keep any gunk from the filament swapping out of the print itself.
-   6. The Thingiverse link also has suggestions about post-processing to know which filament to swap when, but I haven't bothered with that. You can tell which color will print first by looking at the color of the first layer skirt. If it's not doing it in the order you want, just swap spthe characters `00bd ` instead.. Print setup:
+   6. The Thingiverse link also has suggestions about post-processing to know which filament to swap when, but I haven't bothered with that. You can tell which color will print first by looking at the color of the first layer skirt. If it's not doing it in the order you want, just swap  which STL is printed with extruder 1 and 2.
    1. Import *both* STLs at the same time. Because you have multiple extruders selected, you should get a prompt asking if you want to treat it as one multi-material object. Select yes.
-   2. In the plater, check the right side bar and verify that each spthe characters `00bd ` instead.. Hit "Slice Now" and you should see the multi-color g-code preview for printing.
+   2. In the plater, check the right side bar and verify that each part is set to use a different extruder. Hit "Slice Now" and you should see the multi-color g-code preview for printing.
 
 Surprisingly, this worked for me on the first try. I went back to printing the keycaps letter-side down for two reasons: first, I thought it would make a nice textured finish with the two colors (no bridging for the legend now). But more importantly, I could do the filament swapping immediately and not have it wait around for me half and hour (or more) later.
 
@@ -208,7 +208,9 @@ Once I started printing keycaps in batches instead of individually, I ended up h
 
 At least it just broke the keycap (which I can easily replace) instead of the switch itself. I did a bit of fiddling with parts of the stem design (reducing the asymmetry between the slot sizes for the stem) and increasing the tolerance to -0.02 to get something that worked for large batches.
 
-The first set of multiple keys I printed was my highlight keys (because there's red filament in the lab but not at home). Here's a comparison of my three rounds spthe characters `00bd ` instead. versions of highlight keys](/assets/img/projects/keyboard/highlight-key-versions.jpg)
+The first set of multiple keys I printed was my highlight keys (because there's red filament in the lab but not at home). Here's a comparison of my three roundsto get them looking like I want:
+
+![3 versions of highlight keys](/assets/img/projects/keyboard/highlight-key-versions.jpg)
 
 In the first version (top row), I was still using the text version of the enter symbol. It looks a little small and didn't quite match the style I wanted. And the escape key symbol (also the text version) was smaller than I wanted; in fact, the arrow part came off the bed and just became a blob.
 
@@ -260,7 +262,7 @@ But that means we first have to go through the process of [creating a custom lay
   #define UNUSED_PINS \
       { B6, B5, B4, D6 }
   ```
-- In `<project_name>.h`, we'll fill out the `LAYOUT`: how the pins map to the layout of the keyboard. This I found a little confusing, because the example used key names like `K03` for the key in the 0th row and 3rd column. But I have more than 10 columns. Because downloading the QMK firmware also includes the firmware for every other keyboard, I could look for examples of how othershandled it, and they weren't consistent. Some used `k0A` (hex) to indicate being the 0th row and 10th column, where others used `K010`. (Also inconsistent capitalization.) These are all using constants/variables, not strings, so my guess is that behind the scenes QMK gives you every option, or some of spthe characters `00bd ` instead.-digit version, which compiles; we'll find out later if it actually works correctly. Mine ended up looking like this:
+- In `<project_name>.h`, we'll fill out the `LAYOUT`: how the pins map to the layout of the keyboard. This I found a little confusing, because the example used key names like `K03` for the key in the 0th row and 3rd column. But I have more than 10 columns. Because downloading the QMK firmware also includes the firmware for every other keyboard, I could look for examples of how othershandled it, and they weren't consistent. Some used `k0A` (hex) to indicate being the 0th row and 10th column, where others used `K010`. (Also inconsistent capitalization.) These are all using constants/variables, not strings, so my guess is that behind the scenes QMK gives you every option, or some of them are aliases for others. I opted for the 3-digit version, which compiles; we'll find out later if it actually works correctly. Mine ended up looking like this:
   ```c
     #define LAYOUT( \
         K000, K001, K002, K003, K004, K005, K006, K007, K008, K009, K010, K011, K012, K013, K014, \
@@ -290,7 +292,7 @@ Because it's large, you can see the full keymap [in my Github repository](https:
 
 **Modifier keys (`(` = `Shift+9`):** While TMK made this a pain, QMK makes it easy ([as described here](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#modifier-keys)). Where I would but a keycode like `KC_9`, I instead use `LSFT(KC_9)` or `S(KC_9)` to get a left parenthesis (`Shift + 9`).
 
-**Emoji (full unicode mapping)**: QMK has a whole [section of documentation for Unicode input](https://beta.docs.qmk.fm/features/feature_unicode). If I only spthe characters `00bd ` instead.-4 digit code, which cover non-emoji stuff), there's a simpler way to do this. But since I want Emoji (5-digit unicode characters), I have to encode all of my Unicode using the more complicated method.
+**Emoji (full unicode mapping)**: QMK has a whole [section of documentation for Unicode input](https://beta.docs.qmk.fm/features/feature_unicode). If I only wanted "simple" unicode characters (anything with a 3-4 digit code, which cover non-emoji stuff), there's a simpler way to do this. But since I want Emoji (5-digit unicode characters), I have to encode all of my Unicode using the more complicated method.
 
 - First, in the project's `rules.mk`, you add the following: `UNICODEMAP_ENABLE = yes`
 - In the `keymap.c` file, you then need to create names for every unicode character you want to use (before you define your keymaps):
@@ -454,15 +456,15 @@ Turns out 87 diodes is a lot, so we took turns on this part.
 
 Next, we have to wires each of these diodes together into a row. To make it harder to short the row wires and column wires of the matrix, we want to keep the wires between each of the switches insulated. That means a lot of wire stripping. To make our lives easier, we employed some math to strip our wires beforehand.
 
-Switches are spaced at 19 mm apart, and we want to leave ourselves a little gap in the insulation to spthe characters `00bd ` instead. mm). For our 15 switches in a row, that means we want 14 sections of insulation, each 16 mm long. To make sure we had enough wire length, we first stripped about 5 cm of insulation off the end of our solid core wire. Then we marked out our 16 mm sections with Sharpie and cut with wire strippers. Now we can slide the little sections of insulation around as we solder to put them in between the switches. It turns out its not worth trying to line up all the little gaps before you solder; just do it for the next switch as you go.
+Switches are spaced at 19 mm apart, and we want to leave ourselves a little gap in the insulation to actually solder the diodes to the wires (say, 3 mm). For our 15 switches in a row, that means we want 14 sections of insulation, each 16 mm long. To make sure we had enough wire length, we first stripped about 5 cm of insulation off the end of our solid core wire. Then we marked out our 16 mm sections with Sharpie and cut with wire strippers. Now we can slide the little sections of insulation around as we solder to put them in between the switches. It turns out its not worth trying to line up all the little gaps before you solder; just do it for the next switch as you go.
 
 To make it easier to solder, we again make little loops (well, half loops this time). Lay the wire down just north of the bump in the middle of the switch, with the diode cathode leads underneath. Then fold the first diode up and over the stripped section of wire (forming a little U), and solder. Then you can slide the next section of insulation down tight to this (preferably after you let it cool) and move on to the next switch.
 
 ![Closeup of soldered row](/assets/img/projects/keyboard/assembly-row-closeup.jpg)
 
-The one challenge we encountered with our nice 16 mm insulation sections is that it doesn't apply when you have switches more the one switch-length apart, like for the enter key and the space/backspace keys on the bottom row. But it turns out the math here isn't complicated. The enter key is spaced in between two columns, so it's 1.5 switch-lengths away from the next switch spthe characters `00bd ` instead. mm stripped section, and we need a 26 mm insulation section instead of 16 mm: $$1.5 \times (spthe characters `00bd ` instead.~\text{mm} = 26~\text{mm}$$.
+The one challenge we encountered with our nice 16 mm insulation sections is that it doesn't apply when you have switches more the one switch-length apart, like for the enter key and the space/backspace keys on the bottom row. But it turns out the math here isn't complicated. The enter key is spaced in between two columns, so it's 1.5 switch-lengths away from the next switch in the row (about 29 mm). Subtract our 3 mm stripped section, and we need a 26 mm insulation section instead of 16 mm: $$1.5 \times (19~\text{mm}) - 3~\text{mm} = 26~\text{mm}$$.
 
-We can also do the same thing for the gap between the 2u keys in the bottom row: $$2 \spthe characters `00bd ` instead.~\text{mm} = 35~\text{mm}$$.
+We can also do the same thing for the gap between the 2u keys in the bottom row: $$2 \times (19~\text{mm}) - 3~\text{mm} = 35~\text{mm}$$.
 
 We took turns stripping wire and soldering, then trimmed up all the loose wire and and ends of the diode leads.
 
@@ -472,7 +474,7 @@ We took turns stripping wire and soldering, then trimmed up all the loose wire a
 
 This is very similar to wiring the rows, but this time there are no diodes to connect to; we're soldering all of the column pins together directly. This does mean that we don't have any convenient little loops anymore, but we can make loops in the wire as we go to make soldering easier.
 
-Stripping the wire is also pretty much the same as for the rows, with 19 mm vertical spacing for the switches as well. The one trick here is that some rows only have 5 rows of keys, while others have keys in the column slightly offset from the others. (See the wiring diagram above or the result picture below.) I *could* calculate the angle between the keys again for this, but it's really not a precise operation, so I just approximated spthe characters `00bd ` instead. mm.
+Stripping the wire is also pretty much the same as for the rows, with 19 mm vertical spacing for the switches as well. The one trick here is that some rows only have 5 rows of keys, while others have keys in the column slightly offset from the others. (See the wiring diagram above or the result picture below.) I *could* calculate the angle between the keys again for this, but it's really not a precise operation, so I just approximated the distance between the pins with a ruler and subtracted 3 mm.
 
 Here, each column is slightly different, so it was useful to keep them all in order to prevent confusion. (The color coding here is also useful. But we forgot to grab blue wire, so we'll have to come back to those columns.) Because we also have to wrap the wires around each of the pins, we started with a longer stripped length at the end of the wire so we wouldn't run out.
 
@@ -594,17 +596,17 @@ Now we have a functional keyboard without ghosting!
 
 I'll update this as I go. You can get this stuff cheaper on eBay/AliExpress, but I have a deadline, so they're from Amazon.
 
-| Item                                                                                                                                   | Quantity | Unit Price |      Total |
-| :------------------------------------------------------------------------------------------------------------------------------------- | -------: | ---------: | ---------: |
-| [1N148 diodes (pack of 100)](https://smile.amazon.com/gp/product/B06XB1R2NK)                                                           |        1 |      $4.99 |      $4.99 |
-| [Teensy 2.0 microcontroller](https://smile.amazon.com/gp/product/B00NC43256/)                                                          |        1 |     $19.20 |     $19.20 |
-| [Gateron Mechanical switches (pack of 90)](https://smile.amazon.com/gp/product/B07X3VFBFJ/?th=1)                                       |        1 |     $34.99 |     $34.99 |
-| [Hatchbox PLA filament](https://smile.amazon.com/stores/page/BE84484A-154A-49EC-BF3F-FF4CE6E4ECB7)                                     |          |            |            |
-| [Rubber feet](https://spthe characters `00bd ` instead.-8-in-Clear-Adhesive-Bumper-Pads-16-Pack-822891/306229466) (pack of at least 8) |        1 |      $2.48 |      $2.48 |
-| M3x10 mm screws and nuts                                                                                                               |       10 |
-| Solid-core wire                                                                                                                        |
-| Solder                                                                                                                                 |
-|                                                                                                                                        |          | **TOTAL:** | **$59.18** |
+| Item                                                                                                                                | Quantity | Unit Price |      Total |
+| :---------------------------------------------------------------------------------------------------------------------------------- | -------: | ---------: | ---------: |
+| [1N148 diodes (pack of 100)](https://smile.amazon.com/gp/product/B06XB1R2NK)                                                        |        1 |      $4.99 |      $4.99 |
+| [Teensy 2.0 microcontroller](https://smile.amazon.com/gp/product/B00NC43256/)                                                       |        1 |     $19.20 |     $19.20 |
+| [Gateron Mechanical switches (pack of 90)](https://smile.amazon.com/gp/product/B07X3VFBFJ/?th=1)                                    |        1 |     $34.99 |     $34.99 |
+| [Hatchbox PLA filament](https://smile.amazon.com/stores/page/BE84484A-154A-49EC-BF3F-FF4CE6E4ECB7)                                  |          |            |            |
+| [Rubber feet](https://www.homedepot.com/p/Everbilt-3-8-in-Clear-Adhesive-Bumper-Pads-16-Pack-822891/306229466) (pack of at least 8) |        1 |      $2.48 |      $2.48 |
+| M3x10 mm screws and nuts                                                                                                            |       10 |
+| Solid-core wire                                                                                                                     |
+| Solder                                                                                                                              |
+|                                                                                                                                     |          | **TOTAL:** | **$59.18** |
 
 Non-consumable equipment:
 - 3D printer
