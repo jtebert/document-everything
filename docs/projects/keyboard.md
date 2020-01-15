@@ -26,6 +26,60 @@ You can download the latest version of the firmware from [the GitHub repository]
 (Gotta put a nice picture first for the social media previews.)
 {:.fs-2}
 
+## Links & Files
+
+Interested in making all or part of this? Here's what you'll need.
+
+### Firmware
+
+This keyboard uses QMK, so it's very flexible to modify the layout.
+
+[Firmware source files](https://github.com/jtebert/qmk_firmware/). And [this project's files](https://github.com/jtebert/qmk_firmware/tree/master/keyboards/project223).
+
+To build the firmware (once you have your [system set up](https://beta.docs.qmk.fm/newbs/newbs_getting_started)), run:
+```shell
+make project223:default
+```
+Then [flash according to the QMK instructions](https://beta.docs.qmk.fm/newbs/newbs_flashing).
+
+### 3D printed parts
+
+[CAD files (in OnShape)](https://cad.onshape.com/documents/e3bd2d9f8105ee36cd853915/w/b1f59515c735835fd5bd6d6e/e/b1b1c60eb691f9dff8181091)
+
+These are the STLs as exported from the above source on 2020-01-15 (v1.0). If changes have been made to the source CAD since then, you can also export yourself. If you want to change the tolerances, you'll also need to make a copy of the CAD document and modify it. At this point, I haven't had time to clean up the CAD files to make it more clear what you need to do to make these changes. (I'll hopefully get to that eventually.)
+
+#### Case STLs
+
+The case is 297 mm wide, so you either need a big printer, or you'll have to split it into pieces to print.
+
+- [Case top](/assets/files/projects/keyboard/keyboard-case-bottom-plate-no-text.stl)
+- [Case bottom (with text)](/assets/files/projects/keyboard/keyboard-case-bottom-plate-with-text.stl)
+- [Case bottom (without text)](/assets/files/projects/keyboard/keyboard-case-bottom-no-text.stl)
+
+#### Keycap STLs:
+
+The keycaps are split into groups to print in the print area of a more normal-sized printer. I recommend printing the keycaps face down with a layer height of 0.1 mm. For more printing details, see the [keycaps section](#keycaps) below.
+
+- Base characters
+  - Left side: [keys](/assets/files/projects/keyboard/keycaps-base-l-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-base-l-legends.stl)
+  - Right side: [keys](/assets/files/projects/keyboard/keycaps-base-r-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-base-r-legends.stl)
+- Numbers (and `-`, `=`): [keys](/assets/files/projects/keyboard/keycaps--keys.stl), [legends](/assets/files/projects/keyboard/keycaps--legends.stl)
+- Modifiers
+  - Left side: [keys](/assets/files/projects/keyboard/keycaps-mod-l-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-mod-l-legends.stl)
+  - Right side: [keys](/assets/files/projects/keyboard/keycaps-mod-r-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-mod-r-legends.stl)
+  - Highlighted modifiers: [keys](/assets/files/projects/keyboard/keycaps-mod-highlight-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-mod-highlight-legends.stl)
+- Arrows: [keys](/assets/files/projects/keyboard/keycaps-arrow-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-arrow-legends.stl)
+- Function keys
+  - F1-F4, F9-F12: [keys](/assets/files/projects/keyboard/keycaps-fn-end-legends-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-fn-end-legends.stl)
+  - F5-F8: [keys](/assets/files/projects/keyboard/keycaps-fn-mid-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-fn-mid-legends.stl)
+
+### Assembly
+
+[Bill of materials](#bill-of-materials) for additional parts
+
+[Keyboard wiring diagram]({{ "/assets/img/projects/keyboard/wiring.png" }})
+
+
 ## Inspiration
 
 I want to build a custom mechanical keyboard from the ground up. That means a custom layout, designing the case to fit that, hand wiring the keyboard, getting (or making) keycaps, compiling my own firmware,
