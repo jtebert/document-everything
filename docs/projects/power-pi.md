@@ -185,6 +185,72 @@ findmnt -n -o SOURCE /
 ```
 and indeed, `/` is on `/dev/sda2`, the SSD. That was a lot less painful than I expected, and I didn't even need to use my sketchy flash drive backup.
 
+## Pi-hole
+
+I hate intrusive ads. They're especially bad on mobile, where they massively slow everything down and mobile browsers don't have extensions to block them. (I know there are exceptions. It still sucks.) So let's set up network-wide ad blocking with [Pi-hole](https://pi-hole.net/).
+
+The first hiccup here: it doesn't officially support Buster yet, the latest release of Raspbian. But at least people report it working anyway, so we'll just run with it.
+
+It's got a convenient one command install:
+```shell
+curl -sSL https://install.pi-hole.net | bash
+```
+
+These seem to becoming much more common than when I last did Pi stuff three of four years ago, which is great for ease of use (if they work). The problem with this is a lack of guidance. When it asks you to select your upstream DNS provider, for example there's no additional information in the installer or on the main Pi-hole install page. I had to Google it and find a [Reddit thread](https://www.reddit.com/r/pihole/comments/aor5m3/upstream_dns_provider/).
+
+Another issue: the script has to be run as root, but the one-liner they give you doesn't tell you that. It shows up as a quick failure/warning message before dumping you into a full-terminal view so you can't see it. (And then my install failed partway through and I had to restart to make DNS work on my Pi again.) So I tried running it with `sudo`, and the error went away, but the full screen thing crashed as soon as it appeared. I ended up doing `sudo su` and running it as root this way. Hacky AF.
+
+There is a warning in the installer that the router could decide to take the static IP address that you're assigning on the device (in my case `192.168.0.107`), but normally routers are smart enough to avoid this. I haven't had a problem with my OctoPi server having its IP address getting re-assigned, so I'm probably fine. (FYI, I'm using a TP-Link Archer C7.) In case I mess something up while trying to reserve an address, I'll get this working first, then try setting that on the router.
+
+Still, a relatively painless installation process, compared to some stuff. (After all, this was setting up an entire server behind the scenes.)
+
+Now I have to configure things to use this new (hopefully functional) server. Before I put it on the whole network without asking my roommates, I should probably test this on my own devices. First thing: turns out it works on the device running Pi-hole without needing to do anything. Looking at the query log on [pi.hole](http://pi.hole/admin/queries.php), I see it's blocking stuff on the `localhost` client. I confirmed this by opening [speedtest.net](https://www.speedtest.net/) in an incognito tab: no ads! Meanwhile, that same page on my desktop has total ad cancer. We're in business!
+
+### A side adventure in network management...
+
+Now let's try to make my desktop use the Pi-hole. According to the [Pi-hole FAQ](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) I should be able to go to my wi-fi settings and pick a network to edit. Then go to the "IPv4 Settings" tab, put in the Pi-hole's IP address, and change the method from "Automatic (DHCP)" to "Automatic (DHCP) addresses only." ...But that tab has no ""Automatic (DHCP) addresses only" option.
+
+So I decided to see what these settings looked like on the Pi, only to realize that now using XFCE instead of the default PIXEL, I had no way to see or manage my networks. I was able to fix that problem by [installing a couple packages](https://raspberrypi.stackexchange.com/questions/67616/how-to-show-wifi-launcher-in-xfce): `blueman` and `wicd`. But since this is different than Network Manager, it didn't help in identifying the DHCP configuration issue.
+
+...And when I restarted the computer, I got an icon for wifi in the sidebar (awesome!)... and I couldn't connect to the internet (not awesome!) It's now complaining that the network requires encryption and I don't have an encryption key. WTF. Turns out that means a password (not a user-friendly way to put this), and this different network manager apparently doesn't get access to the passwords from the other one. I have to first pick the right encryption method from a list of 18 options. According to the network manager on my desktop, the security type is "WPA & WPA2 Personal". Guess what's not an option in the Pi's settings? I tried "WPA1/2 (Passphrase)" and it said (after waiting...) "Connection Failed: Bad password". (Yes, I checked the password.) Then I tried pretty much every other option in the list. Then I tried the 2.4 GHz network instead of the 5 GHz network. Same result. Now I'm afraid that if I uninstall this, I'll totally lose any way to connect to the internet. So let's restart again and see what happens first?
+
+...And now it's connected when it boots up?? I don't understand any of this. But the "Automatically connect" box is unchecked. And if I disconnect, I can't reconnect. So it seems like the Raspbian default network management is connecting it the first time, but when I disconnect, this new, other manager is failing. So I'll just uninstall it, hope the internet doesn't break, and worry about that later...
+
+In the meantime, I just gave up on figuring this out myself and asked on Reddit what's going on with this Linux client/network issue. (I don't even know what to Google to solve this.)
+
+Somewhere in my online searching, I ran across `pihole -d` as a thing that will give you debug output, so I ran it. It showed a bunch of stuff about `eth0` (wired internet) but not `wlan0`(wireless internet). After scratching my head and retrying the installation to reconfigure, rebooting, and running the debug again, my stupidity dawned on me. By default, `eth0` was selected in the terminal. I used my arrow keys to go down to `wlan0` and hit Enter. But enter doesn't select the option; it moves on to the next step. I never actually selected `wlan0`.
+
+Does this solve my problem? Partially. On my Desktop, I still needed to make one change. I left the IPv4 method as "Automatic (DHCP)", but now I went back and unchecked "Automatic" next to DNS. Now, it would just check the Pi-hole for DNS. I had tried this before, but it didn't work because the Pi-hole wasn't actually connecting to the network. (It was trying to connect by ethernet, which it didn't have connected.) Now, it would *only* check the Pi for DNS, not the router.
+
+Now speedtest.net doesn't have ads, and my Pi-hole queries show blocked ads from the Desktop!
+
+## VPN
+
+I was going to use the Pi to set up a VPN, but when I was digging around in the router settings to set up Pi-hole, I discovered that this router has the capability to manage a VPN itself. Thanks, TP-Link Archer C7 v4, and thanks, former roommate who purchased this router and left it behind.
+
+I started with this [tutorial from TP-Link](https://www.tp-link.com/us/support/faq/1544/?utm_medium=select-local), which starts by saying you should already have dynamic DNS set up.
+
+I created a hostname (`jtebert.hopto.org`) on [No-IP](https://www.noip.com/). Then in the router configuration (at `192.168.0.1`), I went to Advanced > Network > Dynamic DNS, and entered the info I had just set up. I didn't know what to do with the "WAN IP binding" option, but [this page](https://www.tp-link.com/ae/support/faq/1921/) suggests that I need to enable it. When I clicked Save, I got a little success message, so I guess it worked?
+
+So now back to the VPN, under Advanced > VPN Server > OpenVPN. First, it complains I haven't generated a certificate. So scroll down to the next box and the page and click generate. (I don't know why it doesn't just do this automatically.) I left the "Service Type", "Service Port", and "VPN Subnet/Netmask" with their default settings, and set "Client Access" to "Internet and Home Network." (I think that means that using the VPN will mean that Pi-hole is in effect when using it, but we'll see.) Then hit "Export." This configuration file is what you'll use to set up/connect to the VPN from a client.
+
+Let's try it, from the desktop this time. (Still in the same network, but if this doesn't work there are bigger issues.) Annoyingly, there's no OpenVPN client installed by default on Ubuntu, so we need to install it and integrate it with the network manager:
+```shell
+sudo apt install openvpn network-manager-openvpn network-manager-openvpn-gnome
+```
+Now, when you open up the network settings and click to add a VPN, there should be an option for OpenVPN. But don't use it directly; pick "Import from File" and use your exported `.ovpn` file.
+
+But then when I tried to connect, it failed with no clear explanation of why. Hopefully the command line interface will at least give me an error message I can use:
+```shell
+openvpn --config OpenVPN_config.ovpn
+```
+It gave an error, but not an informative one. Eventually, I went back to the router page and discovered that I had forgotten to check the "Enable VPN Server" box. *Facepalm.*
+
+Now I get a new error on the client CLI: `Cannot ioctl TUNSETIFF tun: Operation not permitted`. Copy and paste into Google, and I find out that [I have to run this as root](https://serverfault.com/questions/647231/getting-cannot-ioctl-tunsetiff-tun-operation-not-permitted-when-trying-to-con). Now the CLI interface gets to `Initialization sequence Completed`, which seems like success, but I don't know how to test if that means the VPN is working. But now when I turn on the VPN from the GUI, it says it connects almost instantly! And it shows up on the router's list of VPN connections.
+
+With a bit more digging, I've discovered that people don't like No-IP. (For example, you have to log in and check a box every 30 days to keep your URL active.) [Duck DNS](https://www.duckdns.org/why.jsp) looks like a really nice option, and I could even [use my Google domain for DDNS](https://support.google.com/domains/answer/6147083?hl=en), but... my router doesn't support it. For some dumb reason, it has limited, fixed options for DDNS providers: DynDNS (which is apparently now shut down), No-IP, and TP-Link itself. The documentation on using TP-Link is limited at best. I was able to create and enable a domain, but for some reason the .ovpn file isn't including the new domain, even if I log out of No-IP. At that point, it was just putting in the raw dynamic IP, but it turns out that in the client, I can change it to `jtebert.tplinkdns.com` and it still works. Really annoying if the exported file contains the wrong IP address, though.
+
+
 ## TODO
 
 - Change username (which probably means [making a new user and moving stuff over](https://www.raspberrypi.org/forums/viewtopic.php?t=12270))
