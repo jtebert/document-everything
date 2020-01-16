@@ -251,6 +251,28 @@ Now I get a new error on the client CLI: `Cannot ioctl TUNSETIFF tun: Operation 
 With a bit more digging, I've discovered that people don't like No-IP. (For example, you have to log in and check a box every 30 days to keep your URL active.) [Duck DNS](https://www.duckdns.org/why.jsp) looks like a really nice option, and I could even [use my Google domain for DDNS](https://support.google.com/domains/answer/6147083?hl=en), but... my router doesn't support it. For some dumb reason, it has limited, fixed options for DDNS providers: DynDNS (which is apparently now shut down), No-IP, and TP-Link itself. The documentation on using TP-Link is limited at best. I was able to create and enable a domain, but for some reason the .ovpn file isn't including the new domain, even if I log out of No-IP. At that point, it was just putting in the raw dynamic IP, but it turns out that in the client, I can change it to `jtebert.tplinkdns.com` and it still works. Really annoying if the exported file contains the wrong IP address, though.
 
 
+## Audio
+
+I tried watching a YouTube video, because people send there are issues with 1080p video on the Pi. But I was too distracted by the horrendous audio: rattles, choppy, static, etc. And, like the network interface, I realized that I have no way of controlling the audio in XFCE. Fantastic.
+
+I started with the [first link I found](https://mike632t.wordpress.com/2014/02/04/installing-xfce/), which is now almost 6 years old (and it shows):
+```shell
+sudo apt install alsa-base alsa-utils pimixer
+```
+That gets me a mixer I can at least open from the programs list, but nothing integrated into the settings, and no way to choose the output. (It's only playing from HDMI, and it doesn't even show the built-in audio jack.)
+
+One thing that kept popping up was that some of this shows up in the "Indicators" panel widget, which didn't come up as an option for me. So I installed it:
+```shell
+sudo apt install xfce4-indicator-plugin
+```
+and nothing showed up.
+
+[These instructions](https://ubuntuforums.org/showthread.php?t=2210233) let me get an icon (at least temporarily), but it's kludgy AF -- middle clicking on it opens alsamixer in a terminal, and a regular click mutes it and pops up the volume in the middle of the screen.
+
+To change the audio output you can [use `sudo raspi-config`](https://www.raspberrypi.org/documentation/configuration/audio-config.md). Go to Advanced Options > Audio. But if you're using their PIXEL desktop environment, you can do it fromt he desktop taskbar. But if you're not using their DE, you're apparently shit out of luck.
+
+I did discover that there's a PulseAudio Plugin you can add to the panel., which does actually let me control the volume and open a mixer. But it still doesn't let me change the audio output; it just shows Port: Analog Output (even though it's actually playing through HDMI).
+
 ## TODO
 
 - Change username (which probably means [making a new user and moving stuff over](https://www.raspberrypi.org/forums/viewtopic.php?t=12270))
