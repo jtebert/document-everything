@@ -224,6 +224,23 @@ Does this solve my problem? Partially. On my Desktop, I still needed to make one
 
 Now speedtest.net doesn't have ads, and my Pi-hole queries show blocked ads from the Desktop!
 
+## SSH
+
+I want to be able to manage/operate the Pi headless, so I need to be able to SSH into it.
+
+First thing I need to do is enable SSH. Inside of `sudo raspi-config`, go to Interfacing Options > SSH and enable it. Now you should be able to SSH in from within the network by the Pi's IP address.
+
+But I want to be able to access it by its hostname, like I can with my OctoPi setup. For that, it seems like I need Avahi, which will broadcast the Pi's hostname without needing to set up a within-network DNS server (which, TBF, the Pi Hole is already doing). There seem to be a lot of complicated instructions on how to possibly do this, but I found a [Medium post with only two lines of stuff to do](https://medium.com/@pierre.loret.dev/install-avahi-on-your-pi-4cd63682ce37), so that seems like an easy first thing to try. First, install avahi and related stuff (I actually don't know what the other stuff does.):
+```shell
+sudo apt-get install db5.1-util avahi-daemon libavahi-client-dev libdb5.3-dev
+```
+Then make sure it runs at boot:
+```shell
+sudo update-rc.d avahi-daemon defaults
+```
+
+I rebooted the Pi, and it actually works! Now I can SSH in to `pi@fortyone.local`.
+
 ## VPN
 
 I was going to use the Pi to set up a VPN, but when I was digging around in the router settings to set up Pi-hole, I discovered that this router has the capability to manage a VPN itself. Thanks, TP-Link Archer C7 v4, and thanks, former roommate who purchased this router and left it behind.
