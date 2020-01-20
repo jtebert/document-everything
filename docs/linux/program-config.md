@@ -79,7 +79,7 @@ JetBrains makes nice IDEs for a bunch of languages (for us mere mortals who don'
 
 ### Updating
 
-If you're installing an update, follow the same steps. Creating a new desktop entry should overwrite the old one, but you may need to restart your session for it to take effect. (For me in Gnome, that's Alt+F2, then `r`). Also note that if you have a user-specific desktop entry, that will take precedence over a system-wide one.
+If you're installing an update, follow the same steps. Creating a new desktop entry should overwrite the old one, but probably differs by distro need to restart your session for it to take effect. (For me in Gnome, that's Alt+F2, then `r`). Also note that if you have a user-specific desktop entry, that will take precedence over a system-wide one.
 
 ### Changing the Icon
 
@@ -120,3 +120,66 @@ ssh://username@host
 Or whatever your preferred accessing method is (ssh, stfp, ftp).  (Also useful to remember: the change the location bar from buttons to a text field, hit Ctrl+L.)
 
 The remote directory is then mounted and appears on the left side bar.  It will stay mounted even if you close Nautilus, and you just have to click on it to re-open it.  To unmount, just click the arrow next to it in the panel (like unmounting/ejecting a drive/disk).
+
+## Spotify Themes with Spicetify CLI
+
+Someone made a program that lets you add themes and extensions to Spotify. The Linux version only has a command line version, hence [Spicetify CLI](https://github.com/khanhas/spicetify-cli).
+
+### Installation
+
+([Instructions from here](https://github.com/khanhas/spicetify-cli/wiki/Installation))
+
+- Download the [latest release](https://github.com/khanhas/spicetify-cli/releases) (the Linux tar file)
+- Make a folder and extract the tar file to it:
+  ```shell
+  mkdir ~/spicetify
+  tar xzf ~/Downloads/spicetify-x.x.x-linux-amd64.tar.gz -C ~/spicetify
+  ```
+  (filling in `x.x.x` with the version number you just downloaded)
+- Make spicetify runnable from anywhere by your user:
+  ```shell
+  ln -s ~/spicetify/spicetify ~/bin/spicetify
+  ```
+  (This requires that you have `~/bin` as part of your PATH, as [set up here](#make-a-shell-command))
+
+### Setup/Testing
+
+([From "Basic Usage"](https://github.com/khanhas/spicetify-cli/wiki/Basic-Usage))
+
+- Generate a config file:
+  ```shell
+  spicetify
+  ```
+- When you get the above working with no errors, run:
+  ```shell
+  spicetify backup apply enable-devtool
+  ```
+  To get this to work, I needed to [give write permissions](https://github.com/khanhas/spicetify-cli/wiki/Installation#note-for-linux-users) to the Spotify install location: (This is the install location in my Ubuntu/Pop system; probably differs by distro)
+  ```shell
+  sudo chmod 777 /usr/share/spotify -R
+  ```
+- Update Spotify with whatever changes you make:
+  ```shell
+  spicetify update
+  ```
+
+### Themes
+
+There's a whole repository of [community-created themes](https://github.com/morpheusthewhite/spicetify-themes) for Spicetify
+
+- Clone the `spicetify-themes` repository to Spicetify's Themes folder:
+  ```shell
+  git clone git@github.com:morpheusthewhite/spicetify-themes.git ~/.config/spicetify/Themes
+  ```
+  (Note that the [Themes folder location varies by OS](https://github.com/khanhas/spicetify-cli/wiki/Customization#themes))
+- Change the theme:
+  ```shell
+  spicetify config current_theme THEME_NAME
+  ```
+  where `THEME_NAME` is one of the options in the [Themes preview](https://github.com/morpheusthewhite/spicetify-themes/wiki/Themes-preview)
+- Apply the change and launch Spotify:
+  ```shell
+  spicetify apply
+  ```
+
+There are also [Spicetify extensions](https://github.com/khanhas/spicetify-cli/wiki/Extensions), but I haven't tried any of those yet.
