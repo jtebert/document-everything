@@ -20,7 +20,7 @@ permalink: /linux/programs
 | `sudo apt install gimp`                               | Raster graphics editor                                                                                                  |
 | [Typora](https://typora.io/)                          | Markdown editor                                                                                                         |
 | [MuseScore](https://musescore.org/en)                 | Music notation                                                                                                          |
-| [Spotify](https://www.spotify.com/us/download/other/) | Music                                                                                                                   |
+| [Spotify](https://www.spotify.com/us/download/other/) | Music ([add themes with Spicetify](/linux/program-config#spotify-themes-with-spicetify-cli))                            |
 | [Z shell](/linux/zsh)                                 | Better interactive shell                                                                                                |
 | [Steam](https://store.steampowered.com)               | Games!                                                                                                                  |
 
