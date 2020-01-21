@@ -75,5 +75,4 @@ From my (so far limited) experience with this, you'll probably need to re-check 
 3. Go through steps 8-12 of the previous section if you're not satisfied with the bed's levelness.
 
 Source: [/r/prusa3d](https://www.reddit.com/r/prusa3d/comments/bp440f/full_guide_to_doing_nylock_mod_if_you_havent_you/)
-
 {:.fs-2}

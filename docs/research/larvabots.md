@@ -42,3 +42,4 @@ The current (in progress) version of the LARVAbot code is an Arduino library. Be
      ```
 
 Sources: [Carlos Rodrigues Github](https://github.com/carlosefr/atmega)
+{:.fs-2}

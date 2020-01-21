@@ -16,7 +16,7 @@ var closeModal = function () {
 
 window.onload = function () {
     // Get all elements inside the page-content
-    var page_imgs = document.getElementById("main-content").querySelectorAll("img:not(#modal-content)");
+    var page_imgs = document.getElementById("main-content").querySelectorAll("img:not(#modal-content):not(#header-img)");
     // Add click opener to every image
     for (var i = 0; i < page_imgs.length; i++) {
         page_imgs[i].addEventListener('click', function () { openModal(this) });

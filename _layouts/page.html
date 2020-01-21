@@ -14,14 +14,19 @@ layout: default
 <hr> -->
 
 {% if page.has_children %}
-
+    {% comment %} I don't know how to directly make it do "if not page.has_children" {% endcomment %}
 {% else %}
-    {% if page.date %}
-        <h5 class="text-epsilon">Posted: {{ page.date | date: '%Y %B %-d' }} <i>(Last updated: {{ page.last_modified_at | date: '%Y %B %-d' }})</i></h5>
-    {% else %}
-        <h5 class="text-epsilon">Last updated: {{ page.last_modified_at | date: '%Y %B %-d' }}</h5>
-    {% endif %}
+    <h3 class="text-epsilon date">
+        {% if page.date %}
+            <b>Posted:</b> {{ page.date | date: '%Y %B %-d' }}<br>
+        {% endif %}
+        <b>Last updated:</b> {{ page.last_modified_at | date: '%Y %B %-d' }}
+    </h3>
     <hr>
+{% endif %}
+
+{% if page.image %}
+    <img src="{{ page.image }}" alt="{{ page.image_alt }}" id="header-img">
 {% endif %}
 
 {{ content }}

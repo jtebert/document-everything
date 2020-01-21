@@ -5,7 +5,7 @@ $link-color: $jte-green;
 
 $body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif;
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Space+Mono&display=swap');
 @import url('https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css');
 
 .site-title {
@@ -18,8 +18,21 @@ $body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica n
     font-family: "Space Mono", monospace;
 }
 
-// Image modal/lightbox
+// Use this if you want to expand all the blocks in the left hand nav
+// .navigation-list-item .navigation-list-child-list {
+//     display: block !important;
+// }
 
+.date {
+    line-height: 1.5em;
+}
+// Main image on pages
+#header-img {
+    display: block;
+    margin-bottom: 2em;
+}
+
+// Image modal/lightbox
 .active-modal {
     border: 3px solid red;
 }

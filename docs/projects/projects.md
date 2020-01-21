@@ -5,9 +5,9 @@ has_children: true
 permalink: projects
 nav_order: 6
 has_toc: false
+image: /assets/img/undraw_building_blocks_n0nc.svg
+image_alt: Building... something
 ---
-
-![Building... something](/assets/img/undraw_building_blocks_n0nc.svg)
 
 Check out what I'm up to in my free time, in approximately reverse chronological order.
 

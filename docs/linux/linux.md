@@ -4,10 +4,9 @@ title: Linux
 has_children: true
 permalink: /linux
 nav_order: 3
+image: /assets/img/undraw_programming_2svr.svg
+image_alt: So many monitors
 ---
-
-
-![So many monitors]({{ "assets/img/undraw_programming_2svr.svg" | absolute_url }})
 
 Tips & tricks related to Linux use and configuration.
 

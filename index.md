@@ -14,4 +14,4 @@ permalink: '/'
 
 {{ site.description }}
 
-<!-- This documents the miscellaneous techy things I do for research, fun, and keeping my Linux system up and running. It's mostly for me, but if you find something useful, that's cool too. -->
+I like programming, 3D printing, and robots, so most of what you find here is related to that.

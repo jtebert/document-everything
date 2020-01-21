@@ -3,9 +3,9 @@ layout: page
 title: TODO
 permalink: /todo
 nav_order: 7
+image: /assets/img/undraw_to_do_list_a49b.svg
+image_alt: Human-sized To Do list
 ---
-
-![Human-sized To Do list]({{ "/assets/img/undraw_to_do_list_a49b.svg" }})
 
 These are things I want to learn how to do or try out. Not for work or anything. Mostly to procrastinate on work. Like everything on this website. And this website itself.
 
