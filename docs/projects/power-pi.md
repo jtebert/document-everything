@@ -4,6 +4,7 @@ title: Powerful Pi
 grand_parent: Side Projects
 parent: 2020
 permalink: /projects/power-pi
+date: 2020-01-11
 ---
 
 1. TOC

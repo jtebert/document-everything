@@ -4,6 +4,7 @@ title: Creating a Keyboard
 grand_parent: Side Projects
 parent: 2019
 permalink: /projects/keyboard
+date: 2019-12-17
 ---
 
 1. TOC

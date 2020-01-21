@@ -2,7 +2,9 @@
 layout: default
 ---
 
-<h1><i class="mdi {{page.icon}}"></i> {{ page.title }}</h1>
+{% comment %} <h1><i class="mdi {{page.icon}}"></i> {{ page.title }}</h1> {% endcomment %}
+<h1>{{ page.title }}</h1>
+
 
 <!-- <div id="inline_toc" markdown="1">
 1. TOC
@@ -10,6 +12,17 @@ layout: default
 </div>
 
 <hr> -->
+
+{% if page.has_children %}
+
+{% else %}
+    {% if page.date %}
+        <h5 class="text-epsilon">Posted: {{ page.date | date: '%Y %B %-d' }} <i>(Last updated: {{ page.last_modified_at | date: '%Y %B %-d' }})</i></h5>
+    {% else %}
+        <h5 class="text-epsilon">Last updated: {{ page.last_modified_at | date: '%Y %B %-d' }}</h5>
+    {% endif %}
+    <hr>
+{% endif %}
 
 {{ content }}
 
@@ -23,4 +36,4 @@ layout: default
 
 <script type="text/javascript" async
  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
+</script>

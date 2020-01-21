@@ -37,6 +37,8 @@ footer_content: "&copy; 2019 by Julia Ebert"
 # e.g, UA-1234567-89
 ga_tracking: UA-54476418-2
 
+# Date formatting (set defaults)
+date_format: '%Y %B %d'
 
 # Build settings
 markdown: kramdown
@@ -44,6 +46,7 @@ remote_theme: pmarsceill/just-the-docs
 # theme: "just-the-docs"
 plugins:
   - jekyll-feed
+  - jekyll-last-modified-at
 
 kramdown:
   toc_levels: "2"
