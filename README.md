@@ -1,5 +1,7 @@
 # Julia's Documentation
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fd44e2d6-5084-4a77-a373-d9dc70d2594e/deploy-status)](https://app.netlify.com/sites/julesdocs/deploys)
+
 This is documentation of various useful things I've figured out and will inevitably forget if I don't write them down.
 
 ## Usage
