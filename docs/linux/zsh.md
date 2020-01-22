@@ -45,6 +45,20 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 
 Pick a font from that link above and download one of the ttf/otf fonts to your `~/.fonts/` directory. Then, using Gnome Tweaks (or whatever your equivalent), set the Monospace font to your chosen Nerd Font variant. (I'm currently using the Hack font.) You may need to logout or restart for it to show up here. Once I set the font, I also had to restart the shell (Alt+F2 r) for the change to show up in the terminal.
 
+## **UPDATE:** Powerlevel10k
+
+I've now switched to [Powerlevel10k](https://github.com/romkatv/powerlevel10k), but I'm not yet using any of its special features -- just as a faster version of Powerlevel9k.
+
+Install it:
+```shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+```
+
+Set it as the theme in `~/.zshrc`:
+```shell
+ZSH_THEME=powerlevel10k/powerlevel10k
+```
+
 ## Configuration
 
 These are a useful set of plugins (which does in your `~/.zshrc`): `plugins=(git extract z history-substring-search)`
