@@ -31,7 +31,7 @@ github_username:  jtebert
 heading_anchors: true
 
 # Footer content appears at the bottom of every page's main content
-footer_content: "&copy; 2019 by Julia Ebert"
+footer_content: "&copy; 2019&ndash;2020 by Julia Ebert"
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89

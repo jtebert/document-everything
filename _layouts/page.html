@@ -16,12 +16,12 @@ layout: default
 {% if page.has_children %}
     {% comment %} I don't know how to directly make it do "if not page.has_children" {% endcomment %}
 {% else %}
-    <h3 class="text-epsilon date">
+    <h6 class="text-zeta date text-grey-dk-000">
         {% if page.date %}
             <b>Posted:</b> {{ page.date | date: '%Y %B %-d' }}<br>
         {% endif %}
         <b>Last updated:</b> {{ page.last_modified_at | date: '%Y %B %-d' }}
-    </h3>
+    </h6>
     <hr>
 {% endif %}
 

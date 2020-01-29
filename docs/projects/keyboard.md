@@ -113,7 +113,7 @@ On a [GeekHack thread](https://geekhack.org/index.php?topic=75111.0), some peopl
 
 ![Full-size ortholinear design]({{ "/assets/img/projects/keyboard/full-size-ortholinear.png" }})
 
-And [someone on Reddit actually made a 14x6 ortholinear keyboard](https://www.reddit.com/r/MechanicalKeyboards/comments/94caov/hand_wired_14x6_ortholinear_mechanical_keyboard/), which commenters described as "enormous" and "What a beast." But even the creator said that the 1u space bar(s) in this were a pain.
+And someone on Reddit actually [made a 14x6 ortholinear keyboard](https://www.reddit.com/r/MechanicalKeyboards/comments/94caov/hand_wired_14x6_ortholinear_mechanical_keyboard/), which commenters described as "enormous" and "What a beast." But even the creator said that the 1u space bar(s) in this were a pain.
 
 ![Someone made a 14x6 ortholinear keyboard]({{ "/assets/img/projects/keyboard/14x6-ortho-example.jpg" }})
 
@@ -121,10 +121,10 @@ And [someone on Reddit actually made a 14x6 ortholinear keyboard](https://www.re
 ### Useful tools and references
 
 Electronics:
-- [Reddit links to tutorials/resources for handwiring keyboards](https://www.reddit.com/r/MechanicalKeyboards/comments/4wgf3w/hand_wiring_a_keyboard_tutorials/)
-- [Another guide, this one with good pictures and explanations.](http://www.masterzen.fr/2018/12/16/handwired-keyboard-build-log-part-1/) The result here is very clean-looking.
+- [Reddit links](https://www.reddit.com/r/MechanicalKeyboards/comments/4wgf3w/hand_wiring_a_keyboard_tutorials/) to tutorials/resources for handwiring keyboards
+- [Another guide](http://www.masterzen.fr/2018/12/16/handwired-keyboard-build-log-part-1/), this one with good pictures and explanations. The result here is very clean-looking, and I ended up referencing it the most while wiring.
 - [Yet another hand-wiring guide](https://geekhack.org/index.php?topic=87689.0)
-- [The seemingly canonical keyboard-building guide from matt3o](https://matt3o.com/book/)
+- The seemingly canonical keyboard-building [guide from Matt3o](https://matt3o.com/book/)
 
 Case/keycaps:
 
@@ -132,7 +132,7 @@ Case/keycaps:
 - Someone else has a whole OpenSCAD system for keycap design [on Thingiverse](https://www.thingiverse.com/thing:2783650). Unfortunately, I suck at OpenSCAD and the whole thing seems rather poorly documented.
 - [SiCK-68](https://www.thingiverse.com/thing:3478494): an open-source 3D printed keyboard with good documentation
 - [SMOLBOAT case](https://www.thingiverse.com/thing:3289175): the ortholinear basis for the SiCK-68. It doesn't seem to include much documentation - just STL files for the case(s).
-- Someone made a [fully 3D printed keyboard (including keycaps)](https://imgur.com/a/AalpV1r) ([Github](https://github.com/sealclubber/SB-147))
+- Someone made a [fully 3D printed keyboard](https://imgur.com/a/AalpV1r) (including keycaps) ([Github](https://github.com/sealclubber/SB-147))
 - [SwillKB Plate & Case designer](http://builder.swillkb.com/) for getting the correct sizes to insert switches. (It's designed for laser cutting. I could do that or turn it into a 3D printable part.)
 - [keyboard-layout-editor.com](http://www.keyboard-layout-editor.com/), for designing the layout (which imports to the plate builder above)
 

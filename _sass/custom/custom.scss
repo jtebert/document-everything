@@ -32,6 +32,21 @@ $body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica n
     margin-bottom: 2em;
 }
 
+// half-width images
+.left {
+    display: block;
+    @media only screen and (min-width: 31.25rem) {
+        float: left;
+        width: 50%;
+        margin-right: 1em;
+
+    }
+}
+
+hr, h2 {
+    clear: both;
+}
+
 // Image modal/lightbox
 .active-modal {
     border: 3px solid red;

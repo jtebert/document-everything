@@ -19,7 +19,6 @@ These are things I want to learn how to do or try out. Not for work or anything.
   - AstroPrint
   - Polar Cloud
   - The Spaghetti Detective
-  - VPN
   - Port forwarding (seemingly the riskiest)
 
 ## To Do
@@ -31,3 +30,5 @@ These are things I want to learn how to do or try out. Not for work or anything.
 ## To Make
 
 - 8" 3D-printed moon lamp (gotta figure out how I'm lighting it up. Section of a 12 V LED strip?)
+- Curling stone magnets
+- Bust of Caesar pencil holder
