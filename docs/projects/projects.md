@@ -23,8 +23,8 @@ This is rough contemporaneous documentation of projects I'm working on. Its main
 ## Table of contents
 {:.text-delta}
 
-- [2020](2020)
-  - [Migrating a website to DigitalOcean](migrate-to-do)
-  - [Powerful Pi](power-pi)
-- [2019](2019)
-  - [Creating a Keyboard](keyboard)
+- [2020](/projects/2020)
+  - [Migrating a website to DigitalOcean](/projects/migrate-to-do)
+  - [Powerful Pi](/projects/power-pi)
+- [2019](/projects/2019)
+  - [Creating a Keyboard](/projects/keyboard)
