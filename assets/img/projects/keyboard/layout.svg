@@ -15,7 +15,7 @@
    viewBox="0 0 333.37496 195.2625"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="layout.svg"
    inkscape:export-filename="/home/jtebert/google-drive/Projects/Programming/html/document-everything/assets/img/projects/keyboard/keycaps.png"
    inkscape:export-xdpi="222.22223"
@@ -29,9 +29,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.89944342"
-     inkscape:cx="659.55037"
-     inkscape:cy="335.91791"
+     inkscape:zoom="3.5977737"
+     inkscape:cx="-916.26857"
+     inkscape:cy="211.62269"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -43,10 +43,10 @@
      inkscape:object-paths="true"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-grids="true"
-     inkscape:window-width="2560"
-     inkscape:window-height="1404"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:window-width="3392"
+     inkscape:window-height="1392"
+     inkscape:window-x="48"
+     inkscape:window-y="48"
      inkscape:window-maximized="1"
      inkscape:snap-others="false"
      inkscape:snap-nodes="true"
@@ -74,7 +74,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3931,7 +3931,7 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Fn Layers"
-     style="display:none;opacity:1"
+     style="display:inline;opacity:1"
      transform="translate(-304.80002,80.962489)">
     <g
        id="g7394"
@@ -4593,7 +4593,7 @@
            id="tspan7365-5-0-2-67"
            x="4.0421796"
            y="11.006478"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">RESET</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">?</tspan></text>
       <image
          y="11.382258"
          x="4.3265724"
@@ -4635,7 +4635,7 @@
            id="tspan7365-5-0-2-29"
            x="4.0421796"
            y="11.006478"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">?</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">RESET</tspan></text>
       <image
          y="11.382258"
          x="4.3265724"
@@ -5310,20 +5310,15 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px">?</tspan></text>
       <text
          id="text1658"
-         y="13.576219"
+         y="14.634551"
          x="4.0421796"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px"
-           y="13.576219"
-           x="4.0421796"
-           id="tspan1656"
-           sodipodi:role="line">Unicode</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px"
-           y="15.692885"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:start;letter-spacing:0px;text-anchor:start;stroke-width:0.26458332px"
+           y="14.634551"
            x="4.0421796"
            sodipodi:role="line"
-           id="tspan1660">Mode</tspan></text>
+           id="tspan1660">?</tspan></text>
     </g>
     <g
        transform="translate(19.049994,38.100003)"
@@ -7597,7 +7592,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Keycaps"
-     style="display:inline;opacity:1"
+     style="display:none;opacity:1"
      transform="translate(-304.80002,80.962488)">
     <g
        id="g1870"
@@ -9985,7 +9980,7 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="Legends"
-     style="display:inline"
+     style="display:none"
      transform="translate(-304.80002,80.962489)">
     <text
        transform="translate(19.049999,38.099997)"
@@ -10825,7 +10820,7 @@
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
         <polygon
            id="polygon2805"
-           points="50,57.955 57.955,50 25.852,17.898 38.75,5 5,5 5,38.75 17.898,25.852 "
+           points="25.852,17.898 38.75,5 5,5 5,38.75 17.898,25.852 50,57.955 57.955,50 "
            style="fill:#ffffff;fill-opacity:1;stroke-width:2.9765625" />
       </g>
     </g>

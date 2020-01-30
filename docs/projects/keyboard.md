@@ -20,7 +20,7 @@ date: 2019-12-17
 
 ![Keyboard render with keycaps](/assets/img/projects/keyboard/keyboard-render-1.png)
 
-It's built! And it looks like the original render! And it works! (Except unicode, but we're still working on that.)
+It's built! And it looks like the original render! And it works! Unicode now works, too (look, emoji: 🐄🐘🐕🐁 – see [this update](#january-update)) but the caveat is that for the moment, the keyboard only works with a Colemak layout, but none of the unicode/emoji keys line up with where you'd want them to be relative to the letters. (Sorry, QWERTY plebians.) Don't worry – it's on the [TODO list](#todo).
 
 You can download the latest version of the firmware from [the GitHub repository](https://github.com/jtebert/qmk_firmware/tree/master/keyboards/project223).
 
@@ -597,6 +597,18 @@ The last piece was the unicode. And we still don't have that working. This was h
 
 For now, though, we do have a fully functional keyboard! It just doesn't (yet) have the power to type emoji.
 
+### January Update
+
+I did finally get the unicode to work, with a caveat (for now). The problem was that I had the base layer in the firmware set to QWERTY, and then had my computer switching the layout to Colemak in software, like I've always done. The problem is that this also translated the character strings that the keyboard was trying to send to generate unicode. I was trying to get it to send `Ctrl`+`Shift`+`u`, but the computer thought that that was a `u` from a QWERTY-programmed keyboard that had to be "translated" to Colemak, so it interpretted the series of keystrokes as `Ctrl`+`Shift`+`i` instead... which does not give me unicode. Instead it just followed this by spitting out the series of characters that should have made up the unicode.
+
+But that spitting out the characters was actually the clue that let me solve the problem. For example, instead of typing out `1F620` to give me an angry face emoji like I expected, I got `1T620`. Guess what? Typing `f` on a QWERTY keyboard gets translated to having typed `t` on a Colemak layout.
+
+The way I truly figured this out, though, was by posing the question on a forum, trying to write up a thorough question, and then figuring out the solution to my problem in the process. I rubber duck debugged myself.(I left the question as a monument to my ability to sort of solve my own problems, and also in the hopes that it might help someone else in the future.)
+
+The solution was to change the base layer in the firmware to have a Colemak layout instead of QWERTY, and then have the OS treat it as a QWERTY keyboard. Essentially, changing where the burden of layouts is. (Side note: in order to still retain use of the [dead keys](https://en.wikipedia.org/wiki/Dead_key) to get things like umlauts, I had to use the "English (intl., with AltGr dead keys)" layout in Ubuntu. Maybe I should add those to the Function layer.)
+
+The caveat that I mentioned, though, is that you can now *only* type with a Colemak layout at the moment, because I haven't gotten around to having the option to switch the layout on the keyboard to QWERTY. It's [totally possible](https://beta.docs.qmk.fm/features/feature_advanced_keycodes#switching-and-toggling-layers), but it's late and I'm tired right now. The additional challenge with this is that I want to have the unicode keys line up in a somewhat meaningful way with the letter key they're on top of, which I think requires having multiple function/emoji layers to handle this. I'll try it... later.
+
 ## How does this work?
 
 A keyboard matrix is pretty simple to set up and wire, but it's not necessarily intuitive how it's possible to figure out the key pressed from this wiring setup -- and that's the interesting part of this project! I found these explanations from [komar's techblog](http://blog.komar.be/how-to-make-a-keyboard-the-matrix/) and [PCB Heaven](http://pcbheaven.com/wikipages/How_Key_Matrices_Works/) useful.
@@ -667,3 +679,10 @@ Non-consumable equipment:
 - 3D printer
 - Wire strippers
 - Soldering iron
+
+## TODO
+
+- Fix the QWERTY/Colemak issue ([see here](#january-update))
+  - Make QWERTY layer accessible by toggle (perhaps `Fn`+upper delete key)
+  - Make unicode (emoji and function layer) align with the right letter layouts
+  - Maybe add umlauts/other stuff to reduce dependence on AltGr dead key layouts
