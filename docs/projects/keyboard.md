@@ -408,10 +408,6 @@ Because it's large, you can see the full keymap [in my Github repository](https:
 
 **Reset key:** My physical keyboard design (ingeniously) makes it impossible to get to the reset button on the Teensy when the keyboard is assembled. (That's part of the design that I stole from the [SiCK-68](https://www.thingiverse.com/thing:3478494).) But QMK lets me set a keyboard key to do this! It's dead simple: just use the keycode `RESET` for a key. (Mine is the top right key on the function layer.)
 
-### TODO:
-
-- Initialize Unicode input method? (Not sure if this is needed)
-- Make a macro that outputs some stupid copypasta (because we can)
 
 ## Making the case
 
@@ -683,6 +679,7 @@ Non-consumable equipment:
 ## TODO
 
 - Fix the QWERTY/Colemak issue ([see here](#january-update))
-  - Make QWERTY layer accessible by toggle (perhaps `Fn`+upper delete key)
+  - Make QWERTY layer accessible by toggle (perhaps `Fn`+upper delete key) (see [info here](https://beta.docs.qmk.fm/features/feature_advanced_keycodes#switching-and-toggling-layers))
   - Make unicode (emoji and function layer) align with the right letter layouts
   - Maybe add umlauts/other stuff to reduce dependence on AltGr dead key layouts
+- Make a macro that outputs some stupid copypasta (because we can)
