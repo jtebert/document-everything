@@ -605,6 +605,8 @@ The solution was to change the base layer in the firmware to have a Colemak layo
 
 The caveat that I mentioned, though, is that you can now *only* type with a Colemak layout at the moment, because I haven't gotten around to having the option to switch the layout on the keyboard to QWERTY. It's [totally possible](https://beta.docs.qmk.fm/features/feature_advanced_keycodes#switching-and-toggling-layers), but it's late and I'm tired right now. The additional challenge with this is that I want to have the unicode keys line up in a somewhat meaningful way with the letter key they're on top of, which I think requires having multiple function/emoji layers to handle this. I'll try it... later.
 
+Since creating this new on-keyboard layout, I quickly realized a major issue: my keyboard shortcuts aren't working in some programs. In some programs they work fine, like Chrome. But in VS Code, I realized that although I could type the letter `f`, typing `Ctrl`+`f` wasn't opening "Find". The [VS Code wiki on keybinding issues](https://github.com/microsoft/vscode/wiki/Keybinding-Issues) provided a solution: in the settings, set `"keyboard.dispatch": "keyCode"`. Don't understand why I had an issue or how this solved it, but it works... for this program. But I've also noticed the same issue in Inkscape, which I completely can't use without keyboard shortcuts.
+
 ## How does this work?
 
 A keyboard matrix is pretty simple to set up and wire, but it's not necessarily intuitive how it's possible to figure out the key pressed from this wiring setup -- and that's the interesting part of this project! I found these explanations from [komar's techblog](http://blog.komar.be/how-to-make-a-keyboard-the-matrix/) and [PCB Heaven](http://pcbheaven.com/wikipages/How_Key_Matrices_Works/) useful.
@@ -682,4 +684,6 @@ Non-consumable equipment:
   - Make QWERTY layer accessible by toggle (perhaps `Fn`+upper delete key) (see [info here](https://beta.docs.qmk.fm/features/feature_advanced_keycodes#switching-and-toggling-layers))
   - Make unicode (emoji and function layer) align with the right letter layouts
   - Maybe add umlauts/other stuff to reduce dependence on AltGr dead key layouts
+  - Or replace the right alt key (while in Colemak) with one that gives the [dead keys for Colemak](https://upload.wikimedia.org/wikipedia/commons/9/9f/KB_Colemak.png)
 - Make a macro that outputs some stupid copypasta (because we can)
+- Re-enable `UC_MOD` so it's possible to switch unicode input modes (in case there's a weird world where I'm not using Linux)
