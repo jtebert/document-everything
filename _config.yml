@@ -51,6 +51,7 @@ plugins:
 kramdown:
   toc_levels: "2"
   parse_block_html: true
+  math_engine: mathjax
 
 # Configuration for just-the-docs
 
@@ -68,11 +69,16 @@ aux_links:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - node_modules
+
+sass:
+  load_paths:
+    - _sass
+    - node_modules

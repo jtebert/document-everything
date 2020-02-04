@@ -7,6 +7,14 @@ $body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica n
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Space+Mono&display=swap');
 @import url('https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.10.0/tocbot.css');
+
+@import 'tocbot/src/scss/tocbot-core';
+@import 'tocbot/src/scss/tocbot-default-theme';
+
+.main-content {
+	scroll-behavior: smooth;
+}
 
 .site-title {
     font-family: "Space Mono", monospace;
@@ -66,7 +74,7 @@ blockquote {
     display: block;
     visibility: hidden;
     position: fixed;
-    z-index: 101;
+    z-index: 103;
     left: 0;
     top: 0;
     width: 100%;
@@ -102,4 +110,57 @@ blockquote {
             transform: scale(0.7);
         }
     }
+}
+
+// Fixed within-page table of contents
+
+.side-bar {
+    @include mq(lg) {
+        width: calc((100% - #{$nav-width + $content-width}) / 3 + #{$nav-width}) !important;
+    }
+}
+.main-content {
+    @include mq(md) {
+        // Leaves space on the right for the TOC
+        // Max width of 800px sets upper bound (in theme layout)
+        //width: calc(100% - 2 * #{$nav-width}) !important;
+        margin-right: $nav-width-md;
+    }
+    @include mq(lg) {
+        margin-left: calc((100% - #{$nav-width + $content-width}) / 3 + #{$nav-width}) !important;
+        // width: calc(100% - (100% - #{$nav-width + $content-width}) / 3 - #{$nav-width}) !important;
+        //width: 300px !important;
+      }
+}
+
+#fixed-toc {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 101;
+    height: 100vh;
+    //padding-top: $header-height;
+
+
+    @include mq(md) {
+        flex-wrap: nowrap;
+        position: absolute;
+        width: $nav-width-md;
+        flex-direction: column;
+        align-items: flex-start;
+        right: 0;
+        }
+
+    @include mq(lg) {
+        right: 1em;
+        //left: calc((100% - #{$nav-width + $content-width}) / 3 + #{$nav-width + $content-width});
+        //left: calc((100% - #{$nav-width + $content-width}) / 3 + #{$nav-width} + #{$content-width});
+        // width: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
+        min-width: $nav-width;
+      }
+
+      .toc-content {
+          @include container;
+          position: relative;
+          overflow: auto;
+      }
 }
