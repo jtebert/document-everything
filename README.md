@@ -29,3 +29,11 @@ Netlify builds from the master branch. (You can use GitHub Pages, but you will l
 This uses the very slick [Just the Docs](https://pmarsceill.github.io/just-the-docs/) Jekyll theme.
 
 Images are from [unDraw](https://undraw.co/illustrations), sometimes modified by me.
+
+
+## Things I want to add
+
+- For long pages (in desktop view, at least), a running within-page table of contents along the right side
+  - Also should involve smooth-scrolling between sections when you click on the links
+  - And dynamically updating the TOC to show which section is currently active ([possibly helpful](https://tj.ie/building-a-table-of-contents-with-the-intersection-observer-api/))
+- On the home page, add links to most recently posted & most recently updated pages
