@@ -5,7 +5,7 @@ has_children: true
 permalink: projects
 nav_order: 6
 has_toc: false
-image: /assets/img/undraw_building_blocks_n0nc.svg
+image: /assets/img/undraw_online_test_gba7.svg
 image_alt: Building... something
 ---
 
@@ -24,6 +24,7 @@ This is rough contemporaneous documentation of projects I'm working on. Its main
 {:.text-delta}
 
 - [2020](/projects/2020)
+  - [Infinity ErgoDox Configuration](/projects/infinity-ergodox)
   - [Migrating a website to DigitalOcean](/projects/migrate-to-do)
   - [Powerful Pi](/projects/power-pi)
 - [2019](/projects/2019)

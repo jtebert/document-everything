@@ -5,6 +5,7 @@ grand_parent: Side Projects
 parent: 2020
 permalink: /projects/migrate-to-do
 date: 2020-01-03
+nav_order: 100
 ---
 
 1. TOC

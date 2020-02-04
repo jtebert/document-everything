@@ -5,6 +5,7 @@ grand_parent: Side Projects
 parent: 2019
 permalink: /projects/keyboard
 date: 2019-12-17
+nav_order: 100
 ---
 
 1. TOC
@@ -22,7 +23,7 @@ date: 2019-12-17
 
 It's built! And it looks like the original render! And it works! Unicode now works, too (look, emoji: 🐄🐘🐕🐁 – see [this update](#january-update)) but the caveat is that for the moment, the keyboard only works with a Colemak layout, but none of the unicode/emoji keys line up with where you'd want them to be relative to the letters. (Sorry, QWERTY plebians.) Don't worry – it's on the [TODO list](#todo).
 
-You can download the latest version of the firmware from [the GitHub repository](https://github.com/jtebert/qmk_firmware/tree/master/keyboards/project223).
+You can download the latest version of the firmware from [the GitHub repository](https://github.com/jtebert/qmk_firmware/tree/master/keyboards/artemis75).
 
 (Gotta put a nice picture first for the social media previews.)
 {:.fs-2}
@@ -35,11 +36,11 @@ Interested in making all or part of this? Here's what you'll need.
 
 This keyboard uses QMK, so it's very flexible to modify the layout.
 
-[Firmware source files](https://github.com/jtebert/qmk_firmware/). And [this project's files](https://github.com/jtebert/qmk_firmware/tree/master/keyboards/project223).
+[Firmware source files](https://github.com/jtebert/qmk_firmware/). And [this project's files](https://github.com/jtebert/qmk_firmware/tree/master/keyboards/artemis75).
 
 To build the firmware (once you have your [system set up](https://beta.docs.qmk.fm/newbs/newbs_getting_started)), run:
 ```shell
-make project223:default
+make artemis75:default
 ```
 Then [flash according to the QMK instructions](https://beta.docs.qmk.fm/newbs/newbs_flashing).
 
@@ -53,8 +54,8 @@ These are the STLs as exported from the above source on 2020-01-15 (v1.0). If ch
 
 The case is 297 mm wide, so you either need a big printer, or you'll have to split it into pieces to print.
 
-- [Case top](/assets/files/projects/keyboard/keyboard-case-bottom-plate-no-text.stl)
-- [Case bottom (with text)](/assets/files/projects/keyboard/keyboard-case-bottom-plate-with-text.stl)
+- [Case top](/assets/files/projects/keyboard/keyboard-case-top.stl)
+- [Case bottom (with text)](/assets/files/projects/keyboard/keyboard-case-bottom-with-text.stl)
 - [Case bottom (without text)](/assets/files/projects/keyboard/keyboard-case-bottom-no-text.stl)
 
 #### Keycap STLs:
@@ -64,14 +65,14 @@ The keycaps are split into groups to print in the print area of a more normal-si
 - Base characters
   - Left side: [keys](/assets/files/projects/keyboard/keycaps-base-l-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-base-l-legends.stl)
   - Right side: [keys](/assets/files/projects/keyboard/keycaps-base-r-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-base-r-legends.stl)
-- Numbers (and `-`, `=`): [keys](/assets/files/projects/keyboard/keycaps--keys.stl), [legends](/assets/files/projects/keyboard/keycaps--legends.stl)
+- Numbers (and `-`, `=`): [keys](/assets/files/projects/keyboard/keycaps-number-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-number-legends.stl)
 - Modifiers
   - Left side: [keys](/assets/files/projects/keyboard/keycaps-mod-l-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-mod-l-legends.stl)
   - Right side: [keys](/assets/files/projects/keyboard/keycaps-mod-r-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-mod-r-legends.stl)
   - Highlighted modifiers: [keys](/assets/files/projects/keyboard/keycaps-mod-highlight-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-mod-highlight-legends.stl)
 - Arrows: [keys](/assets/files/projects/keyboard/keycaps-arrow-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-arrow-legends.stl)
 - Function keys
-  - F1-F4, F9-F12: [keys](/assets/files/projects/keyboard/keycaps-fn-end-legends-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-fn-end-legends.stl)
+  - F1-F4, F9-F12: [keys](/assets/files/projects/keyboard/keycaps-fn-end-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-fn-end-legends.stl)
   - F5-F8: [keys](/assets/files/projects/keyboard/keycaps-fn-mid-keys.stl), [legends](/assets/files/projects/keyboard/keycaps-fn-mid-legends.stl)
 
 ### Assembly
@@ -343,7 +344,7 @@ But that means we first have to go through the process of [creating a custom lay
 
 #### Special keymap stuff
 
-Because it's large, you can see the full keymap [in my Github repository](https://github.com/jtebert/qmk_firmware/blob/master/keyboards/project223/keymaps/default/keymap.c). But there were a couple particulars that I had to sort out to get the layout as I wanted.
+Because it's large, you can see the full keymap [in my Github repository](https://github.com/jtebert/qmk_firmware/blob/master/keyboards/artemis75/keymaps/default/keymap.c). But there were a couple particulars that I had to sort out to get the layout as I wanted.
 
 **Modifier keys (`(` = `Shift+9`):** While TMK made this a pain, QMK makes it easy ([as described here](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#modifier-keys)). Where I would but a keycode like `KC_9`, I instead use `LSFT(KC_9)` or `S(KC_9)` to get a left parenthesis (`Shift + 9`).
 
