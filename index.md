@@ -15,3 +15,13 @@ permalink: '/'
 {{ site.description }}
 
 I like programming, 3D printing, and robots, so most of what you find here is related to that.
+
+{% assign sorted = site.pages | sort: 'date' %}
+
+<p>
+<!-- {% comment %} -->
+{% for page in sorted %}
+    {{ page.title}} | {{ page.last_modified_at | date: '%s' }}
+{% endfor %}
+<!-- {% endcomment %} -->
+</p>
