@@ -79,6 +79,11 @@ This is a safe way to do it, because you will not undo (remove from history) any
   - Commit that version as your current version: `git commit`
   - Push the updated version: `git push`
 
+If you want to look at a commit but not stay there:
+
+- Switch to the commit: `git revert --no-commit [YOUR-HASH]..HEAD`
+- Switch back to where you were before: `git reset --hard HEAD` or `git cherry-pick --abort` ([source](https://stackoverflow.com/questions/8728093/how-do-i-un-revert-a-reverted-git-commit))
+
 **Note:** This won't work if there's a merge commit between your current status and the commit you're trying to get back to; that gets more complicated. In that case you'll need to revert back to the merge point and [deal with the merge specifically](https://stackoverflow.com/questions/5970889/why-does-git-revert-complain-about-a-missing-m-option).
 
 ## Using branches
