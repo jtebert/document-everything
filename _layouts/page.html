@@ -22,7 +22,11 @@ layout: default
         {% endif %}
         <b>Last updated:</b> {{ page.last_modified_at | date: '%Y %B %-d' }}
     </h6>
-    <hr>
+    {% if page.image %}
+        <br>
+    {% else %}
+        <hr>
+    {% endif %}
 {% endif %}
 
 {% if page.image %}

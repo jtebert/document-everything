@@ -4,11 +4,11 @@ title: Design Resources
 permalink: /design-resources
 nav_order: 3
 has_children: false
-#image: /assets/img/undraw_master_plan_95wa.svg
-# image_alt: Aliens doing science
+image: /assets/img/undraw_master_plan_95wa.svg
+image_alt: Planning to take over the world
 ---
 
-These are external things that I've found useful for various projects.
+I'm big on finding free graphics and fonts.
 
 ---
 
@@ -40,6 +40,7 @@ These are external things that I've found useful for various projects.
 - [Hero Patterns](https://www.heropatterns.com/): Repeating 2-color SVG patterns for websites. It's what I use on [my website](https://juliaebert.com).
 - [Trianglify](https://trianglify.io/): Generate multi-colored triangle-based SVG images
 - [SVG Backgrounds](https://www.svgbackgrounds.com/): Customizable (any colors, multiple patterns) SVG pattern generator. Free with attribution.
+- [Pattern Generator](https://beautifuldingbats.com/pattern-generator/): Generate complex, multi-colored SVG patterns
 
 ## Free Photos
 
