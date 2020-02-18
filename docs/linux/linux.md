@@ -3,7 +3,7 @@ layout: page
 title: Linux
 has_children: true
 permalink: /linux
-nav_order: 3
+nav_order: 4
 image: /assets/img/undraw_programming_2svr.svg
 image_alt: So many monitors
 ---

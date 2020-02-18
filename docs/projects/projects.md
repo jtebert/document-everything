@@ -3,7 +3,7 @@ layout: page
 title: Side Projects
 has_children: true
 permalink: projects
-nav_order: 6
+nav_order: 7
 has_toc: false
 image: /assets/img/undraw_online_test_gba7.svg
 image_alt: Building... something
