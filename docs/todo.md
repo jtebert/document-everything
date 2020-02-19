@@ -14,7 +14,7 @@ These are things I want to learn how to do or try out. Not for work or anything.
 ## To Learn
 
 - Docker containers
-- Different approaches to externally accessing and controlling my 3D printer
+- Different approaches to externally accessing and controlling my 3D printer ([I set up a VPN on my router](/projects/power-pi#vpn))
   - OctoPrint Anywhere
   - AstroPrint
   - Polar Cloud
