@@ -175,6 +175,7 @@ Which brings us to the updated layout, now with 87 keys (and made in Inkscape):
 For pointless funsies, I also thought it would be fun to make a function layer just for emojis. Why? How about *why not*? Now I can more easily write [Emojiscript](https://github.com/dan3944/emojiscript).
 
 ![Function layers]({{ "/assets/img/projects/keyboard/fn-layers.png" }})
+![Function layers]({{ "/assets/img/projects/keyboard/fn-layers-cm.png" }})
 
 (The emoji for the function role are basically a selection of random animals.)
 
