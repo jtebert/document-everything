@@ -30,6 +30,7 @@ As a mechanical engineer, Clark is excited about designing and building the arm 
 We're trying to do as much of this as possible with the parts we have on hand. (Let's try to reduce to the risk to Amazon warehouse workers!) From our initial scratch-paper design, here's what we have in mind:
 
 - All of the structural parts will be 3D printed. We'll probably go with PETG over PLA because it's less brittle. This includes the body, arm, wheels, and pulleys. For things like timing belts and tires, we can print in Ninjaflex TPU. (McMaster even provides [CAD files for timing belts](https://www.mcmaster.com/6484k118), which makes things even easier.)
+- Because we also like things to look nice, we're thinking about how to give this thing a nice aesthetic. We're aiming for a sleek futuristic look with white and blue plastic, like a cross between R2-D2 and those stock photos of white plastic humanoid robots (but less creepy).
 - Arm
   - 2 links with a pincher gripper at the end
   - 3 DOF powered by NEMA 17 stepper motors: bending at the base, elbow, and wrist. They're controlled by linkages, and motors are inside the body, connected by timing belts/pulleys. We'll rely on turning the body to get alignment.
@@ -52,3 +53,13 @@ We're trying to do as much of this as possible with the parts we have on hand. (
 - Power
   - The Pi runs on 5V but needs up to 3 Amps. I have a 20,000 mAh USB-C battery bank capable of powering of Chromebook and Switch, so that should be plenty
   - The stepper motors run at 12 or 24 V. A 3S (11.1V) LiPo battery should be enough. Clark estimates that a 2,000 mAh battery should be enough, but we haven't run any calculations to determine that for certain. We'll also probably need a LiPo charger so we don't blow ourselves up.
+
+### Reference Robots
+
+There are a lot of homemade robots floating around the internet, some better engineered than others.
+
+**[ZeroBot Pro:](https://hackaday.io/project/25092-zerobot-raspberry-pi-zero-fpv-robot)** This is powered by a Pi Zero and comes in a very slick-looking body. It's also using the idea we had of wheels with Ninjaflex tires. And it's wifi connected for controlling the robot. At first glance, it also appears to be very well-documented to use for reference!
+
+**[How to Mechatronics Arduino Robot:](https://howtomechatronics.com/projects/arduino-robot-arm-and-mecanum-wheels-platform-automatic-operation/)** This robot has the general structure of what we're aiming for: an arm on wheels. In contrast to what we're planning, it's using a weak and imprecise servo-powered arm, omni-wheels instead of differential drive, and an Arduino for control. But it also has an app for control, and that blue-and-white aesthetic.
+
+**3D printed arms:** There are a lot of designs for 3D printed robot arms around Thingiverse, but Clark can point out a problem with all of them. They're servo-powered or poorly documented or have poor linkage design or use a 3D printed gear train with a lot of backlash, etc. And of course, none of them will match our aesthetic. But they're a useful reference for designing our own. (By which I mean Clark designing one. This falls squarely into his mechanicla engineering wheelhouse.)
