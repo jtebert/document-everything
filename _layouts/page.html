@@ -36,8 +36,14 @@ layout: default
 {{ content }}
 
 <div class="wrapper" style="position: relative">
-    <div id="modal-overlay">
-        <div id="modal"><img id="modal-content"/></div>
+    <div id="modal-overlay-img" class="modal-overlay">
+        <div class="modal"><img id="modal-content-img" class="modal-content"/></div>
+    </div>
+    <div id="modal-overlay-video" class="modal-overlay">
+        <div class="modal">
+            <video autoplay controls loop
+                id="modal-content-video" class="modal-content">
+        </div>
     </div>
 </div>
 

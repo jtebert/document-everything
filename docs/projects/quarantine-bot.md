@@ -63,3 +63,68 @@ There are a lot of homemade robots floating around the internet, some better eng
 **[How to Mechatronics Arduino Robot:](https://howtomechatronics.com/projects/arduino-robot-arm-and-mecanum-wheels-platform-automatic-operation/)** This robot has the general structure of what we're aiming for: an arm on wheels. In contrast to what we're planning, it's using a weak and imprecise servo-powered arm, omni-wheels instead of differential drive, and an Arduino for control. But it also has an app for control, and that blue-and-white aesthetic.
 
 **3D printed arms:** There are a lot of designs for 3D printed robot arms around Thingiverse, but none of them are quite right for our purposes. They're servo-powered or poorly documented or have poor linkage design or use a 3D printed gear train with a lot of backlash, etc. And of course, none of them will match our aesthetic. But they're a useful reference for designing our own. (By which I mean Clark designing one. This falls squarely into his mechanical engineering wheelhouse.)
+
+## Wheels
+
+This seems like a part I can work on while Clark designs the arm.
+
+We're design this to work with NEMA 14 pancake stepper motors, because they're compact and will fit in line with the three NEMA 17 motors planned for the arm without making the robot too wide. But mostly because we have them. We'll have to see if they're powerful enough, though. (Spoiler from later: they're not.)
+
+We have to mount the wheel to the motor shaft, but we don't have any set screws, and if you screw into the 3D printed plastic that would strip out immediately. So we need to leave space to stick an M3 nut into the hub and screw an M3 screw into that. In the first test print, I only allowed a 0.1 mm tolerance on the hole for the shaft, and it fit on so tightly that we had to cut the print off. Oops.
+
+![motor mounting design](/assets/img/projects/quarantine-bot/wheel-motor-mount.jpg)
+
+Consistent with our design goals for this robot, I want to get that nice curved/futuristic aesthetic. Most of the time for this was invested in getting the spokes to look just right. I also designed it with a curved front face, which means we need to print with that side up and a ton of support material on the underside/back (which no one will see when the robot is assembled). I was worried that the gently curved top surface would result in the ugly stair stepping effect that you get on 3D prints from the large layer height relative to the slope. However, the latest PrusaSlicer (2.2) comes with an automatic variable layer height, which reduces the layer height to as low as 0.07 mm for the most gently sloped areas. The result is much cleaner than I expected.
+
+![curved wheel surface with variable layer height](/assets/img/projects/quarantine-bot/orig/wheel-surface.jpg)
+
+### Tires
+
+The wheels also need tires for grip, which we're printing with Ninjaflex. Since Clark's printer has a bowden extruder, it can't print flexible materials. That means we're printing it on my printer, which I've never tried printing Ninjaflex on before. So the first step here is to figure out the settings I need to print Ninjaflex. I started with this [Ninjaflex printing profile for the Prusa MK3](https://www.prusaprinters.org/prints/12586-ninjaflex-profile-zero-stringing-flawless-print-be) that someone else made, and printed a 20 mm calibration cube. It's the one on the left here:
+
+![Ninjaflex calibration cube attempts](/assets/img/projects/quarantine-bot/ninjaflex-calibation-cubes.jpg)
+
+It started out so promising. So I tried again, this time turning off retraction, since that can cause flexible filaments to get backed up and wound around the extruder gears. It failed again. I tried turning down the print speed from 15 mm/s to 10 mm/s. Still failing. I got a number of prints like the middle one in that picture -- frustratingly worse than my first attempt.
+
+Eventually, I loosened the idler gear in the extruder and was able to get the cube on the left. Huzzah! Apparently having the gear too tight squishes the filament out of shape and makes it more likely to fail. I don't understand the mechanics behind it, but it's a common suggestion I saw online, and it worked. My cube definitely isn't perfect. The perimeters didn't adhere to each other and some of the layers separated. It was only printed at 15% infill, so that might have played a role. I think this clear filament is also particularly unforgiving when it comes to showing flaws, since every small detail/error reflects and refracts the light to make it as visible as possible. It's good enough, though, especially since we're printing the tire at 100% infill. So let's invest 7 hours to print this tire!
+
+I also make another fun discovery while trying to print Ninjaflex: if I unload it from the printer menu, it's too fast and the filament gets wrapped around the extruder gears. I ended up unloading by slowing moving the extruder motor position from the settings menu.
+
+6 hours and 53 minutes later, the tire actually printed successfully! We're still seeing the perimeter separation, which seems to indicate that we're getting consistent under-extrusion. Since it's at least consistent, we could bump up the extrusion multiplier in the slicer to compensate. But it's a functional tire.
+
+![Picture of completed tire](/assets/img/projects/quarantine-bot/tire-print.jpg)
+
+And I think it looks pretty dang good all put together:
+
+![Wheel and tire assembled](/assets/img/projects/quarantine-bot/wheel-complete.jpg)
+
+Let's jump back a couple steps here to talk about the design of the tire. To make sure the tire stays seated on the rigid wheel and doesn't slip, we have notches in the tire and corresponding nubs on the wheel to keep it in place. The size, angle, and number of these was pretty arbitrary, with one exception. Since the tire is printed flat, it has to be able to print the overhang angle for the sides of the notches, and Ninjaflex doesn't like to print overhangs. I could have printed an overhang test, but I'm lazy, so I just made a guess that it could probably handle 40° from horizontal. It turned out I was right on that, but that's a relatively shallow angle, which also allows a bit of slipping side-to-side on the wheel. (On the plus side, it's pretty easy to get the tire on and off.)
+
+There's also another potential cause for the fit of the tire on the wheel hub. TPU like Ninjaflex tends to shrink when printed, relative to the specified dimensions. For rigid filaments, you typically need to give a tolerance of something like 0.2 mm (a gap) to get things to fit together. With TPU, you actually need to give a *negative* tolerance. For the tires, we added a tolerance of -0.5 mm on the round surface where it meets the wheels. But we didn't add any tolerance to the notches, because we wanted to make sure the wheel stayed round and didn't end up not fitting nicely over the nubs on the wheel. Once printed, though, this likely contributes to the small amount of slippage we see between the tire and wheel. The possible under-extrusion probably doesn't help, either.
+
+But do you know the phrase "good enough for government work"? Well, this is good enough for quarantine work. For the other tire, I can try adjusting the negative tolerance as well as the extrusion multiplier in the slicer. But I'm not going to mess with this one.
+
+One last note on Ninjaflex. We were planning to also use it to 3D print timing belts for the arm. But even at 3 mm thick and 100% infill, the Ninjaflex tire still has some stretch to it, which is not what you want in a timing belt (or else you'll get backlash). So this might not work as well as we'd hoped for timing belts.
+
+### Motorizing the Wheel
+
+With both parts of the wheel complete, let's put our NEMA 14 motor on it. The setup for actually running the motor is incredibly hacky: the stepper motor is connected to a RAMPS 1.4 board (intended to be put into a 3D printer), which is then connected to a Raspberry Pi, which is runnning Clark's instance of OctoPrint (which is normally connected to his 3D printer). Then, from the OctoPrint web interface, we tell it to move the y-axis to run our motor.
+
+![Hacky setup for running this motor](/assets/img/projects/quarantine-bot/hacky-motor-testing.jpg)
+
+But hey, it runs!
+
+<video loop autoplay muted>
+    <source src="/assets/video/projects/quarantine-bot/motor-test.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+...as long as there's no load. As soon as you introduce any significant resistance (like you'd get from the weight of the robot), the motor can't produce enough torque to keep going.
+
+What about the beefier NEMA 17 motor? It's slightly better, but it still can't really produce enough torque that it would be able to move our robot around. It looks like our original plan of directly driving the wheels with the motors is a bust.
+
+In true quarantine bot fashion, we now have to figure out an alternative with our scavenged scrap. We can gear the motors down, but that requires us to have a shaft and bearings for the wheel, plus gears. (One benefit of this, though, is that it will allow us to offset the motors from the line of arm motors and keep the robot body smaller.) We can 3D print some mediocre gears, so that should be manageable. And it turns out that Clark has some 3/16" dowels and bushings leftover from something else. 3/16" is close enough to the 5 mm motor shaft that I designed the wheels for, so it turns out that we can just stick it into the existing wheels and tighten down our makeshift set screw. (We don't have a file, so we can't give it a nice flat to grab onto.)
+
+### Printer issues
+
+All of that glosses over many other incredibly frustrating and still-unsolved issues with my 3D printer that cropped up in the midst of all of this. But it's too confounding to explain in detail here. I'll add more when it makes me less sad.

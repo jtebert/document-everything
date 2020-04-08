@@ -62,7 +62,7 @@ blockquote {
     border: 3px solid red;
 }
 
-#modal-overlay {
+.modal-overlay {
     display: block;
     visibility: hidden;
     position: fixed;
@@ -79,13 +79,13 @@ blockquote {
         visibility: visible;
         cursor: zoom-out;
         opacity: 1;
-        #modal {
-            #modal-content {
+        .modal {
+            .modal-content {
                 transform: scale(1);
             }
         }
     }
-    #modal {
+    .modal {
         transition: all 0.3s;
         display: block;
         position: relative;
@@ -93,7 +93,7 @@ blockquote {
         margin: auto;
         top: 50%;
         transform: translateY(-50%);
-        #modal-content {
+        .modal-content {
             display: block;
             position: relative;
             max-height: 90vh;
@@ -102,4 +102,9 @@ blockquote {
             transform: scale(0.7);
         }
     }
+}
+
+// Video
+video {
+    width: 100%;
 }
