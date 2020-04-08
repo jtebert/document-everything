@@ -14,8 +14,8 @@ var openImgModal = function (img) {
 
 var openVideoModal = function (video) {
     // When a video is clicked, put its source in the modal and display it
-    console.log(video)
     source = video.getElementsByTagName("source")[0].src
+    console.log(source)
     modalVideo.src = source;
     modalOverlayVideo.classList.add('active');
 }
