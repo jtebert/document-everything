@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Infinity ErgoDox Configuration
+label: In Progress
 grand_parent: Side Projects
 parent: 2020
 permalink: /projects/infinity-ergodox
