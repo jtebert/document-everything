@@ -64,7 +64,7 @@ There are a lot of homemade robots floating around the internet, some better eng
 
 **3D printed arms:** There are a lot of designs for 3D printed robot arms around Thingiverse, but none of them are quite right for our purposes. They're servo-powered or poorly documented or have poor linkage design or use a 3D printed gear train with a lot of backlash, etc. And of course, none of them will match our aesthetic. But they're a useful reference for designing our own. (By which I mean Clark designing one. This falls squarely into his mechanical engineering wheelhouse.)
 
-## Wheels
+## Wheels & Drivetrain
 
 This seems like a part I can work on while Clark designs the arm.
 
@@ -128,3 +128,80 @@ In true quarantine bot fashion, we now have to figure out an alternative with ou
 ### Printer issues
 
 All of that glosses over many other incredibly frustrating and still-unsolved issues with my 3D printer that cropped up in the midst of all of this. But it's too confounding to explain in detail here. I'll add more when it makes me less sad.
+
+
+### Baby's first gearbox
+
+We've figured out that we need to gear down the motor to get enough torque, but now we need to figure out what the ratio needs to be. (There are reasons people don't usually use stepper motors for driving wheels, and their low torque is one of the reasons.)
+
+We need to make some estimates and assumptions for this calculation, such as the robot's mass  and how steep of a slope the robot can climb. (If quarantine bot is going to go do things for us, it probably needs to go up and down some ramps.) We want to compute the gear ratio $$\rho$$, which needs to be at least the ratio of the goal torque at the wheel ($$\tau_g$$) and motor torque ($$\tau_m$$):
+
+$$\rho \geq \frac{\tau_g}{\tau_m}$$
+
+Let's start by computing the goal torque. For a rough approximation, we'll start with the torque required for the robot to remain stationary (not roll down) the steepest slope we care about, an angle we'll call $$\alpha$$. The biggest force we have to worry about here is the force of gravity; with an acceleration of $$9.8 \frac{\text{m}}{\text{s}^2}$$, this is a way larger factor than any forward acceleration (of perhaps $$0.5 \frac{\text{m}}{\text{s}^2}$$), as the slope gets steeper.
+
+$$\tau_g = F_g \cdot r_w \cdot \sin \alpha = m_\text{robot} \cdot g \cdot r_w \cdot \sin\alpha$$
+
+The last piece we need for this calculation is the radius of the wheel, $$r_w$$, which we already (rather arbitrary) picked as 50 mm (0.05 m).
+
+The motor torque is a property of the motor, and it turns out the there's some variation here, depending on the manufacturer and the individual motor. Based on one available on Adafruit, we picked a conservative estimate of $$\tau_m = 0.20 \text{ Nm}$$.
+
+To compute our gear ratio, we need estimates for the weight of the robot, and we need to pick the steepest angle the robot can handle. We estimated the robot mass mostly based on the weights of the heaviest things in the robot (such as 5 NEMA-17 motors, at 0.25 kg each), coming up with a rough estimate of 2.2 kg. For a goal slope, we picked 35°, which would let the robot climb a slope built over standard stairs, which have a 7:11 aspect ratio.
+
+$$
+\rho = \frac{m_\text{robot} \cdot g \cdot r_w \cdot \sin\alpha}{\tau_m} \\
+= \frac{(2.2\text{ kg})(9.8\frac{\text{m}}{\text{s}^2})(0.05\text{ m})\sin(35\deg)}{(0.20 \text{ Nm}) \\
+= 3.1}
+$$
+
+A gear ratio of about 3:1 would let our robot not roll down a 35° slope, under ideal conditions. We haven't accounted for any loss/friction in the system, uncertainty in our estimates (like that atrocious estimate of the robot's mass), or letting the robot actually go *up* the slope. We've also assumed that the robot is only being driven by *one* motor, but we'll actually have one for each of the two wheel. The easiest way to fix this is to add a safety factor. A 20% safety factor would mean a gear ratio of 3.72, and a 50% safety factor means a gear ratio of 4.65.
+
+But as you increase the gear ratio, you also decrease the maximum speed (on flat ground) that the robot can achieve. With no gearing, it's a simple calculation to go from the motor's angular velocity ($$\omega_m$$) to the linear velocity. Pulled from an instructable, the motor can go at 800 RPM, or 83.8 rad/s.
+
+$$
+v_\text{max} = r_w \cdot \omega_m \\
+= (0.05\text{ m})(83.8\tfrac{\text{rad}}{\text{s}}) \\
+= 4.19 \tfrac{\text{m}}{\text{s}}
+$$
+
+On flat ground, with no gearing (or a gear ratio of 1), the maximum velocity would be 4.19 m/s, if the robot can generate enough torque. That's *way* faster than we'd want anyway, but that's good. Because the maximum velocity is divided by the gear ratio $$\rho$$, so this means we can increase the gear ratio (thus generating more torque) while still maintaining a reasonable maximum velocity.
+
+| Safety factor | $$\rho$$ | $$v_\text{max}~(\text{m}/\text{s})$$ |
+| ------------- | -------- | ------------------------------------ |
+| 1.0           | 3.1      | 1.35                                 |
+| 1.2           | 3.72     | 1.13                                 |
+| 1.5           | 4.65     | 0.90                                 |
+| 2.0           | 6.2      | 0.68                                 |
+
+So what do we pick? The options we have for gear ratios are determined by the gears we have available. In our case, we're going to be 3D printing the gears, so they'll need big teeth to not strip/break. And because we don't want to reinvent the wheel (or in this case, the gear), we're going to 3D print gears that are available on McMaster, since they provide the CAD files.
+
+Narrowing down our gear options on McMaster, we pick plastic gears with a 14.5° pressure angle. This mostly means we need to pick the pitch, which is how many teeth per unit of distance; the smaller the pitch, the bigger the teeth. It also means a larger gear diameter for the same number of teeth, and more backlash. Clark went through and looked at the pitch options and settled on a pitch of 32. This has a lot of options for ratios (as [seen here](https://www.mcmaster.com/gears/plastic-gears-and-gear-racks-4/pressure-angle~14-1-2-/component~gear/pitch~32/)), while providing a good compromise on size: big enough to 3D print, but small enough that the large gears will still fit in the robot. (If you have a gear with too large of a diameter, you'd reduce the robot's ground clearance.)
+
+If we use the smallest (12-tooth) gear for the motor, that leaves us with gear ratio options of about 4 or 5. To play it safe (and design our motor mount the worst case), we started with the higher gear ratio and picked the 62-tooth gear.
+
+Once you've made those decisions, designing the mount to put all of this together was a lot easier than I expected. With the gears picked, you know the pitch diameter of each gear, which tells you exactly how far apart you need to place the gears. From there, everything else is known: the mounting holes for the motor, the size of the bushings we're using as bearings (salvaged from an old project of Clark's), and the diameters of the shafts we're attaching our gears to. We did have to make some modifications to the gear CAD files from McMaster, to match the shaft hole sizes and add in our custom nut and set screw configuration (like I did for the wheels).
+
+The trickiest bit of this design was dealing with the limited length of the 3/16" dowel we're using as the wheel shaft. It's only 1.5" long, and we need to use that to fit into the wheel, through the outside of the robot body, through both bushings on either end, and fit the gear in between. We had to squeeze the gear into a 13 mm slot. This gear also has to serve a secondary function: it's what's holding the wheel in place. The bushings on either side let the wheel shaft turn smoothly, but the gear in between is what keeps it from sliding out of the body. It's not ideal, since the sides of the gear are rubbing against the surface of the bearings, but in typical form, it's good enough for quarantine work.
+
+And with that, we have my first ever gearbox:
+
+![Drivetrain CAD assembly](/assets/img/projects/quarantine-bot/drivetrain-cad.png)
+
+We two of printed all the parts in PETG, and discovered that this required some assembly tricks: you have to attach the motor first, because you can't get to the screw holes once the big gear is in place. But that's a small one-time limitation, nothing major. The real test comes when we run it. To make the simplest robot possible, we screwed the drivetrain and caster wheel to a piece of MDF from sacrificed IKEA furniture scrap.
+
+![Underside of scrap robot](/assets/img/projects/quarantine-bot/woodbot-underside.jpg)
+
+But once you throw some googly eyes on it, it looks like a real robot!
+
+![Scrap robot with googly eyes](/assets/img/projects/quarantine-bot/woodbot-eyes.jpg)
+
+But does it work? We connected the motors to the driver board running Marlin and Clark sent it g-code from his laptop. (We're leaving out the Raspberry Pi running OctoPrint this time, but we're still pretending it's a 3D printer. Eventually we *might* write real firmware for this.) It's now doubly-tethered, to the computer and a 12V power supply. We "built" a ramp with a sheet of plywood on the couch to test whether this could actually climb a ramp like our assumption-filled calculations say it should.
+
+<video loop autoplay muted>
+    <source src="/assets/video/projects/quarantine-bot/drivetrain-test.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+It works! It can go straight. It can turn. It can climb. This is actually starting to behave like a real robot.
+
+Next up, I want to design the body and figure out how all of this is going to fit together. For now, though, I'm waiting on Clark to figure out how he plans to organize the motors for the arm. In the meantime, I should work on the high-level software and control side that will run on the Raspberry Pi. Actually, the weekend's over and now I should do my actual research work. But that doesn't seem like as much fun as hacking together a Pi, RealSense camera, and USB AI accelerator for object recognition.
