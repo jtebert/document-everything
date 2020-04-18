@@ -207,3 +207,75 @@ But does it work? We connected the motors to the driver board running Marlin and
 It works! It can go straight. It can turn. It can climb. This is actually starting to behave like a real robot.
 
 Next up, I want to design the body and figure out how all of this is going to fit together. For now, though, I'm waiting on Clark to figure out how he plans to organize the motors for the arm. In the meantime, I should work on the high-level software and control side that will run on the Raspberry Pi. Actually, the weekend's over and now I should do my actual research work. But that doesn't seem like as much fun as hacking together a Pi, RealSense camera, and USB AI accelerator for object recognition.
+
+## Object Detection
+
+While we're busy printing parts for the arm, and while Clark is hacking at the Marlin firmware to make the motors work... I should probably get started on the software that will run this robot.
+
+Since I've got this new [Coral USB Accelerator](https://coral.ai/products/accelerator) and [Intel RealSense camera](https://www.intelrealsense.com/depth-camera-d435/) sitting on my desk, it seems like a good place to start is sticking them together to detect thing in the environment. We'll give our non-existent robot some eyes!
+
+Before I get into this, let me preface this by saying that this ended up being a huge rabbit hole (which seems to happen a lot). Both Intel and Google have polished advertising for these products, but under the hood, there's a lot of inconsistency, changing APIs, and limited support for different platforms.
+
+In the end, the goal is to run this on a Raspberry Pi 4, but to make debugging easier, I decided to start by setting up and running things on my desktop computer (running Ubuntu 19.10). Naively, I thought I could just start by running this [Pi + RealSense + Edge TPU code for object detection](https://github.com/samhoff20/Realsense-Object-Detection-Public) that I found on Github.
+
+Of course, it didn't work. I was beset with errors from the start, in part because that code came with zero instructions. As I went, I use `pip` to install every Python package the script complained it didn't have, until I ran into the complaint that it couldn't find the `edgetpu` module. That's apparently something Google didn't feel the need to put into PyPi to make things easy to use. Instead they [only provide it as a system package](https://coral.ai/docs/edgetpu/api-intro/). So now, I'm going to have most of my packages installed in virtual environment, and this *one package* and its dependencies as a system package. And if I'm using the virtual environment for my python path, I don't have access to that system package. I found this [Github issue](https://github.com/f0cal/google-coral/issues/42#issuecomment-584623598) that solved my problem with an incredibly hacky workaround: adding the system distribution packages to my `PYTHONPATH` when I'm in the virtual environment. I don't like that solution, but at least for the moment, it lets me move on... to the next error:
+
+```shell
+AttributeError: 'Delegate' object has no attribute '_library'
+```
+
+No idea what that means. The classic game of Googling the error eventually led me to [this Github issue](https://github.com/tensorflow/tensorflow/issues/32743), where it seems that the issue is related to accessing the device over USB. I checked that it showed up with `lsusb`. I tried [adding my user to the `plugdev` group](https://github.com/tensorflow/tensorflow/issues/32743#issuecomment-543806766). I [added this mysterious rule](https://github.com/tensorflow/tensorflow/issues/32743#issuecomment-570811813). I rebooted my computer multiple times. No dice.
+
+Eventually, I realized that there are two different APIs for using the Edge TPU. One is `edgetpu`, and the other is `tflite`, which is a lower-level interface. Desperate to make *something* work, I actually went back to the beginning and read the beginning of the documentation: [Get started with the USB Accelerator](https://coral.ai/docs/accelerator/get-started).
+
+Look, comprehensive instructions! A way to install the the TensorFlow Lite library with pip. (There's a caveat on that, since they still aren't using PyPi, so you have to tell it the URL to get the package from, and it's different depending on what OS you're using.)
+
+1. Install the Edge TPU runtime on the system:
+   ```shell
+   echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
+   curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+   sudo apt-get update
+   sudo apt-get install libedgetpu1-std
+   ```
+   (At this point I accidentally *uninstalled* that package and spent half an hour tearing my hair out trying to figure out why later stuff didn't work.)
+2. Install the Python package: ([Instructions here](https://www.tensorflow.org/lite/guide/python)). Here you need a different file depending on your Python version and your computer architecture (ARM, x86, etc.). I'm on x86 using Python 3.7 (for now), so I used the following:
+   ```shell
+   pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_x86_64.whl
+   ```
+   If you try to create a requirements file from this using `pip freeze`, though, it won't work. I'm still working on a fix to automate that, but for now you'll have to run that command manually.
+3. Download and run the example image classification code:
+   ```shell
+   mkdir coral && cd coral
+   git clone https://github.com/google-coral/tflite.git
+   cd tflite/python/examples/classification
+   bash install_requirements.sh
+
+   python3 classify_image.py \
+   --model models/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite \
+   --labels models/inat_bird_labels.txt \
+   --input images/parrot.jpg
+   ```
+
+Look, we found a bird!
+
+This ended up being way more straightforward than the `edgetpu` API. Which is kind of ironic, because that API is supposed to be higher level and easier to use. But it's amazing how much better this works when I *actually read the instructions.*
+
+This example repo also had an object detection example, which was equally easy to run (and helpfully told me that the picture of Grace Hopper contained a person and a tie). That's the more interesting thing to me, since that's what we're planning to do with our video.
+
+So far, these examples are running on single, saved images. We want to use a video stream. Guess what? [They have an example for that on Github](https://github.com/google-coral/examples-camera). It turns out to be almost exactly the same thing as the previous object detection example, but with the functions written ever so slightly differently. Basically, it was written by a different person with slightly different opinions about the code structure, but who used the same function names. But it turned out I couldn't use that code, because it's set up to get camera data from a regular webcam, not a RealSense camera.
+
+But hey, I've got an example of how to use the RealSense camera from that other [realsense object detection code](https://github.com/samhoff20/Realsense-Object-Detection-Public). So I basically glued that camera code together with the object detection code from Google's camera example repository. I cleaned it up a bit, and we can do object detection from a live video stream at about 35 frames per second.
+
+![Object detection says I'm probably human](/assets/img/projects/quarantine-bot/realsense-object-detection-test.png)
+
+Apparently there's a 58% chance that I'm human.
+
+I cleaned up the code a bit and pushed it to Github. You can [check out the code here](https://github.com/jtebert/quarantine-bot/tree/6b5fc792cbbfac6ff0d95ffb154d420e6009243a/qbot/object_detection). (This links to that particular commit, not the most recent code, since I'm sure it will change dramatically.)
+
+### On the Raspberry Pi
+
+I booted up the Raspberry Pi, prepared to just download and run what I'd spent most of my Saturday on.
+
+Of course it didn't work like that. I cloned my repository and ran my setup script. I ran my installation script and hit my first snag: it couldn't install `opencv-python`. That turned out to be an easy fix; my `requirements.txt` wanted version 4.2, but it turns out that the latest version available for ARM is version 4.1. I manually ran `pip install opencv-python`, then updated my requirements file with `pip freeze > requirements.txt`.
+
+Then pip failed to install `pyrealsense2`. And that is not an easy fix.
