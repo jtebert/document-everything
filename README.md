@@ -37,3 +37,11 @@ Images are from [unDraw](https://undraw.co/illustrations), sometimes modified by
   - Also should involve smooth-scrolling between sections when you click on the links
   - And dynamically updating the TOC to show which section is currently active ([possibly helpful](https://tj.ie/building-a-table-of-contents-with-the-intersection-observer-api/))
 - On the home page, add links to most recently posted & most recently updated pages
+
+## Notes
+
+For Ruby 2.7 and Jekyll 3.8.5, you get a billion warnings printed to the console. Until Just The Docs supports Jekyll 4.0, run this instead of the above command:
+
+```shell
+bundle exec jekyll serve 2>/dev/null
+```

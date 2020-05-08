@@ -37,16 +37,32 @@ permalink: /linux/programs
 
 ## Gnome Extensions
 
+These are what I'm currently using:
+
+| Program                                                                                 | Purpose                                           |
+| :-------------------------------------------------------------------------------------- | :------------------------------------------------ |
+| [Alternatetab](https://extensions.gnome.org/extension/15/alternatetab/)                 | Alt+Tab switches by window instead of program     |
+| [Auto move windows](https://extensions.gnome.org/extension/16/auto-move-windows/)       | Move windows to a certain workspace when launched |
+| [Bring out submenu of power off/logout button]()                                        | Fix a system menu annoyance                       |
+| [Clipboard indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)  | Show clipboard history                            |
+| [Dash to panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)             | Replace the dash with something more functional   |
+| [Desktop icons](https://extensions.gnome.org/extension/1465/desktop-icons/)             | Use this to remove the trash/home icons           |
+| [Gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)                     | Connect my phone to the computer                  |
+| [Panel osd](https://extensions.gnome.org/extension/708/panel-osd/)                      | Move the notification popup                       |
+| [User themes](https://extensions.gnome.org/extension/19/user-themes/)                   | Allow user themes described above                 |
+| [Windowoverlay icons](https://extensions.gnome.org/extension/302/windowoverlay-icons/)  | Show program icons in the Alt+Tab view            |
+| [Workspace switcher](https://github.com/Tomha/gnome-shell-extension-workspace-switcher) | Name workspace and show them in the top bar       |
+
+These are worthwhile extensions I've used in the past:
+
 | Program                                                                               | Purpose                                                     |
 | :------------------------------------------------------------------------------------ | :---------------------------------------------------------- |
-| [Alternatetab](https://extensions.gnome.org/extension/15/alternatetab/)               | Alt+Tab switches by window instead of program               |
 | [Dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)              | More configuration of dash bar                              |
+| [Material Shell](https://github.com/PapyElGringo/material-shell)                      | Tiling WM style for Gnome (clear `~/.cache` if misbehaving) |
 | [OpenWeather](https://extensions.gnome.org/extension/750/openweather/)                | Show weather in top bar                                     |
 | [ShellTile](https://extensions.gnome.org/extension/657/shelltile/)                    | More places to snap windows                                 |
 | [Suspend button](https://extensions.gnome.org/extension/826/suspend-button/)          | Add a suspend button to the main dropdown                   |
-| [User themes](https://extensions.gnome.org/extension/19/user-themes/)                 | Allow user themes described above                           |
 | [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/) | Label/number workspaces in the top bar                      |
-| [Material Shell](https://github.com/PapyElGringo/material-shell)                      | Tiling WM style for Gnome (clear `~/.cache` if misbehaving) |
 
 ## Work/Research
 
