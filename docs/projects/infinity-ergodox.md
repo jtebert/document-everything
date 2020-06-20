@@ -28,7 +28,7 @@ I'm going to start by basically following this and filling in any details/gaps I
 
 **EDIT:** Turns out they've change quite a bit, including getting rid of the online configurator. And their [new documentation for configuration and compiling](https://input.club/configurator-ergodox/) is frustratingly incomplete. So this will be more *fun* than originally planned.
 
-## Building and Flashing Firmware
+## Building and Flashing Default Firmware
 
 You need some dependencies to build the firmware yourself ([taken from the wiki](https://kiibohd.github.io/wiki/#/Setup?id=ubuntu)):
 ```shell
@@ -72,3 +72,8 @@ Now you should be able to compile the controller (from within the `Keyboards` di
 
 <!-- You'll also need the IC Configurator. (This used to be online, but now you download it and do it locally.) -->
 
+## Using QMK
+
+After some further research, it looks like the LCD does work with QMK (at least in some form), so that seems worth a try. (Based on [this](https://www.reddit.com/r/ergodox/comments/80hgxj/infinity_lcd_configuration_in_qmk/) and [this](https://www.reddit.com/r/MechanicalKeyboards/comments/6576f8/psa_the_screens_on_the_infinity_ergodox_now_work/) Reddit threads.)
+
+My (in-progress) layout is in my QMK fork: [QMK firmware](https://github.com/jtebert/qmk_firmware/tree/master/keyboards/ergodox_infinity/keymaps/jtebert).
