@@ -2,6 +2,7 @@
 layout: page
 title: Git Cheat Sheet
 parent: Programming
+nav_order: 1
 permalink: /programming/git
 ---
 

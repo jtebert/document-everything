@@ -2,6 +2,7 @@
 layout: page
 title: Z shell
 parent: Linux
+nav_order: 5
 permalink: /linux/zsh
 ---
 

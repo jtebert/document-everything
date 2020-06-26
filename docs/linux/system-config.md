@@ -2,6 +2,7 @@
 layout: page
 title: System Configuration
 parent: Linux
+nav_order: 4
 permalink: /linux/system-config
 ---
 

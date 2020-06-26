@@ -63,7 +63,7 @@ aux_links:
     "Github":
       - "//github.com/jtebert"
 # Color scheme currently only supports "dark" or nil (default)
-# color_scheme: "dark"
+color_scheme: "jtebert"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

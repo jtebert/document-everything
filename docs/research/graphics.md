@@ -2,6 +2,7 @@
 layout: page
 parent: Research
 title: Graphics
+nav_order: 1
 permalink: /research/graphics
 ---
 

@@ -2,6 +2,7 @@
 layout: page
 title: Program Configuration
 parent: Linux
+nav_order: 2
 permalink: /linux/program-config
 ---
 

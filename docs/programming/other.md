@@ -2,6 +2,7 @@
 layout: page
 parent: Programming
 title: Miscellaneous
+nav_order: 3
 permalink: /programming/other
 ---
 

@@ -2,6 +2,7 @@
 layout: page
 title: Programs to Install
 parent: Linux
+nav_order: 3
 permalink: /linux/programs
 ---
 

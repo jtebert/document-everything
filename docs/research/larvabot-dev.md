@@ -2,6 +2,7 @@
 layout: page
 title: LARVAbot Development
 parent: Research
+nav_order: 3
 permalink: /research/larvabot-dev
 ---
 

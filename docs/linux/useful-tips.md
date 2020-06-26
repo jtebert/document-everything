@@ -2,6 +2,7 @@
 layout: page
 title: Useful Tips
 parent: Linux
+nav_order: 5
 permalink: /linux/tips
 ---
 
@@ -38,9 +39,9 @@ I started with the [IC Configurator AppImage](https://kiibohd.github.io/wiki/#/Q
 
 From there, I made my modifications and clicked "Flash Keyboard." And even when I was in flash mode with one keyboard half plugged in, it didn't work. So I just flashed it manually. The dialog that appears for flashing the keyboard gives a file name where the compiled file is (in my case, `/home/jtebert/.config/kiibohd-configurator/firmware-cache/MDErgo1_Default_bffebbe02e60e62b/left_kiibohd.dfu.bin`). (There's also one for the right half of the keyboard.)
 
-First, make sure you have `dfu-utils` installed:
+First, make sure you have `dfu-util` installed:
 ```shell
-sudo apt install dfu-utils
+sudo apt install dfu-util
 ```
 
 Then `cd` to the directory containing compiled firmware. Directly plug in only the keyboard half you're flashing, and put it into flash mode (using the button on the back or whatever keyboard shortcut you have already programmed in). Then run:

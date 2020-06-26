@@ -2,6 +2,7 @@
 layout: page
 title: Designs & Models
 parent: 3D Printing
+nav_order: 1
 permalink: /3d-printing/designs
 ---
 
@@ -11,6 +12,15 @@ permalink: /3d-printing/designs
 ---
 
 This is a subset of the things I've designed, in approximately reverse-chronological order.
+
+## Compact weekly pill box
+
+![Pill box](/assets/img/3d-printing/pillbox.jpg)
+{:.left}
+
+I didn't like any of the pill boxes you could buy, so I made my own. I wanted something that's compact, reliable, and looks cool.
+
+**Models:** [PrusaPrinters](https://www.prusaprinters.org/prints/35457), [Thingiverse](https://www.thingiverse.com/thing:4502015)
 
 ## ErgoDox Infinity built-in wrist rest
 

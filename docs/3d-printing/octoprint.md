@@ -2,6 +2,7 @@
 layout: page
 title: OctoPrint
 parent: 3D Printing
+nav_order: 3
 permalink: /3d-printing/octoprint
 ---
 

@@ -2,6 +2,7 @@
 layout: page
 title: Kilobots
 parent: Research
+nav_order: 2
 permalink: /research/kilobots
 ---
 
