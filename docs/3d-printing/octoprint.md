@@ -101,6 +101,18 @@ Edit Main Settings > Uncheck "Always Display Navbar"
 
 Set it to use the output from PrusaSlicer (because all of the others seem to be terrible estimators).
 
+### PrusaSlicer Thumbnails
+
+By default, PrusaSlicer only generates thumbnail images for the Prusa Mini (as of the time I'm writing this). Luckily, you can edit your printer profiles to add it ([as described in the plugin description](https://plugins.octoprint.org/plugins/prusaslicerthumbnails/)).
+
+1. Within PrusaSlicer, go to the menu: Help > Show Configuration Folder. This should open the folder containing the configuration/profile files.
+2. Within the `printer` subfolder, open your desired printer profile in a text file.
+3. Find the line that says `thumbnails =` and replace it with:
+   ```
+   thumbnails = 16x16,220x124
+   ```
+4. Save the file and restart PrusaSlicer to see it take effect.
+
 ### Tab Order
 
 These are my tab settings (all with the color set to white, and the label unchecked):
