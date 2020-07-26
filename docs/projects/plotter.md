@@ -120,31 +120,51 @@ adding linear bearings/spring
 
 pen randomly popping up -->
 
+## To Do
+
+Right now, the workflow for using this is pretty hacky:
+
+- Create your SVG file
+- Use the J Tech Photonics extension (with the right parameters set!) to generate the G-code
+- Connect your computer to the plotter via USB cable to the SKR board
+- In Pronterface, run the homing script
+- Also in Pronterface, run the G-code file. You have to stay connected to the plotter until it's finished.
+
+I'm now working with a fork of the J Tech extension that I've hacked at, which I should be able to use to directly include homing into the script. AxiDraw has its own Inkscape extension for plotting, so I might also see if I can steal (er, borrow) some ideas from that.
+
+The physical setup is also a bit hacky; the control board is stuck to the board is double-sided tape.,
+
+To clean up the hardware side, we want to add a Raspberry Pi running OctoPrint, thus fully integrating it into our printer menagerie. And, of course, print a nice enclosure to hold both the Pi and control board. From what we've seen so far, we'll also probably want to include a fan in there to keep the motor drivers cool.
+
 ## Bill of materials
 
-(This isn't finished or complete yet.)
+This isn't complete yet. I've included Amazon links for parts we actually bought for this.
 
 | Item                                                                                | Quantity |
 | :---------------------------------------------------------------------------------- | -------: |
-| [1N148 diodes (pack of 100)](https://smile.amazon.com/gp/product/B06XB1R2NK)        |        1 |
+| **Mechanical**                                                                      |
 | NEMA17 stepper motors                                                               |        2 |
 | 8 mm linear rods (paired lengths, for each axis)                                    |        4 |
 | 8 mm (inner diameter) linear bearings                                               |        8 |
 | G2 timing belts (length based on rods)                                              |        2 |
-| Zip ties (for timing belts)                                                         |
 | Idler bearings for y-axis                                                           |        2 |
+| X-axis idler bearing                                                                |        1 |
 | [SG90 9g servo motor](https://smile.amazon.com/gp/product/B07MLR1498)               |        1 |
 | [4 mm x 50 mm steel dowel pins](https://smile.amazon.com/gp/product/B07MP9XRDQ)     |        2 |
 | [4 mm linear ball bearings (LM4UU)](https://smile.amazon.com/gp/product/B07H93TFBM) |        2 |
 | [Spring for dowel pins](https://smile.amazon.com/gp/product/B079P5P9LL)             |        1 |
+| **Electronics**                                                                     |
 | [SKR 1.4 control board](https://smile.amazon.com/gp/product/B082HCFL34/)            |        1 |
+| 12 V power brick                                                                    |        1 |
 | Motor drivers                                                                       |        2 |
+| **Hardware**                                                                        |
+| Zip ties (for timing belts)                                                         |
 | M3 screws, washers, and nuts (various)                                              |
 | M2 screws, nuts, and washers (for servo)                                            |        2 |
 | M5 (or imperial) screws and nuts (for y axis bearings)                              |        2 |
 | M5 or M6 screws and nuts (for mounting)                                             |        4 |
 | PETG printer filament                                                               |
-| Rubber band                                                                         |
+| Rubber band(s)                                                                      |
 
 Non-consumable equipment:
 - 3D printer
