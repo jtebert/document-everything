@@ -24,6 +24,7 @@ This is rough contemporaneous documentation of projects I'm working on. Its main
 {:.text-delta}
 
 - [2020](/projects/2020)
+  - [Plotter](/projects/plotter)
   - [Quarantine Bot](/projects/quarantine-bot)
   - [Infinity ErgoDox Configuration](/projects/infinity-ergodox)
   - [Migrating a website to DigitalOcean](/projects/migrate-to-do)
