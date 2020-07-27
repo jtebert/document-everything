@@ -88,7 +88,7 @@ The first thing to make the plotter say is, of course, "Hello World". But let's 
     Your browser does not support the video tag.
 </video>
 
-It actually kind of works! You can already spot a couple of issues here. The most obvious is that we're not drawing consistently on the paper. There are a couple problems contributing to this. First is the sag of the x-axis linear rails; the closer we are to the middle of the x-axis, the lower the y-axis gantry sags. It's not a lot, but it's enough to cause an issue with something as precised as a pen in contact with paper. You also get some sagging when the y-axis is all the way extended, but at this point the contraption is unsteady since it's not mounted on anything. So we'll ignore that problem at the moment and worry about it later.
+It actually kind of works! You can already spot a couple of issues here. The most obvious is that we're not drawing consistently on the paper. There are a couple problems contributing to this. First is the sag of the x-axis linear rails; the closer we are to the middle of the x-axis, the lower the y-axis gantry sags. It's not a lot, but it's enough to cause an issue with something as precise as a pen in contact with paper. You also get some sagging when the y-axis is all the way extended, but at this point the contraption is unsteady since it's not mounted on anything. So we'll ignore that problem at the moment and worry about it later.
 
 The second issue (which turned to be a bigger challenge) was the actuation of the pen. In the original design, the servo horn bumps up against a plastic piece to push the pen up, and then relies on gravity for the pen to go down. The gravity approach had two issues: first, our bearing surface of 3D printed plastic on metal down pins was far from a high-precision bearing surface, even with liberal application of Super Lube, so the pen often wouldn't drop down on its own. Second, gravity alone doesn't generate a lot of downward force on the pen tip, so we didn't get consistent enough force to draw nice lines. You can see our first-pass solution above: just stick a rubber band on it to pull the pen carriage down when the servo isn't engaged. As I'll get into below, we ended up doing a lot of work to improve this.
 
@@ -96,13 +96,19 @@ You might also notice that the lines it's drawing are kind of shaky. We'd made s
 
 ![Hello World, plotted over and over](/assets/img/projects/plotter/many-hello-world.jpg)
 
-## Making it plot better
+## Better plotting with bearings
 
 The plotter technically works. It probably works as well as the demo video on Andrew Sleigh's website, where you might notice that it never shows the pen "retracting." Sneaky, since we discovered this was the trickiest part of the whole build.
 
 After plotting "Hello, World" over and over, we ran into a problem: we killed the servo. We'd overheated it. In fact, it had gotten so warm that it started to melt/deform the plastic holding it in place with M2 screws. Adding some M2 washers fixed that second issue, but we had a bigger problem. When the servo pulled the pen up, it was constantly engaged and had to produce enough torque to counteract the rubberband(s). If we used a weaker rubber band to limit this, there wasn't enough force to push the pen down. It turns out that Marlin has an option to turn off a motor once it gets to its target position. Awesome! Except that once the motor was turned off, there wasn't enough force to keep the pen *up.* It's a catch 22.
 
-What if we could reduce the necessary rubber band strength by letting the servo help push the pen back down? We added a second lever for the servo horn to hit. Now it would hit one bumpout to push the pen up, and when you told the pen to go down, the servo would hit the other one and help overcome the static friction resulting from our crappy bearing surface. It worked... sort of. I mean, it was *better,* but it still wasn't super reliable or consistent. We really couldn't get around the limitations of our 3D printed bearing.
+What if we could reduce the necessary rubber band strength by letting the servo help push the pen back down? We added a second lever for the servo horn to hit. Now it would hit one bumpout to push the pen up, and when you told the pen to go down, the servo would hit the other one and help overcome the static friction resulting from our crappy bearing surface. It worked... sort of. I mean, it was *better,* but it still wasn't super reliable or consistent. We really couldn't get around the limitations of our 3D printed bearing. Plus, the whole pen carriage was kind of wobbly; because we couldn't put tight tolerances on the bearing tube, there was a lot of hysteresis between moving the axes and moving the pen.
+
+So we caved and ordered some cheap bearings. Previously, we were using some leftover Imperial-sized dowel pins that luckily happened to be almost exactly the right size for the initial design. But to find compatible bearing parts, we ended up ordering 50mm x 4mm steel dowel pins and corresponding linear ball bearings. While we were at it, we got some springs, hoping to eliminate the unsightly rubber band hack. We went with what you could get cheap on Amazon with Prime shipping, so we're not talking high precision here; the dowel pins were advertised as being good for assembling bunk beds. They did actually turn out to have pretty tight diameter tolerances, but when you rolled them on a flat surface, you could see that they weren't all perfectly straight. So we picked 2 of the straightest-looking ones out of our 10-pack.
+
+We originally planned to use two bearings on each side of the pen carriage, which would hopefully make it less wobbly, but the curvature of the dowel pins nixed that idea. If you put two bearings next to each other and moved the rod, they tended to bind. Clark also partly blames the cheap bearings for this. Either way, we settled on putting just one bearing on each side.
+
+From our assortment of random springs, we also put a spring around the dowel rod on one side of the pen carriage. The idea was that this would help keep the pen pushed against the paper, like the rubber band. Originally, were were going to put a spring on both sides, but it turned out the little servo couldn't handle pushing the pen up against that much spring force.
 
 __*To be continued.*__
 
@@ -142,7 +148,7 @@ This isn't complete yet. I've included Amazon links for parts we actually bought
 
 | Item                                                                                | Quantity |
 | :---------------------------------------------------------------------------------- | -------: |
-| **Mechanical**                                                                      |
+| **Mechanical**                                                                      |          |
 | NEMA17 stepper motors                                                               |        2 |
 | 8 mm linear rods (paired lengths, for each axis)                                    |        4 |
 | 8 mm (inner diameter) linear bearings                                               |        8 |
