@@ -267,3 +267,52 @@ In the case of the Harvard VPN, the url is `vpn.harvard.edu`. Also for Harvard, 
 
 Source: [Ask Ubuntu](https://askubuntu.com/questions/1033315/connecting-to-cisco-vpn-from-ubuntu-18-04-without-a-group-password)
 {:.fs-2}
+
+## Moving home directory to a new disk/partition
+
+I did this to move my encrypted `/home` directory from my old HDD to a new NVME SSD.
+
+1. Using [GParted](https://gparted.org/) (`sudo apt install gparted`), create an EXT4 partition on your target drive.
+   - If there's no partition table (like on a new drive), go to `Device > Create Partition Table...` and choose `GPT`.
+   - Right click on the bar showing the drive, and select `New`. Create an ext4 partition that fills the whole drive. Don't give it a name or label. Make sure that it is a Primary Partition. Click the check mark to apply the changes.
+   - *While you're here,* make note of the name of the new partition (e.g., `/dev/sdb1` or `/dev/nvme0n1p1`).
+2. Temporarily mount point your new drive.
+   - Create a folder for mounting:
+     ```shell
+     sudo mkdir -p /media/home
+     ```
+   - Mount your drive. Use the drive name (and partition number) from step 1 to mount.
+     ```shell
+     sudo mount /dev/nvme0n1p1 /media/home
+     ```
+3. Copy everything to the new drive. If you've got a lot in your home directory, this will take hours.
+   ```shell
+   sudo rsync -avh /home/. /media/home/.
+   ```
+   By running this as root and using the `-a` flag, it will preserve the correct ownership of everything.
+4. Check that everything copied correctly:
+   ```shell
+   diff -r /home /media/home
+   ```
+5. Set up your system to point to the new home location.
+   - Get the UUID of your new partition:
+     ```shell
+     sudo blkid /dev/nvme0n1p1
+     ```
+   - Create a backup of `/etc/fstab` (because if you mess this up, your system won't boot)
+     ```shell
+     cp /etc/fstab /etc/fstab.bak
+     ```
+   - Edit `fstab`.
+     ```shell
+     sudo nano /etc/fstab
+     ```
+     In this, comment out the current line that mounts your home directory with `#`. Copy this line (uncommented, of course) and replace the UUID with what you got out of `blkid`. In my case, it looks like this:
+     ```shell
+     UUID=4f491680-ec96-453b-85a9-40d4faa20e86 /home ext4 noatime,errors=remount-ro 0 0
+     ```
+6. Reboot your computer. If you open up GParted, you should see that your new drive is mounted at `/home`. But you shouldn't see anything different in your experience, because everything should be exactly the same as on your old drive!
+7. Clean up your old home drive. Once you're satisfied that everything is working correctly, you can reformat your old drive or remove everything from it with `rm`.
+
+Sources: [TecMint](https://www.tecmint.com/move-home-directory-to-new-partition-disk-in-linux/), [Make Tech Easier](https://www.maketecheasier.com/move-home-folder-ubuntu/)
+{:.fs-2}
