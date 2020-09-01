@@ -52,18 +52,20 @@ This is my setup/usage for OctoPrint on a Raspberry Pi 3B+ connected to a Prusa 
    - **Heated bed:** yes
    - **Width (X):** 250 mm
    - **Depth (Y):** 210 mm
-   - **Height (Z):**  200 mm
-   - **Custom bounding box:** X: 0/250, Y: -4/210, Z: 0/200
+   - **Height (Z):**  210 mm
+   - **Custom bounding box:** X: 0/250, Y: -4/210, Z: 0/210
    - **Maximum X speed:** 6000 mm/min
    - **Maximum Y speed:** 6000 mm/min
    - **Maximum Z speed:** 200 mm/min
    - **E (extruder) feed rate:** 300 mm/min
    - **Nozzle:** 0.4 mm
-   - **Number of Extruders:** 1
+   - **Number of Extruders:** 1 *(See step 9 if you're using MMU.)*
 6. After the wizard, obey the pop up and update OctoPrint!
 7. If you connect a Raspberry Pi camera or a [supported webcam](https://github.com/foosel/OctoPrint/wiki/Webcams-known-to-work), it should just work with no additional configuration. (In my case, I had to reboot for it to show up, though. I'm using a Logitech C270.)
-   - Depending on the camera, you may also benefit from modifying the camera settings. Run `sudo nano /boot/octopi.txt` and edit the `camera_usb_options`. Suggested values can also by found on the [OctoPrint Webcams wiki](https://github.com/foosel/OctoPrint/wiki/Webcams-known-to-work).
- 8. Install any plugins you want. I have a list of the ones I use in this [OctoPrint Plugins section]({{ 'linux/programs#octoprint-plugins' | absolute_url }}). For some reason, I had to disable connectivity checking (under Settings > Server) in order for it to connect to/find the plugin server, even though the connectivity check passes. ([See this forum post.](https://community.octoprint.org/t/i-cant-install-any-plugins-from-the-repository-it-is-unreachable/178/4))
+   - Depending on the camera, you may also benefit from modifying the camera settings. Run `sudo nano /boot/octopi.txt` and edit the `camera_usb_options`. Suggested values can also by found on the [OctoPrint Webcams wiki](https://github.com/foosel/OctoPrint/wiki/Webcams-known-to-work). For my C270, I set mine as:<br>
+     `camera_usb_options="-r 1280x720 -f 30"`.
+8. Install any plugins you want. I have a list of the ones I use in this [OctoPrint Plugins section]({{ 'linux/programs#octoprint-plugins' | absolute_url }}). For some reason, I had to disable connectivity checking (under Settings > Server) in order for it to connect to/find the plugin server, even though the connectivity check passes. ([See this forum post.](https://community.octoprint.org/t/i-cant-install-any-plugins-from-the-repository-it-is-unreachable/178/4))
+9. **If you're using the MMU2S:** You'll need to modify the configuration (or else your filament won't switch). Under Settings > Printer Profile, click the pencil to edit the configuration. Under "Hotend & extruder," set "Number of Extruders" to 5, and check the box next to "Shared nozzle." Don't forget to click "Confirm" when you're finished.
 
 Sources: [Raspberry Pi StackExchange](https://raspberrypi.stackexchange.com/questions/931/how-do-i-install-an-os-image-onto-an-sd-card), [All3DP OctoPrint Setup Guide](https://all3dp.com/2/octoprint-setup-guide-how-to-set-up-octoprint/), [OctoPrint Download & Setup](https://octoprint.org/download/)
 {:.fs-2}

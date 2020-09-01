@@ -5,4 +5,6 @@ _site/
 .bundle/
 vendor/**
 node_modules/
+.vscode/
+
 assets/video/**/orig
