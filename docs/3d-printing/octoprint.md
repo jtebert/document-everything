@@ -156,4 +156,3 @@ Source: [PrusaPrinters Forum](https://forum.prusaprinters.org/forum/original-pru
 
 - Add a self-signed certificate to get access over https
 - Set up for access outside the local network ([see this guide](https://octoprint.org/blog/2018/09/03/safe-remote-access/))
-- Info about nyloc mod
