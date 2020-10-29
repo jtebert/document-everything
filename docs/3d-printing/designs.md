@@ -13,6 +13,15 @@ permalink: /3d-printing/designs
 
 This is a subset of the things I've designed, in approximately reverse-chronological order.
 
+## Nut & bolt pencil organizer
+
+![Pencil holder](/assets/img/3d-printing/pencil-holder.jpg)
+{:.left}
+
+It's a pencil holder that's also a functional M80 nut and bolt. There are others like this online, but they weren't quite the right size, so I made my own.
+
+**Models:** [PrusaPrinters](https://www.prusaprinters.org/prints/44623-nut-bolt-pencil-organizer), [Thingiverse](https://www.thingiverse.com/thing:4638012)
+
 ## Compact weekly pill box
 
 ![Pill box](/assets/img/3d-printing/pillbox.jpg)
