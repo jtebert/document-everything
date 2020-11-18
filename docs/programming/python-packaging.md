@@ -18,7 +18,7 @@ This is how I structure my code in Python packages. Despite the [Zen of Python](
 Another guiding principle in the Zen of Python is "Flat is better than nested." With that in mind, I keep a relatively flat structure for my package files. It looks something like this:
 
 ```
-<PROJECT_ROOT_FOLDER>
+<REPO_ROOT_FOLDER>
 ├── docs/
 ├── examples/
 ├── tests/
@@ -26,8 +26,9 @@ Another guiding principle in the Zen of Python is "Flat is better than nested." 
 ├── <PACKAGE_NAME>
 │   ├── __init__.py
 │   ├── <CODE_FILE>.py
+│   ├── <ANOTHER_MODULE>.py
 │   ├── ⋮
-│   └── <SUB_MODULE>
+│   └── <SUB_PACKAGE>
 │       ├── __init__.py
 │       ├── <MORE_CODE>.py
 │       └── ⋮

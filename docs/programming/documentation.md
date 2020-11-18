@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Python documentation
+title: Python Documentation
 parent: Programming
 nav_order: 4
 permalink: /programming/documentation
