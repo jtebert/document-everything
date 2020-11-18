@@ -1,7 +1,7 @@
-$jte-green: #03bc25;
+$green: #03bc25;
 
 
-$link-color: $jte-green;
+$link-color: $green;
 // $body-heading-color: $jte-green;
 
 $blue: #3A93F2;
@@ -40,7 +40,7 @@ $red: #F23C2B;
 //$blue-300: #183385;
 
 $green-000: #42cc5b;
-$green-100: $jte-green;
+$green-100: $green;
 $green-200: #02961d;
 $green-300: #017016;
 
@@ -66,11 +66,11 @@ $body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica n
 
 .site-title {
     font-family: "Space Mono", monospace;
-    color: $jte-green !important;
+    color: $green !important;
 }
 
 .main-content h2:not(.text-delta) {
-    color: $jte-green;
+    color: $green;
     font-family: "Space Mono", monospace;
 }
 
@@ -164,4 +164,89 @@ blockquote {
 video {
     width: 100%;
     margin-bottom: 1em;
+}
+
+// Code blocks
+.highlight, .highlight code {
+    line-height: 1.2em;
+}
+
+.highlight, .highlight pre, .codehilite pre {
+    font-variant-ligatures: none;
+    .c { color: $grey-dk-000 } /* Comment */
+    .ch { color: $grey-dk-000 } /* Comment.Hashbang */
+    .cm { color: $grey-dk-000 } /* Comment.Multiline */
+    .cp { color: $grey-dk-000 } /* Comment.Preproc */
+    .cpf { color: $grey-dk-000 } /* Comment.PreprocFile */
+    .c1 { color: $grey-dk-000 } /* Comment.Single */
+    .cs { color: $grey-dk-000 } /* Comment.Special */
+
+    .err { color: #960050; background-color: #1e0010 } /* Error */
+
+    .k { color: $blue } /* Keyword */
+    .kc { color: $blue } /* Keyword.Constant */
+    .kd { color: $blue } /* Keyword.Declaration */
+    .kp { color: $blue } /* Keyword.Pseudo */
+    .kr { color: $blue } /* Keyword.Reserved */
+    .kt { color: $blue } /* Keyword.Type */
+    .no { color: $blue } /* Name.Constant */
+
+    .l { color: $purple } /* Literal */
+    .mb { color: $purple } /* Literal.Number.Bin */
+    .mf { color: $purple } /* Literal.Number.Float */
+    .mh { color: $purple } /* Literal.Number.Hex */
+    .mi { color: $purple } /* Literal.Number.Integer */
+    .mo { color: $purple } /* Literal.Number.Oct */
+    .il { color: $purple } /* Literal.Number.Integer.Long */
+    .m { color: $purple } /* Literal.Number */
+
+    .o { color: $purple } /* Operator */
+    .kn { color: $purple } /* Keyword.Namespace */
+    .nt { color: $purple } /* Name.Tag */
+    .ow { color: $purple } /* Operator.Word */
+
+
+    .ge { font-style: italic } /* Generic.Emph */
+    .gs { font-weight: bold } /* Generic.Strong */
+
+    .ld { color: $orange } /* Literal.Date */
+    .s { color: $orange } /* Literal.String */
+    .sa { color: $orange } /* Literal.String.Affix */
+    .sb { color: $orange } /* Literal.String.Backtick */
+    .sc { color: $orange } /* Literal.String.Char */
+    .dl { color: $orange } /* Literal.String.Delimiter */
+    .sd { color: $orange } /* Literal.String.Doc */
+    .s2 { color: $orange } /* Literal.String.Double */
+    .sh { color: $orange } /* Literal.String.Heredoc */
+    .si { color: $orange } /* Literal.String.Interpol */
+    .sx { color: $orange } /* Literal.String.Other */
+    .sr { color: $orange } /* Literal.String.Regex */
+    .s1 { color: $orange } /* Literal.String.Single */
+    .ss { color: $orange } /* Literal.String.Symbol */
+
+    .na { color: $green } /* Name.Attribute */
+    .nc { color: $green } /* Name.Class */
+    .nd { color: $green } /* Name.Decorator */
+    .ne { color: $green } /* Name.Exception */
+    .nf { color: $green } /* Name.Function */
+    .nx { color: $green } /* Name.Other */
+    .fm { color: $green } /* Name.Function.Magic */
+
+    .se { color: $red } /* Literal.String.Escape */
+
+    .w { color: #272822 } /* Text.Whitespace */
+
+    .n { color:  $grey-dk-300 } /* Name */
+    .p { color:   $grey-dk-200 } /* Punctuation */
+    .nb { color:   $grey-dk-300 } /* Name.Builtin */
+    .ni { color:   $grey-dk-300 } /* Name.Entity */
+    .nl { color:   $grey-dk-300 } /* Name.Label */
+    .nn { color:   $grey-dk-300 } /* Name.Namespace */
+    .py { color:   $grey-dk-300 } /* Name.Property */
+    .nv { color:   $grey-dk-300 } /* Name.Variable */
+    .bp { color:   $grey-dk-300 } /* Name.Builtin.Pseudo */
+    .vc { color:   $grey-dk-300 } /* Name.Variable.Class */
+    .vg { color:   $grey-dk-300 } /* Name.Variable.Global */
+    .vi { color:   $grey-dk-300 } /* Name.Variable.Instance */
+    .vm { color:   $grey-dk-300 } /* Name.Variable.Magic */
 }
