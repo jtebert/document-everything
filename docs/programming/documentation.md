@@ -13,12 +13,6 @@ permalink: /programming/documentation
 
 This is how I document and version-control my Python code and create auto-generated documentation on Read The Docs – all for free. To see an example of this in action, check out my [Gridsim project](https://github.com/jtebert/gridsim) and [its documentation](https://gridsim.readthedocs.io/en/latest/).
 
-This makes use of a couple of different sites to manage these pieces:
-- [Github](https://github.com/) for source code and version management
-- [Travis CI](https://travis-ci.com/) for managing tests and autodeploying documentation
-- [Read the Docs](https://readthedocs.org/) for hosting documentation
-<!-- - (Optional) [PyPi](https://pypi.org/) for making releases available throuh pip -->
-
 All of these are available for free when your code is open source. (Some don't have this requirement, or let you use non-open source code with an education account.)
 
 ## Code structure
