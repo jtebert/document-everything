@@ -25,7 +25,12 @@ layout: default
         {% if page.date %}
             <b>Posted:</b> {{ page.date | date: '%Y %B %-d' }}<br>
         {% endif %}
-        <b>Last updated:</b> {{ page.last_modified_at | date: '%Y %B %-d' }}
+        <b>Last updated:</b>
+        {% if page.update %}
+            {{ page.update | date: '%Y %B %-d' }}
+        {% else %}
+            {{ page.last_modified_at | date: '%Y %B %-d' }}
+        {% endif %}
     </h6>
     {% if page.image %}
         <br>
