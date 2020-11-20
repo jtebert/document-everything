@@ -4,7 +4,7 @@ label: In Progress
 parent: "2020"
 permalink: /projects/infinity-ergodox
 date: 2020-02-03
-update: 2020-06-19
+last_modified_date: 2020-06-19
 nav_order: -20200203
 ---
 

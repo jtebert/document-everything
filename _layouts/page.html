@@ -26,10 +26,10 @@ layout: default
         {% capture def_date %}{{'1970-01-01' | date: '%s'}}{% endcapture %}
         {% capture page_date %}{{page.date | date: '%s'}}{% endcapture %}
         {% if page_date != def_date %}
-            <b>Posted:</b> {{ page.date | date: '%Y %B %-d' }}<br>
+            <b>Posted:</b> {{ page.date | date: site.date_format }}<br>
         {% endif %}
-        {% if page.update %}
-            <b>Last updated:</b> {{ page.update | date: '%Y %B %-d' }}
+        {% if page.last_modified_date %}
+            <b>Last updated:</b> {{ page.last_modified_date | date: site.date_format }}
         {% endif %}
     </h6>
     {% if page.image %}

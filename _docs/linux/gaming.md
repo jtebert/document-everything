@@ -1,7 +1,7 @@
 ---
 title: Gaming
 parent: Linux
-update: 2020-06-30
+last_modified_date: 2020-06-30
 ---
 
 1. TOC

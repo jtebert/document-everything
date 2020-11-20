@@ -1,7 +1,7 @@
 ---
 title: Program Configuration
 parent: Linux
-update: 2020-01 20
+last_modified_date: 2020-01 20
 ---
 
 1. TOC

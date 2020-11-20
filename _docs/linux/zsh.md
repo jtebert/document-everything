@@ -1,7 +1,7 @@
 ---
 title: Z shell
 parent: Linux
-update: 2020-01-22
+last_modified_date: 2020-01-22
 ---
 
 1. TOC

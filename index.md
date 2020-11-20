@@ -30,7 +30,7 @@ This is rough contemporaneous documentation of projects I'm working on. Its main
 
 <p>
 {% for page in sorted %}
-    <a href="{{page.url}}">{{ page.title}}</a> | {{ page.update | date: site.date_format }}<br>
+    <a href="{{page.url}}">{{ page.title}}</a> | {{ page.last_modified_date | date: site.date_format }}<br>
 {% endfor %}
 </p>
 
@@ -42,7 +42,7 @@ This is rough contemporaneous documentation of projects I'm working on. Its main
   {{ collection }}
 {% assign pages = collection.docs %}
 {% for item in pages %}
-<li>{{item.update}}<a href="{{ item.url }}">{{ item.title }}</a></li>
+<li>{{item.last_modified_date}}<a href="{{ item.url }}">{{ item.title }}</a></li>
 {% endfor %}
   </ul>
   {% endif %}

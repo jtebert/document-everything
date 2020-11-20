@@ -1,7 +1,7 @@
 ---
 title: Kilobots
 parent: Research
-update: 2019-06-13
+last_modified_date: 2019-06-13
 ---
 
 1. TOC

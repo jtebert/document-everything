@@ -1,7 +1,7 @@
 ---
 title: Useful Tips
 parent: Linux
-update: 2020-02-13
+last_modified_date: 2020-02-13
 ---
 
 1. TOC

@@ -3,7 +3,7 @@ title: Migrating a website to DigitalOcean
 parent: "2020"
 permalink: /projects/migrate-to-do
 date: 2020-01-03
-update: 2020-01-06
+last_modified_date: 2020-01-06
 nav_order: -20200103
 ---
 

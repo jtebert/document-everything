@@ -4,7 +4,7 @@ label: In Progress
 parent: "2020"
 permalink: /projects/plotter
 date: 2020-07-26
-update: 2020-07-27
+last_modified_date: 2020-07-27
 nav_order: -20200726
 ---
 

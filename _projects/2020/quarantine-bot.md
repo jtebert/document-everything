@@ -4,7 +4,7 @@ label: In Progress
 parent: "2020"
 permalink: /projects/quarantine-bot
 date: 2020-03-29
-update: 2020-04-18
+last_modified_date: 2020-04-18
 nav_order: -20200329
 ---
 

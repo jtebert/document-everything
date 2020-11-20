@@ -3,7 +3,7 @@ title: Powerful Pi
 parent: "2020"
 permalink: /projects/power-pi
 date: 2020-01-11
-update: 2020-01-20
+last_modified_date: 2020-01-20
 nav_order: -20200111
 ---
 

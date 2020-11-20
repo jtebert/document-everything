@@ -1,7 +1,7 @@
 ---
 title: Chrome OS
 parent: Linux
-update: 2019-11-27
+last_modified_date: 2019-11-27
 ---
 
 1. TOC

@@ -1,7 +1,7 @@
 ---
 title: Design Resources
 permalink: /design-resources
-update: 2020-02-18
+last_modified_date: 2020-02-18
 image: /assets/img/undraw_master_plan_95wa.svg
 image_alt: Planning to take over the world
 ---

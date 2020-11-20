@@ -1,7 +1,7 @@
 ---
 parent: Research
 title: Graphics
-update: 2020-02-10
+last_modified_date: 2020-02-10
 ---
 
 1. TOC
