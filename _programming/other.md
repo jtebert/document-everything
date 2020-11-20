@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Miscellaneous
 update: 2019-07-01
 ---

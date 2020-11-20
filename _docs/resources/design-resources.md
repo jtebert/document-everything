@@ -1,10 +1,7 @@
 ---
-layout: page
 title: Design Resources
 permalink: /design-resources
 update: 2020-02-18
-# nav_order: 3
-has_children: false
 image: /assets/img/undraw_master_plan_95wa.svg
 image_alt: Planning to take over the world
 ---

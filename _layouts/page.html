@@ -22,14 +22,14 @@ layout: default
     {% comment %} I don't know how to directly make it do "if not page.has_children" {% endcomment %}
 {% else %}
     <h6 class="text-zeta date text-grey-dk-000">
-        {% if page.date %}
+        {% comment %} This is a hacky way of handling pages that don't have dates {% endcomment %}
+        {% capture def_date %}{{'1970-01-01' | date: '%s'}}{% endcapture %}
+        {% capture page_date %}{{page.date | date: '%s'}}{% endcapture %}
+        {% if page_date != def_date %}
             <b>Posted:</b> {{ page.date | date: '%Y %B %-d' }}<br>
         {% endif %}
-        <b>Last updated:</b>
         {% if page.update %}
-            {{ page.update | date: '%Y %B %-d' }}
-        {% else %}
-            {{ page.last_modified_at | date: '%Y %B %-d' }}
+            <b>Last updated:</b> {{ page.update | date: '%Y %B %-d' }}
         {% endif %}
     </h6>
     {% if page.image %}

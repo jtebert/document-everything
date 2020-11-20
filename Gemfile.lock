@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/pdmosses/just-the-docs.git
+  revision: e27e12e20a22924a8e329c95037beced884b11f6
+  branch: rec-nav-2
+  specs:
+    just-the-docs (0.3.3)
+      jekyll (>= 3.8.5)
+      jekyll-include-cache (>= 0.2.1)
+      jekyll-seo-tag (~> 2.0)
+      rake (>= 12.3.1, < 13.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -121,9 +132,8 @@ GEM
     jekyll-github-metadata (2.13.0)
       jekyll (>= 3.4, < 5.0)
       octokit (~> 4.0, != 4.4.0)
-    jekyll-last-modified-at (1.3.0)
+    jekyll-include-cache (0.2.1)
       jekyll (>= 3.7, < 5.0)
-      posix-spawn (~> 0.3.9)
     jekyll-mentions (1.5.1)
       html-pipeline (~> 2.3)
       jekyll (>= 3.7, < 5.0)
@@ -195,10 +205,6 @@ GEM
       gemoji (~> 3.0)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
-    just-the-docs (0.3.3)
-      jekyll (>= 3.8.5)
-      jekyll-seo-tag (~> 2.0)
-      rake (>= 12.3.1, < 13.1.0)
     kramdown (1.17.0)
     liquid (4.0.3)
     listen (3.3.1)
@@ -219,7 +225,6 @@ GEM
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    posix-spawn (0.3.15)
     public_suffix (3.1.1)
     rake (13.0.1)
     rb-fsevent (0.10.4)
@@ -261,8 +266,7 @@ DEPENDENCIES
   github-pages
   jekyll (~> 3.8.5)
   jekyll-feed
-  jekyll-last-modified-at
-  just-the-docs
+  just-the-docs!
   tzinfo-data
 
 BUNDLED WITH

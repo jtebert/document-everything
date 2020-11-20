@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Kilobots
 parent: Research
 update: 2019-06-13

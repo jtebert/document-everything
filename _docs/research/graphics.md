@@ -1,5 +1,4 @@
 ---
-layout: page
 parent: Research
 title: Graphics
 update: 2020-02-10

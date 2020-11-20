@@ -1,9 +1,7 @@
 ---
-layout: page
 title: Creating a Keyboard
-# grand_parent: Side Projects
 parent: "2019"
-permalink: /projects/keyboard
+# permalink: /projects/keyboard
 date: 2019-12-17
 update: 2020-02-03
 ---

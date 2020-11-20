@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Gaming
 parent: Linux
 update: 2020-06-30

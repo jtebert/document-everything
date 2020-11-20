@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Z shell
 parent: Linux
 update: 2020-01-22

@@ -42,8 +42,8 @@ date_format: '%Y %B %d'
 
 # Build settings
 markdown: kramdown
-remote_theme: pmarsceill/just-the-docs
-# theme: "just-the-docs"
+# remote_theme: pmarsceill/just-the-docs
+remote_theme: pdmosses/just-the-docs@rec-nav-2
 plugins:
   - jekyll-feed
   - jekyll-last-modified-at
@@ -87,7 +87,7 @@ collections:
     permalink: "/:collection/:path/"
     output: true
   projects:
-    permalink: "/:collection/:path/"
+    permalink: "/:collection/:title/"
     output: true
 
 just_the_docs:
@@ -100,3 +100,10 @@ just_the_docs:
     docs:
       name: Everything Else
 
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "page"
+      date: "1970-01-01"

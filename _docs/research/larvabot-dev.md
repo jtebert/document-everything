@@ -1,5 +1,4 @@
 ---
-layout: page
 title: LARVAbot Development
 parent: Research
 update: 2020-01-09

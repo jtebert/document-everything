@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Designs & Models
 parent: 3D Printing
 update: 2020-10-29

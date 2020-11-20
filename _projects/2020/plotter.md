@@ -1,8 +1,6 @@
 ---
-layout: page
 title: Plotter
 label: In Progress
-# grand_parent: Side Projects
 parent: "2020"
 permalink: /projects/plotter
 date: 2020-07-26

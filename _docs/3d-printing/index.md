@@ -1,5 +1,4 @@
 ---
-layout: page
 title: 3D Printing
 has_children: true
 permalink: 3d-printing

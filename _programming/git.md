@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Git Cheat Sheet
 update: 2020-02-11
 ---

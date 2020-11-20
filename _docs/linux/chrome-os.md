@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Chrome OS
 parent: Linux
 update: 2019-11-27

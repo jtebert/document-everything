@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Program Configuration
 parent: Linux
 update: 2020-01 20

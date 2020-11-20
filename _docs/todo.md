@@ -1,5 +1,4 @@
 ---
-layout: page
 title: TODO
 update: 2020-02-19
 image: /assets/img/undraw_to_do_list_a49b.svg

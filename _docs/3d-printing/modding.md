@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Modding
 parent: 3D Printing
 update: 2020-06-26

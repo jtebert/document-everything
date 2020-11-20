@@ -1,5 +1,4 @@
 ---
-layout: page
 title: System Configuration
 parent: Linux
 update: 2020-08-05

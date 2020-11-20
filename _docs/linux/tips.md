@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Useful Tips
 parent: Linux
 update: 2020-02-13

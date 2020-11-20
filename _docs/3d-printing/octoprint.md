@@ -1,5 +1,4 @@
 ---
-layout: page
 title: OctoPrint
 parent: 3D Printing
 update: 2020-10-08

@@ -1,7 +1,7 @@
 ---
-layout: page
 title: Useful Tips
 parent: 3D Printing
+update: 2020-11-18
 ---
 
 1. TOC

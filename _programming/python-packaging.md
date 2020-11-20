@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Python Packaging
 update: 2020-11-18
 ---

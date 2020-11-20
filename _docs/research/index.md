@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Research
 permalink: /research
 has_children: true

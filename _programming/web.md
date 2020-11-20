@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Web Development
 update: 2019-11-01
 ---
