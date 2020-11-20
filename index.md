@@ -26,12 +26,25 @@ This is rough contemporaneous documentation of projects I'm working on. Its main
 - Everyone loves lots of pictures.
 
 
-{% assign sorted = site.pages | sort: 'date' %}
+{% assign sorted = site.programming | sort: 'update' | reverse %}
 
 <p>
-<!-- {% comment %} -->
 {% for page in sorted %}
-    {{ page.title}} | {{ page.last_modified_at | date: '%s' }}
+    <a href="{{page.url}}">{{ page.title}}</a> | {{ page.update | date: site.date_format }}<br>
 {% endfor %}
-<!-- {% endcomment %} -->
 </p>
+
+<div>
+{% for collection in site.collections %}
+  {% if collection.label != 'posts' %}
+  <h2>Items from {{ collection.title }}</h2>
+  <ul>
+  {{ collection }}
+{% assign pages = collection.docs %}
+{% for item in pages %}
+<li>{{item.update}}<a href="{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+  </ul>
+  {% endif %}
+{% endfor %}
+</div>
