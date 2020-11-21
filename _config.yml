@@ -44,6 +44,7 @@ date_format: '%Y %B %e'
 markdown: kramdown
 # remote_theme: pmarsceill/just-the-docs
 remote_theme: pdmosses/just-the-docs@rec-nav-2
+# remote_theme: cbteeple/just-the-docs
 
 plugins:
   - jekyll-feed
@@ -57,6 +58,7 @@ kramdown:
 
 # Enable or disable the site search
 search_enabled: true
+
 # Aux links for the upper right navigation
 aux_links:
     "Home":
@@ -126,3 +128,10 @@ gh_edit_repository: "https://github.com/jtebert/document-everything" # the githu
 gh_edit_branch: "master" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+
+# #CBTEEPLE
+
+# nav_bullets: children # all, children
+
+# image_lightbox: True

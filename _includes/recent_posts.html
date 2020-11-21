@@ -1,0 +1,26 @@
+<!-- Get list of pages from all collections -->
+{% assign things = "" | split:"/" %} <!--Hacky way of initializing an empty list-->
+{% for collection in site.collections %}
+    {% assign things = things | concat: collection.docs %}
+{% endfor %}
+
+<!-- Only include pages with a last_modified_date, then sort by that -->
+{% assign sorted = things | where_exp: 'item', "item.last_modified_date != nil" | sort: 'last_modified_date' | reverse %}
+
+<!-- Display most recently updated pages -->
+{% for page in sorted limit: 5 %}
+<h3 markdown="0">
+    <span class="text-grey-dk-100">
+        {% if page.collection %}
+            {{page.collection | capitalize}} /
+        {% endif %}
+        {% if page.parent %}
+            {{page.parent }} /
+        {% endif %}
+    </span>
+    <a href="{{page.url}}">{{ page.title}}</a>
+</h3>
+<p class="fs-3 text-grey-dk-000" markdown="0">
+    Last updated: {{ page.last_modified_date | date: site.date_format }}
+</p>
+{% endfor %}

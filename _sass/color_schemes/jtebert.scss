@@ -1,5 +1,16 @@
 $green: #03bc25;
 
+$base-color: $green;
+
+// buttons
+$btn-primary-color: $base-color;
+$base-button-color: $grey-lt-000;
+$button-border-radius: 1.5em;
+
+
+// nav bar hovering
+$sidebar-color: $grey-lt-000;
+$sidebar-hover-color: darken($sidebar-color,3%);
 
 $link-color: $green;
 // $body-heading-color: $jte-green;
