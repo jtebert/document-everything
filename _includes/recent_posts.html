@@ -21,6 +21,11 @@
     <a href="{{page.url}}">{{ page.title}}</a>
 </h3>
 <p class="fs-3 text-grey-dk-000" markdown="0">
-    Last updated: {{ page.last_modified_date | date: site.date_format }}
+    {% if page_date != def_date %}
+        <b>Posted:</b> {{ page.date | date: site.date_format }}<br>
+    {% endif %}
+    {% if page.last_modified_date %}
+        <b>Last updated:</b> {{ page.last_modified_date | date: site.date_format }}
+    {% endif %}
 </p>
 {% endfor %}
