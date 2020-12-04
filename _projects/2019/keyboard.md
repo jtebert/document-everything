@@ -1,7 +1,7 @@
 ---
 title: Creating a Keyboard
 parent: "2019"
-# permalink: /projects/keyboard
+permalink: /projects/keyboard
 date: 2019-12-17
 last_modified_date: 2020-02-03
 ---

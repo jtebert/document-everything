@@ -11,6 +11,25 @@ last_modified_date: 2020-10-29
 
 This is a subset of the things I've designed, in approximately reverse-chronological order.
 
+## Larger weekly pill box
+
+![Pill box](/assets/img/3d-printing/larger-pillbox.jpg)
+{:.left}
+
+It's like the compact pill box, but less compact.
+
+**Models:** [PrusaPrinters](https://www.prusaprinters.org/prints/48132-larger-weekly-pill-box), [Thingiverse](https://www.thingiverse.com/thing:4675070)
+
+## Multi-color 2020 Dumpster Fire Ornament
+
+![2020 Dumpster Fire](/assets/img/3d-printing/2020-dumpster-fire.jpg)
+{:.left}
+
+A summary of 2020, in 3D printed form.
+
+There are a lot of similar designs out there, but mine has wheels! And colored text. And everything is designed with overhangs and tolerances that make it very easy to print.
+
+**Models:** [PrusaPrinters](https://www.prusaprinters.org/prints/48131-multi-color-2020-dumpster-fire-ornament), [Thingiverse](https://www.thingiverse.com/thing:4674990)
 ## Nut & bolt pencil organizer
 
 ![Pencil holder](/assets/img/3d-printing/pencil-holder.jpg)
