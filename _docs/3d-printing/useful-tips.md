@@ -26,6 +26,7 @@ These values are what I've calibrated for the material and brand specified, but 
 | Red PLA (Hatchbox)           | 100            | 80           |
 | Red bronze silk PLA (Eryone) | 70             | 80           |
 | White PLA & PETG (Hatchbox)  | 50             | 150          |
+| White PLA (Sunlu)            | 50             | 180          |
 
 ## Add Thumbnails to PrusaSlicer GCode
 

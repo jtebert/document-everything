@@ -11,6 +11,24 @@ last_modified_date: 2020-10-29
 
 This is a subset of the things I've designed, in approximately reverse-chronological order.
 
+*Coming soon:*
+
+- Flexi gator (currently my peak accomplishment in 3D printed toy designs)
+- MMU-compatiable heatbed mount for [this camera mount](https://www.thingiverse.com/thing:3114849/files)
+- Tool holder for Prusa MK3/S/+ (remixed from [Tool Rail for Prusa i3 MK3](https://www.prusaprinters.org/prints/46474))
+- Printer nozzle box (based on the same box design as my pill boxes)
+
+---
+
+## "My First Pandemic" 2020 Ornament
+
+![First Pandemic Ornament](/assets/img/3d-printing/first-pandemic-ornament.jpg)
+{:.left}
+
+You might have a "My First Christmas" ornament. Now you can add "My First Pandemic" to your collection of 2020 commemorative ornaments. It's a fast, easy, multi-color print designed completely from scratch.
+
+**Models:** [PrusaPrinters](https://www.prusaprinters.org/prints/48723-my-first-pandemic-2020-ornament), [Thingiverse](https://www.thingiverse.com/thing:4683445)
+
 ## Larger weekly pill box
 
 ![Pill box](/assets/img/3d-printing/larger-pillbox.jpg)

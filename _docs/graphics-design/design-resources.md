@@ -1,19 +1,15 @@
 ---
 title: Design Resources
-permalink: /design-resources
+# permalink: /design-resources
+parent: Graphics & Design
 last_modified_date: 2020-02-18
-image: /assets/img/undraw_master_plan_95wa.svg
-image_alt: Planning to take over the world
 ---
 
-I'm big on finding free graphics and fonts.
+I like free graphics and fonts.
 
 ---
 
-<!-- #### Table of Contents -->
-{:.text-delta}
-
-- TOC
+1. TOC
 {:toc}
 
 ---
@@ -22,7 +18,8 @@ I'm big on finding free graphics and fonts.
 ## Graphics & Illustrations
 
 - [unDraw](https://undraw.co/illustrations): A big collection of color-customizable SVG illustrations (many related to tech/design), and the source of all the header images for this website
-- [manypixels](https://gallery.manypixels.co/): Large collection of stylistically consistent, color-customizable illustrations (similar to unDraw, but in a different style)
+- [Scale by Flexiple](https://2.flexiple.com/scale/all-illustrations): Daily color-customizable SVG illustrations. Similar to unDraw, but smaller collection (so far) and more detailed style.
+- [manypixels](https://gallery.manypixels.co/): Large collection of stylistically consistent, color-customizable illustrations. This has *multiple* styles, usually with the same illustration available in most/all styles.
 - [Lukaszadam](https://lukaszadam.com/illustrations): Small but growing collection of small illustrations
 - [Mixkit](https://mixkit.co/free-stock-art/): Many styles of illustrations of a variety of subjects. (More visually interesting than the trendy flat styles of the above ones)
 
