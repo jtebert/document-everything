@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -15,7 +13,7 @@
    viewBox="0 0 381 187.5106"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="1.0.1 (1.0.1+r74)"
    sodipodi:docname="2019.svg">
   <defs
      id="defs2">
@@ -50,16 +48,6 @@
          stop-opacity="0.1"
          id="stop6" />
     </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#e2bf1f7d-47c1-4d5e-a8e7-eb090eb66cd5"
-       id="linearGradient856"
-       x1="47.901108"
-       y1="120.17438"
-       x2="47.901108"
-       y2="130.52992"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(7.5364496,0,0,7.5364496,-314.27214,-819.28293)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -68,23 +56,25 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.42730242"
-     inkscape:cx="483.39724"
-     inkscape:cy="295.96075"
+     inkscape:zoom="0.85460484"
+     inkscape:cx="607.86068"
+     inkscape:cy="335.37929"
      inkscape:document-units="mm"
-     inkscape:current-layer="g895"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
-     inkscape:window-width="1870"
-     inkscape:window-height="1016"
-     inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:window-width="3398"
+     inkscape:window-height="1398"
+     inkscape:window-x="42"
+     inkscape:window-y="42"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:document-rotation="0"
+     inkscape:snap-page="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -98,103 +88,115 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="bg"
+     style="display:none">
+    <rect
+       style="display:inline;fill:#27262b;fill-opacity:1;stroke:none;stroke-width:0.105833;stroke-linejoin:round"
+       id="rect982"
+       width="381"
+       height="187.5106"
+       x="0"
+       y="0" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(96.489679,-8.98055)">
     <g
-       id="g895"
-       transform="matrix(1.3177042,0,0,1.3177042,30.655179,-62.42607)"
-       style="stroke-width:0.7588957">
+       id="g874"
+       style="fill:#49425e;fill-opacity:0.80318457">
       <path
          sodipodi:type="star"
-         style="opacity:1;fill:#3f3d56;fill-opacity:1;stroke:none;stroke-width:0.11383434;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:#49425e;fill-opacity:0.80318457;stroke:none;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="path941"
          sodipodi:sides="3"
-         sodipodi:cx="51.36322"
-         sodipodi:cy="98.020859"
-         sodipodi:r1="44.721725"
-         sodipodi:r2="22.360863"
+         sodipodi:cx="98.336708"
+         sodipodi:cy="66.736427"
+         sodipodi:r1="58.930004"
+         sodipodi:r2="29.465002"
          sodipodi:arg1="2.3436951"
          sodipodi:arg2="3.3908927"
          inkscape:flatsided="true"
          inkscape:rounded="0"
          inkscape:randomized="0"
-         d="M 20.137914,130.03668 39.249357,54.971038 94.70239,109.05486 Z"
          inkscape:transform-center-x="-7.9812389"
-         inkscape:transform-center-y="-7.2697664" />
+         inkscape:transform-center-y="-7.2697664"
+         d="M 57.190991,108.92381 82.37422,10.009499 155.44491,81.275971 Z" />
       <path
          sodipodi:type="star"
-         style="opacity:1;fill:#3f3d56;fill-opacity:1;stroke:none;stroke-width:0.11383434;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:#49425e;fill-opacity:0.80318457;stroke:none;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="path939"
          sodipodi:sides="3"
-         sodipodi:cx="115.55511"
-         sodipodi:cy="161.19357"
-         sodipodi:r1="49.91832"
-         sodipodi:r2="24.95916"
+         sodipodi:cx="182.92262"
+         sodipodi:cy="149.97939"
+         sodipodi:r1="65.77758"
+         sodipodi:r2="32.88879"
          sodipodi:arg1="0.78539816"
          sodipodi:arg2="1.8325957"
          inkscape:flatsided="true"
          inkscape:rounded="0"
          inkscape:randomized="0"
-         d="M 150.85269,196.49116 67.337713,174.11339 128.47492,112.97618 Z"
          inkscape:transform-center-x="8.512249"
-         inkscape:transform-center-y="-8.5122482" />
+         inkscape:transform-center-y="-8.5122482"
+         d="M 229.4344,196.49116 119.38636,167.00388 199.94711,86.443122 Z" />
       <path
          sodipodi:type="star"
-         style="opacity:1;fill:#3f3d56;fill-opacity:1;stroke:none;stroke-width:0.11383434;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:#49425e;fill-opacity:0.80318457;stroke:none;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="path937"
          sodipodi:sides="3"
-         sodipodi:cx="169.68018"
-         sodipodi:cy="93.974335"
-         sodipodi:r1="45.938789"
-         sodipodi:r2="22.969393"
+         sodipodi:cx="254.24345"
+         sodipodi:cy="61.404305"
+         sodipodi:r1="60.533737"
+         sodipodi:r2="30.266865"
          sodipodi:arg1="1.0471976"
          sodipodi:arg2="2.0943951"
          inkscape:flatsided="true"
          inkscape:rounded="0"
          inkscape:randomized="0"
-         d="M 192.64957,133.75849 123.74139,93.974332 192.64957,54.190177 Z"
-         inkscape:transform-center-x="15.133442" />
+         inkscape:transform-center-x="15.133442"
+         d="M 284.51032,113.82806 193.70972,61.404302 284.51033,8.9805518 Z" />
       <path
          sodipodi:type="star"
-         style="opacity:1;fill:#3f3d56;fill-opacity:1;stroke:none;stroke-width:0.11383434;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:#49425e;fill-opacity:0.80318457;stroke:none;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="path935"
          sodipodi:sides="3"
-         sodipodi:cx="-37.420849"
-         sodipodi:cy="125.03981"
-         sodipodi:r1="61.152557"
-         sodipodi:r2="30.576279"
+         sodipodi:cx="-18.654432"
+         sodipodi:cy="102.33941"
+         sodipodi:r1="80.580978"
+         sodipodi:r2="40.290489"
          sodipodi:arg1="0.78539816"
          sodipodi:arg2="1.8325957"
          inkscape:flatsided="true"
          inkscape:rounded="0"
          inkscape:randomized="0"
-         d="M 5.8205393,168.2812 -96.489683,140.86726 -21.593403,65.970976 Z"
          inkscape:transform-center-x="10.427947"
-         inkscape:transform-center-y="-10.427947" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:107.20335388px;line-height:100%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient856);fill-opacity:1;stroke:none;stroke-width:0.20079114px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="-75.49601"
-         y="162.94843"
-         id="text824"><tspan
-           sodipodi:role="line"
-           id="tspan822"
-           x="-75.49601"
-           y="162.94843"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Space Mono';-inkscape-font-specification:'Space Mono Bold';fill:url(#linearGradient856);fill-opacity:1;stroke-width:0.20079114px">2019</tspan></text>
-      <text
-         id="text12"
-         y="166.93642"
-         x="-79.484055"
-         style="font-style:normal;font-weight:normal;font-size:107.20335388px;line-height:100%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.20079114px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Space Mono';-inkscape-font-specification:'Space Mono Bold';fill:#38bc24;fill-opacity:1;stroke-width:0.20079114px"
-           y="166.93642"
-           x="-79.484055"
-           id="tspan10"
-           sodipodi:role="line">2019</tspan></text>
+         inkscape:transform-center-y="-10.427947"
+         d="M 38.324924,159.31876 -96.48968,123.1953 2.2014593,24.504161 Z" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:141.262px;line-height:100%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:0.1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-68.826233"
+       y="152.29175"
+       id="text824"><tspan
+         sodipodi:role="line"
+         id="tspan822"
+         x="-68.826233"
+         y="152.29175"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Space Mono';-inkscape-font-specification:'Space Mono Bold';fill:#000000;fill-opacity:0.1;stroke-width:0.264583px;">2019</tspan></text>
+    <text
+       id="text12"
+       y="157.54675"
+       x="-74.081291"
+       style="font-style:normal;font-weight:normal;font-size:141.262px;line-height:100%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Space Mono';-inkscape-font-specification:'Space Mono Bold';fill:#38bc24;fill-opacity:1;stroke-width:0.264583px"
+         y="157.54675"
+         x="-74.081291"
+         id="tspan10"
+         sodipodi:role="line">2019</tspan></text>
   </g>
 </svg>

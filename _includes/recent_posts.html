@@ -10,7 +10,7 @@
 <!-- Display most recently updated pages -->
 {% for page in sorted limit: 5 %}
 <h3 markdown="0">
-    <span class="text-grey-dk-100">
+    <span>
         {% if page.collection %}
             {{page.collection | capitalize}} /
         {% endif %}

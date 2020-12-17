@@ -45,3 +45,5 @@ For Ruby 2.7 and Jekyll 3.8.5, you get a billion warnings printed to the console
 ```shell
 bundle exec jekyll serve 2>/dev/null
 ```
+
+- If you're using `_includes/resecnt_posts.html` and get an error that says "Error: Liquid error .....: comparison of Array with Array failed included": This is likely due to a page with an invalid `last_modified_date`. Check that you haven't accidentally put a space instead of dash in your date, for example. It should be in the format `2020-12-15`.

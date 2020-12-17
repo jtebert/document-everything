@@ -2,63 +2,8 @@
 layout: default
 ---
 
-{% comment %} <h1><i class="mdi {{page.icon}}"></i> {{ page.title }}</h1> {% endcomment %}
-<h1>
-    {{ page.title }}
-    {% if page.label %}
-        <span class="label label-blue">{{ page.label }}</span>
-    {% endif %}
-</h1>
-
-<!--
-<div id="inline_toc" markdown="1">
-    1. TOC
-    {:toc}
-</div>
-<hr>
--->
-
-{% if page.has_children %}
-    {% comment %} I don't know how to directly make it do "if not page.has_children" {% endcomment %}
-{% else %}
-    <h6 class="text-zeta date text-grey-dk-000">
-        {% comment %} This is a hacky way of handling pages that don't have dates {% endcomment %}
-        {% capture def_date %}{{'1970-01-01' | date: '%s'}}{% endcapture %}
-        {% capture page_date %}{{page.date | date: '%s'}}{% endcapture %}
-        {% if page_date != def_date %}
-            <b>Posted:</b> {{ page.date | date: site.date_format }}<br>
-        {% endif %}
-        {% if page.last_modified_date %}
-            <b>Last updated:</b> {{ page.last_modified_date | date: site.date_format }}
-        {% endif %}
-    </h6>
-    {% if page.image %}
-        <br>
-    {% else %}
-        <hr>
-    {% endif %}
-{% endif %}
-
-{% if page.image %}
-    <img src="{{ page.image }}" alt="{{ page.image_alt }}" id="header-img">
-{% endif %}
+{% comment %} <script src="{{ "/assets/js/theme-loader.js" }}"></script> {% endcomment %}
 
 {{ content }}
 
-<div class="wrapper" style="position: relative">
-    <div id="modal-overlay-img" class="modal-overlay">
-        <div class="modal"><img id="modal-content-img" class="modal-content"/></div>
-    </div>
-    <div id="modal-overlay-video" class="modal-overlay">
-        <div class="modal">
-            <video autoplay controls loop
-                id="modal-content-video" class="modal-content">
-        </div>
-    </div>
-</div>
-
-<script src="{{ "/assets/js/img-modal.js" }}"></script>
-
-<script type="text/javascript" async
- src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+<script src="{{ "/assets/js/theme-switcher.js" }}"></script>

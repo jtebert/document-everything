@@ -31,7 +31,7 @@ github_username:  jtebert
 heading_anchors: true
 
 # Footer content appears at the bottom of every page's main content
-footer_content: "&copy; 2019&ndash;2020 by Julia Ebert"
+# footer_content: "&copy; 2019&ndash;2020 by Julia Ebert"
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
@@ -65,6 +65,8 @@ aux_links:
       - "//juliaebert.com"
     "Github":
       - "//github.com/jtebert"
+    '<button class="btn" id="theme-toggle">Switch theme</button>':
+      - '#"onclick="switch_theme()"'
 # Color scheme currently only supports "dark" or nil (default)
 color_scheme: "jtebert"
 
@@ -114,7 +116,7 @@ defaults:
       # It's a hack around this bug: https://github.com/pmarsceill/just-the-docs/issues/472
       path: "_*"
     values:
-      layout: "page"
+      layout: "doc_page"
       date: "1970-01-01"
 
 # Footer last edited timestamp
