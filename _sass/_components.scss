@@ -1,0 +1,26 @@
+// By default, blockquote is just indented with no styling
+blockquote {
+    @extend .text-grey-dk-000;
+    border-left: 4px solid #e6e1e8;
+    margin-left: 1em;
+    padding-left: 1em;
+    font-size: 0.95em;
+    font-style: italic;
+}
+
+// Main image on pages
+#header-img {
+    display: block;
+    margin-bottom: 2em;
+}
+
+// half-width images
+.left {
+    display: block;
+    @media only screen and (min-width: 31.25rem) {
+        float: left;
+        width: 50%;
+        margin-right: 1em;
+
+    }
+}

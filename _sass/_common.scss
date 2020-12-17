@@ -1,0 +1,100 @@
+// html {
+//     opacity: 0;
+//     transition: opacity 1s;
+// }
+
+$green: #03bc25;
+
+$base-color: $green;
+
+// // buttons
+// $btn-primary-color: $base-color;
+// $base-button-color: $grey-lt-000;
+// $button-border-radius: 1.5em;
+// nav bar hovering
+// $sidebar-color: $grey-lt-000;
+// $sidebar-hover-color: darken($sidebar-color,3%);
+
+$link-color: $green;
+// $body-heading-color: $jte-green;
+
+$blue: #3A93F2;
+$purple: #9246F4;
+$orange: #F18F01;
+$red: #F23C2B;
+
+
+////
+//// Colors
+////
+
+//$white: #fff;
+
+//$grey-dk-000: #959396;
+//$grey-dk-100: #5c5962;
+//$grey-dk-200: #44434d;
+//$grey-dk-250: #302d36;
+//$grey-dk-300: #27262b;
+
+//$grey-lt-000: #f5f6fa;
+//$grey-lt-100: #eeebee;
+//$grey-lt-200: #ecebed;
+//$grey-lt-300: #e6e1e8;
+
+//$purple-000: #7253ed;
+//$purple-100: #5e41d0;
+//$purple-200: #4e26af;
+//$purple-300: #381885;
+
+//$blue-000: #2c84fa;
+//$blue-100: #2869e6;
+//$blue-200: #264caf;
+//$blue-300: #183385;
+
+$green-000: #42cc5b;
+$green-100: $green;
+$green-200: #02961d;
+$green-300: #017016;
+
+//$yellow-000: #ffeb82;
+//$yellow-100: #fadf50;
+//$yellow-200: #f7d12e;
+//$yellow-300: #e7af06;
+
+//$red-000: #f77e7e;
+//$red-100: #f96e65;
+//$red-200: #e94c4c;
+//$red-300: #dd2e2e;
+
+
+$body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Space+Mono&display=swap');
+@import url('https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css');
+
+
+// Makes sure it behaves with floating images
+hr, h2 {
+    clear: both;
+}
+
+// Use the title font
+.site-title {
+    font-family: "Space Mono", monospace;
+    color: $green !important;
+}
+// This covers everything except H1 and table of contents titles
+.main-content h2:not(.text-delta) {
+    color: $green;
+    font-family: "Space Mono", monospace;
+}
+
+.date {
+    line-height: 1.5em;
+}
+
+// This is a fix for a bug in the dark theme where the search text is still black.
+// Single line of code is stolen from here: https://github.com/pmarsceill/just-the-docs/pull/498
+.search-input {
+    color: $body-text-color;
+}
