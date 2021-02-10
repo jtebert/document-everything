@@ -38,15 +38,17 @@ footer_content: "&copy; 2019&ndash;2020 by Julia Ebert"
 ga_tracking: UA-54476418-2
 
 # Date formatting (set defaults)
-date_format: '%Y %B %d'
+date_format: '%Y %B %e'
 
 # Build settings
 markdown: kramdown
-remote_theme: pmarsceill/just-the-docs
-# theme: "just-the-docs"
+# remote_theme: pmarsceill/just-the-docs
+remote_theme: pdmosses/just-the-docs@rec-nav-2
+# remote_theme: cbteeple/just-the-docs
+
 plugins:
   - jekyll-feed
-  - jekyll-last-modified-at
+  # - jekyll-last-modified-at
 
 kramdown:
   toc_levels: "2"
@@ -56,6 +58,7 @@ kramdown:
 
 # Enable or disable the site search
 search_enabled: true
+
 # Aux links for the upper right navigation
 aux_links:
     "Home":
@@ -76,3 +79,59 @@ color_scheme: "jtebert"
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Define Jekyll collections
+collections:
+  # Define a collection named "docs", its documents reside in the "_docs" directory
+  docs:
+    permalink: "/:path/"
+    output: true
+    title: 'Everything Else'
+  programming:
+    permalink: "/:collection/:path/"
+    output: true
+    title: Programming
+  projects:
+    permalink: "/:collection/:path/"
+    output: true
+    title: Projects
+
+just_the_docs:
+  # Define which collections are used in just-the-docs
+  collections:
+    programming:
+      name: Programming
+    projects:
+      name: Projects
+    docs:
+      name: Everything Else
+
+defaults:
+  -
+    scope:
+      # an empty string here means all files in the project - THAT BREAKS JTD
+      # This gets things in all the collections
+      # It's a hack around this bug: https://github.com/pmarsceill/just-the-docs/issues/472
+      path: "_*"
+    values:
+      layout: "page"
+      date: "1970-01-01"
+
+# Footer last edited timestamp
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: '%Y %B %e' # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+
+# Footer "Edit this page on GitHub" link text
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub."
+gh_edit_repository: "https://github.com/jtebert/document-everything" # the github URL for your repo
+gh_edit_branch: "master" # the branch that your docs is served from
+# gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+
+# #CBTEEPLE
+
+# nav_bullets: children # all, children
+
+# image_lightbox: True
