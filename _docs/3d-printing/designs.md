@@ -11,8 +11,12 @@ This is a subset of the things I've designed, in approximately reverse-chronolog
 - MMU-compatiable heatbed mount for [this camera mount](https://www.thingiverse.com/thing:3114849/files)
 - Tool holder for Prusa MK3/S/+ (remixed from [Tool Rail for Prusa i3 MK3](https://www.prusaprinters.org/prints/46474))
 - Printer nozzle box (based on the same box design as my pill boxes)
+- SD card box (again, with the same box design)
 - Improved Ikea Skådis accessories (remixed from [IKEA SKADIS Collection](https://www.thingiverse.com/thing:2853261))
-
+- Stackable Lego-like filament test bricks (with lots of parameters!)
+- Yet another minimalist toothbrush holder
+- Yet another minimalist phone stand
+- Over-engineered socket set box
 ---
 
 ## Flexi-gator
