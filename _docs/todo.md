@@ -1,6 +1,6 @@
 ---
 title: TODO
-last_modified_date: 2020-02-19
+last_modified_date: 2021-02-10
 image: /assets/img/undraw_to_do_list_a49b.svg
 image_alt: Human-sized To Do list
 ---
@@ -32,3 +32,7 @@ These are things I want to learn how to do or try out. Not for work or anything.
 - [8" 3D-printed moon lamp](https://www.thingiverse.com/thing:3242080) (gotta figure out how I'm lighting it up. Section of a 12 V LED strip?)
 - Curling stone magnets
 - [Bust of Caesar pencil holder](https://www.thingiverse.com/thing:2536988)
+
+## To Write About
+
+- Designing for 3D printing

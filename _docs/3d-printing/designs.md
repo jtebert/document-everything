@@ -1,24 +1,28 @@
 ---
 title: Designs & Models
 parent: 3D Printing
-last_modified_date: 2020-10-29
----
-
-- TOC
-{:toc}
-
+last_modified_date: 2021-02-10
 ---
 
 This is a subset of the things I've designed, in approximately reverse-chronological order.
 
 *Coming soon:*
 
-- Flexi gator (currently my peak accomplishment in 3D printed toy designs)
 - MMU-compatiable heatbed mount for [this camera mount](https://www.thingiverse.com/thing:3114849/files)
 - Tool holder for Prusa MK3/S/+ (remixed from [Tool Rail for Prusa i3 MK3](https://www.prusaprinters.org/prints/46474))
 - Printer nozzle box (based on the same box design as my pill boxes)
+- Improved Ikea Skådis accessories (remixed from [IKEA SKADIS Collection](https://www.thingiverse.com/thing:2853261))
 
 ---
+
+## Flexi-gator
+
+![Flexi-gator](/assets/img/3d-printing/flexi-gator.jpg)
+{:.left}
+
+It's a flexible alligator, inspired by Flexi Rex, but more *Florida.* It's the first time I've made a design based on something biological. This is currently my peak accomplishment in 3D printed toy design.
+
+**Models:** [PrusaPrinters](https://www.prusaprinters.org/prints/55973-flexi-gator), [Thingiverse](https://www.thingiverse.com/thing:4757841)
 
 ## "My First Pandemic" 2020 Ornament
 
