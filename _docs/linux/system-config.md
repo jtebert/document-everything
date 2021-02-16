@@ -1,7 +1,7 @@
 ---
 title: System Configuration
 parent: Linux
-last_modified_date: 2020-08-05
+last_modified_date: 2021-02-16
 ---
 
 - TOC
