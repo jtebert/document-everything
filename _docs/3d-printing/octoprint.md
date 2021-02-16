@@ -103,7 +103,15 @@ Set it to use the output from PrusaSlicer (because all of the others seem to be 
 
 ### PrusaSlicer Thumbnails
 
-By default, PrusaSlicer only generates thumbnail images for the Prusa Mini (as of the time I'm writing this). Luckily, you can edit your printer profiles to add it ([as described in the plugin description](https://plugins.octoprint.org/plugins/prusaslicerthumbnails/)).
+You can add thumbnails for you prints in Octoprint with [this plugin](https://plugins.octoprint.org/plugins/prusaslicerthumbnails/). However, you need to also make PrusaSlicer generate the thumbnails with the GCode. By default, PrusaSlicer only does this for the Mini.
+
+#### For PrusaSlicer ≥2.3
+
+Within PrusaSlicer, go the "Printer Settings" tab. Within "General", look for "G-code thumbnails" under "Firmware." Set the value to `16x16, 220x124`. To save this you'll also need to save this as a custom printer profile.
+
+If you already set this in PrusaSlicer <2.3, it should already show up here.
+
+#### For PrusaSlicer <2.3
 
 1. Within PrusaSlicer, go to the menu: Help > Show Configuration Folder. This should open the folder containing the configuration/profile files.
 2. Within the `printer` subfolder, open your desired printer profile in a text file.
