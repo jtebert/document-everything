@@ -1,7 +1,7 @@
 ---
 title: Modding
 parent: 3D Printing
-last_modified_date: 2020-06-26
+last_modified_date: 2021-02-17
 ---
 
 1. TOC
@@ -38,7 +38,7 @@ This is the process for improving the levelness of the bed on the Prusa i3 MK3S 
 
 - 8 M3 locknuts, which is (inconveniently) fewer than there are extras in your kit.
 - Printer connected to OctoPrint (though the video/Reddit has a way to do it without OctoPrint).
-- Install the [PrusaMeshMap](https://github.com/PrusaOwners/OctoPrint-PrusaMeshMap) plugin for OctoPrint. This will let you check the levelness of the bed when you're making adjustments. Note caveat at the end that it will have to compile matplotlib/numpy on a Raspberry Pi, so you can end up with some errors-that-aren't-errors while installing.
+- Install the [Prusa Leveling Guide](https://plugins.octoprint.org/plugins/PrusaLevelingGuide/) plugin for OctoPrint. This will let you check the levelness of the bed when you're making adjustments.
 
 ### Instructions
 
@@ -48,22 +48,9 @@ This is the process for improving the levelness of the bed on the Prusa i3 MK3S 
 4. Start screwing in the outside screws, one turn at a time, cycling around, until the heatbed is close to the height of the center spacer. (You can also insert a spacer near these screws to double check.)
 5. Use pliers to insert the spacer next to your screws at each point and tighten your screws until you can't pull the spacer out, then loosen the screw just enough to be able to pull the spacer out.
 6. Then screw in center screw until it's tight.
-7. Turn your printer back on, put the steel sheet back on, and change the mesh bed leveling (if you haven't already). Go to Settings > Mesh Bed Leveling > Mesh, and set it to 7x7. Also set the z-probe to 5.
-8. Heat the print bed to 60°C if you print primarily with PLA, 85°C if you print with PETG, or something in the middle if you print with both.
-9. Since you've installed the OctoPrint plugin, you can go the MeshMap tab and click "Perform Bed Level and Check". This will show you an visualization of the variance.
-10. Go to the terminal tab of OctoPrint and copy the output values under `Measured points:`. It should look something like this:
-    ```shell
-    Recv:   0.02400  0.10950  0.15350  0.28050  0.32150  0.40550  0.48250
-    Recv:   0.14450  0.20900  0.20700  0.27600  0.37800  0.50350  0.54400
-    Recv:   0.20950  0.26050  0.22650  0.29625  0.33750  0.50750  0.56550
-    Recv:   0.16750  0.22900  0.22950  0.34500  0.39225  0.48850  0.58950
-    Recv:   0.21500  0.28800  0.28500  0.35525  0.39800  0.56650  0.61900
-    Recv:   0.18850  0.29350  0.29750  0.39300  0.46400  0.58650  0.60850
-    Recv:   0.12950  0.26600  0.34950  0.42300  0.52150  0.58250  0.60100
-    ```
-    Paste the result into [this tool](https://pcboy.github.io/g81_relative/), which will convert the variation into how much you should turn each of the 8 screws.
-11. Turn the screws according to those instructions and **repeat steps 9-10.** Keep doing this until you have < 0.2 mm height difference across the bed. (Or so the instructions say. I haven't actually been able to get it that small.)
-12. Before you start printing again, **set the live z back near zero** so you don't dig into the bed and re-run the first layer calibration.
+7. In Octoprint, go to the "Prusa Leveling Guide" tab. This should guide you through the whole process: Preheat to your target temperature (I use the PLA settings -- 215°C nozzle, 60°C bed), and click "Begin Adjusting."
+8.  Turn the screws according to the output displayed by the plugin. Keep doing this until you have < 0.2 mm height variance.
+9.  Before you start printing again, **set the live z back near zero** so you don't dig into the bed and re-run the first layer calibration.
 
 ### Upkeep
 

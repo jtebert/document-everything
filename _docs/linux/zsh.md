@@ -1,7 +1,7 @@
 ---
 title: Z shell
 parent: Linux
-last_modified_date: 2020-01-22
+last_modified_date: 2021-02-17
 ---
 
 1. TOC
@@ -127,6 +127,24 @@ Now you can edit this YAML file to your heart's content. I opted for lazily taki
 Sources: [OMG Ubuntu](https://www.omgubuntu.co.uk/2017/07/add-bling-ls-bash-command-colorls), [colorls GitHub](https://github.com/athityakumar/colorls/issues/165)
 {:.fs-2}
 
+## Syntax Highlighting
+
+Get code-like syntax highlighting as you type in your terminal. I'm using the [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) plugin through Oh My ZSH.
+
+First, install the system dependency. [The installation page](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md) directs you to the place to get it. For Ubuntu/Pop, this involved a process of copying/pasting stuff into the terminal to get the repository added and installing.
+
+Then clone the repository directly into your ZSH plugins directory. (This should automatically put it in the right spot.)
+```shell
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+
+In your `.zshrc` file, look for the line with `plugins=(...)`. Within this, add the `zsh-syntax-highlighting` plugin. For example:
+```shell
+plugins=(git extract z history-substring-search zsh-syntax-highlighting)
+```
+
+Restart your terminal and you should see colors when you type.
+
 ## Other Fixes
 
 ### VS Code
@@ -181,6 +199,5 @@ Since then, I've also switched to my own dark/bold Material color scheme, which 
 
 ## Unresolved Issues
 
-- Try switching to [powerlevel10k](https://github.com/romkatv/powerlevel10k) because it's faster (apparently)
-- I get single-pixel lines next to the segment separators (in gnome-terminal, but not within VS Code)
+- I get single-pixel lines next to the segment separators (across all the terminals I've tried)
 
