@@ -22,6 +22,7 @@ I like free graphics and fonts.
 - [manypixels](https://gallery.manypixels.co/): Large collection of stylistically consistent, color-customizable illustrations. This has *multiple* styles, usually with the same illustration available in most/all styles.
 - [Lukaszadam](https://lukaszadam.com/illustrations): Small but growing collection of small illustrations
 - [Mixkit](https://mixkit.co/free-stock-art/): Many styles of illustrations of a variety of subjects. (More visually interesting than the trendy flat styles of the above ones)
+- [3D Bay](https://clouddevs.com/3dbay/): A collection of high-quality, royalty-free 3D stock images.
 
 ## Icons
 
