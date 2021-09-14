@@ -7,4 +7,5 @@ vendor/**
 node_modules/
 .vscode/
 
+
 assets/video/**/orig

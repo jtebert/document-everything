@@ -45,3 +45,5 @@ For Ruby 2.7 and Jekyll 3.8.5, you get a billion warnings printed to the console
 ```shell
 bundle exec jekyll serve 2>/dev/null
 ```
+
+If you encounter errors when trying to locally run the site, try deleting the `vendor` and `_site` directories, then reinstalling dependencies (as described above).

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="381mm"
+   height="187.51mm"
+   version="1.1"
+   viewBox="0 0 381 187.51"
+   id="svg35"
+   sodipodi:docname="2021.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2518"
+     inkscape:window-height="1398"
+     id="namedview37"
+     showgrid="false"
+     inkscape:zoom="0.91294022"
+     inkscape:cx="734.98788"
+     inkscape:cy="375.16148"
+     inkscape:window-x="1962"
+     inkscape:window-y="42"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg35"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs9">
+    <linearGradient
+       id="linearGradient856"
+       x1="47.901"
+       x2="47.901"
+       y1="120.17"
+       y2="130.53"
+       gradientTransform="matrix(9.9307143,0,0,9.9307143,-286.96858,-1150.9719)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="gray"
+         stop-opacity=".25"
+         offset="0"
+         id="stop2" />
+      <stop
+         stop-color="gray"
+         stop-opacity=".12"
+         offset=".54"
+         id="stop4" />
+      <stop
+         stop-color="gray"
+         stop-opacity=".1"
+         offset="1"
+         id="stop6" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <ellipse
+     style="fill:#3f3d56;fill-opacity:1;stroke-width:0.926042;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.85208, 0.926042"
+     id="path1188"
+     transform="rotate(-17.146382)"
+     ry="47.552315"
+     rx="67.368111"
+     cy="66.808929"
+     cx="48.334789" />
+  <ellipse
+     style="fill:#3f3d56;fill-opacity:1;stroke-width:0.926041;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.85208, 0.926041"
+     id="path1188-3"
+     cx="162.74516"
+     cy="85.104797"
+     rx="30.2675"
+     ry="41.468834"
+     transform="rotate(21.805087)" />
+  <ellipse
+     style="fill:#3f3d56;fill-opacity:1;stroke-width:0.926042;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.85208, 0.926042"
+     id="path1188-6"
+     cx="273.72739"
+     cy="3.4235528"
+     rx="67.368111"
+     ry="35.418434"
+     transform="rotate(9.3183019)" />
+  <ellipse
+     style="fill:#3f3d56;fill-opacity:1;stroke-width:0.92604;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.85208, 0.92604"
+     id="path1188-7"
+     cx="298.38321"
+     cy="144.63634"
+     rx="39.368286"
+     ry="37.848225" />
+  <text
+     x="27.663908"
+     y="143.31055"
+     fill="url(#linearGradient856)"
+     font-family="sans-serif"
+     font-size="141.257px"
+     letter-spacing="0px"
+     stroke-width="0.264581px"
+     word-spacing="0px"
+     style="line-height:100%;fill:url(#linearGradient856)"
+     xml:space="preserve"
+     id="text25"><tspan
+       x="27.663908"
+       y="143.31055"
+       fill="url(#linearGradient856)"
+       font-family="'Space Mono'"
+       font-weight="bold"
+       stroke-width="0.264581px"
+       id="tspan23"
+       style="fill:url(#linearGradient856)">2021</tspan></text>
+  <text
+     x="22.408861"
+     y="148.56552"
+     fill="#000000"
+     font-family="sans-serif"
+     font-size="141.257px"
+     letter-spacing="0px"
+     stroke-width="0.264581px"
+     word-spacing="0px"
+     style="line-height:100%"
+     xml:space="preserve"
+     id="text29"><tspan
+       x="22.408861"
+       y="148.56552"
+       fill="#38bc24"
+       font-family="'Space Mono'"
+       font-weight="bold"
+       stroke-width="0.264581px"
+       id="tspan27">2021</tspan></text>
+</svg>

@@ -261,3 +261,34 @@ video {
     .vi { color:   $grey-dk-300 } /* Name.Variable.Instance */
     .vm { color:   $grey-dk-300 } /* Name.Variable.Magic */
 }
+
+// Star ratings
+// Based on: https://stackoverflow.com/a/51802643/2552873
+
+.stars {
+    position: relative;
+    display:inline-block;
+    font-size: 18pt;
+	  height: 1em;
+    line-height: 1em;
+}
+
+.stars:before {
+    content: "\2605\2605\2605\2605\2605";
+    color: $grey-lt-300;
+}
+
+.stars:after {
+    content: "\2605\2605\2605\2605\2605";
+    position:absolute;
+    left:0;
+    overflow:hidden;
+    width:var(--w,50%);
+    // color: rgb(255, 200, 0);
+    color: $orange;
+    z-index: 1;
+}
+
+// li {
+//   display: table;
+// }

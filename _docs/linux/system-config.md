@@ -331,7 +331,7 @@ Source: [Ask Ubuntu](https://askubuntu.com/questions/1033315/connecting-to-cisco
 I did this to move my encrypted `/home` directory from my old HDD to a new NVME SSD.
 
 1. Using [GParted](https://gparted.org/) (`sudo apt install gparted`), create an EXT4 partition on your target drive.
-   - If there's no partition table (like on a new drive), go to `Device > Create Partition Table...` and choose `GPT`.
+   - If there's no partition table (like on a new drive), go to `Device > Create Partition Table...`. See [this thread](https://ubuntuforums.org/showthread.php?t=1457901) for which to choose. TL;DR: If it's a Linux-only machine, choose GPT; if it's dual-boot with Windows, choose MBR (sometimes called MSDOS).
    - Right click on the bar showing the drive, and select `New`. Create an ext4 partition that fills the whole drive. Don't give it a name or label. Make sure that it is a Primary Partition. Click the check mark to apply the changes.
    - *While you're here,* make note of the name of the new partition (e.g., `/dev/sdb1` or `/dev/nvme0n1p1`).
 2. Temporarily mount point your new drive.
