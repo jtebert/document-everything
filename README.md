@@ -17,12 +17,17 @@ Run locally:
 bundle exec jekyll serve
 ```
 
+If you want to speed up build times, try adding the `--incremental` flag, but [be aware of its limitations](https://jekyllrb.com/docs/configuration/incremental-regeneration/):
+```shell
+bundle exec jekyll serve --incremental
+```
+
 Occasionally update your packages:
 ```shell
 bundle update
 ```
 
-Netlify builds from the master branch. (You can use GitHub Pages, but you will lose the "last updated" feature on posts, because GitHub Pages doesn't allow external plugins.)
+Netlify builds from the master branch. (Previously, using GitHub pages would disable the last-modified plugin, but this is no longer used. So it should work on Github Pages, but I haven't tried it recently to confirm.)
 
 ## Credits
 

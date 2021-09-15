@@ -9,6 +9,7 @@ permalink: '/'
 ---
 
 # Julia Documents Things
+{:.page-title}
 
 <!-- ![Programming robots to take over the world](/assets/img/undraw_robotics_kep0.svg) -->
 ![Programming and chillin'](/assets/img/undraw_researching_22gp.svg)
@@ -32,4 +33,5 @@ This is rough contemporaneous documentation of projects I'm working on. Its main
 - You're way less likely to actually write stuff down if you wait until you've already finished the project.
 - Explaining things by writing them down helps you solve your own problems (like [rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)).
 - It helps you keep track of useful resources/links as you're going, so you don't need to keep open 300 browser tabs.
+- Something is better than nothing: focus on writing down *something* about what you're doing, rather than trying to write the perfect thing, and ending up writing *nothing*. That also means incomplete documentation is still better than no documentation.
 - Everyone loves lots of pictures.

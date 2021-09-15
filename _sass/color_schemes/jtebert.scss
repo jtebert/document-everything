@@ -22,7 +22,6 @@ $red: #F23C2B;
 
 
 
-
 ////
 //// Colors
 ////
@@ -68,8 +67,6 @@ $green-300: #017016;
 
 
 
-
-
 $body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Space+Mono&display=swap');
@@ -78,6 +75,10 @@ $body-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "helvetica n
 .site-title {
     font-family: "Space Mono", monospace;
     color: $green !important;
+}
+
+.main-content h1.page-title {
+    margin-bottom: 0.6em;
 }
 
 .main-content h2:not(.text-delta) {

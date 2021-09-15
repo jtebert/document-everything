@@ -46,8 +46,8 @@ markdown: kramdown
 remote_theme: pdmosses/just-the-docs@rec-nav-2
 # remote_theme: cbteeple/just-the-docs
 
-plugins:
-  - jekyll-feed
+# plugins:
+  # - jekyll-feed
   # - jekyll-last-modified-at
 
 kramdown:
