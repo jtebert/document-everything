@@ -1,7 +1,7 @@
 ---
 title: Useful Tips
 parent: Graphics & Design
-last_modified_date: 2020-12-07
+last_modified_date: 2021-09-16
 ---
 
 1. TOC
@@ -9,7 +9,7 @@ last_modified_date: 2020-12-07
 
 ---
 
-## White photo backgrounds (Gimp)
+## White photo backgrounds in Gimp
 
 It looks nice in papers and on websites to have a photo with a perfectly white background. I don't promise that this is the best approach, but it works well enough for me.
 
@@ -33,7 +33,7 @@ This assumes that you are starting with an image where the background is *close*
 Source: [ePHOTOzine](https://www.ephotozine.com/article/gimp-tutorial--whiten-a-dull-background-15818)
 {:.fs-2}
 
-## Color Palettes (Inkscape)
+## Create Inkscape color palette
 
 To use a consistent color scheme, I find it useful to have a color palette that I can reuse across my presentations, posters, graphs, etc.
 
