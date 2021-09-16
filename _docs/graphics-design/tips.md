@@ -82,3 +82,46 @@ That extension puts the objects in the order they were created and name the colo
 
 Sources: [Logos by Nick](https://logosbynick.com/inkscape-custom-swatches/)
 {:.fs-2}
+
+## Duotone images in Gimp
+
+![All methods of creating duotone images](/assets/img/graphic-design/duotone/duotone.svg)
+Image source: [Maximalfocus/Unsplash](https://unsplash.com/photos/0n4jhVGS4zs)
+{:.fs-2}
+
+
+### Option A: Screen & Multiply
+
+This approach lets you adjust the colors and brightness/contrast without having to undo anything. However, the screen and multiply effects will dull out whichever layer is underneath.
+
+1. In the menu go to Colors > Desaturate > Desaturate. In the dialog, you can select the conversion mode. Luminance often best matches the original brightness/contrast of the image. Then click OK.
+2. If you want, you can now adjust the brightness/contrast. To make the effect look its best, you probably want to increase the contrast. Go to Colors > Brightness-Contrast to make these adjustments.
+3. Now we'll create the layer for the background. First, set the color you want as your darker color as the secondary (background) color. In the layers section, click the button to create a new layer. Under "Fill with," select "Background color." (If you want to adjust this later, you can always drag the color you want ) Set the Mode to "Screen," and click OK to create the layer. Now, the dark parts of your image will have the color you set.
+4. Next, the foreground. Set the Gimp foreground color to your lighter color. In the layers section again, click to create a new layer.Under "Fill with," this time select "Foreground color," and set the Mode to "Multiply."
+5. You can now tweak the colors of your foreground and background, and adjust the brightness and contrast of the underlying grayscale image layer. Particularly useful for tweaking: on your grayscale image, go to Colors > Curves. Try adjusting the lower end (blacks) down and the upper end (whites) up to increase the contrast between your colors.
+
+Source: [3D world-wide](http://www.3dworld-wide.com/how-to-create-duotone-effect-with-gimp.html)
+{:.fs-2}
+
+### Option B: Gradient Map
+
+This option preserves the colors, but doesn't let you change the base image (eg brightness/contrast) after applying the gradient map. To do that, you'll need to undo, change the image, and redo.
+
+1. Start by adjusting the brightness and contrast of your base image. It doesn't have to be made grayscale, but doing so can help you figure out the appropriate brightness and contrast.
+2. Set your active colors: The dark background color should be set as the active foreground color, and vice versa. (Come on, Gimp!)
+3. Make sure that your active gradient is set to "FG to BG (RGB)". This should be in the same panels as the layers. If not, click the little arrow in the top right corner of the panel, then Add Tab > Gradients.
+4. Time to set the gradient. Go to Colors > Map > Gradient Map.
+
+Source: [Photo StackExchange](https://photo.stackexchange.com/a/85293)
+{:.fs-2}
+
+### Option C: Layer Masks
+
+This option feels like the best of both worlds: It maintains the ability to edit the various pieces, while better preserving the selected foreground and background colors.
+
+1. Like in Option A, create two new layers filled with your foreground and background colors, but keep their Mode set to "Normal." Your foreground layer should be on top.
+2. Right click on the foreground layer and select "Add Layer Mask." It doesn't matter what you initialize the mask with, since we'll be replacing it.
+3. Select the layer containing your original image (again, perhaps easier if it's grayscale) and copy the layer itself. Click on the *mask* of your foreground layer (this will make sure you're editing the mask, not the layer directly). Paste with Ctrl+V. You'll now have a floating selection. Click the green anchor button at the bottom of the Layers panel ("Anchor the floating layer"). This will place your floating layer into the layer mask.
+
+Source: [Reddit /r/GIMP](https://www.reddit.com/r/GIMP/comments/gatfkm/how_to_do_duotone_in_gimp/)
+{:.fs-2}
