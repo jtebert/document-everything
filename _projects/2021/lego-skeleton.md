@@ -1,11 +1,10 @@
 ---
 title: Mega Lego Skeleton
-# label: In Progress
 parent: "2021"
 date: 2021-10-04
 last_modified_date: 2021-10-11
 nav_order: -20211004
-# published: false
+permalink: /projects/lego-skeleton
 ---
 
 1. TOC

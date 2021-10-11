@@ -1,10 +1,9 @@
 ---
 title: 3D Printing my Brain
-# label: In Progress
 parent: "2021"
 date: 2021-03-16
 nav_order: -20210316
-# published: false
+permalink: /projects/3d-print-brain
 ---
 
 1. TOC

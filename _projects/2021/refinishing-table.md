@@ -4,6 +4,7 @@ parent: "2021"
 date: 2021-06-29
 last_modified_date: 2021-09-14
 nav_order: -20210629
+permalink: /projects/refinishing-table
 ---
 
 1. TOC
