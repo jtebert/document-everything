@@ -40,5 +40,5 @@ The current (in progress) version of the LARVAbot code is an Arduino library. Be
      ln -s [REPO_LOCATION]/Larva ~/Arduino/libraries
      ```
 
-Sources: [Carlos Rodrigues Github](https://github.com/carlosefr/atmega)
+Sources: [Carlos Rodrigues GitHub](https://github.com/carlosefr/atmega)
 {:.fs-2}

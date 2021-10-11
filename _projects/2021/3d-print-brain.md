@@ -10,6 +10,8 @@ nav_order: -20210316
 1. TOC
 {:toc}
 
+---
+
 TL;DR: Look, it's my brain!
 
 ![Brain on its stand](/assets/img/projects/3d-print-brain/stand-with-brain.jpg)

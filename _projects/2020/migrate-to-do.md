@@ -118,9 +118,9 @@ Now I can move on to setting up the Django stuff (following [this tutorial](http
 
 Now we diverge from the tutorial because we're not creating a new project from scratch; it already exists in a repository with its dependencies specified.
 
-- Add server user's SSH key to Github (so I can clone):
+- Add server user's SSH key to GitHub (so I can clone):
   - On the server, copy the output of `cat ~/.ssh/id_rsa.pub`
-  - On Github, go to Settings > SSH and GPG keys > New SSH key, and paste the public key.
+  - On GitHub, go to Settings > SSH and GPG keys > New SSH key, and paste the public key.
 - Clone the repository into the user home folder:
   ```shell
   git clone git@github.com:jtebert/lazy-baker.git

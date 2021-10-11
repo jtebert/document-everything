@@ -131,7 +131,7 @@ Case/keycaps:
 - Someone else has a whole OpenSCAD system for keycap design [on Thingiverse](https://www.thingiverse.com/thing:2783650). Unfortunately, I suck at OpenSCAD and the whole thing seems rather poorly documented.
 - [SiCK-68](https://www.thingiverse.com/thing:3478494): an open-source 3D printed keyboard with good documentation
 - [SMOLBOAT case](https://www.thingiverse.com/thing:3289175): the ortholinear basis for the SiCK-68. It doesn't seem to include much documentation - just STL files for the case(s).
-- Someone made a [fully 3D printed keyboard](https://imgur.com/a/AalpV1r) (including keycaps) ([Github](https://github.com/sealclubber/SB-147))
+- Someone made a [fully 3D printed keyboard](https://imgur.com/a/AalpV1r) (including keycaps) ([GitHub](https://github.com/sealclubber/SB-147))
 - [SwillKB Plate & Case designer](http://builder.swillkb.com/) for getting the correct sizes to insert switches. (It's designed for laser cutting. I could do that or turn it into a 3D printable part.)
 - [keyboard-layout-editor.com](http://www.keyboard-layout-editor.com/), for designing the layout (which imports to the plate builder above)
 
@@ -301,7 +301,7 @@ After looking around more, it turns out that there are way better options than T
 
 But that means we first have to go through the process of [creating a custom layout for a hand-wired board](https://docs.qmk.fm/#/hand_wire). I followed the instructions for "Creating and compiling your firmware locally (command line method)," because why would I do it through an online GUI when I can dig into it myself? (Maybe I'm old and just don't trust the internet, but I also like to be able to keep track of everything in a git repository.) But the process was pretty well-documented and straight-forward (summarized here):
 
-- On Github, create a fork of the [QMK firmware repository](https://github.com/qmk/qmk_firmware).
+- On GitHub, create a fork of the [QMK firmware repository](https://github.com/qmk/qmk_firmware).
 - Clone your newly forked repository and create a new keyboard project with: `.util/new_keyboard.sh` (and follow the prompts)
 - Navigate into the new project: `cd keyboards/<project_name>`
 - In the project's `config.h` file, fill in the number of `MATRIX_ROWS` and MATRIX_COLUMNS`, pins that are used for each row and column (these should be in order) and any unused pins (to save power). Mine looks like this:
@@ -343,7 +343,7 @@ But that means we first have to go through the process of [creating a custom lay
 
 #### Special keymap stuff
 
-Because it's large, you can see the full keymap [in my Github repository](https://github.com/jtebert/qmk_firmware/blob/master/keyboards/artemis75/keymaps/default/keymap.c). But there were a couple particulars that I had to sort out to get the layout as I wanted.
+Because it's large, you can see the full keymap [in my GitHub repository](https://github.com/jtebert/qmk_firmware/blob/master/keyboards/artemis75/keymaps/default/keymap.c). But there were a couple particulars that I had to sort out to get the layout as I wanted.
 
 **Modifier keys (`(` = `Shift+9`):** While TMK made this a pain, QMK makes it easy ([as described here](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#modifier-keys)). Where I would but a keycode like `KC_9`, I instead use `LSFT(KC_9)` or `S(KC_9)` to get a left parenthesis (`Shift + 9`).
 

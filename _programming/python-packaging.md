@@ -182,7 +182,7 @@ Another general rule of thumb: code that's "pre-release" has a major version num
 
 ### In your code
 
-One of the most annoying challenges in managing versions is to make sure that everywhere has the same version number: your documentation, your Github release, your PyPi release, the code itself. There's not a perfect solution to this. The way I do it is by:
+One of the most annoying challenges in managing versions is to make sure that everywhere has the same version number: your documentation, your GitHub release, your PyPi release, the code itself. There's not a perfect solution to this. The way I do it is by:
 
 1. Keeping the version number in only *one* place in the code, which everywhere looks at.
 2. Creating a checklist for new releases. (I'll describe this in the [automation section](#automate-it) below.)
@@ -265,13 +265,13 @@ This first walks you through testing the process on test.pypi.org, then making y
 
 There's one important note here that has tripped me up in the past: you can't re-upload to pypi with the same version number. This makes sense -- you don't want to have two different versions of the code with the same version number! So if you discover you made a mistake in the code you uploaded, just increment your version number at the patch level and upload again. (For example, v0.4 becomes v0.4.1) I've done this a lot, especially when fiddling with automating the process (which I'll describe below).
 
-### Github
+### GitHub
 
-In addition to pip having version numbering, Github *also* lets you make releases. (For the nitpicky, version tags are a feature of `git` itself, but Github has a nice interface for adding additional information with those tags.)
+In addition to pip having version numbering, GitHub *also* lets you make releases. (For the nitpicky, version tags are a feature of `git` itself, but GitHub has a nice interface for adding additional information with those tags.)
 
 This might seem redundant and pointless at first, but it will be useful for automating everything. So bear with me.
 
-On the page for your Github repository, you should see a tab for "Tags" or "Releases". When you click on it, you should have a button that says "Draft a new release."
+On the page for your GitHub repository, you should see a tab for "Tags" or "Releases". When you click on it, you should have a button that says "Draft a new release."
 
 That will take you to a form. For the "Tag version," use the release number that's set in your code (in `<PACKAGE_NAME>/__init__.py`). For the name, I do something like "Gridsim v0.4.1". No need to get fancy, but I like to include the version number for clarity. For the description, this is where the changelog comes in handy: if you keep track of the changes from the last version as you go, you can just copy and paste them here.
 
@@ -281,11 +281,11 @@ By default, this release will include a zip file of your source code *at the mos
 
 Right now, we have a lot of manual steps to create a new version of your package, which means a lot of steps to forget or mess up. If we automate it, we can avoid that.
 
-Here we'll use [Travis CI](https://travis-ci.com) (which stands for continuous integration). This lets you automate code-related tasks by connecting it to your Github, such as running tests, compiling documentation, and (in our case) creating releases.
+Here we'll use [Travis CI](https://travis-ci.com) (which stands for continuous integration). This lets you automate code-related tasks by connecting it to your GitHub, such as running tests, compiling documentation, and (in our case) creating releases.
 
 Travis CI provides some useful documentation here: for [setting up Travis with Python](https://docs.travis-ci.com/user/languages/python/) and [deploying to PyPi](https://docs.travis-ci.com/user/deployment/pypi/).
 
-First, we need to connect our Github repo to Travis. ([Here's a tutorial](https://docs.travis-ci.com/user/tutorial/), if you don't like reading my version.) When you go to [travis-ci.com](https://travis-ci.com), log in with your Github and follow the prompts. You can either activate it for all repositories, or just this project. (It won't do anything to your other repositories unless you set them up like below.)
+First, we need to connect our GitHub repo to Travis. ([Here's a tutorial](https://docs.travis-ci.com/user/tutorial/), if you don't like reading my version.) When you go to [travis-ci.com](https://travis-ci.com), log in with your GitHub and follow the prompts. You can either activate it for all repositories, or just this project. (It won't do anything to your other repositories unless you set them up like below.)
 
 In order for Travis to know what to do with our repository, we'll include a `.travis.yml` file in the root of the repository. Travis will spin up a virtual machine with the specifications you give it and run the commands you request of it. This file will tell Travis the configuration and what you want it to do. Here's what the basics look like: (we'll add on to this in a moment)
 
@@ -312,7 +312,7 @@ With this included in your repository, Travis will run this every time you push 
 
 Below this, there are two commented lines that would run any tests in your system. But I haven't covered testing here (I might in a future post), so for now we'll leave it out.
 
-Now, we'll make this deploy to PyPi whenever we create a new release on Github. After this, we'll never need to go through those PyPi steps I describe above. We'll add the following to our `.travis.yml`.
+Now, we'll make this deploy to PyPi whenever we create a new release on GitHub. After this, we'll never need to go through those PyPi steps I describe above. We'll add the following to our `.travis.yml`.
 
 ```yaml
 # Push tagged releases to pip
@@ -352,7 +352,7 @@ travis encrypt YOUR_API_TOKEN --add deploy.password --com
 ```
 Then paste the output into the `secure` line above. You can [read more about the encryption keys here](https://docs.travis-ci.com/user/encryption-keys/#usage).
 
-If you push to Github, you should see on your Travis dashboard that this runs, but it won't deploy to PyPi. Now, if you create a tag/release on Github, the deployment will run and create a new version of your package, which you'll be able to see on pypi.org.
+If you push to GitHub, you should see on your Travis dashboard that this runs, but it won't deploy to PyPi. Now, if you create a tag/release on GitHub, the deployment will run and create a new version of your package, which you'll be able to see on pypi.org.
 
 ### Release checklist
 
@@ -363,6 +363,6 @@ Before making a new release, I have a checklist to make sure I don't miss any st
 - Update version number (`__version__`) in `gridsim/__init__.py`
 - Update changelog: Update the title for "Unreleased" to the new version
 - Push (or merge) to master
-- Create release on Github. (This will automatically create a new Stable and version-numbered documentation version on Read The Docs and deploy an updated release to PyPi.)
+- Create release on GitHub. (This will automatically create a new Stable and version-numbered documentation version on Read The Docs and deploy an updated release to PyPi.)
 
 Some of this is only relevant if you're running tests or [generating documentation](/programming/python-documentation), but just ignore those steps.

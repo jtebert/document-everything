@@ -285,21 +285,21 @@ You can then add the changelog to the table of contents in `docs/index.rst`.
 
 ## Deploying documentation
 
-With your project hosted on Github, it's really easy to automatically deploy your documentation. On [Read the Docs](https://readthedocs.org/), log in with your Github account. This will let Read the Docs set up a webhook, which will automatically generate updated documentation.
+With your project hosted on GitHub, it's really easy to automatically deploy your documentation. On [Read the Docs](https://readthedocs.org/), log in with your GitHub account. This will let Read the Docs set up a webhook, which will automatically generate updated documentation.
 
 Once logged in, you should see an "Import a Project" button. Click it, then choose your repository. You can opt for a nicer-looking name, but the URL and type should be auto-filled correctly.
 
-When you continue, this should automatically create a webhook in your repository. You can check this on Github: Go to your repository > Settings > Webhooks, and you should see one for Read the Docs. Now, a new documentation version will be generated whenever you create a new release on Github. (To learn about Github tags/releases on projects, see [this section of my Python Packaging post](/programming/python-packaging#github).)
+When you continue, this should automatically create a webhook in your repository. You can check this on GitHub: Go to your repository > Settings > Webhooks, and you should see one for Read the Docs. Now, a new documentation version will be generated whenever you create a new release on GitHub. (To learn about GitHub tags/releases on projects, see [this section of my Python Packaging post](/programming/python-packaging#github).)
 
 If your documentation didn't compile correctly on Read the Docs, go to the Builds tab on the project page. Click the failed build to see what went wrong.
 
 ## Wrap up
 
-Everything should now be in place to automatically generate your documentation whenever you make a new release on Github. Now we can go back to the checklist [I described here](/programming/python-packagin#release-checklist).
+Everything should now be in place to automatically generate your documentation whenever you make a new release on GitHub. Now we can go back to the checklist [I described here](/programming/python-packagin#release-checklist).
 
 - Verify tests and examples work. (It must be passing on Travis CI.)
 - Check that all documentation is updated and builds locally.
 - Update version number (`__version__`) in `gridsim/__init__.py`
 - Update changelog: Update the title for "Unreleased" to the new version
 - Push (or merge) to master
-- Create release on Github. (This will automatically create a new Stable and version-numbered documentation version on Read The Docs and deploy an updated release to PyPi.)
+- Create release on GitHub. (This will automatically create a new Stable and version-numbered documentation version on Read The Docs and deploy an updated release to PyPi.)

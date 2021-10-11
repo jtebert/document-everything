@@ -87,4 +87,4 @@ It should be reconfigured on reboot.
 
 ## Fixing `apt-get` failure
 
-I started getting a segfault when I try to run any `apt` or `apt-get` commands in crouton on my Chromebook. So I couldn't update or install. [This Github issue comment](https://github.com/dnschneid/crouton/issues/2688#issuecomment-378670878) provided a workaround. It's not pretty, but it works. Basically, you manually download and re-install `apt`, then update and install dependencies.
+I started getting a segfault when I try to run any `apt` or `apt-get` commands in crouton on my Chromebook. So I couldn't update or install. [This GitHub issue comment](https://github.com/dnschneid/crouton/issues/2688#issuecomment-378670878) provided a workaround. It's not pretty, but it works. Basically, you manually download and re-install `apt`, then update and install dependencies.

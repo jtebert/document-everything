@@ -8,9 +8,9 @@ last_modified_date: 2019-11-01
 
 ---
 
-## Github Pages project on custom subdomain
+## GitHub Pages project on custom subdomain
 
-First, enable GitHub pages for your repository under the settings. If you're using Jekyll and want Github to compile the site, set the source to "master branch". If you're compiling it yourself and pushing it to the gh-pages branch, choose that.
+First, enable GitHub pages for your repository under the settings. If you're using Jekyll and want GitHub to compile the site, set the source to "master branch". If you're compiling it yourself and pushing it to the gh-pages branch, choose that.
 
 Then under "Custom domain," set your subdomain, such as `docs.juliaebert.com`. (Look familiar?) This will create a commit to your repository with a CNAME file that will let GitHub handle properly directing requests to your github.io domain.
 

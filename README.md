@@ -27,7 +27,7 @@ Occasionally update your packages:
 bundle update
 ```
 
-Netlify builds from the master branch. (Previously, using GitHub pages would disable the last-modified plugin, but this is no longer used. So it should work on Github Pages, but I haven't tried it recently to confirm.)
+Netlify builds from the master branch. (Previously, using GitHub pages would disable the last-modified plugin, but this is no longer used. So it should work on GitHub Pages, but I haven't tried it recently to confirm.)
 
 ## Credits
 

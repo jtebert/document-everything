@@ -63,7 +63,7 @@ search_enabled: true
 aux_links:
     "Home":
       - "//juliaebert.com"
-    "Github":
+    "GitHub":
       - "//github.com/jtebert"
 # Color scheme currently only supports "dark" or nil (default)
 color_scheme: "jtebert"

@@ -1,0 +1,20 @@
+<!-- Sort the projects and exclude the index page (where this goes) -->
+{% assign sorted = site.projects | where_exp: 'item', "item.is_index != true" | sort: 'date' | reverse %}
+
+<!-- Exclude the year pages (the parent pages) -->
+{% assign filtered = sorted | where_exp: 'item', "item.has_children != true" %}
+
+<!-- Source: https://stackoverflow.com/a/20777475/2552873 -->
+<div markdown="0">
+{% for post in filtered %}
+    {% assign currentdate = post.date | date: "%Y" %}
+    {% if currentdate != date %}
+        {% unless forloop.first %}</ul>{% endunless %}
+        <h3 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h3>
+        <ul>
+        {% assign date = currentdate %}
+    {% endif %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% if forloop.last %}</ul>{% endif %}
+{% endfor %}
+</div>

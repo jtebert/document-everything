@@ -18,14 +18,12 @@ layout: default
 <hr>
 -->
 
-{% if page.has_children %}
-    {% comment %} I don't know how to directly make it do "if not page.has_children" {% endcomment %}
-{% else %}
+{% if page.has_children != true %}
     <h6 class="text-zeta date text-grey-dk-000">
         {% comment %} This is a hacky way of handling pages that don't have dates {% endcomment %}
-        {% capture def_date %}{{'1970-01-01' | date: '%s'}}{% endcapture %}
+        {% capture default_date %}{{'1970-01-01' | date: '%s'}}{% endcapture %}
         {% capture page_date %}{{page.date | date: '%s'}}{% endcapture %}
-        {% if page_date != def_date %}
+        {% if page_date != default_date %}
             <b>Posted:</b> {{ page.date | date: site.date_format }}<br>
         {% endif %}
         {% if page.last_modified_date %}
