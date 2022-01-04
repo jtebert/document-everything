@@ -2,7 +2,7 @@
 title: Mega Lego Skeleton
 parent: "2021"
 date: 2021-10-04
-last_modified_date: 2021-10-11
+last_modified_date: 2021-10-12
 nav_order: -20211004
 permalink: /projects/lego-skeleton
 ---
@@ -20,7 +20,7 @@ The moral of the story for this project is: Even if you start with a model of wh
 
 ![Completed-assembled-skeleton](/assets/img/projects/lego-skeleton/complete-skeleton.jpg)
 
-I will upload the parts to Thingiverse and Prusa Printers shortly.
+All the models are available on [Prusa Printers](https://www.prusaprinters.org/prints/78695-mega-lego-like-skeleton-101-scale) and [Thingiverse](https://www.thingiverse.com/thing:5019502).
 
 ---
 

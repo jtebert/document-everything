@@ -1,6 +1,6 @@
 ---
 title: Git Cheat Sheet
-last_modified_date: 2020-02-11
+last_modified_date: 2022-01-04
 ---
 
 1. TOC
@@ -8,10 +8,9 @@ last_modified_date: 2020-02-11
 
 ---
 
-
 This walks through most of what you'll probably need to do with git in the command line. You can also read the [full git documentation](https://git-scm.com/doc), but it's not very beginner friendly. A cool resource for interactively learning the more complex stuff (and understanding what's going on under the hood) is [Learning Git Branching](https://learngitbranching.js.org/).
 
-A lot of text editors and IDEs have git integration that will handle basic usage like staging, committing, pushing, pulling, and resolving merge conflicts, but they don't always handle (or are hard to use for) some of the more involved stuff (such as stashing and branching) described here.
+A lot of text editors and IDEs have git integration that will handle basic usage like staging, committing, pushing, pulling, and resolving merge conflicts, but they don't always handle (or are hard to use for) some of the more involved stuff (such as stashing and branching) described here. I use VS Code, which has very good built-in git handling; it especially makes it easy to see what changes you've made to your code since your last commit.
 
 ## Set up a repository from scratch
 
