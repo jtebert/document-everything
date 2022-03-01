@@ -1,7 +1,7 @@
 ---
 title: Designs & Models
 parent: 3D Printing
-last_modified_date: 2022-01-04
+last_modified_date: 2022-03-01
 ---
 
 This is a subset of the things I've designed, in approximately reverse-chronological order.
@@ -17,10 +17,27 @@ This is a subset of the things I've designed, in approximately reverse-chronolog
 - Improved Ikea Skådis accessories (remixed from [IKEA SKADIS Collection](https://www.thingiverse.com/thing:2853261))
 - Stackable Lego-like filament test bricks (with lots of parameters!)
 - Yet another minimalist toothbrush holder
-- Over-engineered socket set box
-- Diamine ink bottle holder
+- Customizable little jars.
 
 ---
+
+## Diamine ink bottle holder
+
+![Ink bottle in holder](/assets/img/3d-printing/diamine-ink-holder.jpg)
+{:.left}
+
+I spilled most of a bottle of ink. I'm not doing that again.
+
+**Models:** [Prusa Printers](https://www.prusaprinters.org/prints/131722-diamine-ink-bottle-holder), [Thingiverse](https://www.thingiverse.com/thing:5239992)
+
+## Compact Case for DeWalt 1/4" Socket Set
+
+![Socket box](/assets/img/3d-printing/socket-box.jpg)
+{:.left}
+
+This socket set is great, but it came with a ridiculously huge case. This fits everything in half the size, and includes print-in-place labels.
+
+**Models:** [Prusa Printers](https://www.prusaprinters.org/prints/119711-compact-case-for-dewalt-14-socket-set), [Thingiverse](https://www.thingiverse.com/thing:5223067)
 
 ## Offline Dinosaur Game Magnets
 

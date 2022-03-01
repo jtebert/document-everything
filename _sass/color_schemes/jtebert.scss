@@ -266,11 +266,22 @@ video {
 // Star ratings
 // Based on: https://stackoverflow.com/a/51802643/2552873
 
+.star-wrapper {
+    p {
+        margin: 0;
+    }
+    .count {
+        margin-left: 16px;
+        font-size: 1.25em;
+        color: $grey-dk-000;
+    }
+}
+
 .stars {
     position: relative;
     display:inline-block;
     font-size: 18pt;
-	  height: 1em;
+	height: 1em;
     line-height: 1em;
 }
 

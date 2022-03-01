@@ -5,6 +5,7 @@ nav_order: -9999999999999  # Force it to the top
 is_index: true
 image: /assets/img/undraw_maker_launch_crhe.svg
 image_alt: It's a rocket, but I haven't made a rocket
+permalink: /projects
 ---
 
 ---
