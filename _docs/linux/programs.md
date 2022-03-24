@@ -1,7 +1,7 @@
 ---
 title: Programs to Install
 parent: Linux
-last_modified_date: 2020-06-30
+last_modified_date: 2022-03-24
 ---
 
 1. TOC
@@ -37,6 +37,7 @@ last_modified_date: 2020-06-30
 | [Papirus icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)                        | Material-inspired icons             |
 | [Papirus folders](https://github.com/PapirusDevelopmentTeam/papirus-folders)                         | Match folder icons to Adapta colors |
 
+I'm currently using the Plata Noir theme with Papirus icons
 
 ## Gnome Extensions
 
@@ -44,17 +45,21 @@ These are what I'm currently using:
 
 | Program                                                                                                                                  | Purpose                                                     |
 | :--------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------- |
+| [Material Shell](https://github.com/PapyElGringo/material-shell)                                                                         | Tiling WM style for Gnome (clear `~/.cache` if misbehaving) |
 | [Alternatetab](https://extensions.gnome.org/extension/15/alternatetab/)                                                                  | Alt+Tab switches by window instead of program               |
 | [Bring out submenu of power off/logout button](https://extensions.gnome.org/extension/2917/bring-out-submenu-of-power-offlogout-button/) | Fix a system menu annoyance                                 |
 | [Clipboard indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)                                                   | Show clipboard history                                      |
 | [Gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)                                                                      | Connect my phone to the computer                            |
-| [Material Shell](https://github.com/PapyElGringo/material-shell)                                                                         | Tiling WM style for Gnome (clear `~/.cache` if misbehaving) |
-| [Lock Keys](https://extensions.gnome.org/extension/36/lock-keys/)                                                                        | Show Caps lock indicator                                    |
 | [Panel osd](https://extensions.gnome.org/extension/708/panel-osd/)                                                                       | Move the notification popup                                 |
 | [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)                           | Show audio input/output in system menu                      |
 | [Tweaks in Systems Menu](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)                                             | Show Tweaks with regular Settings                           |
 | [User themes](https://extensions.gnome.org/extension/19/user-themes/)                                                                    | Allow user themes described above                           |
 | [Windowoverlay icons](https://extensions.gnome.org/extension/302/windowoverlay-icons/)                                                   | Show program icons in the Alt+Tab view                      |
+| [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)                                          | Connect quickly from the system menu                        |
+| [Sensors](https://extensions.gnome.org/extension/82/cpu-temperature-indicator/)                                                          | See temperatures in system menu                             |
+| [Freon](https://extensions.gnome.org/extension/841/freon/)                                                                               | Temperatures in the panel                                   |
+
+<!-- | [Lock Keys](https://extensions.gnome.org/extension/36/lock-keys/)                                                                        | Show Caps lock indicator                                    | -->
 
 These are worthwhile extensions I've used in the past:
 
@@ -71,15 +76,17 @@ These are worthwhile extensions I've used in the past:
 
 ## Work/Research
 
-| Program                                                                                   | Purpose                                                                        |
-| :---------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------- |
-| [Kilogui](https://github.com/acornejo/kilogui/releases)                                   | Programmer interface for Kilobots                                              |
-| [Mendeley](https://www.mendeley.com/guides/download-mendeley-desktop/ubuntu/instructions) | Managing papers                                                                |
-| [Eagle](https://www.autodesk.com/products/eagle/overview)                                 | PCB design ([configuration](/linux/program-config#eagle-create-desktop-entry)) |
-| `sudo apt install minicom`                                                                | Serial monitor terminal (for Kilobots and LARVAbot)                            |
-| [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer/releases)                            | 3D printing slicer                                                             |
-| `sudo apt install openscad`                                                               | Script-based CAD                                                               |
-| [Slack](https://slack.com/downloads/linux)                                                | Channels for everything!                                                       |
+| Program                                                        | Purpose                                                                        |
+| :------------------------------------------------------------- | :----------------------------------------------------------------------------- |
+| [Kilogui](https://github.com/acornejo/kilogui/releases)        | Programmer interface for Kilobots                                              |
+| [Eagle](https://www.autodesk.com/products/eagle/overview)      | PCB design ([configuration](/linux/program-config#eagle-create-desktop-entry)) |
+| `sudo apt install minicom`                                     | Serial monitor terminal (for Kilobots and LARVAbot)                            |
+| [PrusaSlicer](https://github.com/prusa3d/PrusaSlicer/releases) | 3D printing slicer                                                             |
+| `sudo apt install openscad`                                    | Script-based CAD                                                               |
+| [Slack](https://slack.com/downloads/linux)                     | Channels for everything!                                                       |
+| [Zotero](https://github.com/retorquere/zotero-deb)             | Managing papers                                                                |
+
+<!-- | [Mendeley](https://www.mendeley.com/guides/download-mendeley-desktop/ubuntu/instructions) | Managing papers                                                                | -->
 
 ## Programming
 
@@ -100,6 +107,43 @@ Install relevant development packages all at once:
 | Jekyll          | `sudo apt install ruby-full build-essential zlib1g-dev && sudo gem install jekyll bundler`                                                         |
 | Node/NPM        | `sudo apt install nodejs build-essential` or [PPA or NVM](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) |
 | Other           | `sudo apt install libhdf5-dev htop`                                                                                                                |
+
+VS Code Extensions:
+
+| Extension                                                                                                                           | Purpose                                         |
+| :---------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------- |
+| [Arduino](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino)                                         | Program, compile, and deploy Arduino sketches   |
+| [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)                                  | Auto-create HTML closing tags                   |
+| [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)                                | Change HTML open/close tags together            |
+| [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)                                        | Automatic Python documentation strings          |
+| [Better C++ Syntax](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax)                               | Better syntax-highlighting for C++              |
+| [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)                     | Spell-checking, including camel/snake-case      |
+| [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)                                      | Color codes get highlighted with that color     |
+| [Django](https://marketplace.visualstudio.com/items?itemName=bigonesystems.django)                                                  | Snippets/highlighting for Django templates      |
+| [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)                         | Automatic Doxygen docstring generator           |
+| [Edit csv](https://marketplace.visualstudio.com/items?itemName=janisdd.vscode-edit-csv)                                             | Edit CSV like a table                           |
+| [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)                                                | Javascript linting                              |
+| [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)                                                | AI write my code for me, please                 |
+| [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)            | Manage these from within VS Code                |
+| [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)                                                      | More powerful git tools                         |
+| [Indenticator](https://marketplace.visualstudio.com/items?itemName=SirTori.indenticator)                                            | Highlight indentation depth                     |
+| [Intellisense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)     | Auto-complete CSS class names                   |
+| [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)                                                   | Notebooks without your browser                  |
+| [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)                               | Markdown editing and previews                   |
+| [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)                                                | Math rendering support for markdown             |
+| [Material Design Icons Intellisense](https://marketplace.visualstudio.com/items?itemName=lukas-tr.materialdesignicons-intellisense) | Icon name suggestions and preview               |
+| [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)                                | Pretty folder/file icons                        |
+| [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)                                             | Python type-checking and validation             |
+| [Python-autopep8](https://marketplace.visualstudio.com/items?itemName=himanoa.Python-autopep8)                                      | Apply PEP8 formatting to file                   |
+| [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)                                          | Distinguish CSV columns by color                |
+| [reStructuredText](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext)                                   | Support formatting/preview for RST files        |
+| [Rewrap](https://marketplace.visualstudio.com/items?itemName=stkb.rewrap)                                                           | Hard wrap comment/code blocks                   |
+| [scad](https://marketplace.visualstudio.com/items?itemName=efbenson.scad)                                                           | Better editor than OpenSCAD                     |
+| [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)                                            | Preview (simple) SVG files in VS Code           |
+| [TODO Highlight v2](https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight)                              | Highlight TODO/NOTE/FIXME notes                 |
+| [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)                                                           | Vue support                                     |
+| [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)                                                    | PDF viewing within VS Code                      |
+| [vscode-spotify](https://marketplace.visualstudio.com/items?itemName=shyykoserhiy.vscode-spotify)                                   | Spotify interaction (pause, skip, current song) |
 
 ## Miscellaneous/Utilities
 

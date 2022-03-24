@@ -2,7 +2,7 @@
 title: Design Resources
 # permalink: /design-resources
 parent: Graphics & Design
-last_modified_date: 2020-02-18
+last_modified_date: 2022-03-24
 ---
 
 I like free graphics and fonts.
@@ -22,6 +22,7 @@ I like free graphics and fonts.
 - [manypixels](https://gallery.manypixels.co/): Large collection of stylistically consistent, color-customizable illustrations. This has *multiple* styles, usually with the same illustration available in most/all styles.
 - [Lukaszadam](https://lukaszadam.com/illustrations): Small but growing collection of small illustrations
 - [Mixkit](https://mixkit.co/free-stock-art/): Many styles of illustrations of a variety of subjects. (More visually interesting than the trendy flat styles of the above ones)
+- [Pixeltrue](https://www.pixeltrue.com/free-illustrations)
 
 ## Icons
 
@@ -36,6 +37,7 @@ I like free graphics and fonts.
 - [Trianglify](https://trianglify.io/): Generate multi-colored triangle-based SVG images
 - [SVG Backgrounds](https://www.svgbackgrounds.com/): Customizable (any colors, multiple patterns) SVG pattern generator. Free with attribution.
 - [Pattern Generator](https://beautifuldingbats.com/pattern-generator/): Generate complex, multi-colored SVG patterns
+- [Pattern Monster](https://pattern.monster/): More customizable SVG patterns
 
 ## Free Photos
 
