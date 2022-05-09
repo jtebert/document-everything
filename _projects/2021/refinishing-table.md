@@ -74,8 +74,6 @@ We started with the most course sandpaper in the pack: 60 grit. We got through t
 
 After a couple sheets of 60 grit got off all the finish and evened things out, we switched up to 80 grit. I don't know what the *right* way to do this is, but we took turns putting much of our body weight into the table surface to get off as much material as we could (while the other person held onto the tabletop to make sure it didn't flip over).
 
-![]() PICTURE OF SANDING GOES HERE
-
 It didn't take long before it got difficult to sand the leaf with it still attached to the table -- particularly on the end where it was hinge-attached to the rest of the top. (This appeared to have had years of drips down it, so it definitely neeeded the cleanup). We unscrewed the hinges, which we realized looked way undersized for their purpose; some of the screws were starting to rip out of the top. So I guess we're replacing the hinges, too!
 
 The 80 grit sandpaper worked to get out the big damage, like all the knife marks on the leaf. From there, we kept working our way up: first to 120, then finally 240 grit. By this point, it felt smooth enough. We're going to put multiple layers of polyurethane over this anyway, so going any smoother feels like a waste.
