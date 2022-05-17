@@ -1,7 +1,7 @@
 ---
 title: Designs & Models
 parent: 3D Printing
-last_modified_date: 2022-05-05
+last_modified_date: 2022-05-17
 ---
 
 This is a subset of the things I've designed, in approximately reverse-chronological order.
@@ -20,7 +20,16 @@ This is a subset of the things I've designed, in approximately reverse-chronolog
 
 ---
 
-## Nozzle Box
+## "Oops, all nuts!" pencil organizer
+
+![Pencil cup that looks like a stack of giant nuts](/assets/img/3d-printing/oops-all-nuts.jpg)
+{:.left}
+
+It's like my nut & bolt pencil holder, but this time it's all nuts. It also has compatible M80 threads.
+
+**Models:** [Printables](https://www.printables.com/model/126406), [Thingiverse](https://www.thingiverse.com/thing:5387918)
+
+## Nozzle box
 
 ![Open nozzle box](/assets/img/3d-printing/nozzle-box.jpg)
 {:.left}
@@ -40,7 +49,7 @@ I spilled most of a bottle of ink. I'm not doing that again.
 
 **Models:** [Printables](https://www.printables.com/model/131722), [Thingiverse](https://www.thingiverse.com/thing:5239992)
 
-## Compact Case for DeWalt 1/4" Socket Set
+## Compact case for DeWalt 1/4" socket set
 
 ![Socket box](/assets/img/3d-printing/socket-box.jpg)
 {:.left}
@@ -49,7 +58,7 @@ This socket set is great, but it came with a ridiculously huge case. This fits e
 
 **Models:** [Printables](https://www.printables.com/model/119711), [Thingiverse](https://www.thingiverse.com/thing:5223067)
 
-## Offline Dinosaur Game Magnets
+## Offline dinosaur game magnets
 
 ![Dinosaur magnets](/assets/img/3d-printing/dino-magnets.jpg)
 {:.left}
@@ -58,7 +67,7 @@ Chrome lets you play a game when you have no internet. I've taken that game and 
 
 **Models:** [Printables](https://www.printables.com/model/85355), [Thingiverse](https://www.thingiverse.com/thing:5100780)
 
-## Mega Lego Skeleton
+## Mega Lego seleton
 
 ![Mega Lego Skeleton](/assets/img/projects/lego-skeleton/complete-skeleton.jpg)
 {:.left}
@@ -80,7 +89,7 @@ It's a flexible alligator, inspired by Flexi Rex, but more *Florida.* It's the f
 
 **Models:** [Printables](https://www.printables.com/model/55973), [Thingiverse](https://www.thingiverse.com/thing:4757841)
 
-## "My First Pandemic" 2020 Ornament
+## "My First Pandemic" 2020 ornament
 
 ![First Pandemic Ornament](/assets/img/3d-printing/first-pandemic-ornament.jpg)
 {:.left}
@@ -98,7 +107,7 @@ It's like the compact pill box, but less compact.
 
 **Models:** [Printables](https://www.printables.com/model/48132), [Thingiverse](https://www.thingiverse.com/thing:4675070)
 
-## Multi-color 2020 Dumpster Fire Ornament
+## Multi-color 2020 dumpster fire ornament
 
 ![2020 Dumpster Fire](/assets/img/3d-printing/2020-dumpster-fire.jpg)
 {:.left}

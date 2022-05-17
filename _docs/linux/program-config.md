@@ -1,7 +1,7 @@
 ---
 title: Program Configuration
 parent: Linux
-last_modified_date: 2020-01-20
+last_modified_date: 2022-05-17
 ---
 
 1. TOC
@@ -182,3 +182,20 @@ There's a whole repository of [community-created themes](https://github.com/morp
   ```
 
 There are also [Spicetify extensions](https://github.com/khanhas/spicetify-cli/wiki/Extensions), but I haven't tried any of those yet.
+
+## Logitech mouse gesture buttons with Solaar
+
+Within the Solaar GUI, select the mouse (I'm using the MX Master 3) and click the "Rule Editor" button. In the "User-defined rules" section, right click and select "Insert new rule."
+
+From here, I created a sub-rule for each gesture direction. Right click on "[empty]" within the Rule and select "Insert here" > "Sub-rule."
+
+Right click on "[empty]" within the Sub-rule and select "Insert here" > "Condition" > "Mouse Gesture." At the bottom of the window, begin typing the direction of the gesture, and it should autocomplete -- for example "Mouse Up." That's all you need for the condition.
+
+Now right click the "Mouse Gesture" condition and select "Insert below" > "Action" > "Key press." At the bottom of the window, start typing the relevant key you want it to execute. You can also use "Add key" to add additional keys to the key combo you want to execute. For example I have "Super" + "W" set to move up a workspace.
+
+Here's what my configuration looks like for four gesture directions, plus reassigning the button underneath the scroll wheel.
+
+![Screenshot of Solaar configuration](/assets/img/linux/solaar-config.png)
+
+Source: [Solaar documentation](https://pwr-solaar.github.io/Solaar/rules)
+{: .fs-2}

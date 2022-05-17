@@ -1,7 +1,7 @@
 ---
 title: Programs to Install
 parent: Linux
-last_modified_date: 2022-03-24
+last_modified_date: 2022-05-17
 ---
 
 1. TOC
@@ -11,19 +11,20 @@ last_modified_date: 2022-03-24
 
 ## Everyday
 
-| Program                                               | Purpose                                                                                                                 |
-| :---------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| [Chrome](https://www.google.com/chrome/)              | Browser                                                                                                                 |
-| `sudo apt install tilix`                              | Better terminal ([configuration](/linux/system-config#using-tilix-as-default-terminal-application-with-gnome-at-least)) |
-| `sudo apt install inkscape`                           | Vector graphics editor (or the [PPA](https://inkscape.org/release/inkscape-1.0rc1/gnulinux/ubuntu/ppa/dl/))             |
-| `sudo apt install gimp`                               | Raster graphics editor                                                                                                  |
-| [Typora](https://typora.io/)                          | Markdown editor                                                                                                         |
-| [MuseScore](https://musescore.org/en)                 | Music notation                                                                                                          |
-| [Spotify](https://www.spotify.com/us/download/other/) | Music ([add themes with Spicetify](/linux/program-config#spotify-themes-with-spicetify-cli))                            |
-| [Z shell](/linux/zsh)                                 | Better interactive shell ([configuration](/linux/zsh))                                                                  |
-| [Lutris](https://lutris.net/)*                        | Playing not-native-Linux games                                                                                          |
-| [Steam](https://store.steampowered.com)               | Games!                                                                                                                  |
-| [Discord](https://discord.com/new/download)           | Chat servers for everything                                                                                             |
+| Program                                               | Purpose                                                                                                                                          |
+| :---------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Chrome](https://www.google.com/chrome/)              | Browser                                                                                                                                          |
+| `sudo apt install tilix`                              | Better terminal ([configuration](/linux/system-config#using-tilix-as-default-terminal-application-with-gnome-at-least))                          |
+| `sudo apt install inkscape`                           | Vector graphics editor (or the [PPA](https://inkscape.org/release/inkscape-1.0rc1/gnulinux/ubuntu/ppa/dl/))                                      |
+| `sudo apt install gimp`                               | Raster graphics editor                                                                                                                           |
+| [Typora](https://typora.io/)                          | Markdown editor                                                                                                                                  |
+| [MuseScore](https://musescore.org/en)                 | Music notation                                                                                                                                   |
+| [Spotify](https://www.spotify.com/us/download/other/) | Music ([add themes with Spicetify](/linux/program-config#spotify-themes-with-spicetify-cli))                                                     |
+| [Z shell](/linux/zsh)                                 | Better interactive shell ([configuration](/linux/zsh))                                                                                           |
+| [Lutris](https://lutris.net/)*                        | Playing not-native-Linux games                                                                                                                   |
+| [Steam](https://store.steampowered.com)               | Games!                                                                                                                                           |
+| [Discord](https://discord.com/new/download)           | Chat servers for everything                                                                                                                      |
+| [Solaar](https://pwr-solaar.github.io/Solaar/)        | Configure the gesture buttons on my Logitech MX Master 3 mouse ([see config](/linux/program-config/#logitech-mouse-gesture-buttons-with-solaar)) |
 
 \* Usually, I'll use Proton (from within Steam) if I'm playing a Steam game, and Lutris for non-Steam games (like GTA V through Epic games store).
 
