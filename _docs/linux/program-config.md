@@ -1,7 +1,7 @@
 ---
 title: Program Configuration
 parent: Linux
-last_modified_date: 2022-05-17
+last_modified_date: 2022-05-24
 ---
 
 1. TOC
@@ -199,3 +199,29 @@ Here's what my configuration looks like for four gesture directions, plus reassi
 
 Source: [Solaar documentation](https://pwr-solaar.github.io/Solaar/rules)
 {: .fs-2}
+
+## Make PrusaSlicer default for 3MF files
+
+3MF is a compressed archive file format that (by default) Linux won't distinguish from files like zip and tarball files. So if you just change 3MF files to open with PrusaSlicer, it will also change the default program for those others. To fix this, we need to tell get Linux to distinguish them with a new MIME type.
+
+- Make a file named `~/.local/share/mime/packages/application-x-3mf.xml`
+- Copy and paste this into the file:
+  ```XML
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/x-3mf">
+      <comment>3D Manufacturing Format</comment>
+      <icon name="application-x-3mf"/>
+      <glob-deleteall/>
+      <glob pattern="*.3mf"/>
+    </mime-type>
+  </mime-info>
+  ```
+- Update to use this new MIME type: `update-mime-database ~/.local/share/mime`
+
+Now, you should be able to right click a 3MF file and set the default application to PrusaSlicer.
+
+*Note:* The original instructions suggest adding the following line to `~/.config/mimeapps.list`: `[Added Associations] section: application/x-3mf=prusa-slicer.desktop`. However, this doesn't seem to work when the `.desktop` file using [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), so I find it easier to right click and set the default manually.
+
+Source: [Prusa Forums](https://forum.prusa3d.com/forum/prusaslicer/make-prsuaslicer-default-app-for-3mf-files-in-ubuntu-linux/), [Ubuntu](https://answers.launchpad.net/ubuntu/+source/xdg-utils/+question/701652)
+{:.fs-2}

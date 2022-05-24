@@ -1,7 +1,7 @@
 ---
 title: System Configuration
 parent: Linux
-last_modified_date: 2021-02-16
+last_modified_date: 2022-05-24
 ---
 
 - TOC
@@ -373,4 +373,15 @@ I did this to move my encrypted `/home` directory from my old HDD to a new NVME 
 7. Clean up your old home drive. Once you're satisfied that everything is working correctly, you can reformat your old drive or remove everything from it with `rm`.
 
 Sources: [TecMint](https://www.tecmint.com/move-home-directory-to-new-partition-disk-in-linux/), [Make Tech Easier](https://www.maketecheasier.com/move-home-folder-ubuntu/)
+{:.fs-2}
+
+## Change error policy on a CUPS printer
+
+If a print fails or is stopped on Linux, by default it has a stupid error policy that basically stops you from using the printer until you disconnect/reconnect. But it's fixable!
+
+- First, find the name of the printer you're looking for with `lpstat -p`. Mine is called "Brother_HL_L2350DW_series".
+- Now you can check the current error policy for that printer with `sudo cat /etc/cups/printers.conf`. For your printer name, look for the line that starts with "ErrorPolicy". It's probably `stop-printer`, which is *not* what we want. We want to change it to `abort-job` so it doesn't leave your printer in an unusable state.
+- To change it, run: `/usr/sbin/lpadmin -p <PRINTER_NAME> -o printer-error-policy=abort-job`, using the printer name you got in the first step.
+
+Source: [SI Prep](https://technology.siprep.org/changing-the-error-policy-on-a-cups-printer/)
 {:.fs-2}
