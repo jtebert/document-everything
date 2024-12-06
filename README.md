@@ -6,8 +6,11 @@ This is documentation of various useful things I've figured out and will inevita
 
 ## Usage
 
-Local setup:
+Local setup (run from within this project directory):
+
 ```shell
+sudo apt install bundler  # Or whatever else your OS demands
+bundle config set --local path 'vendor/bundle'
 bundle update
 bundle install
 ```

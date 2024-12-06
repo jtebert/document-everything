@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="381mm"
+   height="187.51mm"
+   version="1.1"
+   viewBox="0 0 381 187.51"
+   id="svg35"
+   sodipodi:docname="2024-orig.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1605"
+     inkscape:window-height="1288"
+     id="namedview37"
+     showgrid="false"
+     inkscape:zoom="0.45647011"
+     inkscape:cx="751.41831"
+     inkscape:cy="958.44173"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg35"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs9">
+    <linearGradient
+       id="linearGradient856"
+       x1="47.901"
+       x2="47.901"
+       y1="120.17"
+       y2="130.53"
+       gradientTransform="matrix(9.9307143,0,0,9.9307143,-286.96858,-1150.9719)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="gray"
+         stop-opacity=".25"
+         offset="0"
+         id="stop2" />
+      <stop
+         stop-color="gray"
+         stop-opacity=".12"
+         offset=".54"
+         id="stop4" />
+      <stop
+         stop-color="gray"
+         stop-opacity=".1"
+         offset="1"
+         id="stop6" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="vector-effect:non-scaling-stroke;fill:#3f3d56;fill-opacity:1;stroke-width:0.264584;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:hairline"
+     id="rect351"
+     width="77.044418"
+     height="77.044418"
+     x="0"
+     y="110.46557" />
+  <rect
+     style="vector-effect:non-scaling-stroke;fill:#3f3d56;fill-opacity:1;stroke-width:0.264584;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:hairline"
+     id="rect351-3"
+     width="92.879257"
+     height="92.879257"
+     x="107.56778"
+     y="-80.725365"
+     transform="rotate(36.886779)" />
+  <rect
+     style="vector-effect:non-scaling-stroke;fill:#3f3d56;fill-opacity:1;stroke-width:0.264584;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:hairline"
+     id="rect351-3-6"
+     width="103.52098"
+     height="103.52098"
+     x="128.85394"
+     y="-283.82181"
+     transform="rotate(77.415883)" />
+  <rect
+     style="vector-effect:non-scaling-stroke;fill:#3f3d56;fill-opacity:1;stroke-width:0.264584;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:hairline"
+     id="rect351-3-6-7"
+     width="48.817619"
+     height="48.817619"
+     x="-53.92746"
+     y="-377.49863"
+     transform="rotate(100.51764)" />
+  <text
+     x="27.663908"
+     y="143.31055"
+     fill="url(#linearGradient856)"
+     font-family="sans-serif"
+     font-size="141.257px"
+     letter-spacing="0px"
+     stroke-width="0.264581px"
+     word-spacing="0px"
+     style="line-height:100%;fill:url(#linearGradient856)"
+     xml:space="preserve"
+     id="text25"><tspan
+       x="27.663908"
+       y="143.31055"
+       fill="url(#linearGradient856)"
+       font-family="'Space Mono'"
+       font-weight="bold"
+       stroke-width="0.264581px"
+       id="tspan23"
+       style="fill:url(#linearGradient856)">2024</tspan></text>
+  <text
+     x="22.408861"
+     y="148.56552"
+     fill="#000000"
+     font-family="sans-serif"
+     font-size="141.257px"
+     letter-spacing="0px"
+     stroke-width="0.264581px"
+     word-spacing="0px"
+     style="line-height:100%"
+     xml:space="preserve"
+     id="text29"><tspan
+       x="22.408861"
+       y="148.56552"
+       fill="#38bc24"
+       font-family="'Space Mono'"
+       font-weight="bold"
+       stroke-width="0.264581px"
+       id="tspan27">2024</tspan></text>
+</svg>

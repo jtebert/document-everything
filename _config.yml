@@ -43,7 +43,7 @@ date_format: '%Y %B %e'
 # Build settings
 markdown: kramdown
 # remote_theme: pmarsceill/just-the-docs
-remote_theme: pdmosses/just-the-docs@rec-nav-2
+remote_theme: just-the-docs/just-the-docs@main
 # remote_theme: cbteeple/just-the-docs
 
 # plugins:
